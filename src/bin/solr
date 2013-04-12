@@ -3,7 +3,8 @@
 # Then one can do update-rc.d solr defaults to have it start at boot.
 # Starts, stops, and restarts solr
 
-SOLR_DIR="/path/to/apache-solr-3.6.2/573"
+# Get path of this bash script ... assumes in src/bin directory
+SOLR_DIR="`dirname \"$0\"`/../apache-solr-3.6.2/573"
 JAVA_OPTIONS="-Xmx1024m -Djetty.port=8983 -Dsolr.solr.home=multicore -DSTOP.PORT=8079 -DSTOP.KEY=stopkey -jar start.jar"
 LOG_FILE="/var/log/solr.log"
 JAVA="/usr/bin/java"
