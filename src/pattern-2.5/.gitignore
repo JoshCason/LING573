@@ -1,0 +1,13 @@
+# Ignore compiled Python files
+*.pyc
+
+# Ignore Ninja files
+*.nja
+
+# Ignore build folders
+build
+dist
+
+# Ignore cache folders
+pattern/web/cache/tmp/
+web/cache/tmp/
