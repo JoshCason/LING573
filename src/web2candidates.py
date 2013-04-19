@@ -4,8 +4,13 @@
 #
 # Retrieve Web Results 
 #
+# Example usage: 
+# python2.7 web2candidates.py reformed_TREC-2005.xml
+#
 # @author Joshua Cason <casonj@uw.edu>
-import sys, math
+# @author Anthony Gentile <agentile@uw.edu>
+import sys, os, math
+import xml.etree.ElementTree as ET
 from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -94,10 +99,22 @@ def getcandidates(query, limit):
     return ngrams 
             
 if __name__ == '__main__':
-    lim = 4
-    c = getcandidates('Fred Durst Where was Durst born?', lim)
-    for r, count in c.most_common(lim):
-        print '%s: %7d' % (r, count)
+    reformed_trec_file = os.path.realpath(sys.argv[1])
+    tree = ET.parse(reformed_trec_file)
+    root = tree.getroot()
+    for question in root.findall('question'):
+        q = question.find('question_target_combined')
+        q = q.text
+        print q
+        
+        lim = 4
+        c = getcandidates(q, lim)
+        # TODO:up the lim and store these in lucene index.
+        for r, count in c.most_common(lim):
+            print '%s: %7d' % (r, count)
+            
+        # lets just do the first one for now to not kill our rate quota
+        sys.exit()
     
 
 
