@@ -1,3 +1,10 @@
+#!/opt/python-2.7/bin/python2.7
+# -*- coding: utf-8 -*-
+# LING 573 - Spring 2013 - QA Project
+#
+# Retrieve Web Results 
+#
+# @author Joshua Cason <casonj@uw.edu>
 import sys, math
 from collections import Counter
 from nltk.tokenize import word_tokenize
