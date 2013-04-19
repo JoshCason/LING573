@@ -1,7 +1,0 @@
-*.pyc
-*.swp
-.cache
-MANIFEST
-build
-dist
-docs/_build
