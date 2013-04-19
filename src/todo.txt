@@ -1,0 +1,25 @@
+Current Flow
+
+1. Assume that AQUAINT index is built as we will do some searching against it down the line (takes about ~2.5 min, index size ~820mb)
+python2.7 aquaint_index.py
+
+2. Take the TREC question XML file and output a new XML file that has the stuff we care about and query expansion
+python2.7 trec_questions.py /dropbox/12-13/573/Data/Questions/training/TREC-2005.xml
+
+3. Pass this new reformed TREC XML file to web2candidates.py to retrieve web results
+python2.7 web2candidates.py reformed_TREC-2005.xml
+
+
+TODO:
+
+We want to combine some processes here, so we need to have web2candidates for each question not only 
+retrieve web results but also do a search against the AQUAINT index (as seen in aquaint_search.py)
+The results of both searches can then be evaluated and reranked based on the web results and the top N 
+answers be outputted to D2.outputs in the correct format. 
+
+Do we even need to bother storing web results for questions in lucene? I can see using it as a cache if 
+the question is asked again, but I don't think it is completely necessary for a working system. Perhaps 
+I am wrong. If so, let me know.
+
+Ideally, we can collapse trec_questions.py and web2candidates.py together and just run one script 
+(assuming AQUAINT index is already built).
