@@ -49,6 +49,7 @@ if __name__ == '__main__':
         
         # parse content as XML? doesn't seem to be working right.
         #tree = ET.parse('<root>' + content + '</root>')
+        #root = tree.getroot()
     
         for doc in root.findall('DOC'):
             #docid = doc.find('DOCNO').text
