@@ -17,9 +17,6 @@ import nltk
 from nltk.corpus import stopwords
 import xml.etree.ElementTree as ET
 
-# output file (stores reformulated queries + relevant question data)
-output = open('query_reform_output.txt','w')
-
 # storing question words
 def classify_question(text):
     words = []
@@ -45,7 +42,7 @@ def remove_stopwords(text):
         if word.isalnum():
             if word not in stopwords:
                 mod_text += word.lower() + ' '				
-    return mod_text
+    return mod_text.strip()
 
 # adding synonyms
 #def expand_query_vocab(mod_text):
@@ -57,36 +54,51 @@ def stem_query(mod_text):
     for wordform in mod_text.split(' '):
         stemmed = stemmer.stem(wordform)
         final_text += stemmed + ' '
-    return final_text
+    return final_text.strip()
 
 # modification of Anthony's code
 if __name__ == '__main__':
     trec_file = os.path.realpath(sys.argv[1])
     tree = ET.parse(trec_file)
     root = tree.getroot()
+    
+    # we will store pertinent data in a new XML file
+    new_root = ET.Element('questions')
     for target in root.findall('target'):
-        target_id = target.attrib['id']
-        target_text = target.attrib['text']
-        #store target + useful info
-        output.write('Target: ' + target_text + ' ' + 'Target_ID: ' + target_id)
         for question in target.findall('qa'):
             q = question.find('q')
             if q.attrib['type'].strip() != 'FACTOID':
                 continue
-            question_id = q.attrib['id']
-            question_text = q.text.strip()
-
-            # store question + useful info
-            output.write(question_id + '    ' + question_text)
+                
+            question = ET.SubElement(new_root, 'question')
+            target_id = ET.SubElement(question,'target_id')
+            target_id.text = target.attrib['id']
             
-            # do some query modification
-            question_word = classify_question(question_text)
-            output.write('Classification: ' + question_word)
+            target_text = ET.SubElement(question,'target_text')
+            target_text.text = target.attrib['text']
+            
+            question_id = ET.SubElement(question,'question_id')
+            question_id.text = q.attrib['id']
+            
+            question_text = ET.SubElement(question,'question_text')
+            question_text.text = q.text.strip()
+            
+            question_target_combined = ET.SubElement(question,'question_target_combined')
+            if target_text.text.lower() in q.text.strip().lower():
+                question_target_combined.text = q.text.strip()
+            else:
+                question_target_combined.text = target_text.text + ' ' + q.text.strip()
+            
+            classification = ET.SubElement(question,'classification')
+            classification.text = classify_question(question_text.text)
+            
+            bag_of_words = ET.SubElement(question,'bag_of_words')
+            bag_of_words.text = remove_stopwords(question_text.text)
+            
+            stemmed_query = ET.SubElement(question,'stemmed_query')
+            stemmed_query.text = stem_query(bag_of_words.text)
 
-            mod_text = remove_stopwords(question_text)
-            output.write('BagOfWords: ' + mod_text)
+    # output file (stores reformulated queries + relevant question data)
+    new_tree = ET.ElementTree(new_root)
+    new_tree.write('reformed_' + os.path.basename(trec_file))
 
-            final_text = stem_query(mod_text)
-            output.write('StemmedQuery: ' + final_text)
-
-            output.write('ExpandedQuery: ') # missing method(s) for query expansion
