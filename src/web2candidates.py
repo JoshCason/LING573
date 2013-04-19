@@ -1,4 +1,4 @@
-import sys
+import sys, math
 from collections import Counter
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -28,11 +28,14 @@ bing = BingSearchAPI(my_key)
 
 #bing.search('web','Your Query',params)
 
-def getcandidates(query):
+def getcandidates(query, limit):
     text = ''
     # Get the top 100 - I think it will let you get only 50 at a time.
-    for i in range(2):
-        params = {'$format': 'json', '$top': 50,'$skip': i*50}
+    per_page = 50
+    pages = int(math.ceil(limit / float(per_page)))
+    for page in range(pages):
+        offset = (limit * (page + 1)) - limit;
+        params = {'$format': 'json', '$top': limit,'$skip': offset}
         try:
             results = bing.search('web',query,params)()['d']['results'][0]['Web']
         except:
@@ -83,8 +86,12 @@ def getcandidates(query):
                 ngrams[k] += ngrams[token]
     return ngrams 
             
-        
-
+if __name__ == '__main__':
+    lim = 4
+    c = getcandidates('Fred Durst Where was Durst born?', lim)
+    for r, count in c.most_common(lim):
+        print '%s: %7d' % (r, count)
+    
 
 
 

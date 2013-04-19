@@ -44,34 +44,65 @@ if __name__ == '__main__':
     # for each AQUAINT file get info
     for af in files:
         file = open(af)
-        content = unicode(file.read(), 'utf8')
+        content = file.readlines()
         file.close()
         
-        # parse content as XML? doesn't seem to be working right.
-        #tree = ET.parse('<root>' + content + '</root>')
-        #root = tree.getroot()
-    
-        for doc in root.findall('DOC'):
-            #docid = doc.find('DOCNO').text
-            #doctext = doc.find('.//TEXT').text.strip()
-            #docheadline = document.find('.//HEADLINE').text.strip()
-            
-            d = lucene.Document()
-            
-            d.add(lucene.Field("docid", docid,
-                                 lucene.Field.Store.YES,
-                                 lucene.Field.Index.ANALYZED))
-                                 
-            d.add(lucene.Field("doctext", doctext,
-                                 lucene.Field.Store.YES,
-                                 lucene.Field.Index.ANALYZED))
-                                 
-            d.add(lucene.Field("docheadline", docheadline,
-                                 lucene.Field.Store.YES,
-                                 lucene.Field.Index.ANALYZED))
-
-            writer.addDocument(d)
+        # crude way of parsing out the AQUAINT docs.
+        doc_found = False
+        headline_found = False
+        text_found = False
+        docid = ''
+        doctext = ''
+        docheadline = ''
+        for line in content:
+            if doc_found and '<DOCNO>' in line:
+                docid = line.replace('<DOCNO>', '').replace('</DOCNO>', '').strip()
                 
+            if doc_found and '</HEADLINE>' in line:
+                headline_found = False
+            if headline_found:
+                docheadline += line
+            if doc_found and '<HEADLINE>' in line:
+                headline_found = True
+
+            if doc_found and '</TEXT>' in line:
+                text_found = False
+            if text_found:
+                doctext += line
+            if doc_found and '<TEXT>' in line:
+                text_found = True
+                
+            if line.strip() == '<DOC>':
+                doc_found = True
+            if line.strip() == '</DOC>':
+                # Done with doc, lets index it.
+                docheadline = docheadline.strip()
+                doctext = doctext.strip()
+
+                d = lucene.Document()
+                
+                d.add(lucene.Field("docid", docid,
+                                     lucene.Field.Store.YES,
+                                     lucene.Field.Index.ANALYZED))
+                                     
+                d.add(lucene.Field("doctext", doctext,
+                                     lucene.Field.Store.YES,
+                                     lucene.Field.Index.ANALYZED))
+                                     
+                d.add(lucene.Field("docheadline", docheadline,
+                                     lucene.Field.Store.YES,
+                                     lucene.Field.Index.ANALYZED))
+    
+                writer.addDocument(d)
+                
+                # Reset for next doc
+                doc_found = False
+                headline_found = False
+                text_found = False
+                docid = ''
+                doctext = ''
+                docheadline = ''
+        
     ticker = Ticker()
     print 'optimizing index',
     threading.Thread(target=ticker.run).start()
