@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/opt/python-2.7/bin/python2.7
 # -*- coding: utf-8 -*-
 # LING 573 - Spring 2013 - QA Project
 #
@@ -48,21 +48,30 @@ class IndexFiles(object):
                 try:
                     path = os.path.join(root, filename)
                     file = open(path)
-                    contents = unicode(file.read(), 'iso-8859-1')
+                    contents = unicode(file.read(), 'utf8')
                     file.close()
                     doc = lucene.Document()
-                    doc.add(lucene.Field("name", filename,
+                    
+                    doc.add(lucene.Field("qid", qid,
                                          lucene.Field.Store.YES,
-                                         lucene.Field.Index.NOT_ANALYZED))
+                                         lucene.Field.Index.ANALYZED))
+                                         
+                    doc.add(lucene.Field("target_text", target_text,
+                                         lucene.Field.Store.YES,
+                                         lucene.Field.Index.ANALYZED))
+                                         
+                    doc.add(lucene.Field("target_id", target_id,
+                                         lucene.Field.Store.YES,
+                                         lucene.Field.Index.ANALYZED))
+                                         
+                    doc.add(lucene.Field("question", question,
+                                         lucene.Field.Store.YES,
+                                         lucene.Field.Index.ANALYZED))
+                                         
                     doc.add(lucene.Field("path", path,
                                          lucene.Field.Store.YES,
                                          lucene.Field.Index.NOT_ANALYZED))
-                    if len(contents) > 0:
-                        doc.add(lucene.Field("contents", contents,
-                                             lucene.Field.Store.NO,
-                                             lucene.Field.Index.ANALYZED))
-                    else:
-                        print "warning: no content in %s" % filename
+
                     writer.addDocument(doc)
                 except Exception, e:
                     print "Failed in indexDocs:", e

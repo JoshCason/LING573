@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/opt/python-2.7/bin/python2.7
 # -*- coding: utf-8 -*-
 # LING 573 - Spring 2013 - QA Project
 #
@@ -29,14 +29,14 @@ def run(searcher, analyzer):
 
         print
         print "Searching for:", command
-        query = QueryParser(Version.LUCENE_CURRENT, "contents",
-                            analyzer).parse(command)
+        parser = MultiFieldQueryParser(Version.LUCENE_CURRENT, ['target_text', 'question'], analyzer)
+        query = MultiFieldQueryParser.parse(parser, command)
         scoreDocs = searcher.search(query, 50).scoreDocs
         print "%s total matching documents." % len(scoreDocs)
 
         for scoreDoc in scoreDocs:
             doc = searcher.doc(scoreDoc.doc)
-            print 'path:', doc.get("path"), 'name:', doc.get("name")
+            print 'qid:', doc.get("qid"), 'question:', doc.get("question")
 
 
 if __name__ == '__main__':
