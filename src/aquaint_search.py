@@ -45,12 +45,14 @@ def run(searcher, analyzer):
         term = '(' + whole_group + ' OR ' + parts_group + ')'
         
         query = MultiFieldQueryParser.parse(parser, term)
-        scoreDocs = searcher.search(query, 10).scoreDocs
+        scoreDocs = searcher.search(query, 1).scoreDocs
         print "%s total matching documents." % len(scoreDocs)
 
         for scoreDoc in scoreDocs:
             doc = searcher.doc(scoreDoc.doc)
-            print 'docid:', doc.get("docid"), 'docheadline:', doc.get("docheadline"), 'doctext:', doc.get("doctext")
+            print 'docid:', doc.get("docid")
+            print 'docheadline:', doc.get("docheadline")
+            print 'doctext:', doc.get("doctext")
 
 
 if __name__ == '__main__':

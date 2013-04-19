@@ -23,7 +23,7 @@ class Ticker(object):
             
 if __name__ == '__main__':
     aquaint_path = '/corpora/LDC/LDC02T31'
-    sub_dirs = ['/apw/1998/']
+    sub_dirs = ['/apw/', 'nyt', 'xie']
     
     lucene.initVM()
     print 'lucene', lucene.VERSION
@@ -38,16 +38,22 @@ if __name__ == '__main__':
     writer.setMaxFieldLength(1048576)
 
     # gather each AQUAINT dir
+    fileList = []
+
     for d in sub_dirs:
-        files = [ aquaint_path + d + f for f in os.listdir(aquaint_path + d) if os.path.isfile(os.path.join(aquaint_path + d,f)) ]
+        for root, subFolders, files in os.walk(aquaint_path + d):
+            for file in files:
+                if os.path.isfile(os.path.join(root,file)):
+                    fileList.append(os.path.join(root,file))
 
     # for each AQUAINT file get info
-    for af in files:
+    for af in fileList:
         file = open(af)
         content = file.readlines()
         file.close()
         
         # crude way of parsing out the AQUAINT docs.
+        # was having issues with ElementTree and the aquaint.dtd
         doc_found = False
         headline_found = False
         text_found = False
@@ -58,19 +64,27 @@ if __name__ == '__main__':
             if doc_found and '<DOCNO>' in line:
                 docid = line.replace('<DOCNO>', '').replace('</DOCNO>', '').strip()
                 
+            # headline can be split across multiple lines or on one line.
             if doc_found and '</HEADLINE>' in line:
                 headline_found = False
             if headline_found:
                 docheadline += line
             if doc_found and '<HEADLINE>' in line:
-                headline_found = True
+                if '</HEADLINE>' in line:
+                    docheadline = line.replace('<HEADLINE>', '').replace('</HEADLINE>', '').strip()
+                else:
+                    headline_found = True
 
+            # text can be split across multiple lines or on one line.
             if doc_found and '</TEXT>' in line:
                 text_found = False
             if text_found:
                 doctext += line
             if doc_found and '<TEXT>' in line:
-                text_found = True
+                if '</TEXT>' in line:
+                    doctext = line.replace('<TEXT>', '').replace('</TEXT>', '').strip()
+                else:
+                    text_found = True
                 
             if line.strip() == '<DOC>':
                 doc_found = True
