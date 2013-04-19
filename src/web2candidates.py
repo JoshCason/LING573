@@ -7,7 +7,7 @@ sys.path.append('./requests/')
 from bing_search_api import BingSearchAPI
 
 stopwords = set(stopwords.words('english'))
-punct = set(["'",',','.',':',';','?','-','!','(',')'])
+punct = set(["'",',','.',':',';','?','-','!','(',')', '|'])
 
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
