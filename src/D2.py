@@ -17,6 +17,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 import xml.etree.ElementTree as ET
 from collections import Counter
+import string
 
 from lucene import \
     QueryParser, IndexSearcher, StandardAnalyzer, SimpleFSDirectory, File, \
@@ -26,7 +27,7 @@ sys.path.append('./requests/')
 from bing_search_api import BingSearchAPI
 
 stopwords = set(stopwords.words('english'))
-punct = set(["'",',','.',':',';','?','-','!','(',')', '|'])
+punct = set(string.punctuation)
 
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
@@ -166,6 +167,7 @@ def getcandidates(query, limit):
             if k.split()[-1] in stopwords:remove = True
             for token in tokens:
                 if token in qwords: remove = True
+                if token in punct: remove = True
         if k in qwords: remove = True
         if remove: del ngrams[k]
     for k in ngrams.keys():
