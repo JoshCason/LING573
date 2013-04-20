@@ -22,8 +22,18 @@ from lucene import \
     QueryParser, IndexSearcher, StandardAnalyzer, SimpleFSDirectory, File, \
     VERSION, initVM, Version, MultiFieldQueryParser
     
+sys.path.insert(0, os.path.join("..", ".."))
+
+from pattern.web import Bing, asynchronous, plaintext
+from pattern.web import SEARCH, IMAGE, NEWS
+
+import time
+
 sys.path.append('./requests/')
 from bing_search_api import BingSearchAPI
+
+my_key = 'cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM='
+bing = BingSearchAPI(my_key)
 
 stopwords = set(stopwords.words('english'))
 punct = set(["'",',','.',':',';','?','-','!','(',')', '|'])
@@ -41,9 +51,6 @@ trigramize = lambda t: [(t[x],t[y],t[z]) for (x,y,z) in \
 
 bigramize = lambda t: [(t[x],t[y]) for (x,y) in \
                 zip(range(len(t)-1),range(1,len(t)))]
-
-my_key = 'cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM='
-bing = BingSearchAPI(my_key)
 
 # storing question words
 def classify_question(text):
@@ -117,22 +124,39 @@ def reform_trec_questions(trec_file):
 
     return questions
     
-def getcandidates(query, limit):
+def getcandidates(search_library, query, limit):
     text = ''
     # Get the top 100 - I think it will let you get only 50 at a time.
     per_page = 50
     pages = int(math.ceil(limit / float(per_page)))
-    for page in range(pages):
-        offset = (limit * (page + 1)) - limit;
-        params = {'$format': 'json', '$top': limit,'$skip': offset}
-        try:
-            results = bing.search('web',query,params)()['d']['results'][0]['Web']
-        except:
-            print params
-            raise
-        for result in results:
-            text += "... %s" % result['Title']
-            text += "... %s" % result['Description']
+    
+    if search_library == 'pattern':
+        engine = Bing(license='cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM=', language="en")
+        for page in range(pages):
+            offset = (limit * (page + 1)) - limit;
+            try:
+                request = asynchronous(engine.search, q, start=offset+1, count=limit, type=SEARCH, timeout=10)
+                while not request.done:
+                    time.sleep(0.01)
+            except:
+                raise
+            for result in request.value:
+                text += "... %s" % result.title
+                text += "... %s" % result.text
+            
+    elif search_library == 'requests':
+        for page in range(pages):
+            offset = (limit * (page + 1)) - limit;
+            params = {'$format': 'json', '$top': limit,'$skip': offset}
+            try:
+                results = bing.search('web',query,params)()['d']['results'][0]['Web']
+            except:
+                print params
+                raise
+            for result in results:
+                text += "... %s" % result['Title']
+                text += "... %s" % result['Description']
+            
     ngrams = Counter()
     texts = text.split('...')
     toked = []
@@ -190,6 +214,9 @@ if __name__ == '__main__':
     analyzer = StandardAnalyzer(Version.LUCENE_CURRENT)
     parser = MultiFieldQueryParser(Version.LUCENE_CURRENT, ['doctext', 'docheadline'], analyzer)
     
+    search_library = 'requests'
+    # search_library = 'pattern'
+
     for question in questions:
         q = question['question_target_combined']
 
@@ -226,7 +253,7 @@ if __name__ == '__main__':
         print "FETCHING WEB RESULTS"
         lim = 4
         # Should check cache first
-        c = getcandidates(q, lim)
+        c = getcandidates(search_library, q, lim)
         # TODO:up the lim and store these in lucene index.
         for r, count in c.most_common(lim):
             print '%s: %7d' % (r, count)
