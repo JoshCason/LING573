@@ -1,19 +1,5 @@
-CLiPS
-====
+1. Build AQUAINT index (takes about ~2.5 min, index size ~820mb)
+python2.7 aquaint_index.py
 
-Python web mining module that includes NLP functionality
-
-Documentation: http://www.clips.ua.ac.be/pages/pattern-dev
-
-Installation
-------------
-```
-cd pattern-2.5
-
-sudo python setup.py install
-```
-
-Example Usage
-------------
-
-Some good starting out examples can be found in pattern-2.5/examples
+2. Take the TREC question XML file and output D2.outputs
+python2.7 D2.py /dropbox/12-13/573/Data/Questions/devtest/TREC-2006.xml

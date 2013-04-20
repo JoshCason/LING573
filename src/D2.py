@@ -149,7 +149,8 @@ def getcandidates(search_library, query, limit):
             offset = (limit * (page + 1)) - limit;
             params = {'$format': 'json', '$top': limit,'$skip': offset}
             try:
-                results = bing.search('web',query,params)()['d']['results'][0]['Web']
+                # have to replace some characters, as we were getting some json decoding errors with them
+                results = bing.search('web',query.replace('#','').replace('&',''),params)()['d']['results'][0]['Web']
             except:
                 print params
                 raise
@@ -202,7 +203,7 @@ def getcandidates(search_library, query, limit):
 # Lets do some work!
 if __name__ == '__main__':
     trec_file = os.path.realpath(sys.argv[1])
-    
+
     # Retrieve pertinent info from TREC questions file
     questions = reform_trec_questions(trec_file)
     
@@ -217,50 +218,69 @@ if __name__ == '__main__':
     search_library = 'requests'
     # search_library = 'pattern'
 
+    # output file
+    out_file = '../outputs/D2.outputs'
+    run_tag = 'D2-' + str(int(time.time()))
+    f = open(out_file, 'a')
     for question in questions:
+        if (float(question['question_id']) <= 171.4):
+            continue
         q = question['question_target_combined']
-
+            
         print q
-        
-        # Search AQUAINT lucene first
-        # wildcard/partial term matching
-        print "FETCHING AQUAINT RESULTS"
-        whole_group = q.strip() + '* OR ' + q.strip()
-        parts_group = ''
-        terms = q.split()
-        i = 0
-        for term in terms:
-            if i != 0:
-                parts_group += ' OR '
-            parts_group += '(' + term.strip() + '* OR ' + term.strip() + ')'
-            i += 1
-        term = '(' + whole_group + ' OR ' + parts_group + ')'
-        
-        query = MultiFieldQueryParser.parse(parser, term)
-        
-        # How many docs do we want back?
-        aquaint_lim = 1
-        scoreDocs = searcher.search(query, aquaint_lim).scoreDocs
-        print "%s total matching documents." % len(scoreDocs)
-
-        for scoreDoc in scoreDocs:
-            doc = searcher.doc(scoreDoc.doc)
-            print 'docid:', doc.get("docid")
-            print 'docheadline:', doc.get("docheadline")
-            print 'doctext:', doc.get("doctext")
         
         # Get Web Results leveraging N-Grams
         print "FETCHING WEB RESULTS"
-        lim = 4
+        lim = 20
         # Should check cache first
         c = getcandidates(search_library, q, lim)
         # TODO:up the lim and store these in lucene index.
         for r, count in c.most_common(lim):
-            print '%s: %7d' % (r, count)
+            # now for each we get the supporting AQUAINT doc
             
+            # Search AQUAINT lucene 
+            # wildcard/partial term matching
+            
+            # we need to clean up our ngram set to make sure it doesn't have things that lucene won't like
+            ngram_set = r
+            qry = q + ' ' + ngram_set
+
+            # replace any lucene keywords
+            replacements = [',','.',';','|','/','\\','OR','AND','+','-','NOT','~','TO',':','[',']','(',')','{','}','!','||','&&','^','*','?','"']
+            for p in replacements:
+                qry = qry.replace(p, '')
+
+            qry = qry.strip()
+
+            whole_group = qry + '* OR ' + qry
+            parts_group = ''
+            terms = qry.split()
+            i = 0
+            for term in terms:
+                if term.strip() == '':
+                    continue
+                if i != 0:
+                    parts_group += ' OR '
+                parts_group += '(' + term.strip() + '* OR ' + term.strip() + ')'
+                i += 1
+            qry = '(' + whole_group + ' OR ' + parts_group + ')'
+            
+            query = MultiFieldQueryParser.parse(parser, qry)
+            
+            # How many docs do we want back?
+            aquaint_lim = 1
+            scoreDocs = searcher.search(query, aquaint_lim).scoreDocs
+            print "FOUND %s AQUAINT RESULT(S)." % len(scoreDocs)
+    
+            for scoreDoc in scoreDocs:
+                doc = searcher.doc(scoreDoc.doc)
+                # write to D2.outputs
+                f.write(u' '.join((question['question_id'], run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
+                
         # lets just do the first one for now to not kill our rate quota
-        sys.exit()
+        # sys.exit()
         
+    f.close()
     searcher.close()
     
 
