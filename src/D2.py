@@ -225,8 +225,6 @@ if __name__ == '__main__':
     run_tag = 'D2-' + str(int(time.time()))
     f = open(out_file, 'a')
     for question in questions:
-        if (float(question['question_id']) <= 171.4):
-            continue
         q = question['question_target_combined']
             
         print q
