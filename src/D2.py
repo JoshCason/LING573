@@ -188,8 +188,8 @@ def getcandidates(search_library, query, limit):
         if k in punct:remove = True
         tokens = k.split()
         if len(tokens) > 1:
-            if k.split()[0] in stopwords:remove = True
-            if k.split()[-1] in stopwords:remove = True
+            if tokens[0] in stopwords:remove = True
+            if tokens[-1] in stopwords:remove = True
             for token in tokens:
                 if token in qwords: remove = True
                 if token in punct: remove = True
