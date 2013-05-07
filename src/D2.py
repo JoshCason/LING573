@@ -18,6 +18,7 @@ from nltk.tokenize import word_tokenize
 import xml.etree.ElementTree as ET
 from collections import Counter
 import string
+#import web2candidates as web
 
 from lucene import \
     QueryParser, IndexSearcher, StandardAnalyzer, SimpleFSDirectory, File, \
@@ -136,6 +137,12 @@ def getcandidates(search_library, query, limit):
         for page in range(pages):
             offset = (limit * (page + 1)) - limit;
             try:
+                # Won't you get start page = 100 on the second iteration?
+                # i.e., the first time you get the first page w/ 50 results, then you get page 100 with 50 results.
+                # am I wrong?
+                # looking at pattern's docs, should be: start=page+1, count = limit
+                # I don't think offset is necessary
+                # -- Josh
                 request = asynchronous(engine.search, q, start=offset+1, count=limit, type=SEARCH, timeout=10)
                 while not request.done:
                     time.sleep(0.01)
@@ -147,14 +154,9 @@ def getcandidates(search_library, query, limit):
             
     elif search_library == 'requests':
         for page in range(pages):
-            offset = (limit * (page + 1)) - limit;
-            params = {'$format': 'json', '$top': limit,'$skip': offset}
-            try:
-                # have to replace some characters, as we were getting some json decoding errors with them
-                results = bing.search('web',query.replace('#','').replace('&',''),params)()['d']['results'][0]['Web']
-            except:
-                print params
-                raise
+            offset = per_page * page
+            params = {'$format': 'json', '$top': per_page,'$skip': offset}
+            results = bing.search('web',query.replace('#','').replace('&',''),params)()['d']['results'][0]['Web']
             for result in results:
                 text += "... %s" % result['Title']
                 text += "... %s" % result['Description']
