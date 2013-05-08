@@ -173,29 +173,21 @@ def getcandidates(search_library, query, limit):
         ngrams.update(map(lambda x: ' '.join(x), bigramize(tokens)))
         ngrams.update(map(lambda x: ' '.join(x), trigramize(tokens)))
         ngrams.update(map(lambda x: ' '.join(x), quadrigramize(tokens)))
+    stemmer = nltk.PorterStemmer()
     for k in ngrams.keys():
-        qwords = set(map(lambda x: x.lower(), word_tokenize(query)))
-        variations = set()
-        for qword in qwords:
-            variations.add("%s%s" % (qword,"s"))
-            variations.add("%s%s" % (qword,"es"))
-            variations.add("%s%s" % (qword,"ed"))
-            variations.add("%s%s" % (qword,"."))
-            variations.add("%s%s" % (qword,"er"))
-            variations.add("%s%s" % (qword,"ers"))
-            variations.add(qword[:-1])
-        qwords.update(variations)
+        qwords = set(map(lambda x: stemmer.stem(x.lower()), word_tokenize(query)))
         remove = False
-        if k in stopwords:remove = True
-        if k in punct:remove = True
         tokens = k.split()
         if len(tokens) > 1:
-            if tokens[0] in stopwords:remove = True
-            if tokens[-1] in stopwords:remove = True
+            if tokens[0] in stopwords: remove = True
+            if tokens[-1] in stopwords: remove = True
             for token in tokens:
-                if token in qwords: remove = True
+                if stemmer.stem(token) in qwords: remove = True
                 if token in punct: remove = True
-        if k in qwords: remove = True
+        else:
+            if k in stopwords: remove = True
+            if k in punct: remove = True
+            if stemmer.stem(k) in qwords: remove = True
         if remove: del ngrams[k]
     for k in ngrams.keys():
         tokens = k.split()
