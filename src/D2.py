@@ -11,7 +11,7 @@
 # @author Marie-Renee Arend <rcarend@uw.edu>
 # @author Joshua Cason <casonj@uw.edu>
 # @author Anthony Gentile <agentile@uw.edu>
-import sys, os, math
+import sys, os, math, hashlib, cPickle as pickle
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -210,6 +210,8 @@ if __name__ == '__main__':
     
     search_library = 'requests'
     #search_library = 'pattern'
+    
+    search_engine = 'bing'
 
     # output file
     out_file = '../outputs/D2.outputs'
@@ -225,8 +227,22 @@ if __name__ == '__main__':
         
         # blocks of 50
         lim = 100
+        
         # Should check cache first
-        c = getcandidates(search_library, q, lim)
+        cache_key = hashlib.md5(q + search_engine + search_library).hexdigest()
+        cache_path = 'web_cache/' + search_engine + '/' + search_library + '/' + cache_key
+        cache_reset = False
+        
+        if cache_reset == False and os.path.exists(cache_path):
+            # continue # uncomment this just to cache a bunch of web results.
+            with open(cache_path ,'rb') as fp:
+                c = pickle.load(fp)
+        else:
+            c = getcandidates(search_library, q, lim)
+            with open(cache_path ,'wb') as fp:
+                pickle.dump(c,fp)
+
+        # continue # uncomment this just to cache a bunch of web results.
         
         # TODO:up the lim and store these in lucene index.
         for r, count in c.most_common(lim):
