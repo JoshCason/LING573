@@ -131,23 +131,20 @@ def getcandidates(search_library, query, limit):
     # Get the top 100 - I think it will let you get only 50 at a time.
     per_page = 50
     pages = int(math.ceil(limit / float(per_page)))
-    
+
     if search_library == 'pattern':
         engine = Bing(license='cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM=', language="en")
         for page in range(pages):
-            offset = (limit * (page + 1)) - limit;
             try:
-                # Won't you get start page = 100 on the second iteration?
-                # i.e., the first time you get the first page w/ 50 results, then you get page 100 with 50 results.
-                # am I wrong?
-                # looking at pattern's docs, should be: start=page+1, count = limit
-                # I don't think offset is necessary
-                # -- Josh
-                request = asynchronous(engine.search, q, start=offset+1, count=limit, type=SEARCH, timeout=10)
+                # turns out start = starting page and count is results per page
+                # could probably do some logic to make sure count is right if limit was 130, on page 3, count should be 30, whereas 
+                # our code is going to fetch 50 for a total of 150. ... I think we can probably mess with that later and just work in blocks of 50
+                request = asynchronous(engine.search, q, start=page+1, count=per_page, type=SEARCH, timeout=10)
                 while not request.done:
                     time.sleep(0.01)
             except:
                 raise
+
             for result in request.value:
                 text += "... %s" % result.title
                 text += "... %s" % result.text
@@ -212,7 +209,7 @@ if __name__ == '__main__':
     parser = MultiFieldQueryParser(Version.LUCENE_CURRENT, ['doctext', 'docheadline'], analyzer)
     
     search_library = 'requests'
-    # search_library = 'pattern'
+    #search_library = 'pattern'
 
     # output file
     out_file = '../outputs/D2.outputs'
@@ -225,9 +222,12 @@ if __name__ == '__main__':
         
         # Get Web Results leveraging N-Grams
         print "FETCHING WEB RESULTS"
-        lim = 20
+        
+        # blocks of 50
+        lim = 100
         # Should check cache first
         c = getcandidates(search_library, q, lim)
+        
         # TODO:up the lim and store these in lucene index.
         for r, count in c.most_common(lim):
             # now for each we get the supporting AQUAINT doc
