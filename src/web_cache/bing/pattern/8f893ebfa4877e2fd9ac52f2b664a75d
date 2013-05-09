@@ -1,4461 +1,704 @@
-ccollections
-Counter
-p1
-((dp2
-Vsince
+(lp1
+(dp2
+S'description'
 p3
-I4
-sVasia 's beauty
+VAt the end of competition the runners-up were announced and the winner crowned ... the Miss Universe contestant for a country. ... to represent Miss Universe's ...
 p4
-I34
-sVfour
+sS'title'
 p5
-I1
-sVusa 2012 after answering
+VMiss Universe - Wikipedia, the free encyclopedia
 p6
-I99
-sVasian
-p7
-I3
-sV2012 news
+sa(dp7
+g3
+V... 26-year-old Leila Lopes represents the country of Angola. ... Crown Aside Episode 6 ft Miss Universe Miss USA and Miss Te 30/04/13 Crown ...
 p8
-I57
-sVcyprus
+sg5
+VMiss Universe : Home
 p9
-I2
-sVshamcey supsup placed
-p10
-I8
-sV2012 \u2013
+sa(dp10
+g3
+VAll photos from Cyprus courtesy of Miss Universe ... embrace and was then crowned by outgoing Miss Universe Mpule ... represent her country as a ...
 p11
-I48
-sVtop 10 most beautiful
+sg5
+VPageant News Bureau - Miss Universe 2000
 p12
-I13
-sVtv
-p13
-I2
-sVlast year 's
+sa(dp13
+g3
+VBefore being crowned Miss Universe ... gaining her the right to represent Angola in the 2011 MISS UNIVERSE ... a lot to offer and that my country of Angola is ...
 p14
-I37
-sVsweden- with 3
+sg5
+VMembers - Miss Universe : Home
 p15
-I4
-sVtonight is \u2026
-p16
-I7
-sVvenezuela- with 6
+sa(dp16
+g3
+VElmira Abdrazakova Crowned Miss Russia 2013. ... 2000 or 2008. Since 2007, the winner of Miss Russia represents her country in both Miss Universe and Miss World.
 p17
-I5
-sVtj
+sg5
+VElmira Abdrazakova Crowned Miss Russia 2013
 p18
-I1
-sVbra photo
-p19
-I4
-sVindia 's
+sa(dp19
+g3
+VLast year\u2019s winner, Leila Lopes of Angola, crowned ... showing off elaborate outfits designed to represent ... Miss USA walked away with the Miss Universe crown by ...
 p20
-I34
-sVmatos perez
+sg5
+VMiss USA Olivia Culpo is crowned Miss Universe - TODAY.com
 p21
-I3
-sVhampshire \u2019 s outstanding
-p22
-I11
-sVrebecca king is chosen
+sa(dp22
+g3
+VWhich country did she represent? ... The 2000 beauties were: Lara Dutta (Miss Universe), ... Gerthie almost won the Miss Universe crown in 1975. Which country did ...
 p23
-I5
-sVwoman
+sg5
+VBeauty Pageant Galore - Fun Facts, Questions, Answers, Information
 p24
-I3
-sVdimacali \u2019
-p25
-I9
-sVvoicing
+sa(dp25
+g3
+VMiss USA 2012 crowned Miss Universe 2012. ... 2000 or 2008. Since 2007, the winner of Miss Russia represents her country in both Miss Universe and Miss World.
 p26
-I1
-sVpuerto rico- with 5
+sg5
+VElmira Abdrazakova Crowned Miss Russia 2013
 p27
-I7
-sVfaq
-p28
-I1
-sVnews articles »
+sa(dp28
+g3
+VWhich country did she represent? Italy. ... The year 2000 was a back to back victory for ... Gerthie almost won the Miss Universe crown in 1975. Which country did ...
 p29
-I18
-sVplaid
+sg5
+VBeauty Pageant Galore Game - Play Fun Trivia Quiz
 p30
-I1
-sVevery
-p31
-I3
-sVdecide
+sa(dp31
+g3
+VMOST BEAUTIFUL MISS UNIVERSE FROM THE 2000\u2032s ... Dayana received the crown from Miss Universe ... the first back-to-back title for a country in Miss Universe ...
 p32
-I1
-sVbringing
+sg5
+VWINNER \u2013 Miss Universe 2002 (dethroned) \u2013 Oxana Fedorova
 p33
-I1
-sV17. she bagged
-p34
-I6
-sVglobal beauties
+sa(dp34
+g3
+V... as Miss USA was crowned Miss Universe last night for the first time EVER in the ... the whole universe is a free country. ... last year's pageant winner, ...
 p35
-I7
-sVinternational 2012 \u2013 ikumi
+sg5
+VMiss USA Crowned Miss Universe (Right Before the Universe Ends)
 p36
-I55
-sVbikini bra
-p37
-I4
-sVjamaica
+sa(dp37
+g3
+VHere are the other black women who won the Miss Universe crown ... crowned the winner of the 2011 Miss Universe ... home country Angola, to get crowned \u201cMiss ...
 p38
-I5
-sVindian to win
+sg5
+VThe Four Black Women Who Won Miss Universe Title [PHOTOS]
 p39
-I8
-sVwisconsinite wins 2012
-p40
-I53
-sVstate of alabama
+sa(dp40
+g3
+V... failed to capture the crown of Miss USA Universe in Miami, ... "I am very glad to represent my country Tanzania ... was crowned Miss France in 2000.
 p41
-I5
-sVyear 's host
+sg5
+VMiss Universe Pageant - Black Beauties! - EzineArticles Submission ...
 p42
-I31
-sVrate
-p43
-I1
-sVfollow
+sa(dp43
+g3
+Vcrowned as the Miss ... Prachi and Rochelle shall represent the country at Miss Earth ... Femina will not send the beauties to the Miss Universe pageant ...
 p44
-I1
-sVleila lopes gave angola
+sg5
+VVanya Mishra crowned Miss India World - Hindustan Times
 p45
-I21
-sVusa 2012 beating
-p46
-I99
-sVn't
+sa(dp46
+g3
+VMiss USA Olivia Culpo was crowned Miss Universe on ... to represent their home country ... vote for miss u.s.a as miss universe winner,she got no brain ...
 p47
-I3
-sVshow swimsuit nigeria
+sg5
+VMiss Universe 2012 Winner - Olivia Culpo of USA Wins Pageant ...
 p48
-I5
-sVabc
-p49
-I2
-sVnew allegations
+sa(dp49
+g3
+VAdams stands 1.8m tall and will represent her country at Miss Universe ... July 7. 24 contestants are battling it out for the crown. The winner will respresent ...
 p50
-I12
-sVgot no brain
+sg5
+VEye For Beauty
 p51
-I3
-sVselected
-p52
-I1
-sVnang
+sa(dp52
+g3
+V... the country at the Miss Universe, and the winner of the Miss Nigeria competition represents Nigeria at the Miss World ... the crown was decided for ...
 p53
-I1
-sVfleur
+sg5
+VAgbani Darego - Miss World and most beautiful girl in Nigeria
 p54
-I1
-sVanna litvinova
-p55
-I3
-sVnew
+sa(dp55
+g3
+VMiss Universe 2000, ... was crowned as the new Miss Universe 2000 by Miss Universe ... had to deal with the threat of escalating violence in her country.
 p56
-I10
-sVfedorova
+sg5
+VMiss Universe 2000 (Part 4) - Presentation Show Swimsuit Nigeria ...
 p57
-I2
-sVever
-p58
-I1
-sVkerrie baylis
+sa(dp58
+g3
+VA 20-year-old cellist from Rhode Island won the Miss USA crown and will represent the United States in this year's Miss Universe ... "This is a free country and to ...
 p59
-I3
-sVoutgoing
+sg5
+VCranston woman wins Miss USA Pageant - WPRI.com | Eyewitness News
 p60
-I2
-sVfull
-p61
-I1
-sVpageant 2011
+sa(dp61
+g3
+VLara Dutta was Miss Universe in the year 2000. ... to hold the Miss Universe title from that country. ... being the first Miss Universe winner who was crowned by ...
 p62
-I49
-sVpageant 2013
+sg5
+VMiss Universe: Beauty queen pageant winners - Terra USA
 p63
-I38
-sVkemerovskaya
-p64
-I1
-sVdimacali
+sa(dp64
+g3
+VA 20-year-old cellist from Rhode Island won the Miss USA crown and will represent the United States in this year's Miss Universe ... the winner to be ...
 p65
-I1
-sVcontestants as she reacts
+sg5
+VMiss Rhode Island captures Miss USA crown after voicing support ...
 p66
-I12
-sVtop 15
-p67
-I7
-sVchina
+sa(dp67
+g3
+VMiss Universe 2000, ... was crowned as the new Miss Universe 2000 by Miss Universe ... had to deal with the threat of escalating violence in her country.
 p68
-I1
-sVtop 10
+sg5
+VMiss Universe 2000 (Part 1) - Presentation Show Opening - YouTube
 p69
-I10
-sV\u201d culpo
-p70
-I23
-sVround to determine
+sa(dp70
+g3
+VApasra Hongsakula of Thailand was crowned Miss Universe in ... ever winner of the "Miss Universe," a beauty ... right to represent Puerto Rico in the Miss ...
 p71
-I3
-sV\u2013 ikumi yoshimatsu
+sg5
+VMiss Universe - The encyclopedia Shortopedia - Main page
 p72
-I6
-sVelaborate
-p73
-I1
-sVfeared for her security
+sa(dp73
+g3
+VRachel Smith was crowned Miss USA ... New Maid Margarine and I had the honor to represent Kansas in the Miss ... was crowned Miss Universe 2000 in ...
 p74
-I3
-sVexperience
+sg5
+VPageant Trivia Famous Winners - Pinterest
 p75
-I1
-sVpresentation show national costume
-p76
-I13
-sVwonderful message to spread
+sa(dp76
+g3
+V... the winner automatically represents the country in the Miss Universe ... 2000 Latia Bowe; 2002 T\u2019Shura ... New Miss Bahamas Universe Crowned. Miss Bahamas ...
 p77
-I4
-sVsen made india proud
+sg5
+VLearn and talk about Miss Bahamas, Beauty pageants in the Bahamas ...
 p78
-I19
-sVkarin
-p79
-I1
-sVusa shall
+sa(dp79
+g3
+VWhy doesn't the winner get ... AMBASSADORS represent their country ... this crown is perfect.. no hassels and problems of falling off unlike miss universe crown..
 p80
-I55
-sV's name
+sg5
+VMISSOSOLOGY \u2022 View topic - What is the Miss World Crown made of?
 p81
-I21
-sVontiveros stoked
-p82
-I3
-sVberlin berlin
+sa(dp82
+g3
+VOne of Miss USA\u2019s main duties is to represent her country at the Miss Universe Pageant. 7 Miss USA\u2019s ... are battling it out for the crown. The winner will ...
 p83
-I5
-sVmyanmar
+sg5
+VEye For Beauty: My Most Magnificent Miss USA List #11
 p84
-I1
-sV5 4
-p85
-I6
-sVbrought
+sa(dp85
+g3
+VThis is the new Miss Universe 2008 Crown and the 57th pageant ... in the crown which represent inspiration and feeling ... potential of each country.
 p86
-I1
-sVtrivia famous
+sg5
+VNew crown for Miss Universe 2008 « And Back UP
 p87
-I3
-sVpageant begins
-p88
-I35
-sV.drum roll \u2026
+sa(dp88
+g3
+VThe 20-year-old cellist from Rhode Island had just been crowned Miss ... States in the Miss Universe ... this country.\u201d The demands of being Miss ...
 p89
-I5
-sVmayra matos
+sg5
+VNewly crowned Miss USA Olivia Culpo ready for her close-up ...
 p90
-I3
-sVterri-karelle
-p91
-I1
-sVjanine
+sa(dp91
+g3
+V... was crowned as Ms Universe ... a country. The pageants is called Miss Universe not Miss English! The winner is suppose to represent the Universe ...
 p92
-I1
-sVnew zealand
+sg5
+VWere you satisfied that Ms Angola was crowned as Ms Universe 2011 ...
 p93
-I14
-sVbra
-p94
-I1
-sVdna
+sa(dp94
+g3
+VLAS VEGAS\u2014A 20-year-old cellist from Rhode Island won the Miss USA crown and will represent the United States in this year s Miss Universe ... country ," Culpo said
 p95
-I1
-sVtakes
+sg5
+V20-year-old Rhode Island cellist wins Miss USA - The Denver Post
 p96
-I2
-sVeastern europe
-p97
-I4
-sVmayra matos perez
+sa(dp97
+g3
+VAthina Pikraki is the winner of Miss Hellas 2012 and will represent ... Miss USA 2012 crowned Miss Universe ... She will represent the country in the Miss ...
 p98
-I4
-sVback-to-back title
+sg5
+VMiss World Greece 2013 Athina Pikraki - BEAUTY PAGEANT NEWS ...
 p99
-I8
-sVphilippines pageants
-p100
-I16
-sVzealand 's
+sa(dp100
+g3
+V... who was crowned Miss ... and will represent the U.S. in the Miss Universe 61st ... the country since she was named Miss USA in June and ...
 p101
-I22
-sVmusic
+sg5
+VOlivia Culpo, Miss USA 2012 Winner, To Take On Contestants At 2012 ...
 p102
-I1
-sV6
-I3
-sVworld in london
-p103
-I32
-sVteen
+sa(dp103
+g3
+VBut organizers said they discovered that winner ... The runner-up will now represent the Caribbean country at the Miss ... Miss Universe organizers later ...
 p104
-I1
-sVfailed to capture
+sg5
+VShould Miss Dominican Republic lose her crown for being a Mrs ...
 p105
-I3
-sV\u2026 .drum roll \u2026
-p106
-I7
-sVphilippines as one
+sa(dp106
+g3
+VThe winner will represent the country at Miss World ... of judges to represent the country at Miss Universe ... Miss USA shall be crowned on May 16th at ...
 p107
-I14
-sV1 photo
+sg5
+VCzech Misses Page
 p108
-I6
-sVbeauties »
-p109
-I8
-sVberlin
+sa(dp109
+g3
+V... I wanted to represent ... we went by the laws of the country ... Dayana Mendoza will formally cede her crown as the 2009 winner of the Miss Universe ...
 p110
-I2
-sVlast year \u2019
+sg5
+VMiss Universe - The Hollywood Gossip
 p111
-I24
-sVleila lopes made
-p112
-I14
-sVglad
+sa(dp112
+g3
+VWinner of the national pageant represents the United ... Lee was crowned Miss Universe 1997 and ... she will represent the country in the Miss World 2013 ...
 p113
-I1
-sVrhode island won
+sg5
+VBeauty Contest
 p114
-I29
-sVfaking documents
-p115
-I3
-sVte
+sa(dp115
+g3
+V... Miss Mexico, was crowned Miss Universe ... Alejandra Barillas was the original winner of Miss Universe ... Oana Paveluc will represent Romania in Miss Universe ...
 p116
-I1
-sVword
+sg5
+VMISS UNIVERSE
 p117
-I1
-sVfun facts
-p118
-I6
-sV1999
+sa(dp118
+g3
+V... will take a year off from her studies to tackle her duties as Miss USA and represent the nation in the 61st Miss Universe ... the winner to be ...
 p119
-I1
-sVpresentation
+sg5
+VMiss USA Olivia Culpo supports transgender pageant contestants ...
 p120
-I2
-sVindiatimes.com
-p121
-I1
-sVlatina beauties
+sa(dp121
+g3
+VCrown, Diamonds, Winner. ... For more about Miss World and this year's host country, ... Ambassadors are selected every year to represent Barbados at Miss World.
 p122
-I7
-sVfakih
+sg5
+VOfficial Miss Barbados World
 p123
-I4
-sVfirst time
-p124
-I12
-sVnew hampshire
+sa(dp124
+g3
+VThe teenager from Harare beat 33 other contestants from around the country and walked ... was crowned Miss Universe ... represent Zimbabwe at Miss ...
 p125
-I12
-sVms
+sg5
+VTeen wins Miss Zimbabwe crown - New Zimbabwe.com : The Zimbabwe ...
 p126
-I3
-sVlearn
-p127
-I1
-sVrussian federation
+sa(dp127
+g3
+V... publicly calling the Miss Universe Organization's winner ... Who won the Miss USA 2012 crown?! "The Miss Universe ... country." MORE: Former Miss USA ...
 p128
-I3
-sVshilpa singh
+sg5
+VMiss Pennsylvania USA Resigns: Inclusion of Transgender Contestant ...
 p129
-I3
-sValyssa
-p130
-I1
-sVhistory
+sa(dp130
+g3
+VBihari Beauty Shilpa Singh will represent India at the Miss Universe Pageant 2012 ... the original winner of I ... the Miss Universe crown has eluded India ever since ...
 p131
-I5
-sVbeautiful
+sg5
+VBihari beauty Shilpa Singh to represent India at Miss Universe 2012
 p132
-I3
-sV's interesting
-p133
-I21
-sVgibraltar 2010
+sa(dp133
+g3
+VMexico for the Crown Osmel Karin Ontiveros stoked to win Miss Universe again. ... Miss Universe Pageant 2011 - Miss Universe 2010 Photos Also as: ...
 p134
-I14
-sV's catching
+sg5
+VMiss Universe 2011: Photos of contestants and winners of the contest
 p135
-I21
-sVindrani rehman
-p136
-I4
-sV2nd ru
+sa(dp136
+g3
+VShe will represent Tenness ... Brenna Mader crowned Miss Tennessee USA 2013. ... Miss Tennessee USA 2013 Brenna Mader. Credits: (c) Miss Universe LP, LLLP ...
 p137
-I3
-sVindia
+sg5
+VBrenna Mader crowned Miss Tennessee USA 2013 - National pageant ...
 p138
-I14
-sVaccept
-p139
-I2
-sVstates
+sa(dp139
+g3
+VSince then it has usually been held in a different country each year. The Miss Universe ... The winner of Miss USA represents the ... in 2000 Australia's ...
 p140
-I6
-sV2006 2,000
+sg5
+VMiss Universe - Live India . Com :::: FREE ::::
 p141
-I5
-sVwant
-p142
-I2
-sVschoolgirl
+sa(dp142
+g3
+VVenezuela is the only other country to ... Lara Dutta had won the Miss Universe crown ... Did Priyanka experience extra pressure because last year's winner ...
 p143
-I1
-sVpresentation show national
+sg5
+VEngology.com,Engineer Priyanka Chopra,Miss World 2000,Miss India ...
 p144
-I10
-sVtimes
-p145
-I1
-sVroundshe won
+sa(dp145
+g3
+V"In that moment I didn't know what to think," pageant winner Laura Kaeppeler ... she was crowned Miss America. ... "Miss America needs to represent all."
 p146
-I13
-sVinformation
+sg5
+VMiss Wisconsin Crowned Miss America
 p147
-I2
-sVneeds
-p148
-I2
-sVcontestants at 2012
+sa(dp148
+g3
+VMiss Universe 2000 ... flew out of the country only to return after being crowned the world's ... and winner of Femina Miss India 1992 came within ...
 p149
-I55
-sVend
+sg5
+VMiss India Winners 2000 - 1991 - Indiatimes.com
 p150
-I2
-sVvenezuela stefania fernandez takes
-p151
-I10
-sV8 2
+sa(dp151
+g3
+VShe will represent the country at Miss Universe ... was crowned Miss Teen Iraq 2009 on Jan. 16, 2000 ... will serve in a caretaker role and crown the next winner ...
 p152
-I6
-sVleila
+sg5
+VPageant News Bureau (PNB) - Pageant News
 p153
-I5
-sV58th
-p154
-I1
-sVfar
+sa(dp154
+g3
+VShe will represent the country at Miss Universe ... was crowned Miss Teen Iraq 2009 on Jan. 16, 2000 ... will serve in a caretaker role and crown the next winner ...
 p155
-I1
-sVjapan- with 2 venezuela
+sg5
+VPageant News Bureau (PNB) - Pageant News
 p156
-I10
-sVcanada 2013
-p157
-I8
-sVidaho
+sa(dp157
+g3
+VThe woman who wears the Miss Universe Malaysia crown is not ... 2000 as current Chairman and CEO of the Miss ... when the Winner represents the country at ...
 p158
-I1
-sValso said
+sg5
+VLearn and talk about Miss Malaysia, Beauty pageants in Malaysia
 p159
-I6
-sVft
-p160
-I1
-sVosmel karin ontiveros
+sa(dp160
+g3
+V... the Latinas at the pageant represent some of the most ... making it the only country to ... Miss Philippines' Road to the Miss Universe Crown ALMOST ...
 p161
-I4
-sVbeauty
+sg5
+V[PHOTOS] Latina beauty queens compete in Miss Universe 2012 pageant
 p162
-I11
-sVtop 5
-p163
-I9
-sVivian
+sa(dp163
+g3
+VWhen Sushmita Sen made India proud by bringing home the Miss Universe crown in ... last in 2000. Those who missed ... represent India LIVE at Miss Universe on Zee ...
 p164
-I1
-sVfrance
+sg5
+VThe countdown begins for Shilpa Singh - Entertainment - DNA
 p165
-I1
-sVgrand slam
-p166
-I3
-sVms angola
+sa(dp166
+g3
+V... and Binibining Pilipinas World\u2014who represent the country in ... who was a Miss Universe semi-finalist and winner of ... Pilipinas Universe crown.
 p167
-I12
-sVparticipant
+sg5
+VBinibining Pilipinas - WikiPilipinas: The Hip 'n Free Philippine ...
 p168
-I1
-sVcatalina inaugurates
-p169
-I3
-sVresponse
+sa(dp169
+g3
+VNewly crowned Miss Universe El ... She will represent our country in the Miss Bikini International ... rate her chance for the crown? Top 15, Top 5, Winner, ...
 p170
-I1
-sVlas
+sg5
+VPhilippines Pageants | Facebook
 p171
-I1
-sV'n free philippine
-p172
-I11
-sV26-year-old leila lopes
+sa(dp172
+g3
+VNew allegations against the winner of the Miss Universe ... is crowned Miss Universe 2011 by ... to represent that country fine but besides ...
 p173
-I13
-sVwins
+sg5
+VMiss Universe Accused of Faking Documents for Pageant - ABC News
 p174
-I7
-sV20-year-old culpo
-p175
-I25
-sVmatos
+sa(dp175
+g3
+V1) USA- with 8 2) Venezuela- with 6 3) Puerto Rico- with 5 4) Sweden- with 3 5) Japan- with 2 Venezuela's catching up USA! :D
 p176
-I1
-sVpageant news
+sg5
+VWhich country has the most Miss Universe winners - The Q&A wiki
 p177
-I45
-sVlopes gave
-p178
-I8
-sVstates in this year
+sa(dp178
+g3
+V... of relevance to our country. Once chosen, Miss America and the ... represent my state at the national Miss America ... the Miss USA and Miss Universe ...
 p179
-I18
-sVport of spain
+sg5
+VMiss America : Faq
 p180
-I7
-sVvegas
-p181
-I1
-sVstefania fernandez takes
+sa(dp181
+g3
+V... was crowned the 2011 winner of the Miss ... The comments uploaded on this site do not necessarily represent ... The \u2018miracle child\u2019\u2013one of the country ...
 p182
-I6
-sVhead-turners back
+sg5
+VMiss Venezuela wins Miss World crown; Miss Philippines 1st runner ...
 p183
-I7
-sVbinibining pilipinas contest
-p184
-I17
-sVquiambao
+sa(dp184
+g3
+VThe Miss Universe crown has been brought back ... She doesn\u2019t only represent herself. Her name is Miss ... Veteran China watcher puts critical eye to country\u2019s ...
 p185
-I1
-sV2013 pageant
+sg5
+VMiss USA crowned Miss Universe 2012 - Globaltimes.cn
 p186
-I38
-sVmexican
-p187
-I1
-sVhelp
+sa(dp187
+g3
+VThe winner of Miss Universe New Zealand has called ... which would crown runner-up and Miss North ... PHILIPPINES Winner/s\u2026.Of Course, Every Country Has A ...
 p188
-I1
-sVtonight in brazil
+sg5
+VGlobal Beauties » Miss Universe New Zealand saga: Bohm told to ...
 p189
-I6
-sVzee
-p190
-I1
-sVwikipilipinas
+sa(dp190
+g3
+V... Sushmita Sen was crowned Miss Universe. ... beauty was crowned the winner at the 49th Miss World pageant ... World crown at London\u2019s Millennium Dome in 2000.
 p191
-I1
-sVsatisfied
+sg5
+VIndia at Miss World... - FashionFlu.com - Fashion Blog, Celebrity ...
 p192
-I1
-sVlitvinova
-p193
-I1
-sVtop
+sa(dp193
+g3
+V2000. The Miss America Organization celebrates ... wears a bulletproof dress at the Miss Universe Pageant ... Miss America Pageant Goes Country. The Miss America ...
 p194
-I5
-sVheld
+sg5
+VPageant History - 2000 to date - Pageants! Beauty Pageants! Free ...
 p195
-I1
-sVlondon
-p196
-I1
-sVximena navarrete. tonights
+sa(dp196
+g3
+V... competed in Miss World 2000 where she did not ... Universe 2007,the winner of Miss Universe ... to represent Jamaica at Miss Universe. ...
 p197
-I4
-sVjapan
+sg5
+VMISS UNIVERSE: MISS UNIVERSE 2007
 p198
-I2
-sVaside episode 6
-p199
-I6
-sVmay 16th
+sa(dp199
+g3
+VAMBASSADORS represent their country ... crown: miss universe has always been ... i dont care how much salary a MU winner will get! winning the Miss Universe title and ...
 p200
-I6
-sV24
+sg5
+VMISSOSOLOGY \u2022 View topic - Salary of Miss Universe
 p201
-I1
-sVstyle
-p202
-I1
-sVlisted miriam
+sa(dp202
+g3
+V... she sold herself a winner, ... She will represent Guyana at the Miss Universe Pageant in Sao Paulo on September ... The newly crowned Miss Guyana Universe, ...
 p203
-I3
-sV20
+sg5
+VAspiring psychologist crowned Miss Guyana Universe : Kaieteur News
 p204
-I1
-sV21
-p205
-I1
-sV22
+sa(dp205
+g3
+V... top four pageants covered Miss Universe, ... (Country/Wins ) Poll; Photos ... A DIARY BY MISS SUPRANATIONAL ISRAEL 2011 My journey began when I was crowned Miss ...
 p206
-I1
-sV's central
+sg5
+VMISSOSOLOGY - News, Coverage & Analysis from Miss Universe, Miss ...
 p207
-I21
-sVmisspelled
-p208
-I1
-sVpilipinas
+sa(dp208
+g3
+V2.For Miss Universe 2008 a new crown was unveiled. ... Miss Universe Title winner, ... She also represented her country in the 1997 Miss World Pageant. 6.
 p209
-I5
-sV50,000
+sg5
+VMiss Universe 2009- NDTV Good Times
 p210
-I1
-sVkemerovo kemerovskaya oblast
-p211
-I4
-sVstrange
+sa(dp211
+g3
+VThe Asian country, two-time winner of the Miss World ... who was crowned as Miss Italy 2012. ... wasn't allowed to compete in Miss Universe 2000 in Nicosia ...
 p212
-I1
-sVbikini bra photo gallery
+sg5
+VMiss Universe 2012: Parade of Nations. 89 Countries & Dependencies ...
 p213
-I8
-sVhorrific death.
-p214
-I3
-sVtobago 2012
+sa(dp214
+g3
+VThe newest Miss USA winner is a Rhode Island cellist who describes ... represent the nation in the 61st Miss Universe contest ... it's a free country ...
 p215
-I48
-sVindiatimes
+sg5
+VNew Miss USA cites Audrey Hepburn as role model - Yahoo! omg!
 p216
-I1
-sVsomebody
-p217
-I1
-sVmade history
+sa(dp217
+g3
+V"Miss America represents ... Kaeppeler was crowned the new Miss America by a ... Officials also said Miss Idaho Genevieve Nutting won the $2,000 ...
 p218
-I8
-sVinquirer lifestyle
+sg5
+VMiss Wisconsin wins Miss America pageant | Fox News
 p219
-I5
-sVgrand
-p220
-I1
-sVtake on contestants
+sa(dp220
+g3
+V... that won her the Miss Earth crown. ... to have made a real difference to people in need in her country. ... Miss Universe 2000 Miss India Universe 2000
 p221
-I15
-sVkerrie
+sg5
+VINTERNATIONAL PAGEANT WINNERS - Miss India | Femina Miss India ...
 p222
-I1
-sVolivia
-p223
-I17
-sV2012 beating
+sa(dp223
+g3
+VShe will now go on to represent Great Britain at ... wear the crown, then apply now for Miss Universe ... next winner, take a look at the Miss Universe ...
 p224
-I46
-sVyu
+sg5
+VHolly wins Miss UniverseGB 2012 - Miss Universe GB
 p225
-I1
-sVbank
-p226
-I2
-sVhip 'n free philippine
+sa(dp226
+g3
+V... was a graceful and beautiful winner and I know she is going To represent her Country and crown in the most ... Miss Universe 2011 Winner is Miss Angola ...
 p227
-I12
-sVfour black
+sg5
+VWho Won Miss Universe 2011: Miss Angola But Did She Deserve It ...
 p228
-I5
-sVall.
-p229
-I1
-sVolivia culpo supports
+sa(dp229
+g3
+V... won the crown and beat out three ... I do accept that because I believe it's a free country.\u201d Culpo will represent the United States at the Miss Universe ...
 p230
-I40
-sVman australia
+sg5
+VMiss USA 2012 Winner: Miss Rhode Island Olivia Culpo | Latina
 p231
-I6
-sVswimsuit
-p232
-I1
-sVwins beauty
+sa(dp232
+g3
+VMiss USA Rima Fakih, first Muslim winner, ... first Muslim to be crowned Miss Universe. ... will wear during the Miss Universe pageant represents the ...
 p233
-I19
-sVlast week saw
+sg5
+VMiss USA Rima Fakih, first Muslim winner, speaks out against ...
 p234
-I9
-sVwisconsin laura
-p235
-I7
-sVwoman was eaten
+sa(dp235
+g3
+VThe winner will represent the United States in Miss Universe 2011. ... While Miss USA represents the country in Miss ... Page Pennock Crowned Miss Louisiana USA ...
 p236
-I5
-sVwent
+sg5
+VMiss USA 2011 Pageant | WORLD SHOWBIZ
 p237
-I3
-sVread this blog
-p238
-I4
-sVbrunette
+sa(dp238
+g3
+VIn the final round to determine the winner, ... By winning the crown of Miss USA 2012, Culpo will represent the United States at the 61st annual Miss Universe pageant ...
 p239
-I1
-sVangola
+sg5
+VOlivia Culpo Wins Miss USA 2012 After Answering Question About ...
 p240
-I8
-sV3rd asian
-p241
-I5
-sVindrani
+sa(dp241
+g3
+VJimena Navarrete Miss Universe 2010 WINNER: ... I can't help but wonder if a beauty queen is really what the country needs ... she won the crown. Full ...
 p242
-I1
-sVrico- with 5
+sg5
+VJimena Navarrete Miss Universe 2010 WINNER: Miss Mexico Takes Home ...
 p243
-I5
-sVasia pacific 2000.
-p244
-I10
-sVisland usa pageant begins
+sa(dp244
+g3
+V... roundShe won the Miss Universe crown the same ... to represent India at the 2000 Miss ... was the winner of Miss India Universe in ...
 p245
-I96
-sVreally
+sg5
+VLargest Bikini Bra Photo Gallery Of All Indian Miss World
 p246
-I1
-sVru
-p247
-I1
-sVsurrounded
+sa(dp247
+g3
+VCulpo went on to represent the USA in the 2012 Miss Universe ... winner of the rival Miss America ... that the response may have cost her the Miss USA crown.
 p248
-I1
-sVbeauty pageants
+sg5
+VMiss USA Pageant 2013, TV Schedule, Pictures, Contestants, Winners
 p249
-I18
-sVczech to ceska
-p250
-I4
-sVstefania fernandez takes home
+sa(dp250
+g3
+VCatalina inaugurates the Miss Universe and Miss ... Rebecca King is chosen Miss America 1974. She is the first winner to ... Vanessa Williams is crowned Miss ...
 p251
-I16
-sVmendoza will formally
+sg5
+VAmerican Experience | Miss America | Timeline
 p252
-I3
-sV7
-I1
-sVinquirer
-p253
-I3
-sVgot
+sa(dp253
+g3
+VLAS VEGAS \u2014 A 20-year-old cellist from Rhode Island won the Miss USA crown and will represent the United States in this year's Miss Universe ... winner to be ...
 p254
-I1
-sVnewly
+sg5
+VCellist from Rhode Island wins Miss USA; Miss Texas makes Top 10 ...
 p255
-I1
-sVvenezuela
-p256
-I4
-sVstripped just days
+sa(dp256
+g3
+VMiss America 2012 winner crowned ... a $50,000 scholarship and a yearlong run as Miss America, touring the country to speak to ... "Miss America represents ...
 p257
-I5
-sV26-year-old
+sg5
+VMiss America 2012 winner crowned - see who won the competition ...
 p258
-I1
-sVarizona
-p259
-I1
-sVwisconsin
+sa(dp259
+g3
+VOne of Miss USA\u2019s main duties is to represent her country at the Miss Universe Pageant. 7 ... on to win the Miss Universe crown. While I believe each winner was ...
 p260
-I3
-sVtimeline
+sg5
+VEye for Beauty | has moved to: www.eyeforbeautyblog.com
 p261
-I1
-sVu.s.
-p262
-I2
-sVjuly 7.
+sa(dp262
+g3
+VShe was also competed in Miss Universe 2010 ... Natalia Prokopenko Natalia Prokopenko was crowned Miss Euro ... The winner will represent country to compete in ...
 p263
-I3
-sVfree
+sg5
+VBeauty pageant | Beauty Contest Update
 p264
-I8
-sVsushmita sen made
-p265
-I5
-sVimdbpro »
+sa(dp265
+g3
+V"The fact is we went by the laws of the country and the laws ... The winner of the Miss Universe ... will go on to represent Canada in the Miss Universe Pageant ...
 p266
-I6
-sVyoshimatsu
+sg5
+VDonald Trump Has Words for Transgender Miss Universe Contestant ...
 p267
-I1
-sVwanted
-p268
-I1
-sVn't know
+sa(dp268
+g3
+VCountry Music: Fashion: Hollywood ... The winner? It was Miss USA, Olivia Culpo who brought the Miss Universe crown back to the United States for the first time in ...
 p269
-I6
-sVelaborate outfits
+sg5
+VMiss Universe 2012, Contestants, Winners, TV Schedule, Pictures, Video
 p270
-I3
-sVdayana mendoza
-p271
-I4
-sVmyanmar international 2013
+sa(dp271
+g3
+V... by speaking the country's ... to win the rights to represent Angola in the Miss Universe ... Crowned Miss Universe; First American Winner ...
 p272
-I13
-sVdays
+sg5
+VMiss Universe 2011 Leila Lopes: 5 Things to Know - The Hollywood ...
 p273
-I1
-sVoutfits
-p274
-I1
-sVamerican
+sa(dp274
+g3
+VSchoolgirl stripped of her Miss World crown ; ... in Fiji after she won the country's Miss World ... will now represent Fiji at the Miss World 2012 pageant ...
 p275
-I1
-sVcompeted
+sg5
+VTeenage Miss Fiji stripped of beauty crown following ugly race row ...
 p276
-I1
-sVthreat
-p277
-I2
-sVlas vegas tonight
+sa(dp277
+g3
+VWINNER: MISS WORLD PHILIPPINES 2012 ... Janine Tugonon has been crowned Miss Universe Philippines 2012 by the outgoing beauty queen ... Miss Universe 2000 from India.
 p278
-I7
-sVusa wins
+sg5
+VQueenierich Rehman : Miss World Philippines 2012 | MISS WORLD 2012 ...
 p279
-I61
-sV17.
-p280
-I2
-sVstefania
+sa(dp280
+g3
+V... death in 2000. Alongside its rival Miss Universe, ... winner spends a year travelling to represent the Miss World ... Crowned Miss New ...
 p281
-I2
-sVcontender
+sg5
+VGlobal Miss Contest: Miss World Beauty Pageant
 p282
-I1
-sVusa pageant 2013
-p283
-I91
-sVend. congrats
+sa(dp283
+g3
+V... who is representing the country at the Miss Universe 2012 ... winner, because she did not conform to the ... was in 2000 when Lara Dutta was crowned in ...
 p284
-I3
-sVsatisfied that ms
+sg5
+VIndian villagers pray for Miss Universe hopeful | GulfNews.com
 p285
-I5
-sVtake a year
-p286
-I16
-sVpageant news bureau
+sa(dp286
+g3
+VTonight the world will find out who is crowned Miss Universe 2011. She will be crowned by Miss Universe 2010, Ximena Navarrete. Tonights competition is...
 p287
-I46
-sVepisode 6
+sg5
+VMiss Universe 2011 Crowning Results and Winners... | Gather
 p288
-I5
-sVlaura kaeppeler
-p289
-I10
-sVfinal round to determine
+sa(dp289
+g3
+VThe stunning 25-year-old beauty is the first winner from her country, ... Why can\u2019t she represent JUST Africa ... African Beauty Crowned Miss Universe 2012 ...
 p290
-I4
-sVleading
+sg5
+VNecole Bitchie.com: African Beauty Crowned Miss Universe 2011
 p291
-I1
-sVinterviews
-p292
-I1
-sVambassadors are selected
+sa(dp292
+g3
+VThe winner of the Miss USA crown goes on to represent her country in the Miss Universe contest. ... 2,000 Netflix movies to disappear ;
 p293
-I3
-sVbound to follow
+sg5
+VWomen to compete in Las Vegas for Miss Universe - Yahoo! omg!
 p294
-I3
-sVbank misspelled
-p295
-I4
-sVblack women who won
+sa(dp295
+g3
+VThe official site of the Miss America Pageant, with current contestants, pageant details, history, and an index to every participant through the years.
 p296
-I18
-sVworld latest
+sg5
+VMiss America : Welcome
 p297
-I33
-sV\u2032
-I1
-sVlisted
-p298
-I1
-sVnigeria
+sa(dp298
+g3
+VSunday, October 21, 2012, Avionne Mark was crowned Miss Universe Trinidad and Tobago 2012 at the National Academy for the Performing Arts in Port of Spain ...
 p299
-I1
-sVgibraltar
+sg5
+VAvionne Mark crowned Miss Universe Trinidad and Tobago 2012 ...
 p300
-I2
-sValabama usa
-p301
-I56
-sVrediff getahead
+sa(dp301
+g3
+VBrowse Miss World 2012 latest news and updates, watch videos and view all photos and more. Join the discussion and find more about Miss World 2012 at abcnews.com
 p302
-I3
-sVdethroned
+sg5
+VMiss World 2012 News, Photos and Videos - ABC News
 p303
-I1
-sVdayana received
-p304
-I4
-sVinaugurates
-p305
-I1
-sVtook
-p306
-I1
-sVpart
-p307
-I2
-sVrediff
-p308
-I1
-sVwinner,she
-p309
-I1
-sVslideshow to view
-p310
-I3
-sV2012.
-p311
-I2
-sVbelieve
-p312
-I3
-sVhollywood
-p313
-I3
-sVbegins
-p314
-I2
-sVking
-p315
-I1
-sVolivia culpo of usa
-p316
-I92
-sVgrave memorial
-p317
-I3
-sVrhode island usa pageant
-p318
-I102
-sV2012 pageant
-p319
-I80
-sVnutting won
-p320
-I13
-sVrunners-up
-p321
-I1
-sVone of her favorites
-p322
-I5
-sVsupposed
-p323
-I1
-sVnang khin zay yar
-p324
-I5
-sVoutstanding teen
-p325
-I4
-sVphoto gallery
-p326
-I5
-sVknow every
-p327
-I6
-sVabc15
-p328
-I1
-sVoutstanding
-p329
-I2
-sVphilippine
-p330
-I1
-sVworld \u2014
-p331
-I32
-sVreturn
-p332
-I2
-sVgala
-p333
-I1
-sVworld 2012 pageant
-p334
-I107
-sV\u2019 s outstanding
-p335
-I10
-sVivian sarcos
-p336
-I3
-sVindia proud by bringing
-p337
-I17
-sVsuomi 2012
-p338
-I46
-sVtan is also
-p339
-I6
-sV2012 at a gala
-p340
-I46
-sVvenezuela ivian
-p341
-I6
-sValso
-p342
-I4
-sVtimes of india
-p343
-I16
-sVbeauty queens compete
-p344
-I16
-sVpointless pageants will end.
-p345
-I8
-sVstrange news. horrific
-p346
-I4
-sVshall
-p347
-I1
-sV7.
-p348
-I1
-sVviews expressed
-p349
-I3
-sV20-year-old
-p350
-I3
-sVgermany
-p351
-I1
-sVeaten
-p352
-I1
-sVgrave
-p353
-I1
-sVpanel of seven judges
-p354
-I5
-sVzealand
-p355
-I2
-sVepisode
-p356
-I1
-sVlopes made history
-p357
-I14
-sVshow national costume
-p358
-I11
-sVvoicing support
-p359
-I3
-sVtanzania
-p360
-I1
-sVpinterest
-p361
-I1
-sVmexico takes home
-p362
-I16
-sVamerica pageant
-p363
-I58
-sVaffair.
-p364
-I1
-sVcame
-p365
-I1
-sVphotos. 1 photo
-p366
-I7
-sVfollowing ugly race row
-p367
-I5
-sV1.8m
-p368
-I1
-sVbaylis
-p369
-I1
-sVindia live
-p370
-I18
-sVphotos of contestants
-p371
-I26
-sV1.8m tall
-p372
-I3
-sVindias
-p373
-I1
-sV\u2018
-I1
-sVcalifornia alyssa campanella
-p374
-I4
-sVosmel karin ontiveros stoked
-p375
-I5
-sVfind
-p376
-I3
-sVnations.
-p377
-I1
-sVterri-karelle griffith-reid
-p378
-I3
-sVjudges
-p379
-I2
-sVsen made
-p380
-I4
-sVusa olivia culpo
-p381
-I98
-sVrelevance to our country.
-p382
-I7
-sVpageant last
-p383
-I39
-sVrico
-p384
-I1
-sVcontestants are battling
-p385
-I12
-sVcaptures
-p386
-I1
-sV8
-I1
-sVangola their first-ever
-p387
-I10
-sVhip 'n
-p388
-I3
-sVwearing
-p389
-I1
-sV'n free
-p390
-I10
-sVoutgoing beauty queen
-p391
-I16
-sVpersonnel feared
-p392
-I3
-sVnews. horrific death.
-p393
-I4
-sVfamous
-p394
-I1
-sVinternational
-p395
-I6
-sVmade india proud
-p396
-I18
-sVholly wins
-p397
-I9
-sVnavarrete
-p398
-I3
-sVpageant in cyprus
-p399
-I35
-sV19
-p400
-I1
-sVmay 1
-p401
-I8
-sVtold
-p402
-I1
-sVofficial site
-p403
-I5
-sVn't help
-p404
-I5
-sVset
-p405
-I1
-sVphotogenic
-p406
-I1
-sV2006 2,000 tenge
-p407
-I6
-sVsee
-p408
-I2
-sV796 news articles
-p409
-I15
-sVsen
-p410
-I1
-sVwenxia
-p411
-I1
-sVbikini bra photo
-p412
-I6
-sVbest
-p413
-I1
-sVfeared
-p414
-I1
-sVbrazil
-p415
-I1
-sVsaid
-p416
-I1
-sVcrown. full
-p417
-I6
-sVpictures
-p418
-I2
-sVaway
-p419
-I1
-sVfirst-ever
-p420
-I1
-sVwikipedia
-p421
-I2
-sV2 million
-p422
-I6
-sVstefania fernandez
-p423
-I4
-sVindex to every
-p424
-I5
-sVwon
-p425
-I11
-sVfiji stripped
-p426
-I7
-sVbarbados
-p427
-I2
-sVcellist
-p428
-I2
-sVdayana mendoza will formally
-p429
-I5
-sVisland olivia
-p430
-I28
-sVtolerance
-p431
-I1
-sVfollowing ugly race
-p432
-I4
-sVeurope
-p433
-I2
-sVfirst-ever title
-p434
-I8
-sV50,000 scholarship
-p435
-I3
-sVinternational 2013 pageant
-p436
-I44
-sVsoutheast
-p437
-I1
-sVlargest bikini bra
-p438
-I5
-sVanswers
-p439
-I2
-sVnews
-p440
-I12
-sVreceived
-p441
-I1
-sVkarin ontiveros
-p442
-I3
-sVlast
-p443
-I6
-sVrima
-p444
-I4
-sVworld will find
-p445
-I34
-sVtitle tonight in brazil
-p446
-I12
-sVpageants will end.
-p447
-I7
-sVannual
-p448
-I1
-sVleila lopes made history
-p449
-I19
-sVbecame
-p450
-I1
-sVbuzz
-p451
-I1
-sVwhole
-p452
-I1
-sVofficials also
-p453
-I6
-sVfirst-ever title tonight
-p454
-I12
-sVrhode island captures
-p455
-I18
-sVsmith
-p456
-I1
-sVpilipinas contest
-p457
-I13
-sV2nd
-p458
-I1
-sVfashion
-p459
-I2
-sVcranston woman
-p460
-I5
-sVrico-
-p461
-I1
-sVleila lopes gave
-p462
-I13
-sV\u2026 .drum
-p463
-I4
-sVbinibining pilipinas
-p464
-I13
-sVeyewitness
-p465
-I1
-sVspeak
-p466
-I1
-sVtransgender pageant contestants
-p467
-I45
-sVcontestants
-p468
-I10
-sVresponse may
-p469
-I6
-sVthree
-p470
-I1
-sVcustom was to send
-p471
-I7
-sVwisconsinite
-p472
-I1
-sVunited states this summer
-p473
-I14
-sVcollected
-p474
-I1
-sVworld philippines
-p475
-I43
-sV» from czechoslovakia
-p476
-I6
-sVduties
-p477
-I3
-sVlopes made
-p478
-I9
-sVeastern
-p479
-I1
-sVpanel of seven
-p480
-I3
-sVanswering question
-p481
-I3
-sVculpo
-p482
-I21
-sVpageants is called
-p483
-I8
-sVfree country.
-p484
-I15
-sValyssa campanella
-p485
-I3
-sVavionne
-p486
-I2
-sVlook
-p487
-I1
-sVidaho genevieve nutting
-p488
-I4
-sVcountdown begins
-p489
-I4
-sVbarbados world
-p490
-I33
-sVugly
-p491
-I1
-sVbikini
-p492
-I2
-sVsuppose
-p493
-I1
-sVfun
-p494
-I2
-sVadvertisement. strange
-p495
-I3
-sVhead-turners
-p496
-I2
-sVgave
-p497
-I1
-sVfernandez
-p498
-I1
-sVjapan-
-p499
-I1
-sVtackle her duties
-p500
-I7
-sVseven
-p501
-I1
-sVusa olivia culpo supports
-p502
-I93
-sVmexico
-p503
-I3
-sVpuerto rico-
-p504
-I4
-sVaside episode 6 ft
-p505
-I7
-sV\u2019
-I7
-sVvegas tonight
-p506
-I6
-sVjanine tugonon
-p507
-I3
-sVmemorial
-p508
-I1
-sVitaly
-p509
-I1
-sVworld 2012
-p510
-I77
-sVworld 2011
-p511
-I47
-sVolivia culpo supports transgender
-p512
-I42
-sV\u201d
-I1
-sVmake
-p513
-I1
-sVlatinas
-p514
-I1
-sVidaho genevieve nutting won
-p515
-I15
-sVblog and photos
-p516
-I18
-sVcyprus courtesy
-p517
-I4
-sVusa rima
-p518
-I59
-sVseveral
-p519
-I1
-sVyoungsters
-p520
-I1
-sVdonald trump
-p521
-I3
-sVmoment
-p522
-I1
-sVlose title
-p523
-I8
-sVseveral beauty pageants
-p524
-I18
-sVculpo supports
-p525
-I23
-sVisland won
-p526
-I21
-sVhip 'n free
-p527
-I11
-sV6 videos
-p528
-I7
-sVinternational contests
-p529
-I8
-sVaside episode
-p530
-I3
-sVnations. 89
-p531
-I3
-sV1974
-p532
-I1
-sVresponse may have cost
-p533
-I7
-sVhonor
-p534
-I1
-sVshamcey supsup placed fourth
-p535
-I10
-sVseveral beauty
-p536
-I13
-sVsupsup placed fourth
-p537
-I8
-sVyearlong
-p538
-I1
-sValabama
-p539
-I2
-sVezinearticles
-p540
-I1
-sVilmira shamsudtinova
-p541
-I3
-sVfashion » congratulations
-p542
-I8
-sVrunners-up were announced
-p543
-I3
-sVanswering
-p544
-I1
-sVnational pageant
-p545
-I38
-sVworld philippines 2012
-p546
-I86
-sV\u2019 s main
-p547
-I9
-sVphoto
-p548
-I2
-sVnamed
-p549
-I1
-sVquestions
-p550
-I2
-sVfacts
-p551
-I2
-sVmargarine
-p552
-I1
-sVisland olivia culpo
-p553
-I49
-sVfirst time ever
-p554
-I12
-sVamerica 2012
-p555
-I71
-sV2,000
-p556
-I3
-sVchina yu wenxia wins
-p557
-I11
-sVgenevieve
-p558
-I1
-sVjapan- with 2
-p559
-I6
-sVspread
-p560
-I1
-sVlows
-p561
-I1
-sVrelevance
-p562
-I1
-sVcontestant
-p563
-I3
-sVcampanella
-p564
-I1
-sVchina yu wenxia
-p565
-I4
-sVlatina
-p566
-I3
-sVaustralia
-p567
-I4
-sVmexico takes
-p568
-I6
-sVvanessa
-p569
-I1
-sVbest national
-p570
-I7
-sVshowing
-p571
-I1
-sVbirth
-p572
-I1
-sVmonika
-p573
-I1
-sVsingh
-p574
-I1
-sVtrivia
-p575
-I1
-sVd
-I1
-sVsubmission
-p576
-I1
-sVperforming
-p577
-I1
-sVcountry.
-p578
-I5
-sVadvertisement.
-p579
-I1
-sVezinearticles submission
-p580
-I3
-sVn't help but wonder
-p581
-I7
-sVnew hampshire \u2019
-p582
-I19
-sVsecurity
-p583
-I1
-sVstands 1.8m
-p584
-I3
-sVtonights competition
-p585
-I5
-sVepisode 6 ft
-p586
-I6
-sVright
-p587
-I4
-sVparade
-p588
-I1
-sVdeal
-p589
-I2
-sVpeople
-p590
-I1
-sVczech
-p591
-I2
-sVdescent
-p592
-I1
-sVback
-p593
-I3
-sVchina yu
-p594
-I3
-sVwelch
-p595
-I1
-sVdonald
-p596
-I1
-sVdocuments for pageant
-p597
-I34
-sVdonald trump has words
-p598
-I4
-sVfiji stripped of beauty
-p599
-I18
-sVasia
-p600
-I3
-sVabc15 arizona
-p601
-I3
-sVcede
-p602
-I1
-sVseven judges
-p603
-I4
-sVfox
-p604
-I2
-sVnew zealand \u2019
-p605
-I20
-sVcomments
-p606
-I1
-sVlara
-p607
-I5
-sVbeating
-p608
-I1
-sVanna
-p609
-I1
-sV\u2013 ikumi
-p610
-I5
-sVlive india
-p611
-I18
-sVcontender collected a cool
-p612
-I4
-sVrun
-p613
-I1
-sVusa \u2019 s main
-p614
-I62
-sVshamcey
-p615
-I2
-sVnight
-p616
-I1
-sVblack women
-p617
-I7
-sVlara dutta
-p618
-I15
-sVgreat britain
-p619
-I3
-sVoxana
-p620
-I3
-sVeye
-p621
-I2
-sVamerica 1974.
-p622
-I26
-sVkhin zay yar
-p623
-I4
-sVpageant from december
-p624
-I35
-sVvenezuela stefania fernandez
-p625
-I8
-sVadams stands 1.8m
-p626
-I4
-sVrhode island olivia
-p627
-I36
-sVwoman wins
-p628
-I11
-sVmendoza
-p629
-I1
-sVplus
-p630
-I1
-sVstoked
-p631
-I1
-sVtonights
-p632
-I1
-sVnews. horrific
-p633
-I3
-sVasia 's
-p634
-I23
-sVzay yar
-p635
-I3
-sVwithin
-p636
-I1
-sVpageants will end. congrats
-p637
-I8
-sVbound
-p638
-I1
-sVmyanmar international
-p639
-I8
-sVback-to-back
-p640
-I1
-sV\u2026 .miss
-p641
-I4
-sVusa 2012
-p642
-I109
-sVusa walked
-p643
-I55
-sVusa 2010
-p644
-I65
-sVnext
-p645
-I1
-sVculpo who brought
-p646
-I23
-sVtwo-time
-p647
-I1
-sVlisted miriam quiambao
-p648
-I4
-sVfinal round
-p649
-I3
-sVnew zealand 's
-p650
-I32
-sVsupport
-p651
-I1
-sVshamsudtinova
-p652
-I1
-sVage 17.
-p653
-I6
-sVfemina
-p654
-I2
-sVcustom
-p655
-I2
-sVcountry. \u201d
-p656
-I7
-sVtransgender pageant
-p657
-I35
-sVworld 2012 news
-p658
-I87
-sVtitle from last
-p659
-I13
-sV.drum
-p660
-I1
-sVshared over 2,000
-p661
-I5
-sVwisconsin laura kaeppeler
-p662
-I11
-sVpointless pageants
-p663
-I7
-sVpointless
-p664
-I1
-sVoffer
-p665
-I1
-sVinternational 2012 \u2013
-p666
-I54
-sVoxana was supposed
-p667
-I5
-sVtj dimacali
-p668
-I3
-sVyear \u2019
-p669
-I18
-sVoutgoing beauty
-p670
-I14
-sVrussian
-p671
-I1
-sVcountdown begins for shilpa
-p672
-I5
-sVcountry. once chosen
-p673
-I8
-sVbikini international
-p674
-I9
-sVbeauty queen
-p675
-I15
-sVgave angola
-p676
-I10
-sVinteresting to note
-p677
-I3
-sVfiji after she won
-p678
-I15
-sVjan.
-p679
-I1
-sVsweden-
-p680
-I1
-sVnavarrete. tonights
-p681
-I3
-sVfaking
-p682
-I1
-sVusa olivia culpo snatched
-p683
-I93
-sVcalled
-p684
-I2
-sVproud
-p685
-I1
-sVspain beauty pageants
-p686
-I22
-sVpageant last week
-p687
-I40
-sVstripped
-p688
-I3
-sVu.s.a
-p689
-I1
-sVmodel.
-p690
-I1
-sVkemerovo
-p691
-I1
-sV26-year-old leila
-p692
-I7
-sVperez
-p693
-I1
-sVcheck
-p694
-I1
-sVontiveros
-p695
-I1
-sVmexico jimena navarrete
-p696
-I10
-sVfirst muslim
-p697
-I14
-sV796 news articles »
-p698
-I19
-sVhighs and lows
-p699
-I3
-sV2000.
-p700
-I3
-sVholly
-p701
-I1
-sVtransgender
-p702
-I2
-sVnang khin zay
-p703
-I4
-sVroll
-p704
-I1
-sVpilipinas world \u2014
-p705
-I37
-sV's
-p706
-I19
-sVroundshe
-p707
-I1
-sVwelcome
-p708
-I1
-sVstrange news.
-p709
-I3
-sV24 contestants
-p710
-I12
-sVpageant trivia famous
-p711
-I35
-sV'n
-p712
-I1
-sVuniversegb 2012
-p713
-I46
-sVage
-p714
-I2
-sVwalked
-p715
-I1
-sV2002
-p716
-I1
-sVfirst back-to-back
-p717
-I10
-sVsince 1991
-p718
-I7
-sV2007
-p719
-I1
-sVtime
-p720
-I2
-sV2 venezuela 's
-p721
-I28
-sV2008
-p722
-I2
-sV2009
-p723
-I2
-sV30/04/13
-p724
-I1
-sVparade of nations.
-p725
-I3
-sV2012 \u2013 ikumi
-p726
-I49
-sVisland usa
-p727
-I62
-sVtrinidad and tobago 2012
-p728
-I50
-sVkenya welch
-p729
-I3
-sVglobal
-p730
-I3
-sVresults
-p731
-I1
-sVlaura
-p732
-I3
-sVstar-studded affair.
-p733
-I3
-sVbeauty pride
-p734
-I13
-sVgb
-p735
-I1
-sVfind a grave
-p736
-I5
-sVgo
-p737
-I2
-sVgossip
-p738
-I2
-sV2010 candidates
-p739
-I13
-sVphotos. 1
-p740
-I5
-sVcompetition
-p741
-I3
-sVrow
-p742
-I1
-sVmeme was shared
-p743
-I3
-sV's central bank
-p744
-I23
-sVusa pageant
-p745
-I88
-sVsend
-p746
-I3
-sVcountdown
-p747
-I1
-sVbeauties » from czechoslovakia
-p748
-I9
-sV796 news
-p749
-I14
-sVnote that oxana
-p750
-I5
-sV»
-I4
-sVadams stands 1.8m tall
-p751
-I5
-sV1991
-p752
-I2
-sV\u2026
-I2
-sVqueen
-p753
-I2
-sVcentral bank misspelled
-p754
-I5
-sVfederation
-p755
-I1
-sVsurrounded by her fellow
-p756
-I3
-sVplaced fourth
-p757
-I6
-sVvenezuela stefania
-p758
-I7
-sVpageant. 7
-p759
-I3
-sV1992
-p760
-I1
-sVfacebook
-p761
-I2
-sVzidkova
-p762
-I1
-sVrachel smith
-p763
-I3
-sVstands 1.8m tall
-p764
-I4
-sVcool
-p765
-I1
-sVfernandez takes
-p766
-I4
-sVpageant trivia
-p767
-I34
-sVphilippines
-p768
-I10
-sV1983 kemerovo kemerovskaya oblast
-p769
-I6
-sVca n't
-p770
-I5
-sVitaly 2012
-p771
-I46
-sVrace
-p772
-I1
-sVtitle stripped
-p773
-I10
-sVtitle stripped just days
-p774
-I11
-sVround
-p775
-I1
-sVbeauty queen is really
-p776
-I15
-sV2012 pageant from december
-p777
-I79
-sVdays after earning
-p778
-I3
-sVvenezuela 's catching
-p779
-I25
-sVyearlong run
-p780
-I3
-sVcost
-p781
-I1
-sVvideo
-p782
-I1
-sVearth
-p783
-I1
-sVpageant last week saw
-p784
-I41
-sVcatching up usa
-p785
-I55
-sVport
-p786
-I1
-sVstrange news. horrific death.
-p787
-I5
-sV2,000 tenge
-p788
-I5
-sVindex
-p789
-I1
-sVstands
-p790
-I1
-sVbeats latina beauties
-p791
-I8
-sVaustralia 's
-p792
-I25
-sVfine
-p793
-I1
-sVlargest bikini
-p794
-I4
-sV\u2026 .drum roll
-p795
-I5
-sVexpressed
-p796
-I1
-sVcurrent
-p797
-I1
-sVindian
-p798
-I2
-sV2 venezuela 's catching
-p799
-I29
-sVgoes
-p800
-I1
-sVshared
-p801
-I1
-sVculpo supports transgender
-p802
-I25
-sVbinibining pilipinas world
-p803
-I40
-sVformally cede
-p804
-I3
-sVcranston
-p805
-I1
-sVindia 's name
-p806
-I35
-sVfree encyclopedia
-p807
-I12
-sVmuslim
-p808
-I3
-sVlast week
-p809
-I8
-sVczechoslovakia to czech
-p810
-I4
-sVtitle from last year
-p811
-I23
-sVhollywood gossip
-p812
-I7
-sV's central bank misspelled
-p813
-I24
-sVofficial technology partners
-p814
-I6
-sVchange
-p815
-I1
-sVcrown. while i believe
-p816
-I8
-sVboy
-p817
-I1
-sVgreat
-p818
-I1
-sVpresentation show swimsuit nigeria
-p819
-I7
-sVbattling
-p820
-I1
-sVusually been held
-p821
-I3
-sVosmel karin
-p822
-I3
-sVoblast
-p823
-I1
-sVeaten by vultures
-p824
-I3
-sVgibraltar 2010 candidates
-p825
-I15
-sVbelieve it 's
-p826
-I24
-sVoutstanding people
-p827
-I4
-sVusually
-p828
-I1
-sVugly race
-p829
-I3
-sV2010 photos also
-p830
-I31
-sVstudies
-p831
-I2
-sV\u2019 s outstanding teen
-p832
-I11
-sVsemi-finalist
-p833
-I1
-sVfaking documents for pageant
-p834
-I35
-sVteenage
-p835
-I1
-sVn't allowed
-p836
-I5
-sVculpo supports transgender pageant
-p837
-I57
-sVstates this summer
-p838
-I8
-sVwin
-p839
-I5
-sVzoominfo.com
-p840
-I1
-sVchange photos.
-p841
-I3
-sVapply
-p842
-I1
-sVtrinidad
-p843
-I2
-sVusa
-p844
-I53
-sVfailed
-p845
-I1
-sV7. 24 contestants
-p846
-I13
-sVzealand \u2019
-p847
-I10
-sVyear 's
-p848
-I34
-sVlive
-p849
-I3
-sVcellist from rhode
-p850
-I12
-sVdecember
-p851
-I2
-sValso had a wonderful
-p852
-I6
-sVnicosia
-p853
-I1
-sV\u2019 s \u2018
-p854
-I9
-sVworld since
-p855
-I35
-sVformally
-p856
-I1
-sVikumi yoshimatsu from japan
-p857
-I5
-sV1983 kemerovo kemerovskaya
-p858
-I5
-sVevery participant
-p859
-I5
-sVnew maid margarine
-p860
-I13
-sVisland captures
-p861
-I10
-sVmexico jimena
-p862
-I7
-sV20-year-old cellist from rhode
-p863
-I15
-sV2 venezuela
-p864
-I9
-sVlifestyle
-p865
-I1
-sVwomen
-p866
-I2
-sVlopes of angola
-p867
-I15
-sVpageant
-p868
-I32
-sVcontests
-p869
-I1
-sVpageant in december
-p870
-I35
-sVpageant details
-p871
-I34
-sVvenezuela- with 6 3
-p872
-I7
-sVselected every year
-p873
-I15
-sVusa pageant begins
-p874
-I88
-sVking is chosen
-p875
-I4
-sV's interesting to note
-p876
-I22
-sVusa wins pageant
-p877
-I93
-sVnj.com
-p878
-I1
-sVfollowing
-p879
-I1
-sVmaking
-p880
-I1
-sVikumi yoshimatsu
-p881
-I3
-sVhip
-p882
-I1
-sV's a free country.
-p883
-I34
-sVtrump
-p884
-I1
-sVsupports transgender pageant
-p885
-I36
-sVolivia culpo
-p886
-I55
-sVximena
-p887
-I1
-sVallowed
-p888
-I1
-sVwonderful
-p889
-I1
-sVtan
-p890
-I1
-sVmade
-p891
-I2
-sV7. 24
-p892
-I3
-sVend. congrats 2
-p893
-I7
-sVyoshimatsu from japan
-p894
-I4
-sVhampshire
-p895
-I1
-sV1
-I3
-sVsunday
-p896
-I1
-sVbiography
-p897
-I1
-sVfourth
-p898
-I2
-sV2010 photos
-p899
-I27
-sVspeaks
-p900
-I1
-sVwalked away
-p901
-I3
-sVdesigner
-p902
-I1
-sVadd or change photos.
-p903
-I4
-sVmay
-p904
-I4
-sVhighs
-p905
-I1
-sVpresentation show swimsuit
-p906
-I6
-sVmain duties
-p907
-I5
-sVunited
-p908
-I6
-sVtrump has words
-p909
-I3
-sVdesigned
-p910
-I1
-sVtakes home
-p911
-I14
-sVman
-p912
-I1
-sVusa rima fakih
-p913
-I63
-sVmissosology
-p914
-I2
-sVcentral bank
-p915
-I4
-sVsupports transgender
-p916
-I4
-sV2012 after answering
-p917
-I46
-sVencyclopedia
-p918
-I2
-sVqueens have set
-p919
-I4
-sVoctober 21
-p920
-I3
-sVrhode island olivia culpo
-p921
-I57
-sVbeauties
-p922
-I3
-sVmiriam quiambao
-p923
-I3
-sVfellow contestants
-p924
-I12
-sVstar-studded
-p925
-I1
-sVyears
-p926
-I1
-sVolivia culpo snatched
-p927
-I40
-sVtitle tonight
-p928
-I11
-sVknxv-tv
-p929
-I1
-sVolivia culpo who brought
-p930
-I40
-sVyu wenxia
-p931
-I3
-sV\u201c
-I3
-sVaccused of faking
-p932
-I3
-sVjamaica world
-p933
-I38
-sVchosen
-p934
-I2
-sVinteresting
-p935
-I1
-sVpart 10
-p936
-I6
-sVwinning
-p937
-I1
-sVsatisfied that ms angola
-p938
-I13
-sVculpo of usa
-p939
-I75
-sVparade of nations. 89
-p940
-I4
-sVphotos from cyprus courtesy
-p941
-I19
-sVpuerto rico
-p942
-I4
-sVpuerto
-p943
-I2
-sVmain
-p944
-I1
-sVfox news
-p945
-I15
-sV2010
-p946
-I11
-sV2013
-p947
-I5
-sV2012
-p948
-I44
-sVgave angola their first-ever
-p949
-I11
-sVviews
-p950
-I1
-sVikumi
-p951
-I1
-sV\u201c somebody told
-p952
-I6
-sVflew
-p953
-I1
-sVnation
-p954
-I3
-sVyear.
-p955
-I1
-sV's a free
-p956
-I29
-sVwant to learn
-p957
-I4
-sVoxana fedorova
-p958
-I7
-sV1958
-p959
-I1
-sVsuccessor
-p960
-I1
-sVarticles
-p961
-I1
-sVjamaica world since
-p962
-I40
-sVscholarship and a yearlong
-p963
-I3
-sVnutting
-p964
-I1
-sVkaeppeler
-p965
-I4
-sVusa- with 8 2
-p966
-I7
-sVasia pacific
-p967
-I7
-sVhorrific death. a woman
-p968
-I6
-sVel
-p969
-I1
-sVswimsuit nigeria
-p970
-I3
-sVcontender collected
-p971
-I3
-sVlast in 2000.
-p972
-I10
-sVximena navarrete. tonights competition
-p973
-I7
-sVmay lose
-p974
-I6
-sVcatching
-p975
-I1
-sVyear
-p976
-I10
-sVzealand \u2019 s \u2018
-p977
-I11
-sVambassadors
-p978
-I1
-sVcanada
-p979
-I2
-sV796
-p980
-I1
-sVusa 2011
-p981
-I71
-sV3rd
-p982
-I1
-sVentertainment
-p983
-I1
-sVspain beauty
-p984
-I17
-sVfree country. \u201d culpo
-p985
-I36
-sV2013 berlin berlin
-p986
-I10
-sV61st annual
-p987
-I7
-sVadvertisement. strange news. horrific
-p988
-I5
-sVbubbly brunette
-p989
-I3
-sVreceiving
-p990
-I1
-sVsupports
-p991
-I1
-sVannounced
-p992
-I1
-sV10 most beautiful
-p993
-I8
-sVphilippines 2012
-p994
-I57
-sVfavorites to win
-p995
-I7
-sVstudies to tackle
-p996
-I6
-sVindia 1992 came within
-p997
-I18
-sVreacts
-p998
-I1
-sVmillion
-p999
-I1
-sVnational academy
-p1000
-I7
-sV\u201c somebody
-p1001
-I5
-sVdependencies
-p1002
-I1
-sVcalifornia
-p1003
-I1
-sVbesides
-p1004
-I2
-sVlatest
-p1005
-I2
-sVarts in port
-p1006
-I3
-sVsupsup placed
-p1007
-I6
-sVusa olivia
-p1008
-I77
-sVearth 2012
-p1009
-I46
-sVq&a wiki
-p1010
-I3
-sVgetahead
-p1011
-I1
-sVwoman who took home
-p1012
-I15
-sVtook home
-p1013
-I12
-sVqueenierich rehman
-p1014
-I4
-sVview
-p1015
-I1
-sVthink
-p1016
-I2
-sVfirst
-p1017
-I8
-sVpacific 2000.
-p1018
-I7
-sVplacing
-p1019
-I1
-sVquestion
-p1020
-I1
-sVrachel
-p1021
-I1
-sVtouring
-p1022
-I1
-sVone
-p1023
-I3
-sVlast year 's pageant
-p1024
-I68
-sVzay
-p1025
-I1
-sVvote
-p1026
-I3
-sVindia 1992 came
-p1027
-I17
-sVmessage
-p1028
-I1
-sVfiji
-p1029
-I3
-sV3 5
-p1030
-I6
-sVisland usa pageant
-p1031
-I94
-sVfact is we went
-p1032
-I5
-sV2013 berlin
-p1033
-I8
-sVinternational 2008
-p1034
-I9
-sVadopted
-p1035
-I1
-sV2
-I4
-sVspread about tolerance
-p1036
-I3
-sVwish to decide
-p1037
-I3
-sVfinal
-p1038
-I1
-sVwilliams
-p1039
-I1
-sVdutta
-p1040
-I5
-sVmeme
-p1041
-I1
-sVproud by bringing home
-p1042
-I13
-sV2001 in her home
-p1043
-I12
-sVcountry. \u201d culpo
-p1044
-I28
-sVacademy
-p1045
-I1
-sVwonderful message
-p1046
-I3
-sVvanessa williams
-p1047
-I3
-sVaustralia media man
-p1048
-I7
-sVjuly
-p1049
-I1
-sVdayana
-p1050
-I2
-sV10
-p1051
-I3
-sVpresentation show
-p1052
-I6
-sV12
-p1053
-I1
-sV15
-p1054
-I1
-sVtime ever
-p1055
-I4
-sVrival
-p1056
-I1
-sVsupports transgender pageant contestants
-p1057
-I46
-sVbinibining pilipinas world \u2014
-p1058
-I41
-sV61st
-p1059
-I5
-sVbuzz top
-p1060
-I7
-sVaccused
-p1061
-I1
-sVaustralia media man australia
-p1062
-I11
-sVrussia
-p1063
-I1
-sVeyewitness news
-p1064
-I14
-sVmay have cost
-p1065
-I6
-sVofficials also said
-p1066
-I7
-sVshilpa
-p1067
-I1
-sVtonight is \u2026 .drum
-p1068
-I8
-sVboy in plaid
-p1069
-I3
-sVamerica needs
-p1070
-I27
-sVamerican experience
-p1071
-I3
-sVtonight
-p1072
-I4
-sVslam
-p1073
-I1
-sVimdb
-p1074
-I1
-sVabc news
-p1075
-I16
-sVclose
-p1076
-I1
-sVstefania became
-p1077
-I4
-sVsaw
-p1078
-I1
-sVlast year
-p1079
-I19
-sVdocuments
-p1080
-I1
-sV1974.
-p1081
-I1
-sVcongrats
-p1082
-I1
-sVnews articles
-p1083
-I14
-sVaside
-p1084
-I1
-sVangola their first-ever title
-p1085
-I16
-sVnote
-p1086
-I1
-sVlatina beauty queens
-p1087
-I17
-sVwisconsin wins
-p1088
-I11
-sVtake
-p1089
-I4
-sV6 3
-p1090
-I6
-sVsuccessor during a star-studded
-p1091
-I3
-sV2012 \u2013 ikumi yoshimatsu
-p1092
-I50
-sVwonder
-p1093
-I2
-sVq&a
-p1094
-I1
-sVshowing off elaborate outfits
-p1095
-I4
-sVte 30/04/13
-p1096
-I3
-sV6 ft
-p1097
-I5
-sVcourtesy
-p1098
-I1
-sVtall
-p1099
-I1
-sV's beauty pride
-p1100
-I32
-sVvultures
-p1101
-I1
-sVamerica
-p1102
-I24
-sVgallery
-p1103
-I2
-sVqueens
-p1104
-I2
-sVwonder when these pointless
-p1105
-I4
-sVjuly 7. 24
-p1106
-I4
-sVpilipinas world
-p1107
-I36
-sVgather
-p1108
-I1
-sVphotos.
-p1109
-I1
-sV.drum roll
-p1110
-I3
-sVsushmita sen made india
-p1111
-I19
-sVqueen is really
-p1112
-I4
-sVfact
-p1113
-I1
-sVlaws
-p1114
-I3
-sVmedia man australia
-p1115
-I7
-sV2011 contestants
-p1116
-I27
-sVcatalina
-p1117
-I1
-sVkhin zay
-p1118
-I3
-sVshow
-p1119
-I2
-sVgallery of all indian
-p1120
-I5
-sVrebecca king
-p1121
-I3
-sVallegations
-p1122
-I1
-sVindia contestants
-p1123
-I25
-sVsuomi
-p1124
-I1
-sVaccused of faking documents
-p1125
-I4
-sV's catching up usa
-p1126
-I74
-sV2010 coverage
-p1127
-I13
-sVdecade
-p1128
-I1
-sVlargest bikini bra photo
-p1129
-I7
-sVpartners
-p1130
-I1
-sVbra photo gallery
-p1131
-I6
-sVlive blog
-p1132
-I6
-sVontiveros stoked to win
-p1133
-I8
-sVtitle
-p1134
-I6
-sVstate
-p1135
-I2
-sVmade india
-p1136
-I17
-sVblack
-p1137
-I3
-sVbeats latina
-p1138
-I5
-sVphilippines crown.
-p1139
-I15
-sVmpule
-p1140
-I1
-sVcongrats 2
-p1141
-I6
-sVsince she was named
-p1142
-I6
-sV2012 after answering question
-p1143
-I47
-sVnews bureau
-p1144
-I14
-sVget
-p1145
-I2
-sVbeat
-p1146
-I1
-sVczechoslovakia
-p1147
-I1
-sVdiamonds
-p1148
-I1
-sVcongratulations
-p1149
-I1
-sVage 17. she bagged
-p1150
-I8
-sV\u2013 oxana fedorova
-p1151
-I9
-sVwords
-p1152
-I1
-sVheld in a different
-p1153
-I3
-sVusa walked away
-p1154
-I56
-sVusa- with 8
-p1155
-I3
-sVrhode island
-p1156
-I24
-sVbinibining
-p1157
-I4
-sVwww.eyeforbeautyblog.com
-p1158
-I1
-sVjuly 7. 24 contestants
-p1159
-I14
-sVgenevieve nutting
-p1160
-I3
-sVmaid margarine
-p1161
-I3
-sVvenezuela ivian sarcos
-p1162
-I7
-sVmonika zidkova
-p1163
-I3
-sV16th
-p1164
-I1
-sVcostume
-p1165
-I3
-sVwiki
-p1166
-I1
-sV2011.
-p1167
-I1
-sVpageant from december 19
-p1168
-I36
-sVnational
-p1169
-I5
-sV12 photos
-p1170
-I17
-sV\u2013
-I3
-sVofficials
-p1171
-I1
-sVwoman who took
-p1172
-I5
-sV's host
-p1173
-I21
-sVnational costume
-p1174
-I10
-sVbringing home
-p1175
-I12
-sVjimena navarrete
-p1176
-I9
-sVend.
-p1177
-I1
-sVstripped of beauty
-p1178
-I15
-sVrecord
-p1179
-I1
-sVescalating violence
-p1180
-I6
-sV's beauty
-p1181
-I31
-sV3
-I2
-sVweek saw
-p1182
-I3
-sVbureau
-p1183
-I1
-sVidaho genevieve
-p1184
-I3
-sVrace row
-p1185
-I3
-sVfollowing ugly
-p1186
-I3
-sVacross
-p1187
-I1
-sVaustralia media
-p1188
-I6
-sVends
-p1189
-I1
-sValabama usa 2012
-p1190
-I100
-sVrate her chance
-p1191
-I3
-sVspartan
-p1192
-I1
-sVmyanmar international 2013 pageant
-p1193
-I45
-sVproud by bringing
-p1194
-I3
-sVfirst one
-p1195
-I12
-sVleila lopes of angola
-p1196
-I20
-sVlopes
-p1197
-I6
-sVwonder if a beauty
-p1198
-I14
-sVpart 4
-p1199
-I5
-sVgriffith-reid
-p1200
-I1
-sVuniversegb
-p1201
-I1
-sVqueenierich
-p1202
-I1
-sVhampshire \u2019
-p1203
-I9
-sVpeople.com
-p1204
-I1
-sVpageant contestants
-p1205
-I43
-sVshamcey supsup
-p1206
-I6
-sVspain 2008
-p1207
-I8
-sVlast night
-p1208
-I8
-sVcandidates
-p1209
-I1
-sVwear
-p1210
-I2
-sVyear 's pageant
-p1211
-I62
-sVphotos and videos
-p1212
-I19
-sVca
-p1213
-I1
-sVfour black women
-p1214
-I7
-sVfine but besides
-p1215
-I4
-sVblack beauties
-p1216
-I7
-sVwenxia wins beauty
-p1217
-I20
-sVarts
-p1218
-I1
-sVhorrific
-p1219
-I1
-sVmaid
-p1220
-I1
-sVlive blog and photos
-p1221
-I21
-sVshow swimsuit
-p1222
-I4
-sVyar
-p1223
-I1
-sVrhode
-p1224
-I8
-sVnew maid
-p1225
-I12
-sVhottest
-p1226
-I1
-sV2001
-p1227
-I1
-sVosmel
-p1228
-I1
-sV20-year-old cellist
-p1229
-I7
-sVindia 1992
-p1230
-I16
-sVsarcos
-p1231
-I1
-sVphotos
-p1232
-I15
-sVworld philippines crown.
-p1233
-I45
-sV.miss
-p1234
-I1
-sVpageants
-p1235
-I5
-sVcostume portion
-p1236
-I5
-sVilmira
-p1237
-I1
-sVsushmita
-p1238
-I1
-sVkemerovo kemerovskaya
-p1239
-I3
-sVspain
-p1240
-I5
-sVnavarrete.
-p1241
-I1
-sVlopes gave angola
-p1242
-I16
-sVinternational 2013
-p1243
-I12
-sVinternational 2012
-p1244
-I51
-sV2011
-p1245
-I16
-sVwinner,she got
-p1246
-I3
-sVbritain
-p1247
-I1
-sVcurrent contestants
-p1248
-I12
-sVperforming arts in port
-p1249
-I4
-sVusa \u2019
-p1250
-I61
-sVsee who won
-p1251
-I14
-sVworld latest news
-p1252
-I45
-sVrima fakih
-p1253
-I12
-sVchange photos. 1
-p1254
-I6
-sVimdbpro
-p1255
-I1
-sVjan. 22
-p1256
-I3
-sVolivia culpo wins
-p1257
-I46
-sValmost
-p1258
-I1
-sVsite
-p1259
-I1
-sVculpo wins
-p1260
-I29
-sVhome country.
-p1261
-I16
-sVdecember 19
-p1262
-I4
-sVembrace
-p1263
-I1
-sVinternaional
-p1264
-I1
-sVphotos from cyprus
-p1265
-I18
-sVkenya
-p1266
-I1
-sVtechnology
-p1267
-I1
-sVcapture
-p1268
-I1
-sVdifferent
-p1269
-I1
-sVselected every
-p1270
-I5
-sVcame within
-p1271
-I3
-sVmedia
-p1272
-I1
-sVallowed to compete
-p1273
-I4
-sVrespresent
-p1274
-I1
-sVlas vegas
-p1275
-I3
-sVbeauty queens
-p1276
-I15
-sVlargest
-p1277
-I1
-sVfree country. \u201d
-p1278
-I15
-sVculpo of usa wins
-p1279
-I82
-sVweek
-p1280
-I1
-sVchange photos. 1 photo
-p1281
-I8
-sVcolumbia
-p1282
-I1
-sVbeauty queens have set
-p1283
-I15
-sVmay lose title
-p1284
-I12
-sVl.p
-p1285
-I1
-sVfavorites
-p1286
-I1
-sV\u2019 s main duties
-p1287
-I12
-sVmayra
-p1288
-I1
-sVyu wenxia wins
-p1289
-I10
-sV1992 came within
-p1290
-I4
-sVmessage to spread
-p1291
-I3
-sVcom
-p1292
-I1
-sVindonesia
-p1293
-I1
-sVkarin ontiveros stoked
-p1294
-I4
-sVpride
-p1295
-I1
-sVculpo went
-p1296
-I25
-sVenglish
-p1297
-I1
-sVbest national costume
-p1298
-I10
-sVwinner,she got no brain
-p1299
-I4
-sVscholarship
-p1300
-I1
-sVsummer
-p1301
-I1
-sVperforming arts
-p1302
-I3
-sVnewest
-p1303
-I1
-sVculpo snatched
-p1304
-I23
-sVwins pageant
-p1305
-I40
-sVsen made india
-p1306
-I18
-sVavionne mark
-p1307
-I6
-sV\u2014
-I1
-sVshow national
-p1308
-I8
-sVugly race row
-p1309
-I4
-sVdeath
-p1310
-I1
-sVset a record
-p1311
-I3
-sVwords for transgender
-p1312
-I4
-sVindia proud
-p1313
-I16
-sVblog
-p1314
-I2
-sVadd
-p1315
-I1
-sVexaminer.com
-p1316
-I1
-sV4
-I2
-sVthreat of escalating violence
-p1317
-I8
-sVthoughts
-p1318
-I1
-sVrhode island usa
-p1319
-I70
-sVglobal beauties »
-p1320
-I11
-sVfind a grave memorial
-p1321
-I6
-sVstoked to win
-p1322
-I7
-sVread
-p1323
-I1
-sVjimena
-p1324
-I3
-sVevery year
-p1325
-I14
-sVacross her home
-p1326
-I12
-sVknow
-p1327
-I2
-sVrehman
-p1328
-I2
-sVworld
-p1329
-I30
-sVrebecca
-p1330
-I1
-sVname
-p1331
-I1
-sVarticles »
-p1332
-I6
-sVadams
-p1333
-I1
-sVmiami
-p1334
-I1
-sVnang khin
-p1335
-I3
-sVximena navarrete.
-p1336
-I3
-sVlatest news
-p1337
-I16
-sVlose
-p1338
-I1
-sVdeath. a woman
-p1339
-I5
-sVpage
-p1340
-I1
-sVroll \u2026
-p1341
-I4
-sVwpri.com
-p1342
-I1
-sVusa-
-p1343
-I1
-sVsoutheast asian
-p1344
-I5
-sVreuters
-p1345
-I1
-sVpacific
-p1346
-I2
-sVn't allowed to compete
-p1347
-I7
-sVeye for beauty
-p1348
-I15
-sVgenevieve nutting won
-p1349
-I14
-sVsnatched
-p1350
-I1
-sVimages
-p1351
-I1
-sVhome
-p1352
-I10
-sVindex to every participant
-p1353
-I6
-sVroll \u2026 .miss
-p1354
-I5
-sVadd or change
-p1355
-I3
-sVtobago
-p1356
-I2
-sVearning
-p1357
-I1
-sVambassadors are selected every
-p1358
-I6
-sVvenezuela 's
-p1359
-I24
-sVfashion »
-p1360
-I7
-sV1992 came
-p1361
-I3
-sVwisconsinite wins
-p1362
-I9
-sVtv schedule
-p1363
-I6
-sVsweden- with 3 5
-p1364
-I7
-sVkansas
-p1365
-I1
-sVschedule
-p1366
-I2
-sV» congratulations
-p1367
-I6
-sVqueens compete
-p1368
-I5
-sVacross her home country.
-p1369
-I17
-sV's pageant
-p1370
-I52
-sVtrinidad and tobago
-p1371
-I6
-sVhost
-p1372
-I1
-sVasia 's beauty pride
-p1373
-I35
-sVkemerovskaya oblast
-p1374
-I3
-sVend of competition
-p1375
-I6
-sVtoday.com
-p1376
-I2
-sVcalifornia alyssa
-p1377
-I3
-sVpanel
-p1378
-I1
-sVcentral
-p1379
-I1
-sVisland
-p1380
-I8
-sVcellist from rhode island
-p1381
-I20
-sVviolence
-p1382
-I2
-sVescalating
-p1383
-I2
-sVlatina beauty queens compete
-p1384
-I19
-sVcranston woman wins
-p1385
-I12
-sVlatina beauty
-p1386
-I15
-sVroad
-p1387
-I2
-sVmendoza will formally cede
-p1388
-I4
-sV2012 interviews
-p1389
-I46
-sVfirst back-to-back title
-p1390
-I16
-sVunited states
-p1391
-I18
-sVwomen who won
-p1392
-I15
-sVdetermine
-p1393
-I1
-sVpageant called
-p1394
-I35
-sVmark
-p1395
-I2
-sVyu wenxia wins beauty
-p1396
-I21
-sVsupsup
-p1397
-I2
-sVbubbly
-p1398
-I1
-sVwins 2012
-p1399
-I52
-sVcollected a cool
-p1400
-I3
-sV1983
-p1401
-I2
-sVbeat out three
-p1402
-I3
-sV2007,the
-p1403
-I1
-sVlot
-p1404
-I1
-sVofficial technology
-p1405
-I5
-sVadams stands
-p1406
-I3
-sVlot to offer
-p1407
-I3
-sVhelp but wonder
-p1408
-I4
-sVbagged
-p1409
-I2
-sVusa in june
-p1410
-I55
-sVthreat of escalating
-p1411
-I6
-sVspain 2010
-p1412
-I17
-sVbrain
-p1413
-I1
-sVplus our beauty queens
-p1414
-I15
-sVkhin
-p1415
-I1
-sVrico- with 5 4
-p1416
-I7
-sVtechnology partners
-p1417
-I3
-sVoctober
-p1418
-I1
-sVwish
-p1419
-I1
-sVofficial
-p1420
-I3
-sVadvertisement. strange news.
-p1421
-I4
-sVplaced
-p1422
-I2
-sV89
-p1423
-I1
-sVplus our beauty
-p1424
-I13
-sVvenezuela-
-p1425
-I1
-sVtugonon
-p1426
-I1
-sVsushmita sen
-p1427
-I3
-sVmedia man
-p1428
-I3
-sVtake a look
-p1429
-I6
-sVschoolgirl stripped
-p1430
-I5
-sVvideos
-p1431
-I3
-sVworld 's
-p1432
-I50
-sVmoved
-p1433
-I1
-sV\u2013 oxana
-p1434
-I7
-sVfellow
-p1435
-I1
-sVfernandez takes home
-p1436
-I14
-sVbeats
-p1437
-I1
-sVpageant.
-p1438
-I1
-sVceska
-p1439
-I1
-sVelaborate outfits designed
-p1440
-I4
-sVtenge
-p1441
-I1
-sVca n't help
-p1442
-I6
-sVfilm
-p1443
-I1
-sVshowing off elaborate
-p1444
-I3
-sVoutfits designed
-p1445
-I3
-sVcontest
-p1446
-I6
-sVpersonnel
-p1447
-I1
-sVmembers
-p1448
-I1
-sVleila lopes
-p1449
-I16
-sV24 contestants are battling
-p1450
-I13
-sVcrown.
-p1451
-I4
-sV5
-I3
-sVdetails
-p1452
-I1
-sV2006
-p1453
-I1
-sVwenxia wins
-p1454
-I9
-sVgaining
-p1455
-I2
-sVsomebody told
-p1456
-I3
-sVphotos also
-p1457
-I20
-sVbegins for shilpa
-p1458
-I4
-sVjune
-p1459
-I1
-sVmiriam
-p1460
-I1
-sVslideshow
-p1461
-I1
-sVtj dimacali \u2019
-p1462
-I10
-sVchance
-p1463
-I1
-sVcoverage
-p1464
-I1
-sVtackle
-p1465
-I2
-sV.drum roll \u2026 .miss
-p1466
-I6
-sVdeath.
-p1467
-I1
-sVnavarrete. tonights competition
-p1468
-I6
-sVbegins for shilpa singh
-p1469
-I5
-sVnews.
-p1470
-I1
-sVfree philippine
-p1471
-I10
-sVportion
-p1472
-I1
-sVcompete
-p1473
-I2
-sVworld and this year
-p1474
-I41
-sV1983 kemerovo
-p1475
-I4
-stRp1476
-.
+sa.

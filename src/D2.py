@@ -126,37 +126,12 @@ def reform_trec_questions(trec_file):
 
     return questions
     
-def getcandidates(search_library, query, limit):
+def getcandidates(search_results):
     text = ''
-    # Get the top 100 - I think it will let you get only 50 at a time.
-    per_page = 50
-    pages = int(math.ceil(limit / float(per_page)))
-
-    if search_library == 'pattern':
-        engine = Bing(license='cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM=', language="en")
-        for page in range(pages):
-            try:
-                # turns out start = starting page and count is results per page
-                # could probably do some logic to make sure count is right if limit was 130, on page 3, count should be 30, whereas 
-                # our code is going to fetch 50 for a total of 150. ... I think we can probably mess with that later and just work in blocks of 50
-                request = asynchronous(engine.search, q, start=page+1, count=per_page, type=SEARCH, timeout=10)
-                while not request.done:
-                    time.sleep(0.01)
-            except:
-                raise
-
-            for result in request.value:
-                text += "... %s" % result.title
-                text += "... %s" % result.text
-            
-    elif search_library == 'requests':
-        for page in range(pages):
-            offset = per_page * page
-            params = {'$format': 'json', '$top': per_page,'$skip': offset}
-            results = bing.search('web',query.replace('#','').replace('&',''),params)()['d']['results'][0]['Web']
-            for result in results:
-                text += "... %s" % result['Title']
-                text += "... %s" % result['Description']
+    
+    for result in search_results:
+        text += "... %s" % result['title']
+        text += "... %s" % result['description']
             
     ngrams = Counter()
     texts = text.split('...')
@@ -192,6 +167,38 @@ def getcandidates(search_library, query, limit):
             for token in tokens:
                 ngrams[k] += ngrams[token]
     return ngrams 
+
+def websearch(search_library, query, limit):
+    ret = []
+    # Get the top 100 - I think it will let you get only 50 at a time.
+    per_page = 50
+    pages = int(math.ceil(limit / float(per_page)))
+
+    if search_library == 'pattern':
+        engine = Bing(license='cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM=', language="en")
+        for page in range(pages):
+            try:
+                # turns out start = starting page and count is results per page
+                # could probably do some logic to make sure count is right if limit was 130, on page 3, count should be 30, whereas 
+                # our code is going to fetch 50 for a total of 150. ... I think we can probably mess with that later and just work in blocks of 50
+                request = asynchronous(engine.search, q, start=page+1, count=per_page, type=SEARCH, timeout=10)
+                while not request.done:
+                    time.sleep(0.01)
+            except:
+                raise
+
+            for result in request.value:
+                ret.append({'title' : result.title, 'description' : result.text})
+            
+    elif search_library == 'requests':
+        for page in range(pages):
+            offset = per_page * page
+            params = {'$format': 'json', '$top': per_page,'$skip': offset}
+            results = bing.search('web',query.replace('#','').replace('&',''),params)()['d']['results'][0]['Web']
+            for result in results:
+                ret.append({'title' : result['Title'], 'description' : result['Description']})
+                
+    return ret
     
 # Lets do some work!
 if __name__ == '__main__':
@@ -208,8 +215,8 @@ if __name__ == '__main__':
     analyzer = StandardAnalyzer(Version.LUCENE_CURRENT)
     parser = MultiFieldQueryParser(Version.LUCENE_CURRENT, ['doctext', 'docheadline'], analyzer)
     
-    search_library = 'requests'
-    #search_library = 'pattern'
+    #search_library = 'requests'
+    search_library = 'pattern'
     
     search_engine = 'bing'
 
@@ -236,13 +243,15 @@ if __name__ == '__main__':
         if cache_reset == False and os.path.exists(cache_path):
             # continue # uncomment this just to cache a bunch of web results.
             with open(cache_path ,'rb') as fp:
-                c = pickle.load(fp)
+                web_results = pickle.load(fp)
         else:
-            c = getcandidates(search_library, q, lim)
+            web_results = websearch(search_library, q, lim)
             with open(cache_path ,'wb') as fp:
-                pickle.dump(c,fp)
+                pickle.dump(web_results,fp)
 
         # continue # uncomment this just to cache a bunch of web results.
+        
+        c = getcandidates(web_results)
         
         # TODO:up the lim and store these in lucene index.
         for r, count in c.most_common(lim):
