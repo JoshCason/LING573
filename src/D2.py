@@ -20,6 +20,8 @@ from collections import Counter
 import string
 #import web2candidates as web
 
+from qa_filters import qa_filters
+
 from lucene import \
     QueryParser, IndexSearcher, StandardAnalyzer, SimpleFSDirectory, File, \
     VERSION, initVM, Version, MultiFieldQueryParser
@@ -204,6 +206,21 @@ def websearch(search_library, query, limit):
 def clean_query(q):
     return q.replace('#','').replace('&','')
     
+# Apply Anthony's context filters
+def apply_filters(web_results, question, limit):
+    filters = qa_filters(web_results)
+    
+    # Initial weigh by rank index
+    filters.weigh_index_position()
+
+    # Weigh by question word type that have matching context in results
+    if question[0:4].lower() == 'when':
+        filters.weigh_temporal_context()
+    elif question[0:5].lower() == 'where':
+        filters.weigh_location_context()
+    
+    return filters.top(limit)
+    
 # Lets do some work!
 if __name__ == '__main__':
     # load config
@@ -276,7 +293,37 @@ if __name__ == '__main__':
             web_results = web_results[:(lim/2)] + web_results_exact[:(lim/2)]
 
         # continue # uncomment this just to cache a bunch of web results.
+        
+        # Apply Anthony's context filters
+        if config['include_exact_query_matches'] == 0:
+            # if we don't have to merge in exact query web results than just pass on through
+            web_results = apply_filters(web_results, question['question_text'], lim)
+        else:
+            # If we are combining results, lets filter than independently to maintain weighting by index rank
+            # Then merge the results together, remove duplicates, resort and cut the list by the limit.
+            web_results = apply_filters(web_results, question['question_text'], lim)
+            web_results_exact = apply_filters(web_results_exact, question['question_text'], lim)
+            web_results = web_results + web_results_exact
 
+            # lets remove duplicates, keeping the result that has a higher weight.
+            filters = qa_filters(web_results, 0)
+            web_results = filters.sort_by_weight().results
+
+            results = []
+            for r in web_results:
+                insert = True;
+                for r2 in results:
+                    if r['title'] == r2['title']:
+                        insert = False
+                        break
+                    
+                if (insert == True):
+                    results.append(r)
+                    
+            # at this point we could have less or more than are limit depending on the 
+            # results, so lets just cut list by limit so at the least we aren't dealing with more
+            web_results = results[:lim]
+        
         c = getcandidates(web_results, q)
         
         # TODO:up the lim and store these in lucene index.
