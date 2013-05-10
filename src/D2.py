@@ -11,7 +11,7 @@
 # @author Marie-Renee Arend <rcarend@uw.edu>
 # @author Joshua Cason <casonj@uw.edu>
 # @author Anthony Gentile <agentile@uw.edu>
-import sys, os, math, hashlib, cPickle as pickle
+import sys, os, math, hashlib, cPickle as pickle, json
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
@@ -126,7 +126,7 @@ def reform_trec_questions(trec_file):
 
     return questions
     
-def getcandidates(search_results):
+def getcandidates(search_results, query):
     text = ''
     
     for result in search_results:
@@ -181,7 +181,7 @@ def websearch(search_library, query, limit):
                 # turns out start = starting page and count is results per page
                 # could probably do some logic to make sure count is right if limit was 130, on page 3, count should be 30, whereas 
                 # our code is going to fetch 50 for a total of 150. ... I think we can probably mess with that later and just work in blocks of 50
-                request = asynchronous(engine.search, q, start=page+1, count=per_page, type=SEARCH, timeout=10)
+                request = asynchronous(engine.search, clean_query(query), start=page+1, count=per_page, type=SEARCH, timeout=10)
                 while not request.done:
                     time.sleep(0.01)
             except:
@@ -194,35 +194,45 @@ def websearch(search_library, query, limit):
         for page in range(pages):
             offset = per_page * page
             params = {'$format': 'json', '$top': per_page,'$skip': offset}
-            results = bing.search('web',query.replace('#','').replace('&',''),params)()['d']['results'][0]['Web']
+            results = bing.search('web',clean_query(query),params)()['d']['results'][0]['Web']
             for result in results:
                 ret.append({'title' : result['Title'], 'description' : result['Description']})
                 
     return ret
     
+# for our search libraries search things about our queries need cleaned
+def clean_query(q):
+    return q.replace('#','').replace('&','')
+    
 # Lets do some work!
 if __name__ == '__main__':
-    trec_file = os.path.realpath(sys.argv[1])
+    # load config
+    json_data=open('config')
+    config = json.load(json_data)
+    json_data.close()
+
+    try:
+        trec_file = os.path.realpath(sys.argv[1])
+    except:
+        trec_file = config['trec_file']
 
     # Retrieve pertinent info from TREC questions file
     questions = reform_trec_questions(trec_file)
     
     # Load up items to be able to search AQUAINT lucene index
-    STORE_DIR = "aquaint_index"
+    STORE_DIR = config['aquant_index_dir']
     initVM()
     directory = SimpleFSDirectory(File(STORE_DIR))
     searcher = IndexSearcher(directory, True)
     analyzer = StandardAnalyzer(Version.LUCENE_CURRENT)
     parser = MultiFieldQueryParser(Version.LUCENE_CURRENT, ['doctext', 'docheadline'], analyzer)
     
-    #search_library = 'requests'
-    search_library = 'pattern'
-    
-    search_engine = 'bing'
+    search_library = config['search_library_active']
+    search_engine = config['search_engine_active']
 
     # output file
-    out_file = '../outputs/D2.outputs'
-    run_tag = 'D2-' + str(int(time.time()))
+    out_file = '../outputs/' + config['deliverable'] + '.outputs'
+    run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
     for question in questions:
         q = question['question_target_combined']
@@ -233,14 +243,13 @@ if __name__ == '__main__':
         print "FETCHING WEB RESULTS"
         
         # blocks of 50
-        lim = 100
+        lim = config['web_results_limit']
         
         # Should check cache first
         cache_key = hashlib.md5(q + search_engine + search_library).hexdigest()
-        cache_path = 'web_cache/' + search_engine + '/' + search_library + '/' + cache_key
-        cache_reset = False
+        cache_path = config['web_cache_dir'] + '/' + search_engine + '/' + search_library + '/' + cache_key
         
-        if cache_reset == False and os.path.exists(cache_path):
+        if config['reset_web_cache'] == 0 and os.path.exists(cache_path):
             # continue # uncomment this just to cache a bunch of web results.
             with open(cache_path ,'rb') as fp:
                 web_results = pickle.load(fp)
@@ -248,10 +257,27 @@ if __name__ == '__main__':
             web_results = websearch(search_library, q, lim)
             with open(cache_path ,'wb') as fp:
                 pickle.dump(web_results,fp)
+                
+        # do we want to search for exact query web results as well and do some merging?
+        if config['include_exact_query_matches'] == 1:
+            cache_key = hashlib.md5('"' + q + '"' + search_engine + search_library).hexdigest()
+            cache_path = config['web_cache_dir'] + '/' + search_engine + '/' + search_library + '/' + cache_key
+            if config['reset_web_cache'] == 0 and os.path.exists(cache_path):
+                # continue # uncomment this just to cache a bunch of web results.
+                with open(cache_path ,'rb') as fp:
+                    web_results_exact = pickle.load(fp)
+            else:
+                web_results_exact = websearch(search_library, '"' + q + '"', lim)
+                with open(cache_path ,'wb') as fp:
+                    pickle.dump(web_results_exact,fp)
+                    
+            # right now just take the top half of each ... will probably need to do some sort of better merging here
+            # if we end up weighting based on result index.
+            web_results = web_results[:(lim/2)] + web_results_exact[:(lim/2)]
 
         # continue # uncomment this just to cache a bunch of web results.
-        
-        c = getcandidates(web_results)
+
+        c = getcandidates(web_results, q)
         
         # TODO:up the lim and store these in lucene index.
         for r, count in c.most_common(lim):

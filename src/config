@@ -1,0 +1,13 @@
+{
+    "search_libraries": ["pattern", "requests"],
+    "search_library_active": "requests",
+    "search_engines": ["bing", "google"],
+    "search_engine_active": "bing",
+    "aquant_index_dir": "aquaint_index",
+    "web_cache_dir": "web_cache",
+    "reset_web_cache": 0,
+    "web_results_limit": 100,
+    "include_exact_query_matches": 1,
+    "deliverable": "D3",
+    "trec_file": "/dropbox/12-13/573/Data/Questions/training/TREC-2005.xml"
+}
