@@ -21,6 +21,10 @@ class qa_filters:
     # from a 1.0 - 0.1 scale, so that the top ranked get 1.0 and the bottom gets 0.1
     def weigh_index_position(self):
         size = len(self.results)
+        
+        if size == 0:
+            return self
+            
         step = 0.9 / size
         position = 1
         for r in self.results:

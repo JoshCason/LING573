@@ -28,11 +28,7 @@ from lucene import \
     QueryParser, IndexSearcher, StandardAnalyzer, SimpleFSDirectory, File, \
     VERSION, initVM, Version, MultiFieldQueryParser
     
-
-
 import time
-
-
 
 # storing question words
 def classify_question(text):
@@ -72,11 +68,6 @@ def stem_query(mod_text):
         final_text += stemmed + ' '
     return final_text.strip()
 
-
-
-goalWords = {}
-hypernyms = []
-
 def processQuestion(q):
     # methods for finding synonyms/hypernyms/storing data
     wnTags = {'ADJ':'a','ADV':'r','N':'n','V':'v','VD':'v','VG':'v'}
@@ -87,6 +78,8 @@ def processQuestion(q):
     #TEST: print 'tagged words'
     simplified = [(word, simplify_wsj_tag(tag)) for word, tag in taggedWords] 
     #TEST: print taggedWords	
+    
+    goalWords = {}
     
 	#converts NLTK simplified tagset to WordNet-accepted tags
     for word, tag in simplified:
@@ -132,12 +125,15 @@ def findBestSense(goalWords, q):
                         count += 1
             senseRank[synset] = count
 			
-        sorted_senseRank = sorted(senseRank.iteritems(), key=operator.itemgetter(1))
-        optimumSense = len(sorted_senseRank)
-			
-        synonyms.append(key)			
-        for lemma in sorted_senseRank[optimumSense - 1][0].lemma_names:
-            synonyms.append(lemma)    
+        
+        # sorted descending and grab the first (optmium sense)
+        sorted_senseRank = sorted(senseRank.iteritems(), key=operator.itemgetter(1), reverse=True)
+
+        synonyms.append(key)	
+        
+        if len(sorted_senseRank) > 0:
+            for lemma in sorted_senseRank[0][0].lemma_names:
+                synonyms.append(lemma) 
 		
         senseRank.clear()
 
@@ -174,14 +170,18 @@ def reform_trec_questions(trec_file):
             q_dict['bag_of_words'] = remove_stopwords(q_dict['question_text'])
             q_dict['stemmed_query'] = stem_query(q_dict['bag_of_words'])
             
-            questions.append(q_dict)
+            # Commenting synonym processing out for now (as it is somewhat intensive and in question about 
+            # whether to be used or not
             
             # grabbing question text to find synonyms
-            processQuestion(q.text.strip())
-            synonyms = findBestSense(goalWords, q.text.strip())
+            #q_dict['synonyms'] = findBestSense(processQuestion(q.text.strip()), q.text.strip())
+
             #adding synonyms to question/target text
-            for synonym in synonyms:
-                q_dict['question_target_combined'] += ' ' + synonym + ' '
+            #q_dict['question_target_synonyms_combined'] = q_dict['question_target_combined']  
+            #for synonym in q_dict['synonyms']:
+            #    q_dict['question_target_synonyms_combined'] += ' ' + synonym + ' '
+                
+            questions.append(q_dict)
 
     return questions
     
