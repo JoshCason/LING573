@@ -135,7 +135,7 @@ def findBestSense(goalWords, q):
         optimumSense = len(sorted_senseRank)
 			
         synonyms.append(key)			
-        for lemma in sorted_senseRank[optimumSense - 1][0].lemmas:
+        for lemma in sorted_senseRank[optimumSense - 1][0].lemma_names:
             synonyms.append(lemma)    
 		
         senseRank.clear()
