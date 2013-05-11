@@ -70,7 +70,7 @@ def websearch(search_library, query, limit):
     return ret
 
 def getcandidates(search_results, query):
-    stopwords = set(stopwords.words('english'))
+    stop_words = set(stopwords.words('english'))
     punct = set(string.punctuation)
     
     text = ''
@@ -97,13 +97,13 @@ def getcandidates(search_results, query):
         remove = False
         tokens = k.split()
         if len(tokens) > 1:
-            if tokens[0] in stopwords: remove = True
-            if tokens[-1] in stopwords: remove = True
+            if tokens[0] in stop_words: remove = True
+            if tokens[-1] in stop_words: remove = True
             for token in tokens:
                 if stemmer.stem(token) in qwords: remove = True
                 if token in punct: remove = True
         else:
-            if k in stopwords: remove = True
+            if k in stop_words: remove = True
             if k in punct: remove = True
             if stemmer.stem(k) in qwords: remove = True
         if remove: del ngrams[k]
@@ -182,4 +182,4 @@ def getwebresults(question, config):
         # at this point we could have less or more than are limit depending on the 
         # results, so lets just cut list by limit so at the least we aren't dealing with more
         web_results = results[:lim]
-        return web_results
+    return web_results
