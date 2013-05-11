@@ -72,25 +72,30 @@ def websearch(search_library, query, limit):
 def getcandidates(search_results, query):
     stop_words = set(stopwords.words('english'))
     punct = set(string.punctuation)
-    
-    text = ''
-    
+        
+    ngrams = Counter()
     for result in search_results:
+        text = ''
         text += "... %s" % result['title']
         text += "... %s" % result['description']
-            
-    ngrams = Counter()
-    texts = text.split('...')
-    toked = []
-    for t in texts:
-        tokes = word_tokenize(t)
-        tokes = map(lambda x: x.lower(), tokes)
-        toked.append(tokes)
-    for tokens in toked:
-        ngrams.update(tokens)
-        ngrams.update(map(lambda x: ' '.join(x), bigramize(tokens)))
-        ngrams.update(map(lambda x: ' '.join(x), trigramize(tokens)))
-        ngrams.update(map(lambda x: ' '.join(x), quadrigramize(tokens)))
+        texts = text.split('...')
+        toked = []
+        for t in texts:
+            tokes = word_tokenize(t)
+            tokes = map(lambda x: x.lower(), tokes)
+            toked.append(tokes)
+        for tokens in toked:
+            bigrams = map(lambda x: ' '.join(x), bigramize(tokens))
+            trigrams = map(lambda x: ' '.join(x), trigramize(tokens))
+            quadrigrams = map(lambda x: ' '.join(x), quadrigramize(tokens))
+            for token in tokens:
+                ngrams[token] += result['weight']
+            for bigram in bigrams:
+                ngrams[bigram] += result['weight']
+            for trigram in trigrams:
+                ngrams[trigram] += result['weight']
+            for quadrigram in quadrigrams:
+                ngrams[quadrigram] += result['weight']
     stemmer = nltk.PorterStemmer()
     for k in ngrams.keys():
         qwords = set(map(lambda x: stemmer.stem(x.lower()), word_tokenize(query)))
