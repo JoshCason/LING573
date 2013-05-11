@@ -146,10 +146,6 @@ def getwebresults(question, config):
             web_results_exact = websearch(search_library, '"' + q + '"', lim)
             with open(cache_path ,'wb') as fp:
                 pickle.dump(web_results_exact,fp)
-                
-        # right now just take the top half of each ... will probably need to do some sort of better merging here
-        # if we end up weighting based on result index.
-        web_results = web_results[:(lim/2)] + web_results_exact[:(lim/2)]
 
     # continue # uncomment this just to cache a bunch of web results.
     
