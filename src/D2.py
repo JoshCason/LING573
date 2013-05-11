@@ -12,7 +12,11 @@
 # @author Joshua Cason <casonj@uw.edu>
 # @author Anthony Gentile <agentile@uw.edu>
 import sys, os, math, hashlib, cPickle as pickle, json
+import operator
 import nltk
+from nltk.corpus import wordnet as wn
+from nltk.tag import pos_tag
+from nltk.tag.simplify import simplify_wsj_tag
 import xml.etree.ElementTree as ET
 from webcandidates import getcandidates, getwebresults
 
@@ -57,8 +61,7 @@ def remove_stopwords(text):
                 mod_text += word.lower() + ' '				
     return mod_text.strip()
 
-# adding synonyms
-#def expand_query_vocab(mod_text):
+
     
 # stemming
 def stem_query(mod_text):
@@ -68,6 +71,94 @@ def stem_query(mod_text):
         stemmed = stemmer.stem(wordform)
         final_text += stemmed + ' '
     return final_text.strip()
+
+# methods for finding synonyms/hypernyms/storing data
+wnTags = {'ADJ':'a','ADV':'r','N':'n','V':'v','VD':'v','VG':'v'}
+
+goalWords = {}
+hypernyms = []
+synonyms = []
+
+def processQuestion(q, tagset):
+	#tags input question with simplified NLTK tagset
+    bagOfWords = nltk.word_tokenize(q)
+    #TEST: print 'tokenized'
+    taggedWords = nltk.pos_tag(bagOfWords)
+    #TEST: print 'tagged words'
+    simplified = [(word, simplify_wsj_tag(tag)) for word, tag in taggedWords] 
+    #TEST: print taggedWords	
+    
+	#converts NLTK simplified tagset to WordNet-accepted tags
+    for word, tag in simplified:
+	    if wnTags.has_key(tag):
+		    goalWords[word.lower()] = wnTags[tag]
+	
+    return goalWords		    
+
+def findBestSense(goalWords, q):
+    commonWords = 0
+    count = 0
+    maxCount = -1
+    optimumSense = ''
+    glossWords = []
+    senseRank = {}
+	
+    for key in goalWords.keys():
+        #TEST: print 'key =' + str(key)
+        POS = str(goalWords[key])
+	
+        for word in q:
+		    # for each word in the question:
+            senses = wn.synsets(word) # find all the senses for the word
+            for sense in senses: # for each sense of the question word
+                gloss = sense.definition # retrieve its definition
+                for w in gloss:
+                    if w not in glossWords:
+                    	glossWords.append(w)
+                    else:
+                        continue		    
+	
+        for synset in wn.synsets(key, POS):
+            #TEST: print synset
+	        # for each sense of the head word in the question:
+            count = 0
+            #TEST: print count
+		    # pull up the definition of that sense
+            goalWordGloss = synset.definition
+            for word in goalWordGloss:
+                for item in glossWords:
+                    if word.lower() == item.lower():
+                        count += 1
+            senseRank[synset] = count
+			
+        sorted_senseRank = sorted(senseRank.iteritems(), key=operator.itemgetter(1))
+        optimumSense = len(sorted_senseRank)
+        #TEST: print sorted_senseRank[optimumSense - 1]
+        hyps = sorted_senseRank[optimumSense - 1][0].hypernyms()
+        for hyp in hyps:
+            hypernyms.append(hyp.name.split('.')[0])
+
+			
+        synonyms.append(key)			
+        for lemma in sorted_senseRank[optimumSense - 1][0].lemmas:
+            synonyms.append(lemma)
+
+        results = []
+        wordDict = {}
+		
+        wordDict['key'] = key
+        wordDict['tag'] = key + '.' + POS
+        wordDict['synset'] = key + '.' + str(sorted_senseRank[optimumSense - 1][0])
+		
+        for i in range(len(hyps)):
+            whichHyp = 'hypernym' + str(i)
+            wordDict[whichHyp] = key + '.' + str(hyps[i])
+
+        results.append(wordDict)		    
+		
+        senseRank.clear()
+
+    return results
 
 def reform_trec_questions(trec_file):
     tree = ET.parse(trec_file)
@@ -99,6 +190,13 @@ def reform_trec_questions(trec_file):
             q_dict['stemmed_query'] = stem_query(q_dict['bag_of_words'])
             
             questions.append(q_dict)
+            
+            # grabbing question text to find synonyms
+            processQuestion(q.text.strip(), wnTags)
+            findBestSense(goalWords, q.text.strip())
+            #adding synonyms to question/target text
+            for synonym in synonyms:
+                q_dict['question_target_combined'] += ' ' + synonym + ' '
 
     return questions
     
