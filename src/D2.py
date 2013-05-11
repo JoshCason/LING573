@@ -215,6 +215,9 @@ if __name__ == '__main__':
     run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
     for question in questions:
+        if question['question_id'] <= '205.4':
+            continue
+            
         q = question['question_target_combined']
             
         print q
@@ -222,13 +225,24 @@ if __name__ == '__main__':
         # Get Web Results leveraging N-Grams
         print "FETCHING WEB RESULTS"
         
-        web_results = getwebresults(question, config)
+        # Fetch web results ...sometimes we get SSL certificate errors when the requests
+        # library attempts a search, so lets retry a few times until we get something before bailing
+        web_results_fetched = False
+        web_results_fetch_attempts = 3
+        attempts = 0
+        while web_results_fetched == False and attempts < web_results_fetch_attempts:
+            attempts += 1
+            try:
+                web_results = getwebresults(question, config)
+                web_results_fetched = True
+            except:
+                web_results_fetched = False
         
         c = getcandidates(web_results, q)
         
         lim = config['web_results_limit']
         # TODO:up the lim and store these in lucene index.
-        for r, count in c.most_common(lim):
+        for r, count in c.most_common(config['answer_candidates_limit']):
             # now for each we get the supporting AQUAINT doc
             
             # Search AQUAINT lucene 
