@@ -72,13 +72,14 @@ def stem_query(mod_text):
         final_text += stemmed + ' '
     return final_text.strip()
 
-# methods for finding synonyms/hypernyms/storing data
-wnTags = {'ADJ':'a','ADV':'r','N':'n','V':'v','VD':'v','VG':'v'}
+
 
 goalWords = {}
 hypernyms = []
 
-def processQuestion(q, tagset):
+def processQuestion(q):
+    # methods for finding synonyms/hypernyms/storing data
+    wnTags = {'ADJ':'a','ADV':'r','N':'n','V':'v','VD':'v','VG':'v'}
 	#tags input question with simplified NLTK tagset
     bagOfWords = nltk.word_tokenize(q)
     #TEST: print 'tokenized'
@@ -107,7 +108,7 @@ def findBestSense(goalWords, q):
         #TEST: print 'key =' + str(key)
         POS = str(goalWords[key])
 	
-        for word in q:
+        for word in goalWords.keys():
 		    # for each word in the question:
             senses = wn.synsets(word) # find all the senses for the word
             for sense in senses: # for each sense of the question word
@@ -176,7 +177,7 @@ def reform_trec_questions(trec_file):
             questions.append(q_dict)
             
             # grabbing question text to find synonyms
-            processQuestion(q.text.strip(), wnTags)
+            processQuestion(q.text.strip())
             synonyms = findBestSense(goalWords, q.text.strip())
             #adding synonyms to question/target text
             for synonym in synonyms:
