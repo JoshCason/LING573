@@ -77,7 +77,6 @@ wnTags = {'ADJ':'a','ADV':'r','N':'n','V':'v','VD':'v','VG':'v'}
 
 goalWords = {}
 hypernyms = []
-synonyms = []
 
 def processQuestion(q, tagset):
 	#tags input question with simplified NLTK tagset
@@ -96,6 +95,7 @@ def processQuestion(q, tagset):
     return goalWords		    
 
 def findBestSense(goalWords, q):
+    synonyms = []
     commonWords = 0
     count = 0
     maxCount = -1
@@ -133,32 +133,14 @@ def findBestSense(goalWords, q):
 			
         sorted_senseRank = sorted(senseRank.iteritems(), key=operator.itemgetter(1))
         optimumSense = len(sorted_senseRank)
-        #TEST: print sorted_senseRank[optimumSense - 1]
-        hyps = sorted_senseRank[optimumSense - 1][0].hypernyms()
-        for hyp in hyps:
-            hypernyms.append(hyp.name.split('.')[0])
-
 			
         synonyms.append(key)			
         for lemma in sorted_senseRank[optimumSense - 1][0].lemmas:
-            synonyms.append(lemma)
-
-        results = []
-        wordDict = {}
-		
-        wordDict['key'] = key
-        wordDict['tag'] = key + '.' + POS
-        wordDict['synset'] = key + '.' + str(sorted_senseRank[optimumSense - 1][0])
-		
-        for i in range(len(hyps)):
-            whichHyp = 'hypernym' + str(i)
-            wordDict[whichHyp] = key + '.' + str(hyps[i])
-
-        results.append(wordDict)		    
+            synonyms.append(lemma)    
 		
         senseRank.clear()
 
-    return results
+    return synonyms
 
 def reform_trec_questions(trec_file):
     tree = ET.parse(trec_file)
@@ -184,6 +166,8 @@ def reform_trec_questions(trec_file):
                 q_dict['question_target_combined'] = q_dict['question_text']
             else:
                 q_dict['question_target_combined'] = q_dict['target_text'] + ' ' + q_dict['question_text']
+            
+            q_dict['question_target_combined']  
 
             q_dict['classification'] = classify_question(q_dict['question_text'])
             q_dict['bag_of_words'] = remove_stopwords(q_dict['question_text'])
@@ -193,7 +177,7 @@ def reform_trec_questions(trec_file):
             
             # grabbing question text to find synonyms
             processQuestion(q.text.strip(), wnTags)
-            findBestSense(goalWords, q.text.strip())
+            synonyms = findBestSense(goalWords, q.text.strip())
             #adding synonyms to question/target text
             for synonym in synonyms:
                 q_dict['question_target_combined'] += ' ' + synonym + ' '
