@@ -215,8 +215,10 @@ if __name__ == '__main__':
     run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
     for question in questions:
-        if question['question_id'] <= '205.4':
-            continue
+        # this is a crude means of picking up where a run left off if it fails for some reason
+        # you need to find the last question_id in the output file
+        #if question['question_id'] <= '205.4':
+        #    continue
             
         q = question['question_target_combined']
             
