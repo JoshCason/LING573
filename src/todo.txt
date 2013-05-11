@@ -7,15 +7,3 @@ python2.7 aquaint_index.py
 python2.7 D2.py /dropbox/12-13/573/Data/Questions/training/TREC-2005.xml
 
 
-TODO:
-
-We want to combine some processes here, so we need to have web2candidates for each question not only 
-retrieve web results but also do a search against the AQUAINT index (as seen in aquaint_search.py)
-The results of both searches can then be evaluated and reranked based on the web results and the top N 
-answers be outputted to D2.outputs in the correct format. 
-
-Do we even need to bother storing web results for questions in lucene? I can see using it as a cache if 
-the question is asked again, but I don't think it is completely necessary for a working system. Perhaps 
-I am wrong. If so, let me know.
-
-
