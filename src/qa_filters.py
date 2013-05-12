@@ -52,8 +52,6 @@ class qa_filters:
         ]
         boost_multiplier = 1.2
         
-        already_boosted = []
-        
         return self.weigh_context_by_pattern(patterns, boost_multiplier)
         
     # while there are more robust packages for this like
