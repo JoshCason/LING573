@@ -215,13 +215,14 @@ if __name__ == '__main__':
     run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
     for question in questions:
+
         # this is a crude means of picking up where a run left off if it fails for some reason
         # you need to find the last question_id in the output file
         #if question['question_id'] <= '205.4':
         #    continue
             
         q = question['question_target_combined']
-            
+
         print q
         
         # Get Web Results leveraging N-Grams
@@ -243,7 +244,7 @@ if __name__ == '__main__':
         c = getcandidates(web_results, q)
         
         lim = config['web_results_limit']
-        # TODO:up the lim and store these in lucene index.
+
         for r, count in c.most_common(config['answer_candidates_limit']):
             # now for each we get the supporting AQUAINT doc
             
@@ -261,18 +262,7 @@ if __name__ == '__main__':
 
             qry = qry.strip()
 
-            whole_group = qry + '* OR ' + qry
-            parts_group = ''
-            terms = qry.split()
-            i = 0
-            for term in terms:
-                if term.strip() == '':
-                    continue
-                if i != 0:
-                    parts_group += ' OR '
-                parts_group += '(' + term.strip() + '* OR ' + term.strip() + ')'
-                i += 1
-            qry = '(' + whole_group + ' OR ' + parts_group + ')'
+            query = qry + '* OR ' + qry
             
             query = MultiFieldQueryParser.parse(parser, qry)
             
@@ -285,9 +275,6 @@ if __name__ == '__main__':
                 doc = searcher.doc(scoreDoc.doc)
                 # write to D2.outputs
                 f.write(u' '.join((question['question_id'], run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
-                
-        # lets just do the first one for now to not kill our rate quota
-        # sys.exit()
         
     f.close()
     searcher.close()

@@ -30,10 +30,14 @@ def apply_filters(web_results, question, limit):
     filters.weigh_index_position()
 
     # Weigh by question word type that have matching context in results
-    if question[0:4].lower() == 'when':
+    q = question.lower()
+
+    if q.startswith('when') or q.startswith('what year') or q.startswith('what month'):
         filters.weigh_temporal_context()
-    elif question[0:5].lower() == 'where':
+    elif q.startswith('where') or q.startswith('in what country') or q.startswith('in what state') or q.startswith('what country') or q.startswith('what state'):
         filters.weigh_location_context()
+    elif q.startswith('how many') or q.startswith('how much') or q.startswith('at what age') or q.startswith('how old'):
+        filters.weigh_numerical_context()
     
     return filters.top(limit)
 
