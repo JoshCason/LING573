@@ -143,6 +143,7 @@ def findBestSense(goalWords, q):
 def reform_trec_questions(trec_file):
     tree = ET.parse(trec_file)
     root = tree.getroot()
+    trecyear = root.attrib['year']
     
     # we will store pertinent data in an array of question dictionaries
     new_root = ET.Element('questions')
