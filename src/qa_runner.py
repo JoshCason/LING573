@@ -214,7 +214,7 @@ if __name__ == '__main__':
     parser = MultiFieldQueryParser(Version.LUCENE_CURRENT, ['doctext', 'docheadline'], analyzer)
 
     # output file
-    out_file = '../outputs/' + config['deliverable'] + '.test.outputs'
+    out_file = '../outputs/' + config['deliverable'] + '.outputs'
     run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
     for question in questions:
