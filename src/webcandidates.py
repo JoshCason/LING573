@@ -1,3 +1,12 @@
+#!/opt/python-2.7/bin/python2.7
+# -*- coding: utf-8 -*-
+# LING 573 - Spring 2013 - QA Project
+#
+# Web Candidates
+#
+# @author Marie-Renee Arend <rcarend@uw.edu>
+# @author Joshua Cason <casonj@uw.edu>
+# @author Anthony Gentile <agentile@uw.edu>
 import nltk
 from nltk.tokenize import word_tokenize
 from collections import Counter
@@ -41,6 +50,7 @@ def apply_filters(web_results, question, limit):
     
     return filters.top(limit)
 
+# search the web for a particular query using different libraries and engines
 def websearch(search_library, query, limit):
     ret = []
     # Get the top 100 - I think it will let you get only 50 at a time.
@@ -73,6 +83,7 @@ def websearch(search_library, query, limit):
                 
     return ret
 
+# grather up n-grams from our web search reslts
 def getcandidates(search_results, query):
     stop_words = set(stopwords.words('english'))
     punct = set(string.punctuation)
@@ -123,6 +134,8 @@ def getcandidates(search_results, query):
                 ngrams[k] += ngrams[token]
     return ngrams 
 
+# Take a TREC question and retrieve search results from the web. 
+# Leverage caching and exact query searching
 def getwebresults(question, config):
     q = question['question_target_combined']
     # blocks of 50

@@ -1,3 +1,10 @@
+#!/opt/python-2.7/bin/python2.7
+# -*- coding: utf-8 -*-
+# LING 573 - Spring 2013 - QA Project
+#
+# Classifier
+#
+# @author Joshua Cason <casonj@uw.edu>
 import subprocess
 import json
 

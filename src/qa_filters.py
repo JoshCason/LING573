@@ -67,10 +67,20 @@ class qa_filters:
         already_boosted = []
         
         for r in self.results:
+            pattern_matched = False
             for pattern in patterns:
                 if r['title'] not in already_boosted and (re.search(pattern, r['title'], re.IGNORECASE) or re.search(pattern, r['description'], re.IGNORECASE)):
                     r['weight'] = r['weight'] * boost_multiplier
                     already_boosted.append(r['title'])
+                    pattern_matched = True
+             
+            # if we remove results that don't match our pattern
+            # it seems that we get a increase in the strict score
+            # but a decrease in the lenient score. 
+            # TODO: play with this concept more
+            
+            #if pattern_matched == False:
+            #    self.results.remove(r)
                     
         return self
         

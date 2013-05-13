@@ -1,3 +1,10 @@
+#!/opt/python-2.7/bin/python2.7
+# -*- coding: utf-8 -*-
+# LING 573 - Spring 2013 - QA Project
+#
+# Utility functions
+#
+# @author Joshua Cason <casonj@uw.edu>
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
                     range(1,len(t)-2), \
