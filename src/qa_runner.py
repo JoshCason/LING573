@@ -187,6 +187,29 @@ def reform_trec_questions(trec_file):
 
     return questions
     
+def aquaint_search(searcher, parser, qry, wildcard = False):
+    # replace any lucene keywords
+    replacements = [',','.',';','|','/','\\','OR','AND','+','-','NOT','~','TO',':','[',']','(',')','{','}','!','||','&&','^','*','?','"']
+    for p in replacements:
+        qry = qry.replace(p, '')
+
+    qry = qry.strip()
+
+    # wildcard matching
+    if wildcard == True:
+        qry = qry + '* OR ' + qry
+    
+    query = MultiFieldQueryParser.parse(parser, qry)
+    
+    # How many docs do we want back?
+    aquaint_lim = 1
+    scoreDocs = searcher.search(query, aquaint_lim).scoreDocs
+    if len(scoreDocs) == 0:
+        return False
+
+    for scoreDoc in scoreDocs:
+        return searcher.doc(scoreDoc.doc)
+    
 # Lets do some work! Main Runner
 if __name__ == '__main__':
     # load config
@@ -256,25 +279,9 @@ if __name__ == '__main__':
             # Add the ngram set to our question
             qry = q + ' ' + ngram_set
 
-            # replace any lucene keywords
-            replacements = [',','.',';','|','/','\\','OR','AND','+','-','NOT','~','TO',':','[',']','(',')','{','}','!','||','&&','^','*','?','"']
-            for p in replacements:
-                qry = qry.replace(p, '')
-
-            qry = qry.strip()
-
-            # wildcard matching
-            query = qry + '* OR ' + qry
+            doc = aquaint_search(searcher, parser, qry, True)
             
-            query = MultiFieldQueryParser.parse(parser, qry)
-            
-            # How many docs do we want back?
-            aquaint_lim = 1
-            scoreDocs = searcher.search(query, aquaint_lim).scoreDocs
-            print "FOUND %s AQUAINT RESULT(S)." % len(scoreDocs)
-    
-            for scoreDoc in scoreDocs:
-                doc = searcher.doc(scoreDoc.doc)
+            if doc is not False:
                 # write to D2.outputs
                 f.write(u' '.join((question['question_id'], run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
         
