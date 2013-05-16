@@ -85,7 +85,7 @@ def websearch(search_library, query, limit):
 
 # grather up n-grams from our web search reslts
 def getcandidates(search_results, query):
-    stop_words = set(stopwords.words('english'))
+    stop_words = set(stopwords.words('english')) | set(["'s"])
     punct = set(string.punctuation)
         
     ngrams = Counter()
