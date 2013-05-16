@@ -6,6 +6,7 @@
 #
 # @author Joshua Cason <casonj@uw.edu>
 import cPickle
+import re
 
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
@@ -31,7 +32,14 @@ class pattern:
         self.doclists = []
         self.doclists.append(doclist)
 
-import re
+"""
+Stole most of this code from compute_mrr.py written by UW faculty/TAs
+
+ I used this to get the pickledanswers file.
+Since we have the answers pickled now, this function will
+probably not be useful
+-j
+""" 
 def getanswerpatterns(patt_file):
     
     patt_f = open(patt_file,'r')
@@ -61,7 +69,16 @@ def getanswerpatterns(patt_file):
     patt_f.close()
     return patterns
 
-'''
+"""
+Stole most of this code from compute_mrr.py written by UW faculty/TAs
+
+You can use util.checkanswer to check whether a string contains
+an acceptable answer. You must supply the year (2001,2004,2005,or
+2006) and the question id. Doc number is optional if you want to
+test lucene.
+
+Returns True or False (type bool).
+
 >>> import util
 >>> util.checkanswer('2004','5.2','1958')
 True
@@ -83,7 +100,7 @@ True
 True
 >>> util.checkanswer('2004','5.2','isdvufv 1956sdibdfg')
 True
-'''
+"""
 def checkanswer(year_str,qid_str,ans_str, docno=None):
     mrr_type = ''
     if docno == None:
