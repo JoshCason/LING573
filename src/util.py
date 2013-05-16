@@ -5,6 +5,8 @@
 # Utility functions
 #
 # @author Joshua Cason <casonj@uw.edu>
+import cPickle
+
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
                     range(1,len(t)-2), \
@@ -18,3 +20,87 @@ trigramize = lambda t: [(t[x],t[y],t[z]) for (x,y,z) in \
 
 bigramize = lambda t: [(t[x],t[y]) for (x,y) in \
                 zip(range(len(t)-1),range(1,len(t)))]
+
+# treats Litkowski patterns as arrays of patts and doclists
+# where patts are regular expression patterns that match correct answers
+# and  doclist are list of docnos in which those patterns are valid
+class pattern:
+    def __init__(self,patt,doclist):
+        self.patts = []
+        self.patts.append(patt)
+        self.doclists = []
+        self.doclists.append(doclist)
+
+import re
+def getanswerpatterns(patt_file):
+    
+    patt_f = open(patt_file,'r')
+
+    patterns = {}
+
+    # Collect patters from pattern files
+    for pattline in patt_f.readlines():
+        pattline = pattline[:-1]
+        parts = re.split('\s+',pattline)
+        if len(parts) > 2:
+            qid = parts[0]
+            patt = ''
+            partct = 1
+            while partct < len(parts) and parts[partct].find('APW') < 0 and parts[partct].find('XIE') < 0 and parts[partct].find('NYT') < 0:
+                patt += parts[partct]+'\s*'
+                partct += 1
+            doclist = []
+            while partct < len(parts):
+                doclist.append(parts[partct])
+                partct += 1
+            if patterns.has_key(qid):
+                patterns[qid].patts.append(patt)
+                patterns[qid].doclists.append(doclist)
+            else:
+                patterns[qid] = pattern(patt,doclist)
+    patt_f.close()
+    return patterns
+
+'''
+>>> import util
+>>> util.checkanswer('2004','5.2','1958')
+True
+>>> util.checkanswer('2004','5.2','1956')
+True
+>>> util.checkanswer('2004','5.2','1956','NYT19980720.0082')
+True
+>>> util.checkanswer('2004','5.2','1956','NYT20000519.0335')
+True
+>>> util.checkanswer('2004','5.2','1956','NYT20000908.0136')
+False
+>>> util.checkanswer('2004','5.2','1957')
+False
+>>> util.checkanswer('2004','5.2','1952')
+False
+>>> util.checkanswer('2004','5.2','isdvufv 1956')
+True
+>>> util.checkanswer('2004','5.2','isdvufv 1956 sdibdfg')
+True
+>>> util.checkanswer('2004','5.2','isdvufv 1956sdibdfg')
+True
+'''
+def checkanswer(year_str,qid_str,ans_str, docno=None):
+    mrr_type = ''
+    if docno == None:
+        mrr_type = 'lenient'
+    else: mrr_type = 'strict'
+    qid = qid_str
+    f = open("pickledanswers",'rb')
+    allyears = cPickle.load(f)
+    if year_str in allyears:
+        patterns = allyears[year_str]
+    pct = 0
+    while pct < len(patterns[qid].patts):
+        if re.search(patterns[qid].patts[pct],ans_str) >= 0:
+            if (mrr_type != 'strict') or ((mrr_type == 'strict') and  (docno in patterns[qid].doclists[pct])):
+                return True
+        pct += 1
+    return False
+        
+    
+
