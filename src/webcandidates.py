@@ -15,6 +15,7 @@ import string
 from nltk.corpus import stopwords
 import sys, os, hashlib, cPickle as pickle, math
 from qa_filters import qa_filters
+from config573 import config
 sys.path.append('./requests/')
 from bing_search_api import BingSearchAPI
 
@@ -136,7 +137,7 @@ def getcandidates(search_results, query):
 
 # Take a TREC question and retrieve search results from the web. 
 # Leverage caching and exact query searching
-def getwebresults(question, config):
+def getwebresults(question):
     q = question['question_target_combined']
     # blocks of 50
     lim = config['web_results_limit']

@@ -3,6 +3,8 @@
     "search_library_active": "requests",
     "search_engines": ["bing", "google"],
     "search_engine_active": "bing",
+    "use_lucene_wildcard": true,
+    "questions_to_answer":0,
     "aquant_index_dir": "aquaint_index",
     "web_cache_dir": "web_cache",
     "reset_web_cache": 0,

@@ -19,6 +19,8 @@ from nltk.tag import pos_tag
 from nltk.tag.simplify import simplify_wsj_tag
 import xml.etree.ElementTree as ET
 from webcandidates import getcandidates, getwebresults
+from util import aquaint_search
+from config573 import config
 
 sys.path.insert(0, os.path.join("..", ".."))
 
@@ -187,35 +189,8 @@ def reform_trec_questions(trec_file):
 
     return questions
     
-def aquaint_search(searcher, parser, qry, wildcard = False):
-    # replace any lucene keywords
-    replacements = [',','.',';','|','/','\\','OR','AND','+','-','NOT','~','TO',':','[',']','(',')','{','}','!','||','&&','^','*','?','"']
-    for p in replacements:
-        qry = qry.replace(p, '')
-
-    qry = qry.strip()
-
-    # wildcard matching
-    if wildcard == True:
-        qry = qry + '* OR ' + qry
-    
-    query = MultiFieldQueryParser.parse(parser, qry)
-    
-    # How many docs do we want back?
-    aquaint_lim = 1
-    scoreDocs = searcher.search(query, aquaint_lim).scoreDocs
-    if len(scoreDocs) == 0:
-        return False
-
-    for scoreDoc in scoreDocs:
-        return searcher.doc(scoreDoc.doc)
-    
 # Lets do some work! Main Runner
 if __name__ == '__main__':
-    # load config
-    json_data=open('config')
-    config = json.load(json_data)
-    json_data.close()
 
     # load trec file from config or command line argument
     try:
@@ -228,20 +203,21 @@ if __name__ == '__main__':
 
     # Retrieve pertinent info from TREC questions file
     questions = reform_trec_questions(trec_file)
-    
-    # Load up items to be able to search AQUAINT lucene index
     STORE_DIR = config['aquant_index_dir']
-    initVM()
     directory = SimpleFSDirectory(File(STORE_DIR))
     searcher = IndexSearcher(directory, True)
-    analyzer = StandardAnalyzer(Version.LUCENE_CURRENT)
-    parser = MultiFieldQueryParser(Version.LUCENE_CURRENT, ['doctext', 'docheadline'], analyzer)
+    
 
     # output file
     out_file = '../outputs/' + config['deliverable'] + '.outputs'
     run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
-    for question in questions:
+    qta = config["questions_to_answer"]
+    assert(type(qta == int))
+    # Zero means do all questions - sorry can't comment the json
+    if qta == 0:
+        qta = len(questions)
+    for question in questions[:qta]:
 
         # this is a crude means of picking up where a run left off if it fails for some reason
         # you need to find the last question_id in the output file
@@ -263,7 +239,7 @@ if __name__ == '__main__':
         while web_results_fetched == False and attempts < web_results_fetch_attempts:
             attempts += 1
             try:
-                web_results = getwebresults(question, config)
+                web_results = getwebresults(question)
                 web_results_fetched = True
             except:
                 web_results_fetched = False
@@ -278,15 +254,14 @@ if __name__ == '__main__':
             # Search AQUAINT lucene 
             # Add the ngram set to our question
             qry = q + ' ' + ngram_set
-
-            doc = aquaint_search(searcher, parser, qry, True)
+            
+            doc = aquaint_search(qry, searcher)
             
             if doc is not False:
                 # write to D2.outputs
                 f.write(u' '.join((question['question_id'], run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
-        
-    f.close()
     searcher.close()
+    f.close()
     
     # End Timer
     end = datetime.now()
