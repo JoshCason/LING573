@@ -1,0 +1,8188 @@
+(dp1
+S'2006'
+p2
+(dp3
+S'155.4'
+p4
+(dp5
+S'question'
+p6
+S'What year did Chavez graduate from this school?'
+p7
+sS'target'
+p8
+S'Hugo Chavez'
+p9
+ssS'155.6'
+p10
+(dp11
+g6
+S'What percentage of the 2000 Presidential vote did Chavez receive?'
+p12
+sg8
+g9
+ssS'155.7'
+p13
+(dp14
+g6
+S"Who was Chavez's opponent in his 1998 Presidential race?"
+p15
+sg8
+g9
+ssS'155.1'
+p16
+(dp17
+g6
+S'Hugo Chavez is president of which country?'
+p18
+sg8
+g9
+ssS'155.2'
+p19
+(dp20
+g6
+S'How old was Hugo Chavez when first elected?'
+p21
+sg8
+g9
+ssS'155.3'
+p22
+(dp23
+g6
+S'Where did Chavez graduate from?'
+p24
+sg8
+g9
+ssS'163.3'
+p25
+(dp26
+g6
+S'In what year did Catherine the Great begin buying for the museum?'
+p27
+sg8
+S'Hermitage Museum'
+p28
+ssS'163.2'
+p29
+(dp30
+g6
+S'Along the banks of what river is the Hermitage Museum located?'
+p31
+sg8
+g28
+ssS'163.1'
+p32
+(dp33
+g6
+S'Where is the Hermitage Museum located?'
+p34
+sg8
+g28
+ssS'175.1'
+p35
+(dp36
+g6
+S'How old was Elian at the time of the shipwreck?'
+p37
+sg8
+S'repatriation of Elian Gonzales'
+p38
+ssS'163.7'
+p39
+(dp40
+g6
+S'Who is the director of the Hermitage?'
+p41
+sg8
+g28
+ssS'163.6'
+p42
+(dp43
+g6
+S'In what city will there be a satellite museum for the Hermitage?'
+p44
+sg8
+g28
+ssS'175.4'
+p45
+(dp46
+g6
+S'Who was the U.S. Attorney General at the time?'
+p47
+sg8
+g38
+ssS'175.5'
+p48
+(dp49
+g6
+S'On what date did Elian return to Cuba?'
+p50
+sg8
+g38
+ssS'161.1'
+p51
+(dp52
+g6
+S'In what city was the 1999 All-Star Game held?'
+p53
+sg8
+S'1999 Baseball All-Star Game'
+p54
+ssS'161.2'
+p55
+(dp56
+g6
+S'In what city was the 1999 Game originally scheduled?'
+p57
+sg8
+g54
+ssS'161.5'
+p58
+(dp59
+g6
+S'What is the seating capacity of the ballpark?'
+p60
+sg8
+g54
+ssS'161.4'
+p61
+(dp62
+g6
+S'What is the name of the ballpark where the game was played?'
+p63
+sg8
+g54
+ssS'161.7'
+p64
+(dp65
+g6
+S'Who was the Most Valuable Player (MVP) of the game?'
+p66
+sg8
+g54
+ssS'161.6'
+p67
+(dp68
+g6
+S'What was the date of the 1999 All-Star Game?'
+p69
+sg8
+g54
+ssS'153.2'
+p70
+(dp71
+g6
+S'Where was Hitchcock born?'
+p72
+sg8
+S'Alfred Hitchcock'
+p73
+ssS'153.3'
+p74
+(dp75
+g6
+S"What was Hitchcock's first movie?"
+p76
+sg8
+g73
+ssS'169.3'
+p77
+(dp78
+g6
+S'When was Stonehenge built?'
+p79
+sg8
+S'stone circles'
+p80
+ssS'153.1'
+p81
+(dp82
+g6
+S'When was Hitchcock born?'
+p83
+sg8
+g73
+ssS'153.6'
+p84
+(dp85
+g6
+S'When did Hitchcock die?'
+p86
+sg8
+g73
+ssS'153.7'
+p87
+(dp88
+g6
+S'Where did Hitchcock die?'
+p89
+sg8
+g73
+ssS'153.5'
+p90
+(dp91
+g6
+S'How many Oscar awards did Hitchcock win?'
+p92
+sg8
+g73
+ssS'177.1'
+p93
+(dp94
+g6
+S'What game can "Deep Blue" play?'
+p95
+sg8
+S'Deep Blue'
+p96
+ssS'177.2'
+p97
+(dp98
+g6
+S'Who won the match between Gary Kasparov and Deep Blue in February 1996?'
+p99
+sg8
+g96
+ssS'177.3'
+p100
+(dp101
+g6
+S'How much money was wagered in the 1996 match?'
+p102
+sg8
+g96
+ssS'177.4'
+p103
+(dp104
+g6
+S'The 1996 match consisted of how many games?'
+p105
+sg8
+g96
+ssS'177.5'
+p106
+(dp107
+g6
+S'Who won the match between Gary Kasparov and Deep Blue in May 1997?'
+p108
+sg8
+g96
+ssS'177.6'
+p109
+(dp110
+g6
+S'How many "moves per second" could Deep Blue scan in 1997?'
+p111
+sg8
+g96
+ssS'171.4'
+p112
+(dp113
+g6
+S'Who was the talent manager hired by Wynn to start new theaters, arenas and cabarets?'
+p114
+sg8
+S'Stephen Wynn'
+p115
+ssS'171.5'
+p116
+(dp117
+g6
+S"What is the name of Wynn's newest casino in Mississippi?"
+p118
+sg8
+g115
+ssS'171.2'
+p119
+(dp120
+g6
+S"What company acquired Wynn's Mirage Resorts in 2000?"
+p121
+sg8
+g115
+ssS'171.3'
+p122
+(dp123
+g6
+S'What is the name of the new Wynn casino opened in Las Vegas in 1998?'
+p124
+sg8
+g115
+ssS'171.1'
+p125
+(dp126
+g6
+S'When was Stephen Wynn born?'
+p127
+sg8
+g115
+ssS'173.4'
+p128
+(dp129
+g6
+S'How many tourists visited China in 1995 according to WTO reports?'
+p130
+sg8
+S'World Tourism Organization (WTO)'
+p131
+ssS'173.5'
+p132
+(dp133
+g6
+S'What continent had the highest tourism growth rate in 1997 according to WTO reports?'
+p134
+sg8
+g131
+ssS'173.1'
+p135
+(dp136
+g6
+S'In what country is the WTO headquartered?'
+p137
+sg8
+g131
+ssS'173.2'
+p138
+(dp139
+g6
+S'What country was the most popular tourist destination in 1995 according to WTO reports?'
+p140
+sg8
+g131
+ssS'173.3'
+p141
+(dp142
+g6
+S'Who was the director of the WTO in 1996?'
+p143
+sg8
+g131
+ssS'186.4'
+p144
+(dp145
+g6
+S'Which is the largest pyramid ever built?'
+p146
+sg8
+S'Pyramids of Egypt'
+p147
+ssS'175.2'
+p148
+(dp149
+g6
+S'Who was Elian staying with in Florida?'
+p150
+sg8
+g38
+ssS'186.6'
+p151
+(dp152
+g6
+S'How old are the three Great Pyramids?'
+p153
+sg8
+g147
+ssS'186.1'
+p154
+(dp155
+g6
+S'How many pyramids have been discovered in Egypt?'
+p156
+sg8
+g147
+ssS'186.2'
+p157
+(dp158
+g6
+S'In what city are the three Great Pyramids located?'
+p159
+sg8
+g147
+ssS'175.3'
+p160
+(dp161
+g6
+S"Where was Elian's father at the time?"
+p162
+sg8
+g38
+ssS'195.1'
+p163
+(dp164
+g6
+S'What was the date of the East Timor election on independence?'
+p165
+sg8
+S'East Timor Independence'
+p166
+ssS'195.2'
+p167
+(dp168
+g6
+S'What percentage of the vote was for independence?'
+p169
+sg8
+g166
+ssS'195.3'
+p170
+(dp171
+g6
+S'From what country did East Timor separate?'
+p172
+sg8
+g166
+ssS'195.4'
+p173
+(dp174
+g6
+S'In what year did this country invade East Timor?'
+p175
+sg8
+g166
+ssS'195.5'
+p176
+(dp177
+g6
+S'On what date did the International Force in East Timor (INTERFET) enter East Timor?'
+p178
+sg8
+g166
+ssS'195.7'
+p179
+(dp180
+g6
+S'On what date did INTERFET turn over control to UNTAET (U.N. Transitional Authority in East Timor)?'
+p181
+sg8
+g166
+ssS'193.6'
+p182
+(dp183
+g6
+S'In 2000, in how many countries did the WFP distribute food?'
+p184
+sg8
+S'World Food Program (WFP)'
+p185
+ssS'193.4'
+p186
+(dp187
+g6
+S'Who was the director of the WFP in 1997?'
+p188
+sg8
+g185
+ssS'193.5'
+p189
+(dp190
+g6
+S'The WFP is an agency of what organization?'
+p191
+sg8
+g185
+ssS'193.2'
+p192
+(dp193
+g6
+S'When was the WFP created?'
+p194
+sg8
+g185
+ssS'193.3'
+p195
+(dp196
+g6
+S'Who was the first director of the WFP?'
+p197
+sg8
+g185
+ssS'193.1'
+p198
+(dp199
+g6
+S'In what city is the WFP headquartered?'
+p200
+sg8
+g185
+ssS'188.2'
+p201
+(dp202
+g6
+S'What is the fat content of an avocado?'
+p203
+sg8
+S'avocados'
+p204
+ssS'191.5'
+p205
+(dp206
+g6
+S'Who was elected president of the International Rowing Federation in 1989?'
+p207
+sg8
+S'International Rowing Federation'
+p208
+ssS'191.6'
+p209
+(dp210
+g6
+S'How many boats raced in the 2000 Olympic Games in Sydney Australia?'
+p211
+sg8
+g208
+ssS'188.1'
+p212
+(dp213
+g6
+S'What U.S. state is the highest avocado producer?'
+p214
+sg8
+g204
+ssS'188.6'
+p215
+(dp216
+g6
+S'What insect pest threatens avocado crops?'
+p217
+sg8
+g204
+ssS'191.1'
+p218
+(dp219
+g6
+S'What abbreviation is the International Rowing Federation also known by?'
+p220
+sg8
+g208
+ssS'191.2'
+p221
+(dp222
+g6
+S'When was the International Rowing Federation Rowing World Cup first held?'
+p223
+sg8
+g208
+ssS'188.5'
+p224
+(dp225
+g6
+S'When was the first avocado plant cultivated in the U.S.?'
+p226
+sg8
+g204
+ssS'213.2'
+p227
+(dp228
+g6
+S'Who was she married to?'
+p229
+sg8
+S'Meg Ryan'
+p230
+ssS'180.2'
+p231
+(dp232
+g6
+S'How many seats are in the Lebanese Parliament?'
+p233
+sg8
+S'Lebanese Parliament'
+p234
+ssS'180.3'
+p235
+(dp236
+g6
+S'Who is the Speaker of the Lebanese Parliament?'
+p237
+sg8
+g234
+ssS'199.6'
+p238
+(dp239
+g6
+S'What year did Padre Pio first receive the stigmata?'
+p240
+sg8
+S'Padre Pio'
+p241
+ssS'180.1'
+p242
+(dp243
+g6
+S'In what city is the Lebanese Parliament located?'
+p244
+sg8
+g234
+ssS'180.6'
+p245
+(dp246
+g6
+S'How many years are in a term of the Lebanese Parliament?'
+p247
+sg8
+g234
+ssS'199.1'
+p248
+(dp249
+g6
+S'In what year was Padre Pio born?'
+p250
+sg8
+g241
+ssS'180.4'
+p251
+(dp252
+g6
+S'Who is the Deputy Speaker of the Lebanese Parliament?'
+p253
+sg8
+g234
+ssS'199.3'
+p254
+(dp255
+g6
+S'What year did Padre Pio die?'
+p256
+sg8
+g241
+ssS'182.1'
+p257
+(dp258
+g6
+S'How many performers appeared at the 1998 Edinburgh Fringe?'
+p259
+sg8
+S'1998 Edinburgh Fringe'
+p260
+ssS'182.2'
+p261
+(dp262
+g6
+S'What was the total number of performances at the 1998 Edinburgh Fringe?'
+p263
+sg8
+g260
+ssS'182.4'
+p264
+(dp265
+g6
+S'In what month is the Edinburgh Fringe held?'
+p266
+sg8
+g260
+ssS'182.5'
+p267
+(dp268
+g6
+S'In what country is the Edinburgh Fringe held?'
+p269
+sg8
+g260
+ssS'182.6'
+p270
+(dp271
+g6
+S'In what year was the Edinburgh Fringe begun?'
+p272
+sg8
+g260
+ssS'184.6'
+p273
+(dp274
+g6
+S"What was the women's winning time in the 1999 Chicago Marathon?"
+p275
+sg8
+S'1999 Chicago Marathon'
+p276
+ssS'169.1'
+p277
+(dp278
+g6
+S'When did the construction of stone circles begin in the UK?'
+p279
+sg8
+g80
+ssS'184.4'
+p280
+(dp281
+g6
+S"Who was the women's winner of the 1999 Chicago Marathon?"
+p282
+sg8
+g276
+ssS'184.5'
+p283
+(dp284
+g6
+S"What was the men's winning time in the 1999 Chicago Marathon?"
+p285
+sg8
+g276
+ssS'184.2'
+p286
+(dp287
+g6
+S'What was the distance of the 1999 Chicago Marathon?'
+p288
+sg8
+g276
+ssS'184.3'
+p289
+(dp290
+g6
+S"Who was the men's winner of the 1999 Chicago Marathon?"
+p291
+sg8
+g276
+ssS'184.1'
+p292
+(dp293
+g6
+S'What was the date of the 1999 Chicago Marathon?'
+p294
+sg8
+g276
+ssS'197.2'
+p295
+(dp296
+g6
+S'What year was this animal born?'
+p297
+sg8
+S'cloning of mammals (from adult cells)'
+p298
+ssS'197.3'
+p299
+(dp300
+g6
+S'At what institute was this procedure done?'
+p301
+sg8
+g298
+ssS'213.7'
+p302
+(dp303
+g6
+S'In what movie did she own a party-planning business?'
+p304
+sg8
+g230
+ssS'197.1'
+p305
+(dp306
+g6
+S'What animal was the first mammal successfully cloned from adult cells?'
+p307
+sg8
+g298
+ssS'169.2'
+p308
+(dp309
+g6
+S'Approximately how many stone circles have been found in the UK?'
+p310
+sg8
+g80
+ssS'169.4'
+p311
+(dp312
+g6
+S'In what county was Stonehenge built?'
+p313
+sg8
+g80
+ssS'169.6'
+p314
+(dp315
+g6
+S'What is the oldest stone circle in the UK?'
+p316
+sg8
+g80
+ssS'148.2'
+p317
+(dp318
+g6
+S'On what date did the massacre happen?'
+p319
+sg8
+S'tourists massacred at Luxor in 1997'
+p320
+ssS'148.3'
+p321
+(dp322
+g6
+S'How many people died from the massacre?'
+p323
+sg8
+g320
+ssS'200.5'
+p324
+(dp325
+g6
+S'How old was he when he died?'
+p326
+sg8
+S'Frank Sinatra'
+p327
+ssS'200.4'
+p328
+(dp329
+g6
+S'When did he die?'
+p330
+sg8
+g327
+ssS'200.1'
+p331
+(dp332
+g6
+S'In what city was Frank Sinatra born?'
+p333
+sg8
+g327
+ssS'200.3'
+p334
+(dp335
+g6
+S"What was Sinatra's first recording?"
+p336
+sg8
+g327
+ssS'200.2'
+p337
+(dp338
+g6
+S"What year was Sinatra's first performance?"
+p339
+sg8
+g327
+ssS'206.3'
+p340
+(dp341
+g6
+S'How much water fell on Johnstown?'
+p342
+sg8
+S'Johnstown flood'
+p343
+ssS'206.2'
+p344
+(dp345
+g6
+S'How many people perished in the Johnstown flood?'
+p346
+sg8
+g343
+ssS'206.1'
+p347
+(dp348
+g6
+S'When did the Johnstown flood occur?'
+p349
+sg8
+g343
+ssS'206.6'
+p350
+(dp351
+g6
+S'In what state is Johnstown?'
+p352
+sg8
+g343
+ssS'206.5'
+p353
+(dp354
+g6
+S'How old was the dam?'
+p355
+sg8
+g343
+ssS'206.4'
+p356
+(dp357
+g6
+S'What dam caused the Johnstown flood?'
+p358
+sg8
+g343
+ssS'204.1'
+p359
+(dp360
+g6
+S'Who founded the Church of Jesus Christ of Latter-day Saints?'
+p361
+sg8
+S'Church of Jesus Christ of Latter-day Saints (Mormons)'
+p362
+ssS'204.3'
+p363
+(dp364
+g6
+S'Where did the Mormon church begin?'
+p365
+sg8
+g362
+ssS'204.2'
+p366
+(dp367
+g6
+S'In what year was the church founded?'
+p368
+sg8
+g362
+ssS'204.4'
+p369
+(dp370
+g6
+S'How many members does it have?'
+p371
+sg8
+g362
+ssS'204.7'
+p372
+(dp373
+g6
+S'How many temples are in operation worldwide?'
+p374
+sg8
+g362
+ssS'204.6'
+p375
+(dp376
+g6
+S'Where is the capital of the Mormon Church?'
+p377
+sg8
+g362
+ssS'208.4'
+p378
+(dp379
+g6
+S'Under which dynasty was the wall built?'
+p380
+sg8
+S'Great Wall of China'
+p381
+ssS'208.1'
+p382
+(dp383
+g6
+S'How old is the Great Wall of China?'
+p384
+sg8
+g381
+ssS'208.3'
+p385
+(dp386
+g6
+S'How long was it used as a defense?'
+p387
+sg8
+g381
+ssS'208.2'
+p388
+(dp389
+g6
+S'How long is the Great Wall of China?'
+p390
+sg8
+g381
+ssS'202.7'
+p391
+(dp392
+g6
+S"What was Cole Porter's first professional musical?"
+p393
+sg8
+S'Cole Porter'
+p394
+ssS'202.6'
+p395
+(dp396
+g6
+S'How many songs did Cole Porter write?'
+p397
+sg8
+g394
+ssS'202.5'
+p398
+(dp399
+g6
+S"What was Cole Porter's last Broadway show?"
+p400
+sg8
+g394
+ssS'151.4'
+p401
+(dp402
+g6
+S'What tobacco company is a sponsor of the Winston Cup series?'
+p403
+sg8
+S'Winston Cup'
+p404
+ssS'202.2'
+p405
+(dp406
+g6
+S'What year was Cole Porter born?'
+p407
+sg8
+g394
+ssS'202.1'
+p408
+(dp409
+g6
+S'Where was Cole Porter born?'
+p410
+sg8
+g394
+ssS'210.6'
+p411
+(dp412
+g6
+S'What disease was she diagnosed with in 1995?'
+p413
+sg8
+S'Janet Reno'
+p414
+ssS'210.4'
+p415
+(dp416
+g6
+S'Where did she grow up?'
+p417
+sg8
+g414
+ssS'210.5'
+p418
+(dp419
+g6
+S'Who was her top Deputy Attorney in 1999?'
+p420
+sg8
+g414
+ssS'210.2'
+p421
+(dp422
+g6
+S'What position did she have immediately prior to 1993?'
+p423
+sg8
+g414
+ssS'210.3'
+p424
+(dp425
+g6
+S'Where was her father born?'
+p426
+sg8
+g414
+ssS'210.1'
+p427
+(dp428
+g6
+S'What government position did she assume in 1993?'
+p429
+sg8
+g414
+ssS'178.3'
+p430
+(dp431
+g6
+S'How much money did the Clinton Administration budget in 2000 for shutting down methamphetamine labs?'
+p432
+sg8
+S'methamphetamine labs'
+p433
+ssS'178.2'
+p434
+(dp435
+g6
+S'How many methamphetamine labs were dismantled nationwide in the U.S. in 1998?'
+p436
+sg8
+g433
+ssS'178.1'
+p437
+(dp438
+g6
+S'How many methamphetamine labs were dismantled in Arizona in 1998?'
+p439
+sg8
+g433
+ssS'212.1'
+p440
+(dp441
+g6
+S'What year was he born?'
+p442
+sg8
+S'Barry Manilow'
+p443
+ssS'178.5'
+p444
+(dp445
+g6
+S"What chemical company's labels were found on bottles in a methamphetamine lab?"
+p446
+sg8
+g433
+ssS'178.4'
+p447
+(dp448
+g6
+S'In what Texas town did the FBI and ATF destroy a compound killing dozens, but found no methamphetamine lab?'
+p449
+sg8
+g433
+ssS'167.2'
+p450
+(dp451
+g6
+S'How high is the Millennium Wheel?'
+p452
+sg8
+S'the Millennium Wheel'
+p453
+ssS'163.4'
+p454
+(dp455
+g6
+S'What is the size of the Hermitage Museum collection?'
+p456
+sg8
+g28
+ssS'214.2'
+p457
+(dp458
+g6
+S'Which TV network aired the pageant?'
+p459
+sg8
+S'2000 Miss America Pageant'
+p460
+ssS'214.3'
+p461
+(dp462
+g6
+S'What was the date of the pageant?'
+p463
+sg8
+g460
+ssS'214.1'
+p464
+(dp465
+g6
+S'Where was the pageant held?'
+p466
+sg8
+g460
+ssS'214.6'
+p467
+(dp468
+g6
+S'How many judges were in the pageant?'
+p469
+sg8
+g460
+ssS'214.4'
+p470
+(dp471
+g6
+S'Who was crowned Miss America 2000?'
+p472
+sg8
+g460
+ssS'214.5'
+p473
+(dp474
+g6
+S'What state was Miss America 2000 from?'
+p475
+sg8
+g460
+ssS'181.4'
+p476
+(dp477
+g6
+S'Who is the captain of Manchester United?'
+p478
+sg8
+S'Manchester United Football Club'
+p479
+ssS'150.5'
+p480
+(dp481
+g6
+S"What Boston bar was the inspiration for Cheers' bar?"
+p482
+sg8
+S'television show Cheers'
+p483
+ssS'164.4'
+p484
+(dp485
+g6
+S'How many Oscars has she been nominated for?'
+p486
+sg8
+S'Judi Dench'
+p487
+ssS'150.6'
+p488
+(dp489
+g6
+S'What year was the program first broadcast?'
+p490
+sg8
+g483
+ssS'150.1'
+p491
+(dp492
+g6
+S'In what year was the final episode telecast?'
+p493
+sg8
+g483
+ssS'150.3'
+p494
+(dp495
+g6
+S'Who played Diane Chambers?'
+p496
+sg8
+g483
+ssS'150.2'
+p497
+(dp498
+g6
+S'What network aired the show?'
+p499
+sg8
+g483
+ssS'156.3'
+p500
+(dp501
+g6
+S'Who took control of NASCAR from the founder?'
+p502
+sg8
+S'NASCAR'
+p503
+ssS'156.2'
+p504
+(dp505
+g6
+S'When was NASCAR founded?'
+p506
+sg8
+g503
+ssS'156.1'
+p507
+(dp508
+g6
+S'Who founded NASCAR?'
+p509
+sg8
+g503
+ssS'156.7'
+p510
+(dp511
+g6
+S'What is the record career total of victories in NASCAR?'
+p512
+sg8
+g503
+ssS'181.1'
+p513
+(dp514
+g6
+S'What British league does Manchester United play in?'
+p515
+sg8
+g479
+ssS'156.5'
+p516
+(dp517
+g6
+S'How much money does NASCAR generate from TV rights annually?'
+p518
+sg8
+g503
+ssS'186.5'
+p519
+(dp520
+g6
+S'What is the height of the largest pyramid?'
+p521
+sg8
+g147
+ssS'154.1'
+p522
+(dp523
+g6
+S'What year was Christopher Reeve paralyzed?'
+p524
+sg8
+S'Christopher Reeve'
+p525
+ssS'174.5'
+p526
+(dp527
+g6
+S'According to the AFBF, what is the average cost of a turkey dinner with all the trimmings?'
+p528
+sg8
+S'American Farm Bureau Federation (AFBF)'
+p529
+ssS'174.4'
+p530
+(dp531
+g6
+S'What was the total amount in disaster aid the AFBF asked congress for in July 1999?'
+p532
+sg8
+g529
+ssS'174.3'
+p533
+(dp534
+g6
+S'The AFBF represents how many families?'
+p535
+sg8
+g529
+ssS'174.2'
+p536
+(dp537
+g6
+S'Who was president of the AFBF in 1999?'
+p538
+sg8
+g529
+ssS'174.1'
+p539
+(dp540
+g6
+S'When was the AFBF founded?'
+p541
+sg8
+g529
+ssS'176.5'
+p542
+(dp543
+g6
+S'Who sings the song during the final credits?'
+p544
+sg8
+S'An Officer and a Gentleman'
+p545
+ssS'176.4'
+p546
+(dp547
+g6
+S'What song from the movie won an academy award?'
+p548
+sg8
+g545
+ssS'176.6'
+p549
+(dp550
+g6
+S'What Florida bar was featured in the movie?'
+p551
+sg8
+g545
+ssS'176.3'
+p552
+(dp553
+g6
+S'In what year did the movie win academy awards?'
+p554
+sg8
+g545
+ssS'176.2'
+p555
+(dp556
+g6
+S'Who directed the movie?'
+p557
+sg8
+g545
+ssS'183.7'
+p558
+(dp559
+g6
+S"How many seats did Mbeki's party win in the election?"
+p560
+sg8
+S'Thabo Mbeki elected president of South Africa'
+p561
+ssS'158.5'
+p562
+(dp563
+g6
+S'How many schools make up the university?'
+p564
+sg8
+S'Tufts University'
+p565
+ssS'158.4'
+p566
+(dp567
+g6
+S"What is Tufts' current endowment?"
+p568
+sg8
+g565
+ssS'158.7'
+p569
+(dp570
+g6
+S'Where is Tufts located?'
+p571
+sg8
+g565
+ssS'183.6'
+p572
+(dp573
+g6
+S'How old was Thabo Mbeki when he was elected president?'
+p574
+sg8
+g561
+ssS'158.1'
+p575
+(dp576
+g6
+S'Who became Tufts University President in 1992?'
+p577
+sg8
+g565
+ssS'158.3'
+p578
+(dp579
+g6
+S"What was Tufts' endowment in 1992 when he became president?"
+p580
+sg8
+g565
+ssS'158.2'
+p581
+(dp582
+g6
+S'Over which other university did he preside?'
+p583
+sg8
+g565
+ssS'183.1'
+p584
+(dp585
+g6
+S'On what date was Thabo Mbeki elected president of South Africa?'
+p586
+sg8
+g561
+ssS'150.4'
+p587
+(dp588
+g6
+S'Who played Sam Malone the bartender?'
+p589
+sg8
+g483
+ssS'152.6'
+p590
+(dp591
+g6
+S'How many children did Mozart have?'
+p592
+sg8
+S'Wolfgang Amadeus Mozart'
+p593
+ssS'152.5'
+p594
+(dp595
+g6
+S"Who was Mozart's rival?"
+p596
+sg8
+g593
+ssS'162.1'
+p597
+(dp598
+g6
+S'Myeloma is cancer in what part of the body?'
+p599
+sg8
+S'Multiple Myeloma'
+p600
+ssS'152.3'
+p601
+(dp602
+g6
+S'What year did Mozart die?'
+p603
+sg8
+g593
+ssS'152.2'
+p604
+(dp605
+g6
+S'When was Mozart born?'
+p606
+sg8
+g593
+ssS'152.1'
+p607
+(dp608
+g6
+S'Where was Mozart born?'
+p609
+sg8
+g593
+ssS'170.3'
+p610
+(dp611
+g6
+S'In what year did John Prine have a cancerous tumor removed?'
+p612
+sg8
+S'John Prine'
+p613
+ssS'170.2'
+p614
+(dp615
+g6
+S'What John Prine song was a #1 hit for George Strait?'
+p616
+sg8
+g613
+ssS'170.1'
+p617
+(dp618
+g6
+S'How many songs are on the album "In Spite of Ourselves"?'
+p619
+sg8
+g613
+ssS'170.4'
+p620
+(dp621
+g6
+S'For how many years did John Prine smoke?'
+p622
+sg8
+g613
+ssS'172.1'
+p623
+(dp624
+g6
+S'In what city and state did the business begin?'
+p625
+sg8
+S"Ben & Jerry's"
+p626
+ssS'202.3'
+p627
+(dp628
+g6
+S'What year did Cole Porter die?'
+p629
+sg8
+g394
+ssS'172.3'
+p630
+(dp631
+g6
+S"What is Ben's last name?"
+p632
+sg8
+g626
+ssS'172.2'
+p633
+(dp634
+g6
+S'What do Ben and Jerry produce?'
+p635
+sg8
+g626
+ssS'172.5'
+p636
+(dp637
+g6
+S"What rock band had a Ben & Jerry's flavor named after them?"
+p638
+sg8
+g626
+ssS'172.4'
+p639
+(dp640
+g6
+S"What is Jerry's last name?"
+p641
+sg8
+g626
+ssS'172.6'
+p642
+(dp643
+g6
+S"Unilever purchased Ben & Jerry's in 2000 for what price?"
+p644
+sg8
+g626
+ssS'156.6'
+p645
+(dp646
+g6
+S'Who holds the record of career victories in NASCAR?'
+p647
+sg8
+g503
+ssS'146.1'
+p648
+(dp649
+g6
+S'Who was the leader deposed by the overthrow?'
+p650
+sg8
+S'Pakistani government overthrown in 1999'
+p651
+ssS'146.2'
+p652
+(dp653
+g6
+S'When did the overthrown government come to power?'
+p654
+sg8
+g651
+ssS'146.3'
+p655
+(dp656
+g6
+S'What group accomplished the overthrow?'
+p657
+sg8
+g651
+ssS'146.4'
+p658
+(dp659
+g6
+S'Who was the nominal leader after the overthrow?'
+p660
+sg8
+g651
+ssS'146.5'
+p661
+(dp662
+g6
+S'For what crime was the deposed leader found guilty?'
+p663
+sg8
+g651
+ssS'201.1'
+p664
+(dp665
+g6
+S'When was Shakespeare born?'
+p666
+sg8
+S'William Shakespeare'
+p667
+ssS'213.3'
+p668
+(dp669
+g6
+S'When did she meet her husband?'
+p670
+sg8
+g230
+ssS'187.1'
+p671
+(dp672
+g6
+S'In what country is the origin of the Amazon River?'
+p673
+sg8
+S'Amazon River'
+p674
+ssS'187.3'
+p675
+(dp676
+g6
+S'How long is the Amazon River?'
+p677
+sg8
+g674
+ssS'187.2'
+p678
+(dp679
+g6
+S'In what country is the mouth of the Amazon River?'
+p680
+sg8
+g674
+ssS'187.5'
+p681
+(dp682
+g6
+S'In what mountain range does the Amazon River rise?'
+p683
+sg8
+g674
+ssS'187.6'
+p684
+(dp685
+g6
+S'What is the name of the Amazon River at its origin?'
+p686
+sg8
+g674
+ssS'213.5'
+p687
+(dp688
+g6
+S'In what movie did she own a bookstore?'
+p689
+sg8
+g230
+ssS'189.7'
+p690
+(dp691
+g6
+S'In what city did Rowling live in 2000?'
+p692
+sg8
+S'Joanne Kathleen Rowling'
+p693
+ssS'189.6'
+p694
+(dp695
+g6
+S'In what city was Rowling born?'
+p696
+sg8
+g693
+ssS'189.5'
+p697
+(dp698
+g6
+S"For which novel did she receive the Whitbread's Children's Book of the Year award in 2000?"
+p699
+sg8
+g693
+ssS'189.4'
+p700
+(dp701
+g6
+S'In what year did she start writing her first book?'
+p702
+sg8
+g693
+ssS'189.3'
+p703
+(dp704
+g6
+S'How much did this publisher pay for her first manuscript?'
+p705
+sg8
+g693
+ssS'189.2'
+p706
+(dp707
+g6
+S'Who publishes her books?'
+p708
+sg8
+g693
+ssS'192.2'
+p709
+(dp710
+g6
+S'Approximately how many people has ETA killed?'
+p711
+sg8
+S'Basque ETA'
+p712
+ssS'192.1'
+p713
+(dp714
+g6
+S'What does the acronym ETA stand for?'
+p715
+sg8
+g712
+ssS'213.6'
+p716
+(dp717
+g6
+S'Who was her male lead in that movie?'
+p718
+sg8
+g230
+ssS'192.6'
+p719
+(dp720
+g6
+S'What date did ETA announce that this cease-fire would end?'
+p721
+sg8
+g712
+ssS'192.5'
+p722
+(dp723
+g6
+S'What date will this cease-fire begin?'
+p724
+sg8
+g712
+ssS'192.4'
+p725
+(dp726
+g6
+S'On what date did ETA announce a cease-fire in 1998?'
+p727
+sg8
+g712
+ssS'190.1'
+p728
+(dp729
+g6
+S'In what city is the company headquartered?'
+p730
+sg8
+S'H. J. Heinz Co.'
+p731
+ssS'190.3'
+p732
+(dp733
+g6
+S'Which heir to the company fortune was killed in an aviation accident?'
+p734
+sg8
+g731
+ssS'190.2'
+p735
+(dp736
+g6
+S'Who became CEO of the company in 1998?'
+p737
+sg8
+g731
+ssS'190.5'
+p738
+(dp739
+g6
+S'Which disease does Heinz tout its ketchup as helping to prevent?'
+p740
+sg8
+g731
+ssS'190.4'
+p741
+(dp742
+g6
+S'What year was Heinz Ketchup introduced?'
+p743
+sg8
+g731
+ssS'142.4'
+p744
+(dp745
+g6
+S'When does the LPGA celebrate its 50th anniversary?'
+p746
+sg8
+S'LPGA'
+p747
+ssS'142.5'
+p748
+(dp749
+g6
+S'How many people were founders of LPGA?'
+p750
+sg8
+g747
+ssS'142.1'
+p751
+(dp752
+g6
+S'What does LPGA stand for?'
+p753
+sg8
+g747
+ssS'142.2'
+p754
+(dp755
+g6
+S'Where is the LPGA headquartered?'
+p756
+sg8
+g747
+ssS'142.3'
+p757
+(dp758
+g6
+S'How many events are part of the LPGA tour?'
+p759
+sg8
+g747
+ssS'166.2'
+p760
+(dp761
+g6
+S'How many humans died of avian flu in Hong Kong in 1997?'
+p762
+sg8
+S'avian flu outbreak in Hong Kong'
+p763
+ssS'166.3'
+p764
+(dp765
+g6
+S'How may chickens were slaughtered to stop further spread of the disease to humans?'
+p766
+sg8
+g763
+ssS'166.1'
+p767
+(dp768
+g6
+S'How many humans were infected with avian flu in Hong Kong in 1997?'
+p769
+sg8
+g763
+ssS'166.4'
+p770
+(dp771
+g6
+S'What strain of avian flu broke out in Hong Kong in 1997?'
+p772
+sg8
+g763
+ssS'166.5'
+p773
+(dp774
+g6
+S'What new strain of avian flu appeared in Hong Kong within the next two years?'
+p775
+sg8
+g763
+ssS'194.1'
+p776
+(dp777
+g6
+S'Where did the tournament take place?'
+p778
+sg8
+S'1996 World Chess Super Tournament'
+p779
+ssS'144.2'
+p780
+(dp781
+g6
+S'When was the division formed?'
+p782
+sg8
+S'82nd Airborne Division'
+p783
+ssS'144.3'
+p784
+(dp785
+g6
+S'How many personnel comprise the division?'
+p786
+sg8
+g783
+ssS'144.1'
+p787
+(dp788
+g6
+S'Where in the U.S. is the division based?'
+p789
+sg8
+g783
+ssS'144.4'
+p790
+(dp791
+g6
+S"What is the division's motto?"
+p792
+sg8
+g783
+ssS'144.5'
+p793
+(dp794
+g6
+S"What is the division's official song?"
+p795
+sg8
+g783
+ssS'191.3'
+p796
+(dp797
+g6
+S'What country won the first four overall International Rowing Federation Rowing World Cup titles?'
+p798
+sg8
+g208
+ssS'198.1'
+p799
+(dp800
+g6
+S'In what country is this facility located?'
+p801
+sg8
+S'Bushehr Nuclear Facility'
+p802
+ssS'198.2'
+p803
+(dp804
+g6
+S'What country is assisting with the development of this facility?'
+p805
+sg8
+g802
+ssS'198.5'
+p806
+(dp807
+g6
+S'What model reactor is being planned for this facility?'
+p808
+sg8
+g802
+ssS'198.4'
+p809
+(dp810
+g6
+S'What is the claimed primary purpose of this facility?'
+p811
+sg8
+g802
+ssS'198.6'
+p812
+(dp813
+g6
+S'What year did work on this facility originally start?'
+p814
+sg8
+g802
+ssS'181.7'
+p815
+(dp816
+g6
+S'What is the feeder club for Manchester United?'
+p817
+sg8
+g479
+ssS'164.1'
+p818
+(dp819
+g6
+S'Where was Judi Dench born?'
+p820
+sg8
+g487
+ssS'181.5'
+p821
+(dp822
+g6
+S'Who is the keeper for Manchester United?'
+p823
+sg8
+g479
+ssS'164.3'
+p824
+(dp825
+g6
+S'Who is she married to?'
+p826
+sg8
+g487
+ssS'181.3'
+p827
+(dp828
+g6
+S'Who is the manager of Manchester United?'
+p829
+sg8
+g479
+ssS'164.5'
+p830
+(dp831
+g6
+S'How many Oscars has she won?'
+p832
+sg8
+g487
+ssS'164.6'
+p833
+(dp834
+g6
+S'How many Tony Awards has she won?'
+p835
+sg8
+g487
+ssS'164.7'
+p836
+(dp837
+g6
+S'In what year was she born?'
+p838
+sg8
+g487
+ssS'196.6'
+p839
+(dp840
+g6
+S'In the Danish referendum of 2000, what percentage of the voters rejected adopting the Euro?'
+p841
+sg8
+S'Adoption of the Euro'
+p842
+ssS'196.5'
+p843
+(dp844
+g6
+S'In what year is the Euro scheduled to completely replace the national currencies?'
+p845
+sg8
+g842
+ssS'196.4'
+p846
+(dp847
+g6
+S'On what date was Greece allowed to adopt the Euro?'
+p848
+sg8
+g842
+ssS'196.2'
+p849
+(dp850
+g6
+S'How many European Union countries originally adopted the Euro?'
+p851
+sg8
+g842
+ssS'196.1'
+p852
+(dp853
+g6
+S'On what date was the Euro adopted?'
+p854
+sg8
+g842
+ssS'183.5'
+p855
+(dp856
+g6
+S"What was the biggest black opposition party at the time of Mbeki's election?"
+p857
+sg8
+g561
+ssS'162.4'
+p858
+(dp859
+g6
+S'How many Americans develop multiple myeloma every year?'
+p860
+sg8
+g600
+ssS'162.5'
+p861
+(dp862
+g6
+S'How many deaths are caused by multiple myeloma in the U.S. annually?'
+p863
+sg8
+g600
+ssS'162.2'
+p864
+(dp865
+g6
+S'What drug is used to treat myeloma?'
+p866
+sg8
+g600
+ssS'162.3'
+p867
+(dp868
+g6
+S'What other form of treatment has been used for multiple myeloma?'
+p869
+sg8
+g600
+ssS'183.3'
+p870
+(dp871
+g6
+S'What political party does Thabo Mbeki belong to?'
+p872
+sg8
+g561
+ssS'183.2'
+p873
+(dp874
+g6
+S'Whom did Thabo Mbeki succeed as president of South Africa?'
+p875
+sg8
+g561
+ssS'185.3'
+p876
+(dp877
+g6
+S'In what month is it held?'
+p878
+sg8
+S'Iditarod Race'
+p879
+ssS'185.2'
+p880
+(dp881
+g6
+S'In what city does the Iditarod end?'
+p882
+sg8
+g879
+ssS'185.1'
+p883
+(dp884
+g6
+S'In what city does the Iditarod start?'
+p885
+sg8
+g879
+ssS'185.7'
+p886
+(dp887
+g6
+S'What is the record time in which the Iditarod was won?'
+p888
+sg8
+g879
+ssS'185.6'
+p889
+(dp890
+g6
+S'How many miles long is the Iditarod?'
+p891
+sg8
+g879
+ssS'194.3'
+p892
+(dp893
+g6
+S'How many players participated?'
+p894
+sg8
+g779
+ssS'185.4'
+p895
+(dp896
+g6
+S'Who is the founder of the Iditarod?'
+p897
+sg8
+g879
+ssS'160.4'
+p898
+(dp899
+g6
+S'What was the record loan amount granted by the IMF?'
+p900
+sg8
+S'IMF'
+p901
+ssS'160.5'
+p902
+(dp903
+g6
+S'What does IMF stand for?'
+p904
+sg8
+g901
+ssS'160.6'
+p905
+(dp906
+g6
+S'When was the IMF founded?'
+p907
+sg8
+g901
+ssS'160.7'
+p908
+(dp909
+g6
+S'Where is the IMF headquartered?'
+p910
+sg8
+g901
+ssS'160.1'
+p911
+(dp912
+g6
+S'How many member nations are in the IMF?'
+p913
+sg8
+g901
+ssS'160.3'
+p914
+(dp915
+g6
+S'Which country received the largest loan ever granted by the IMF?'
+p916
+sg8
+g901
+ssS'168.4'
+p917
+(dp918
+g6
+S'What is his usual painting medium?'
+p919
+sg8
+S"Prince Charles' paintings"
+p920
+ssS'168.5'
+p921
+(dp922
+g6
+S'What are his usual subjects?'
+p923
+sg8
+g920
+ssS'168.6'
+p924
+(dp925
+g6
+S'What other prince showed his paintings in a two-prince exhibition with Prince Charles in London?'
+p926
+sg8
+g920
+ssS'168.1'
+p927
+(dp928
+g6
+S'Approximately how many paintings has Prince Charles completed?'
+p929
+sg8
+g920
+ssS'168.3'
+p930
+(dp931
+g6
+S'What is the record amount ever paid for one of his paintings?'
+p932
+sg8
+g920
+ssS'194.2'
+p933
+(dp934
+g6
+S'When did this tournament conclude?'
+p935
+sg8
+g779
+ssS'154.3'
+p936
+(dp937
+g6
+S'During what years were these "Superman" movies made?'
+p938
+sg8
+g525
+ssS'154.2'
+p939
+(dp940
+g6
+S'How many "Superman" movies did he make?'
+p941
+sg8
+g525
+ssS'154.5'
+p942
+(dp943
+g6
+S'What year did Reeve commence his theatrical career?'
+p944
+sg8
+g525
+ssS'154.4'
+p945
+(dp946
+g6
+S'Which actress co-starred in the most "Superman" movies with Reeve?'
+p947
+sg8
+g525
+ssS'211.3'
+p948
+(dp949
+g6
+S'What year did she die?'
+p950
+sg8
+S'Patsy Cline'
+p951
+ssS'211.2'
+p952
+(dp953
+g6
+S'Who was she married to?'
+p954
+sg8
+g951
+ssS'211.1'
+p955
+(dp956
+g6
+S'What year was she inducted into the Hollywood Walk of Fame?'
+p957
+sg8
+g951
+ssS'211.6'
+p958
+(dp959
+g6
+S'What was the name of her producer?'
+p960
+sg8
+g951
+ssS'211.5'
+p961
+(dp962
+g6
+S'What movie was based on her life?'
+p963
+sg8
+g951
+ssS'211.4'
+p964
+(dp965
+g6
+S'How did she die?'
+p966
+sg8
+g951
+ssS'209.1'
+p967
+(dp968
+g6
+S'Where did she grow up?'
+p969
+sg8
+S'Carolyn Bessette Kennedy'
+p970
+ssS'209.2'
+p971
+(dp972
+g6
+S'Which high school did she go to?'
+p973
+sg8
+g970
+ssS'209.3'
+p974
+(dp975
+g6
+S'Which college did she go to?'
+p976
+sg8
+g970
+ssS'209.4'
+p977
+(dp978
+g6
+S'Who was she married to?'
+p979
+sg8
+g970
+ssS'209.5'
+p980
+(dp981
+g6
+S'When was she married?'
+p982
+sg8
+g970
+ssS'209.6'
+p983
+(dp984
+g6
+S'On what date did she die?'
+p985
+sg8
+g970
+ssS'213.1'
+p986
+(dp987
+g6
+S"What was Meg Ryan's name at birth?"
+p988
+sg8
+g230
+ssS'199.4'
+p989
+(dp990
+g6
+S'How old was Padre Pio when he died?'
+p991
+sg8
+g241
+ssS'201.2'
+p992
+(dp993
+g6
+S'Where was Shakespeare born?'
+p994
+sg8
+g667
+ssS'201.3'
+p995
+(dp996
+g6
+S'When did Shakespeare die?'
+p997
+sg8
+g667
+ssS'201.4'
+p998
+(dp999
+g6
+S'How old was Shakespeare when he died?'
+p1000
+sg8
+g667
+ssS'201.5'
+p1001
+(dp1002
+g6
+S'How many sonnets did Shakespeare write?'
+p1003
+sg8
+g667
+ssS'201.6'
+p1004
+(dp1005
+g6
+S'How many plays did Shakespeare write?'
+p1006
+sg8
+g667
+ssS'199.5'
+p1007
+(dp1008
+g6
+S"In what city is Padre Pio's tomb?"
+p1009
+sg8
+g241
+ssS'207.6'
+p1010
+(dp1011
+g6
+S'How high is the Tower of Pisa?'
+p1012
+sg8
+S'Leaning Tower of Pisa'
+p1013
+ssS'207.4'
+p1014
+(dp1015
+g6
+S"How much was the Tower of Pisa straightened in the 1990's?"
+p1016
+sg8
+g1013
+ssS'207.5'
+p1017
+(dp1018
+g6
+S'What was the cost of preservation of the Tower of Pisa?'
+p1019
+sg8
+g1013
+ssS'207.2'
+p1020
+(dp1021
+g6
+S'How long did it take to build the Tower of Pisa?'
+p1022
+sg8
+g1013
+ssS'207.3'
+p1023
+(dp1024
+g6
+S'What is the tilt angle of the Tower of Pisa?'
+p1025
+sg8
+g1013
+ssS'207.1'
+p1026
+(dp1027
+g6
+S'The Tower of Pisa began to be built in what year?'
+p1028
+sg8
+g1013
+ssS'199.2'
+p1029
+(dp1030
+g6
+S'Where was Padre Pio born?'
+p1031
+sg8
+g241
+ssS'215.6'
+p1032
+(dp1033
+g6
+S'Which film won three awards at the festival?'
+p1034
+sg8
+S'1999 Sundance Film Festival'
+p1035
+ssS'215.5'
+p1036
+(dp1037
+g6
+S'Which film won the Dramatic Screen Play Award at the festival?'
+p1038
+sg8
+g1035
+ssS'215.4'
+p1039
+(dp1040
+g6
+S'Which actress appeared in two films shown at the festival?'
+p1041
+sg8
+g1035
+ssS'215.3'
+p1042
+(dp1043
+g6
+S'When was the festival held?'
+p1044
+sg8
+g1035
+ssS'215.2'
+p1045
+(dp1046
+g6
+S'What is the name of the artistic director of the festival?'
+p1047
+sg8
+g1035
+ssS'215.1'
+p1048
+(dp1049
+g6
+S'Where was the festival held?'
+p1050
+sg8
+g1035
+ssS'205.4'
+p1051
+(dp1052
+g6
+S'How many people were evacuated?'
+p1053
+sg8
+S'1991 eruption of Mount Pinatubo'
+p1054
+ssS'205.5'
+p1055
+(dp1056
+g6
+S'How long had Mt. Pinatubo been dormant?'
+p1057
+sg8
+g1054
+ssS'205.1'
+p1058
+(dp1059
+g6
+S'On what island is Mt. Pinatubo?'
+p1060
+sg8
+g1054
+ssS'205.2'
+p1061
+(dp1062
+g6
+S'In what month did it erupt?'
+p1063
+sg8
+g1054
+ssS'205.3'
+p1064
+(dp1065
+g6
+S'How many people were killed?'
+p1066
+sg8
+g1054
+ssS'212.5'
+p1067
+(dp1068
+g6
+S"For what female singer was he the musical director and pianist in the 70's?"
+p1069
+sg8
+g443
+ssS'203.2'
+p1070
+(dp1071
+g6
+S'Who is president of Nissan Corp.?'
+p1072
+sg8
+S'Nissan Corp.'
+p1073
+ssS'203.1'
+p1074
+(dp1075
+g6
+S'What position is Nissan among Japanese automakers?'
+p1076
+sg8
+g1073
+ssS'203.6'
+p1077
+(dp1078
+g6
+S'What was Nissan formerly known as?'
+p1079
+sg8
+g1073
+ssS'203.4'
+p1080
+(dp1081
+g6
+S'In what city is Nissan headquartered?'
+p1082
+sg8
+g1073
+ssS'203.5'
+p1083
+(dp1084
+g6
+S'What is the Nissan Corp. luxury car?'
+p1085
+sg8
+g1073
+ssS'143.3'
+p1086
+(dp1087
+g6
+S'When was it founded?'
+p1088
+sg8
+S'American Enterprise Institute'
+p1089
+ssS'143.2'
+p1090
+(dp1091
+g6
+S'What is the full title of the organization?'
+p1092
+sg8
+g1089
+ssS'143.5'
+p1093
+(dp1094
+g6
+S'What is the zip code of the American Enterprise Institute?'
+p1095
+sg8
+g1089
+ssS'151.5'
+p1096
+(dp1097
+g6
+S'On what day of the week are races for the Winston Cup run?'
+p1098
+sg8
+g404
+ssS'151.6'
+p1099
+(dp1100
+g6
+S'What is considered the minor league for the Winston Cup series?'
+p1101
+sg8
+g404
+ssS'157.7'
+p1102
+(dp1103
+g6
+S'Who is the Secretary-General for political affairs?'
+p1104
+sg8
+S'United Nations (U.N.)'
+p1105
+ssS'157.4'
+p1106
+(dp1107
+g6
+S'How often does the presidency of the Security Council rotate?'
+p1108
+sg8
+g1105
+ssS'157.5'
+p1109
+(dp1110
+g6
+S'Who was the President of the U.N. Security Council for August 1999?'
+p1111
+sg8
+g1105
+ssS'157.2'
+p1112
+(dp1113
+g6
+S'How many non-permanent members are in the Security Council?'
+p1114
+sg8
+g1105
+ssS'179.6'
+p1115
+(dp1116
+g6
+S'What did Hedy Lamarr invent?'
+p1117
+sg8
+S'Hedy Lamarr'
+p1118
+ssS'212.4'
+p1119
+(dp1120
+g6
+S'What music school did he attend?'
+p1121
+sg8
+g443
+ssS'179.4'
+p1122
+(dp1123
+g6
+S'On what date did Hedy Lamarr die?'
+p1124
+sg8
+g1118
+ssS'179.2'
+p1125
+(dp1126
+g6
+S'What was her name at birth?'
+p1127
+sg8
+g1118
+ssS'179.3'
+p1128
+(dp1129
+g6
+S'In what city was she born?'
+p1130
+sg8
+g1118
+ssS'179.1'
+p1131
+(dp1132
+g6
+S"What was the date of Hedy Lamarr's birth?"
+p1133
+sg8
+g1118
+ssS'157.1'
+p1134
+(dp1135
+g6
+S'What was the number of member nations of the U.N. in 2000?'
+p1136
+sg8
+g1105
+ssS'212.6'
+p1137
+(dp1138
+g6
+S'What record label did he sing for in 2000?'
+p1139
+sg8
+g443
+ssS'212.2'
+p1140
+(dp1141
+g6
+S'How many times has he married?'
+p1142
+sg8
+g443
+ssS'212.3'
+p1143
+(dp1144
+g6
+S'What is the name of the musical that he wrote about the Harmonistas?'
+p1145
+sg8
+g443
+ssS'149.3'
+p1146
+(dp1147
+g6
+S'Who is host of The Daily Show?'
+p1148
+sg8
+S'The Daily Show'
+p1149
+ssS'149.2'
+p1150
+(dp1151
+g6
+S'The Daily Show parodies what other type of TV program?'
+p1152
+sg8
+g1149
+ssS'149.1'
+p1153
+(dp1154
+g6
+S'The Daily Show appears on what cable channel?'
+p1155
+sg8
+g1149
+ssS'149.6'
+p1156
+(dp1157
+g6
+S"What was the title for The Daily Show's 2000 election coverage?"
+p1158
+sg8
+g1149
+ssS'149.5'
+p1159
+(dp1160
+g6
+S'Who is the creator of The Daily Show?'
+p1161
+sg8
+g1149
+ssS'149.4'
+p1162
+(dp1163
+g6
+S'At what time is The Daily Show initially televised?'
+p1164
+sg8
+g1149
+ssS'181.2'
+p1165
+(dp1166
+g6
+S'What is the name of the stadium in Manchester where Manchester United plays?'
+p1167
+sg8
+g479
+ssS'148.4'
+p1168
+(dp1169
+g6
+S'At what site in Luxor did the massacre occur?'
+p1170
+sg8
+g320
+ssS'148.5'
+p1171
+(dp1172
+g6
+S'Which terrorist organization claimed responsibility for the massacre?'
+p1173
+sg8
+g320
+ssS'147.5'
+p1174
+(dp1175
+g6
+S"What was the Prince's occupation?"
+p1176
+sg8
+S"Britain's Prince Edward marries"
+p1177
+ssS'147.4'
+p1178
+(dp1179
+g6
+S'Where was Edward in line for the throne at the time of the wedding?'
+p1180
+sg8
+g1177
+ssS'147.6'
+p1181
+(dp1182
+g6
+S'How many people viewed the wedding on television?'
+p1183
+sg8
+g1177
+ssS'147.1'
+p1184
+(dp1185
+g6
+S'When did Prince Edward engage to marry?'
+p1186
+sg8
+g1177
+ssS'147.3'
+p1187
+(dp1188
+g6
+S'Where did they honeymoon?'
+p1189
+sg8
+g1177
+ssS'147.2'
+p1190
+(dp1191
+g6
+S'Who did the Prince marry?'
+p1192
+sg8
+g1177
+ssS'141.3'
+p1193
+(dp1194
+g6
+S'In what year was Moon born?'
+p1195
+sg8
+S'Warren Moon'
+p1196
+ssS'141.2'
+p1197
+(dp1198
+g6
+S'Where did Moon play in college?'
+p1199
+sg8
+g1196
+ssS'141.1'
+p1200
+(dp1201
+g6
+S'What position did Moon play in professional football?'
+p1202
+sg8
+g1196
+ssS'141.5'
+p1203
+(dp1204
+g6
+S"Who is Warren Moon's agent?"
+p1205
+sg8
+g1196
+ssS'141.4'
+p1206
+(dp1207
+g6
+S'How many times was Moon a Pro Bowler?'
+p1208
+sg8
+g1196
+ssS'159.1'
+p1209
+(dp1210
+g6
+S'What year was Wal-Mart founded?'
+p1211
+sg8
+S'Wal-Mart'
+p1212
+ssS'159.2'
+p1213
+(dp1214
+g6
+S'Who founded Wal-Mart?'
+p1215
+sg8
+g1212
+ssS'148.1'
+p1216
+(dp1217
+g6
+S'In what country is Luxor?'
+p1218
+sg8
+g320
+ssS'159.4'
+p1219
+(dp1220
+g6
+S'How many Wal-Mart employees are there in the U.S.?'
+p1221
+sg8
+g1212
+ssS'159.5'
+p1222
+(dp1223
+g6
+S'How many stores does Wal-Mart operate world-wide?'
+p1224
+sg8
+g1212
+ssS'159.6'
+p1225
+(dp1226
+g6
+S'How many Wal-Mart outlets are there in India?'
+p1227
+sg8
+g1212
+ssS'159.7'
+p1228
+(dp1229
+g6
+S'How many Wal-Mart outlets are there in China?'
+p1230
+sg8
+g1212
+ssS'143.1'
+p1231
+(dp1232
+g6
+S'Where is the Institute located?'
+p1233
+sg8
+g1089
+ssS'151.1'
+p1234
+(dp1235
+g6
+S'How many races are part of the Winston Cup series?'
+p1236
+sg8
+g404
+ssS'167.5'
+p1237
+(dp1238
+g6
+S'How many passenger capsules does it contain?'
+p1239
+sg8
+g453
+ssS'167.4'
+p1240
+(dp1241
+g6
+S'Who built it?'
+p1242
+sg8
+g453
+ssS'167.3'
+p1243
+(dp1244
+g6
+S'What is its popular name?'
+p1245
+sg8
+g453
+ssS'143.4'
+p1246
+(dp1247
+g6
+S'Who is the senior vice president of the American Enterprise Institute?'
+p1248
+sg8
+g1089
+ssS'167.1'
+p1249
+(dp1250
+g6
+S'In what city is the Millennium Wheel located?'
+p1251
+sg8
+g453
+ssS'165.5'
+p1252
+(dp1253
+g6
+S'How many interviews has she granted the Press in her 100 years on earth?'
+p1254
+sg8
+S"the Queen Mum's 100th Birthday"
+p1255
+ssS'165.4'
+p1256
+(dp1257
+g6
+S"What was the Queen Mother's birth name?"
+p1258
+sg8
+g1255
+ssS'165.7'
+p1259
+(dp1260
+g6
+S'What was his title when he died?'
+p1261
+sg8
+g1255
+ssS'165.6'
+p1262
+(dp1263
+g6
+S"What was her husband's title when she married him?"
+p1264
+sg8
+g1255
+ssS'165.1'
+p1265
+(dp1266
+g6
+S"In what year was the Queen Mum's 100th Birthday celebrated?"
+p1267
+sg8
+g1255
+ssS'157.3'
+p1268
+(dp1269
+g6
+S'How long does a non-permanent member serve on the Security Council?'
+p1270
+sg8
+g1105
+ssS'165.2'
+p1271
+(dp1272
+g6
+S'What color was the dress that she wore at her birthday lunch?'
+p1273
+sg8
+g1255
+ssS'145.5'
+p1274
+(dp1275
+g6
+S'Who was the victim of the murder?'
+p1276
+sg8
+S'John William King convicted of murder'
+p1277
+ssS'145.4'
+p1278
+(dp1279
+g6
+S'When was King convicted?'
+p1280
+sg8
+g1277
+ssS'145.3'
+p1281
+(dp1282
+g6
+S'Where was the trial held?'
+p1283
+sg8
+g1277
+ssS'145.2'
+p1284
+(dp1285
+g6
+S'Who was the foreman for the jury?'
+p1286
+sg8
+g1277
+ssS'145.1'
+p1287
+(dp1288
+g6
+S'How many non-white members of the jury were there?'
+p1289
+sg8
+g1277
+sssS'2004'
+p1290
+(dp1291
+S'35.2'
+p1292
+(dp1293
+g6
+S'How many years was he with GE?'
+p1294
+sg8
+S'Jack Welch'
+p1295
+ssS'35.3'
+p1296
+(dp1297
+g6
+S'When did he retire from GE?'
+p1298
+sg8
+g1295
+ssS'35.1'
+p1299
+(dp1300
+g6
+S'When did Jack Welch become chairman of General Electric?'
+p1301
+sg8
+g1295
+ssS'52.3'
+p1302
+(dp1303
+g6
+S'Who founded it?'
+p1304
+sg8
+S'Burger King'
+p1305
+ssS'52.2'
+p1306
+(dp1307
+g6
+S'Where was the first restaurant opened?'
+p1308
+sg8
+g1305
+ssS'35.4'
+p1309
+(dp1310
+g6
+S'How many people did he fire from GE?'
+p1311
+sg8
+g1295
+ssS'7.2'
+p1312
+(dp1313
+g6
+S'What is their average life span?'
+p1314
+sg8
+S'agouti'
+p1315
+ssS'12.2'
+p1316
+(dp1317
+g6
+S'Where is the company located?'
+p1318
+sg8
+S'Rohm and Haas'
+p1319
+ssS'12.1'
+p1320
+(dp1321
+g6
+S'What industry is Rohm and Haas in?'
+p1322
+sg8
+g1319
+ssS'7.1'
+p1323
+(dp1324
+g6
+S'What kind of animal is an agouti?'
+p1325
+sg8
+g1315
+ssS'65.6'
+p1326
+(dp1327
+g6
+S'How long did the Challenger flight last before it exploded?'
+p1328
+sg8
+S'space shuttles'
+p1329
+ssS'6.2'
+p1330
+(dp1331
+g6
+S'Where do Rhodes scholars study?'
+p1332
+sg8
+S'Rhodes scholars'
+p1333
+ssS'6.1'
+p1334
+(dp1335
+g6
+S'How long does one study as a Rhodes scholar?'
+p1336
+sg8
+g1333
+ssS'12.4'
+p1337
+(dp1338
+g6
+S'How many employees does it have?'
+p1339
+sg8
+g1319
+ssS'37.1'
+p1340
+(dp1341
+g6
+S'How many members are there in the singing group the Wiggles?'
+p1342
+sg8
+S'Wiggles'
+p1343
+ssS'37.3'
+p1344
+(dp1345
+g6
+S'Where is the group from?'
+p1346
+sg8
+g1343
+ssS'50.1'
+p1347
+(dp1348
+g6
+S'When was Cassini launched?'
+p1349
+sg8
+S'Cassini space probe'
+p1350
+ssS'50.3'
+p1351
+(dp1352
+g6
+S'What is its destination?'
+p1353
+sg8
+g1350
+ssS'50.2'
+p1354
+(dp1355
+g6
+S'How much did it cost to build?'
+p1356
+sg8
+g1350
+ssS'10.1'
+p1357
+(dp1358
+g6
+S'What are prions made of?'
+p1359
+sg8
+S'prions'
+p1360
+ssS'10.2'
+p1361
+(dp1362
+g6
+S'Who discovered prions?'
+p1363
+sg8
+g1360
+ssS'43.1'
+p1364
+(dp1365
+g6
+S'Who established the awards?'
+p1366
+sg8
+S'Nobel prize'
+p1367
+ssS'33.3'
+p1368
+(dp1369
+g6
+S'Where was she born?'
+p1370
+sg8
+S'Florence Nightingale'
+p1371
+ssS'44.6'
+p1372
+(dp1373
+g6
+S'How much is the Sacajawea coin worth?'
+p1374
+sg8
+S'Sacajawea'
+p1375
+ssS'44.4'
+p1376
+(dp1377
+g6
+S'When did she die?'
+p1378
+sg8
+g1375
+ssS'44.5'
+p1379
+(dp1380
+g6
+S'Where is she buried?'
+p1381
+sg8
+g1375
+ssS'44.2'
+p1382
+(dp1383
+g6
+S'What years did she accompany Lewis and Clark on their expedition?'
+p1384
+sg8
+g1375
+ssS'16.2'
+p1385
+(dp1386
+g6
+S'How are they treated?'
+p1387
+sg8
+S'cataract'
+p1388
+ssS'16.1'
+p1389
+(dp1390
+g6
+S'What is the primary symptom of a cataract?'
+p1391
+sg8
+g1388
+ssS'44.1'
+p1392
+(dp1393
+g6
+S'What tribe did Sacajawea belong to?'
+p1394
+sg8
+g1375
+ssS'43.4'
+p1395
+(dp1396
+g6
+S'What is the monetary value of the prize?'
+p1397
+sg8
+g1367
+ssS'52.4'
+p1398
+(dp1399
+g6
+S"What are Burger King's gross sales today?"
+p1400
+sg8
+g1305
+ssS'45.2'
+p1401
+(dp1402
+g6
+S'What is its mission?'
+p1403
+sg8
+S'International Finance Corporation (IFC)'
+p1404
+ssS'45.1'
+p1405
+(dp1406
+g6
+S'When was the IFC established?'
+p1407
+sg8
+g1404
+ssS'52.1'
+p1408
+(dp1409
+g6
+S'When was the first Burger King restaurant opened?'
+p1410
+sg8
+g1305
+ssS'26.4'
+p1411
+(dp1412
+g6
+S'Where was he born?'
+p1413
+sg8
+S'Ice-T'
+p1414
+ssS'26.2'
+p1415
+(dp1416
+g6
+S'What was his original name?'
+p1417
+sg8
+g1414
+ssS'26.3'
+p1418
+(dp1419
+g6
+S'When was he born?'
+p1420
+sg8
+g1414
+ssS'26.1'
+p1421
+(dp1422
+g6
+S'What kind of singer is Ice-T?'
+p1423
+sg8
+g1414
+ssS'14.4'
+p1424
+(dp1425
+g6
+S'Who was his father?'
+p1426
+sg8
+S'Horus'
+p1427
+ssS'47.2'
+p1428
+(dp1429
+g6
+S'What is his party affiliation?'
+p1430
+sg8
+S'Bashar Assad'
+p1431
+ssS'14.1'
+p1432
+(dp1433
+g6
+S'Horus is the god of what?'
+p1434
+sg8
+g1427
+ssS'14.3'
+p1435
+(dp1436
+g6
+S'Who was his mother?'
+p1437
+sg8
+g1427
+ssS'14.2'
+p1438
+(dp1439
+g6
+S'What country is he associated with?'
+p1440
+sg8
+g1427
+ssS'24.1'
+p1441
+(dp1442
+g6
+S'When was he born?'
+p1443
+sg8
+S'architect Frank Gehry'
+p1444
+ssS'24.2'
+p1445
+(dp1446
+g6
+S'What nationality is he?'
+p1447
+sg8
+g1444
+ssS'24.3'
+p1448
+(dp1449
+g6
+S'Where did he study architecture?'
+p1450
+sg8
+g1444
+ssS'22.2'
+p1451
+(dp1452
+g6
+S'When was he born?'
+p1453
+sg8
+S'Franz Kafka'
+p1454
+ssS'22.3'
+p1455
+(dp1456
+g6
+S'What is his ethnic background?'
+p1457
+sg8
+g1454
+ssS'49.5'
+p1458
+(dp1459
+g6
+S'Where was he captured?'
+p1460
+sg8
+S'Carlos the Jackal'
+p1461
+ssS'22.1'
+p1462
+(dp1463
+g6
+S'Where was Franz Kafka born?'
+p1464
+sg8
+g1454
+ssS'49.3'
+p1465
+(dp1466
+g6
+S'Whom did he marry?'
+p1467
+sg8
+g1461
+ssS'49.2'
+p1468
+(dp1469
+g6
+S'Where was he born?'
+p1470
+sg8
+g1461
+ssS'49.1'
+p1471
+(dp1472
+g6
+S"What is Carlos' real name?"
+p1473
+sg8
+g1461
+ssS'65.2'
+p1474
+(dp1475
+g6
+S'Which was the first shuttle?'
+p1476
+sg8
+g1329
+ssS'54.1'
+p1477
+(dp1478
+g6
+S'Where was she born?'
+p1479
+sg8
+S'Eileen Marie Collins'
+p1480
+ssS'54.3'
+p1481
+(dp1482
+g6
+S'Whom did she marry?'
+p1483
+sg8
+g1480
+ssS'54.2'
+p1484
+(dp1485
+g6
+S'How many siblings does she have?'
+p1486
+sg8
+g1480
+ssS'54.5'
+p1487
+(dp1488
+g6
+S'Where does she live?'
+p1489
+sg8
+g1480
+ssS'54.4'
+p1490
+(dp1491
+g6
+S'How many children does she have?'
+p1492
+sg8
+g1480
+ssS'54.7'
+p1493
+(dp1494
+g6
+S'What is her occupation?'
+p1495
+sg8
+g1480
+ssS'55.1'
+p1496
+(dp1497
+g6
+S'Where was he born?'
+p1498
+sg8
+S'Walter Mosley'
+p1499
+ssS'55.2'
+p1500
+(dp1501
+g6
+S'When was he born?'
+p1502
+sg8
+g1499
+ssS'55.3'
+p1503
+(dp1504
+g6
+S'How old was he when he began writing?'
+p1505
+sg8
+g1499
+ssS'34.4'
+p1506
+(dp1507
+g6
+S'Who is the president or chief executive of Amtrak?'
+p1508
+sg8
+S'Amtrak'
+p1509
+ssS'34.3'
+p1510
+(dp1511
+g6
+S'How many employees does it have?'
+p1512
+sg8
+g1509
+ssS'34.2'
+p1513
+(dp1514
+g6
+S'How many passengers does it serve annually?'
+p1515
+sg8
+g1509
+ssS'34.1'
+p1516
+(dp1517
+g6
+S'When did Amtrak begin operations?'
+p1518
+sg8
+g1509
+ssS'3.2'
+p1519
+(dp1520
+g6
+S'How often does it approach the earth?'
+p1521
+sg8
+S'Hale Bopp comet'
+p1522
+ssS'3.1'
+p1523
+(dp1524
+g6
+S'When was the comet discovered?'
+p1525
+sg8
+g1522
+ssS'36.5'
+p1526
+(dp1527
+g6
+S'When was the Khmer Rouge removed from power?'
+p1528
+sg8
+S'Khmer Rouge'
+p1529
+ssS'2.2'
+p1530
+(dp1531
+g6
+S'What record company is he with?'
+p1532
+sg8
+S'Fred Durst'
+p1533
+ssS'2.1'
+p1534
+(dp1535
+g6
+S"What is the name of Durst's group?"
+p1536
+sg8
+g1533
+ssS'36.1'
+p1537
+(dp1538
+g6
+S'In what country did this movement take place?'
+p1539
+sg8
+g1529
+ssS'36.3'
+p1540
+(dp1541
+g6
+S'Who was its first leader?'
+p1542
+sg8
+g1529
+ssS'2.4'
+p1543
+(dp1544
+g6
+S'Where was Durst born?'
+p1545
+sg8
+g1533
+ssS'20.1'
+p1546
+(dp1547
+g6
+S'In what year did the first Concorde passenger flight take place?'
+p1548
+sg8
+S'Concorde'
+p1549
+ssS'20.3'
+p1550
+(dp1551
+g6
+S'How many seats are in the cabin of a Concorde?'
+p1552
+sg8
+g1549
+ssS'20.4'
+p1553
+(dp1554
+g6
+S'How fast does the Concorde fly?'
+p1555
+sg8
+g1549
+ssS'20.5'
+p1556
+(dp1557
+g6
+S'What year was the first Concorde crash?'
+p1558
+sg8
+g1549
+ssS'54.8'
+p1559
+(dp1560
+g6
+S'What branch of the service did she serve in?'
+p1561
+sg8
+g1480
+ssS'61.3'
+p1562
+(dp1563
+g6
+S'What is its goal?'
+p1564
+sg8
+S'Muslim Brotherhood'
+p1565
+ssS'64.1'
+p1566
+(dp1567
+g6
+S"What was Johnny Appleseed's real name?"
+p1568
+sg8
+S'Johnny Appleseed'
+p1569
+ssS'49.4'
+p1570
+(dp1571
+g6
+S'When was he captured?'
+p1572
+sg8
+g1461
+ssS'39.1'
+p1573
+(dp1574
+g6
+S'What kind of music does the band play?'
+p1575
+sg8
+S'The Clash'
+p1576
+ssS'65.3'
+p1577
+(dp1578
+g6
+S'When was the first flight?'
+p1579
+sg8
+g1329
+ssS'40.2'
+p1580
+(dp1581
+g6
+S'What town was he native of?'
+p1582
+sg8
+S'Chester Nimitz'
+p1583
+ssS'40.3'
+p1584
+(dp1585
+g6
+S'What branch of the military did he serve in?'
+p1586
+sg8
+g1583
+ssS'40.1'
+p1587
+(dp1588
+g6
+S'When was Nimitz born?'
+p1589
+sg8
+g1583
+ssS'40.4'
+p1590
+(dp1591
+g6
+S'During what war did he serve?'
+p1592
+sg8
+g1583
+ssS'40.5'
+p1593
+(dp1594
+g6
+S'What rank did he reach?'
+p1595
+sg8
+g1583
+ssS'27.3'
+p1596
+(dp1597
+g6
+S'Where does she live?'
+p1598
+sg8
+S'Jennifer Capriati'
+p1599
+ssS'27.2'
+p1600
+(dp1601
+g6
+S'Who is her coach?'
+p1602
+sg8
+g1599
+ssS'27.1'
+p1603
+(dp1604
+g6
+S'What sport does Jennifer Capriati play?'
+p1605
+sg8
+g1599
+ssS'27.4'
+p1606
+(dp1607
+g6
+S'When was she born?'
+p1608
+sg8
+g1599
+ssS'42.1'
+p1609
+(dp1610
+g6
+S'When was the USS Constitution commissioned?'
+p1611
+sg8
+S'USS Constitution'
+p1612
+ssS'42.2'
+p1613
+(dp1614
+g6
+S'What conflict did she distinguish herself in?'
+p1615
+sg8
+g1612
+ssS'42.3'
+p1616
+(dp1617
+g6
+S'How many battles did she win?'
+p1618
+sg8
+g1612
+ssS'42.4'
+p1619
+(dp1620
+g6
+S'What is her nickname?'
+p1621
+sg8
+g1612
+ssS'25.1'
+p1622
+(dp1623
+g6
+S'What sport do they play?'
+p1624
+sg8
+S'Harlem Globe Trotters'
+p1625
+ssS'59.1'
+p1626
+(dp1627
+g6
+S'Who founded Public Citizen?'
+p1628
+sg8
+S'Public Citizen'
+p1629
+ssS'25.3'
+p1630
+(dp1631
+g6
+S'By whom were they founded?'
+p1632
+sg8
+g1625
+ssS'25.2'
+p1633
+(dp1634
+g6
+S'When were they founded?'
+p1635
+sg8
+g1625
+ssS'59.4'
+p1636
+(dp1637
+g6
+S'How many members does it have?'
+p1638
+sg8
+g1629
+ssS'59.5'
+p1639
+(dp1640
+g6
+S'Who is its current head?'
+p1641
+sg8
+g1629
+ssS'62.2'
+p1642
+(dp1643
+g6
+S'When was the center formed?'
+p1644
+sg8
+S'Berkman Center for Internet and Society'
+p1645
+ssS'62.3'
+p1646
+(dp1647
+g6
+S'What is its mission?'
+p1648
+sg8
+g1645
+ssS'62.1'
+p1649
+(dp1650
+g6
+S'Where is the center located?'
+p1651
+sg8
+g1645
+ssS'61.1'
+p1652
+(dp1653
+g6
+S'Who founded the Muslim Brotherhood?'
+p1654
+sg8
+g1565
+ssS'57.4'
+p1655
+(dp1656
+g6
+S'What happened to it?'
+p1657
+sg8
+S'Liberty Bell 7'
+p1658
+ssS'23.4'
+p1659
+(dp1660
+g6
+S"What was Gekko's profession?"
+p1661
+sg8
+S'Gordon Gekko'
+p1662
+ssS'23.3'
+p1663
+(dp1664
+g6
+S'What year was the movie released?'
+p1665
+sg8
+g1662
+ssS'23.2'
+p1666
+(dp1667
+g6
+S'Who plays the role?'
+p1668
+sg8
+g1662
+ssS'12.3'
+p1669
+(dp1670
+g6
+S'What is their annual revenue?'
+p1671
+sg8
+g1319
+ssS'57.1'
+p1672
+(dp1673
+g6
+S'What kind of ship is the Liberty Bell 7?'
+p1674
+sg8
+g1658
+ssS'32.1'
+p1675
+(dp1676
+g6
+S'What do practitioners of Wicca worship?'
+p1677
+sg8
+S'Wicca'
+p1678
+ssS'32.3'
+p1679
+(dp1680
+g6
+S'Who is its leader?'
+p1681
+sg8
+g1678
+ssS'32.2'
+p1682
+(dp1683
+g6
+S'How many followers does it have?'
+p1684
+sg8
+g1678
+ssS'60.1'
+p1685
+(dp1686
+g6
+S'What state does he represent?'
+p1687
+sg8
+S'senator Jim Inhofe'
+p1688
+ssS'60.2'
+p1689
+(dp1690
+g6
+S'When was he born?'
+p1691
+sg8
+g1688
+ssS'60.3'
+p1692
+(dp1693
+g6
+S'When was he first elected to the senate?'
+p1694
+sg8
+g1688
+ssS'33.4'
+p1695
+(dp1696
+g6
+S'When did she die?'
+p1697
+sg8
+g1371
+ssS'19.4'
+p1698
+(dp1699
+g6
+S'Where was the first Kibbutz founded?'
+p1700
+sg8
+S'Kibbutz'
+p1701
+ssS'33.1'
+p1702
+(dp1703
+g6
+S'What is Florence Nightingale famous for?'
+p1704
+sg8
+g1371
+ssS'33.2'
+p1705
+(dp1706
+g6
+S'When was she born?'
+p1707
+sg8
+g1371
+ssS'19.5'
+p1708
+(dp1709
+g6
+S'How many are there now?'
+p1710
+sg8
+g1701
+ssS'56.2'
+p1711
+(dp1712
+g6
+S'What is the purpose of the agreement?'
+p1713
+sg8
+S'Good Friday Agreement'
+p1714
+ssS'56.1'
+p1715
+(dp1716
+g6
+S'When was the agreement made?'
+p1717
+sg8
+g1714
+ssS'39.2'
+p1718
+(dp1719
+g6
+S'In what year was their first major album recorded?'
+p1720
+sg8
+g1576
+ssS'19.1'
+p1721
+(dp1722
+g6
+S'What kind of a community is a Kibbutz?'
+p1723
+sg8
+g1701
+ssS'8.1'
+p1724
+(dp1725
+g6
+S'Who founded the Black Panthers organization?'
+p1726
+sg8
+S'Black Panthers'
+p1727
+ssS'8.3'
+p1728
+(dp1729
+g6
+S'Where was it founded?'
+p1730
+sg8
+g1727
+ssS'8.2'
+p1731
+(dp1732
+g6
+S'When was it founded?'
+p1733
+sg8
+g1727
+ssS'21.1'
+p1734
+(dp1735
+g6
+S'How many Club Med vacation spots are there worldwide?'
+p1736
+sg8
+S'Club Med'
+p1737
+ssS'19.2'
+p1738
+(dp1739
+g6
+S'With what country are they associated?'
+p1740
+sg8
+g1701
+ssS'21.3'
+p1741
+(dp1742
+g6
+S'Where is an adults-only Club Med?'
+p1743
+sg8
+g1737
+ssS'53.2'
+p1744
+(dp1745
+g6
+S"Where are the company's headquarters?"
+p1746
+sg8
+S'Conde Nast'
+p1747
+ssS'65.5'
+p1748
+(dp1749
+g6
+S'How many members were in the crew of the Challenger?'
+p1750
+sg8
+g1329
+ssS'53.3'
+p1751
+(dp1752
+g6
+S'When was the company founded?'
+p1753
+sg8
+g1747
+ssS'9.4'
+p1754
+(dp1755
+g6
+S'What is their biggest hit?'
+p1756
+sg8
+S'Insane Clown Posse'
+p1757
+ssS'9.3'
+p1758
+(dp1759
+g6
+S'What is their style of music?'
+p1760
+sg8
+g1757
+ssS'54.9'
+p1761
+(dp1762
+g6
+S'What rank did she reach?'
+p1763
+sg8
+g1480
+ssS'61.2'
+p1764
+(dp1765
+g6
+S'When was it formed?'
+p1766
+sg8
+g1565
+ssS'41.3'
+p1767
+(dp1768
+g6
+S'What was the main focus of the scandal?'
+p1769
+sg8
+S'Teapot Dome scandal'
+p1770
+ssS'41.2'
+p1771
+(dp1772
+g6
+S'Who was President of the United States at the time?'
+p1773
+sg8
+g1770
+ssS'41.1'
+p1774
+(dp1775
+g6
+S'What year did the Teapot Dome scandal take place?'
+p1776
+sg8
+g1770
+ssS'59.3'
+p1777
+(dp1778
+g6
+S'What is its purpose?'
+p1779
+sg8
+g1629
+ssS'28.1'
+p1780
+(dp1781
+g6
+S'What kind of business is Abercrombie and Fitch?'
+p1782
+sg8
+S'Abercrombie and Fitch'
+p1783
+ssS'28.2'
+p1784
+(dp1785
+g6
+S'When was it established?'
+p1786
+sg8
+g1783
+ssS'28.3'
+p1787
+(dp1788
+g6
+S'Where was it established?'
+p1789
+sg8
+g1783
+ssS'28.4'
+p1790
+(dp1791
+g6
+S'How many stores are there?'
+p1792
+sg8
+g1783
+ssS'43.3'
+p1793
+(dp1794
+g6
+S'When were the awards first given?'
+p1795
+sg8
+g1367
+ssS'63.2'
+p1796
+(dp1797
+g6
+S'What type of plant does it damage?'
+p1798
+sg8
+S'boll weevil'
+p1799
+ssS'63.1'
+p1800
+(dp1801
+g6
+S'What kind of insect is a boll weevil?'
+p1802
+sg8
+g1799
+ssS'58.1'
+p1803
+(dp1804
+g6
+S"What is Vilar's nationality?"
+p1805
+sg8
+S'philanthropist Alberto Vilar'
+p1806
+ssS'58.3'
+p1807
+(dp1808
+g6
+S'What is the name of the company he founded?'
+p1809
+sg8
+g1806
+ssS'31.6'
+p1810
+(dp1811
+g6
+S'Where is she buried?'
+p1812
+sg8
+S'Jean Harlow'
+p1813
+ssS'31.4'
+p1814
+(dp1815
+g6
+S'How old was she when she died?'
+p1816
+sg8
+g1813
+ssS'31.5'
+p1817
+(dp1818
+g6
+S'What did she die of?'
+p1819
+sg8
+g1813
+ssS'31.2'
+p1820
+(dp1821
+g6
+S'Where was she born?'
+p1822
+sg8
+g1813
+ssS'31.3'
+p1823
+(dp1824
+g6
+S'When did she die?'
+p1825
+sg8
+g1813
+ssS'31.1'
+p1826
+(dp1827
+g6
+S"What was Jean Harlow's real name?"
+p1828
+sg8
+g1813
+ssS'18.1'
+p1829
+(dp1830
+g6
+S'What division (weight) did he win?'
+p1831
+sg8
+S'boxer Floyd Patterson'
+p1832
+ssS'18.3'
+p1833
+(dp1834
+g6
+S'How old was he when he won the title?'
+p1835
+sg8
+g1832
+ssS'18.2'
+p1836
+(dp1837
+g6
+S'When did he win the title?'
+p1838
+sg8
+g1832
+ssS'18.5'
+p1839
+(dp1840
+g6
+S'Who beat him to take the title away?'
+p1841
+sg8
+g1832
+ssS'18.4'
+p1842
+(dp1843
+g6
+S'Who did he beat to win the title?'
+p1844
+sg8
+g1832
+ssS'1.4'
+p1845
+(dp1846
+g6
+S'What ethnic group/race are Crip members?'
+p1847
+sg8
+S'Crips'
+p1848
+ssS'1.5'
+p1849
+(dp1850
+g6
+S'What is their gang color?'
+p1851
+sg8
+g1848
+ssS'1.1'
+p1852
+(dp1853
+g6
+S'When was the first Crip gang started?'
+p1854
+sg8
+g1848
+ssS'1.2'
+p1855
+(dp1856
+g6
+S'What does the name mean or come from?'
+p1857
+sg8
+g1848
+ssS'19.3'
+p1858
+(dp1859
+g6
+S'When was the first Kibbutz founded?'
+p1860
+sg8
+g1701
+ssS'30.3'
+p1861
+(dp1862
+g6
+S'Where was he born?'
+p1863
+sg8
+S'minstrel Al Jolson'
+p1864
+ssS'30.2'
+p1865
+(dp1866
+g6
+S'What is his nationality?'
+p1867
+sg8
+g1864
+ssS'30.1'
+p1868
+(dp1869
+g6
+S"What is Al Jolson's real name?"
+p1870
+sg8
+g1864
+ssS'53.1'
+p1871
+(dp1872
+g6
+S'Who is the CEO of the publishing company Conde Nast?'
+p1873
+sg8
+g1747
+ssS'30.4'
+p1874
+(dp1875
+g6
+S'Who did he marry?'
+p1876
+sg8
+g1864
+ssS'38.3'
+p1877
+(dp1878
+g6
+S'When were they discovered?'
+p1879
+sg8
+S'quarks'
+p1880
+ssS'38.2'
+p1881
+(dp1882
+g6
+S'Who discovered quarks?'
+p1883
+sg8
+g1880
+ssS'38.1'
+p1884
+(dp1885
+g6
+S'What kind of a particle is a quark?'
+p1886
+sg8
+g1880
+ssS'51.1'
+p1887
+(dp1888
+g6
+S'What is the religious affiliation of the Kurds?'
+p1889
+sg8
+S'Kurds'
+p1890
+ssS'51.2'
+p1891
+(dp1892
+g6
+S'How many Kurds live in Turkey?'
+p1893
+sg8
+g1890
+ssS'13.2'
+p1894
+(dp1895
+g6
+S'What actor is used as his voice?'
+p1896
+sg8
+S'Jar Jar Binks'
+p1897
+ssS'13.3'
+p1898
+(dp1899
+g6
+S'To what alien race does he belong?'
+p1900
+sg8
+g1897
+ssS'13.1'
+p1901
+(dp1902
+g6
+S'What film introduced Jar Jar Binks?'
+p1903
+sg8
+g1897
+ssS'4.5'
+p1904
+(dp1905
+g6
+S'Which was the first movie that he was in?'
+p1906
+sg8
+S'James Dean'
+p1907
+ssS'5.1'
+p1908
+(dp1909
+g6
+S'What does AARP stand for?'
+p1910
+sg8
+S'AARP'
+p1911
+ssS'5.2'
+p1912
+(dp1913
+g6
+S'When was the organization started?'
+p1914
+sg8
+g1911
+ssS'5.3'
+p1915
+(dp1916
+g6
+S'Where is its headquarters?'
+p1917
+sg8
+g1911
+ssS'4.1'
+p1918
+(dp1919
+g6
+S'When was James Dean born?'
+p1920
+sg8
+g1907
+ssS'4.3'
+p1921
+(dp1922
+g6
+S'How did he die?'
+p1923
+sg8
+g1907
+ssS'4.2'
+p1924
+(dp1925
+g6
+S'When did James Dean die?'
+p1926
+sg8
+g1907
+ssS'11.4'
+p1927
+(dp1928
+g6
+S'What is their biggest hit?'
+p1929
+sg8
+S'the band Nirvana'
+p1930
+ssS'11.6'
+p1931
+(dp1932
+g6
+S'What style of music do they play?'
+p1933
+sg8
+g1930
+ssS'11.1'
+p1934
+(dp1935
+g6
+S'Who is the lead singer/musician in Nirvana?'
+p1936
+sg8
+g1930
+ssS'11.3'
+p1937
+(dp1938
+g6
+S'When was the band formed?'
+p1939
+sg8
+g1930
+ssS'17.2'
+p1940
+(dp1941
+g6
+S'What kind of cases does it try?'
+p1942
+sg8
+S'International Criminal Court'
+p1943
+ssS'17.3'
+p1944
+(dp1945
+g6
+S'Who is the sponsor of the court?'
+p1946
+sg8
+g1943
+ssS'17.1'
+p1947
+(dp1948
+g6
+S'When was the court established?'
+p1949
+sg8
+g1943
+ssS'17.4'
+p1950
+(dp1951
+g6
+S'How many justices are members of the court?'
+p1952
+sg8
+g1943
+ssS'47.1'
+p1953
+(dp1954
+g6
+S'On what date was Bashar Assad inaugurated as the Syrian president?'
+p1955
+sg8
+g1431
+ssS'57.2'
+p1956
+(dp1957
+g6
+S'Who developed it?'
+p1958
+sg8
+g1658
+ssS'47.3'
+p1959
+(dp1960
+g6
+S'What was his profession prior to assuming the Presidency?'
+p1961
+sg8
+g1431
+ssS'36.2'
+p1962
+(dp1963
+g6
+S'When did the Khmer Rouge come into power?'
+p1964
+sg8
+g1529
+ssS'47.4'
+p1965
+(dp1966
+g6
+S'How long are Syrian presidential terms?'
+p1967
+sg8
+g1431
+ssS'57.3'
+p1968
+(dp1969
+g6
+S'What is it made of?'
+p1970
+sg8
+g1658
+ssS'46.4'
+p1971
+(dp1972
+g6
+S'Where did it occur?'
+p1973
+sg8
+S"Heaven's Gate"
+p1974
+ssS'46.5'
+p1975
+(dp1976
+g6
+S'How did they commit suicide?'
+p1977
+sg8
+g1974
+ssS'46.6'
+p1978
+(dp1979
+g6
+S'Why did they commit suicide?'
+p1980
+sg8
+g1974
+ssS'23.1'
+p1981
+(dp1982
+g6
+S'In what film is Gordon Gekko the main character?'
+p1983
+sg8
+g1662
+ssS'46.2'
+p1984
+(dp1985
+g6
+S'How many of its members committed suicide?'
+p1986
+sg8
+g1974
+ssS'46.3'
+p1987
+(dp1988
+g6
+S'When did the mass suicide occur?'
+p1989
+sg8
+g1974
+ssS'59.2'
+p1990
+(dp1991
+g6
+S'When was it formed?'
+p1992
+sg8
+g1629
+ssS'60.4'
+p1993
+(dp1994
+g6
+S'What branch of the service did he serve in?'
+p1995
+sg8
+g1688
+ssS'65.4'
+p1996
+(dp1997
+g6
+S'When was the Challenger space shuttle disaster?'
+p1998
+sg8
+g1329
+ssS'5.4'
+p1999
+(dp2000
+g6
+S'Who is its top official or CEO?'
+p2001
+sg8
+g1911
+ssS'64.3'
+p2002
+(dp2003
+g6
+S'When did he die?'
+p2004
+sg8
+g1569
+ssS'29.1'
+p2005
+(dp2006
+g6
+S"Why is the 'Tale of Genji' famous?"
+p2007
+sg8
+S"'Tale of Genji'"
+p2008
+ssS'46.1'
+p2009
+(dp2010
+g6
+S'Who was the leader of the cult?'
+p2011
+sg8
+g1974
+ssS'29.3'
+p2012
+(dp2013
+g6
+S'When was it written?'
+p2014
+sg8
+g2008
+ssS'29.2'
+p2015
+(dp2016
+g6
+S'Who wrote it?'
+p2017
+sg8
+g2008
+ssS'15.2'
+p2018
+(dp2019
+g6
+S'Who coined the name?'
+p2020
+sg8
+S'Rat Pack'
+p2021
+ssS'15.3'
+p2022
+(dp2023
+g6
+S'What Las Vegas hotel was made famous by the Rat Pack?'
+p2024
+sg8
+g2021
+ssS'44.3'
+p2025
+(dp2026
+g6
+S'When was she born?'
+p2027
+sg8
+g1375
+ssS'48.2'
+p2028
+(dp2029
+g6
+S'What was his name at birth?'
+p2030
+sg8
+S'Abu Nidal'
+p2031
+ssS'48.3'
+p2032
+(dp2033
+g6
+S'How many followers does he have?'
+p2034
+sg8
+g2031
+ssS'64.2'
+p2035
+(dp2036
+g6
+S'Where was he born?'
+p2037
+sg8
+g1569
+ssS'48.1'
+p2038
+(dp2039
+g6
+S'When was Abu Nidal born?'
+p2040
+sg8
+g2031
+ssS'64.4'
+p2041
+(dp2042
+g6
+S'What did he wear as a hat?'
+p2043
+sg8
+g1569
+ssS'48.5'
+p2044
+(dp2045
+g6
+S'In what year did the PLO condemn him to death?'
+p2046
+sg8
+g2031
+sssS'2005'
+p2047
+(dp2048
+S'73.1'
+p2049
+(dp2050
+g6
+S'Viagra is prescribed for what problem?'
+p2051
+sg8
+S'Viagra'
+p2052
+ssS'73.2'
+p2053
+(dp2054
+g6
+S'Who manufactures Viagra?'
+p2055
+sg8
+g2052
+ssS'120.3'
+p2056
+(dp2057
+g6
+S'What organization did she found?'
+p2058
+sg8
+S'Rose Crumb'
+p2059
+ssS'73.4'
+p2060
+(dp2061
+g6
+S'What is the scientific name for Viagra?'
+p2062
+sg8
+g2052
+ssS'92.2'
+p2063
+(dp2064
+g6
+S'How many times did Arnold win the British Open?'
+p2065
+sg8
+S'Arnold Palmer'
+p2066
+ssS'92.1'
+p2067
+(dp2068
+g6
+S'How many times did Arnold win the Masters?'
+p2069
+sg8
+g2066
+ssS'92.6'
+p2070
+(dp2071
+g6
+S"What was Arnold's wife's first name?"
+p2072
+sg8
+g2066
+ssS'92.5'
+p2073
+(dp2074
+g6
+S'What major championship did Arnold never win?'
+p2075
+sg8
+g2066
+ssS'139.1'
+p2076
+(dp2077
+g6
+S'When was the Organization of Islamic Conference organized?'
+p2078
+sg8
+S'Organization of Islamic Conference (OIC)'
+p2079
+ssS'90.3'
+p2080
+(dp2081
+g6
+S'Which Virginia vineyard produces the most wine?'
+p2082
+sg8
+S'Virginia wine'
+p2083
+ssS'90.2'
+p2084
+(dp2085
+g6
+S'Approximately how many acres of grapes are grown in Virginia?'
+p2086
+sg8
+g2083
+ssS'90.4'
+p2087
+(dp2088
+g6
+S"Who was Virginia's first and most famous wine maker?"
+p2089
+sg8
+g2083
+ssS'90.6'
+p2090
+(dp2091
+g6
+S'Who was the former CEO who became a Virginia wine maker?'
+p2092
+sg8
+g2083
+ssS'104.6'
+p2093
+(dp2094
+g6
+S'What was the expected attendance at the show?'
+p2095
+sg8
+S'1999 North American International Auto Show'
+p2096
+ssS'97.3'
+p2097
+(dp2098
+g6
+S'What is the title of their signature hit?'
+p2099
+sg8
+S'Counting Crows'
+p2100
+ssS'96.6'
+p2101
+(dp2102
+g6
+S'How many countries were represented at Nagano?'
+p2103
+sg8
+S'1998 Nagano Olympic Games'
+p2104
+ssS'96.5'
+p2105
+(dp2106
+g6
+S"Who won the women's giant slalom?"
+p2107
+sg8
+g2104
+ssS'96.4'
+p2108
+(dp2109
+g6
+S'Which country took the first gold medal at Nagano?'
+p2110
+sg8
+g2104
+ssS'96.2'
+p2111
+(dp2112
+g6
+S"How long was the men's downhill ski run in Nagano?"
+p2113
+sg8
+g2104
+ssS'96.1'
+p2114
+(dp2115
+g6
+S'What materials was the 1998 Olympic torch made of?'
+p2116
+sg8
+g2104
+ssS'104.5'
+p2117
+(dp2118
+g6
+S'How many automakers and suppliers had displays at the show?'
+p2119
+sg8
+g2096
+ssS'94.5'
+p2120
+(dp2121
+g6
+S"What was the jury's ruling on the obstruction of justice charge?"
+p2122
+sg8
+S'1998 indictment and trial of Susan McDougal'
+p2123
+ssS'94.6'
+p2124
+(dp2125
+g6
+S'What was the result of the contempt charges?'
+p2126
+sg8
+g2123
+ssS'94.1'
+p2127
+(dp2128
+g6
+S"Who was Mrs. McDougal's lawyer?"
+p2129
+sg8
+g2123
+ssS'94.3'
+p2130
+(dp2131
+g6
+S'How did Mrs. McDougal plead?'
+p2132
+sg8
+g2123
+ssS'94.2'
+p2133
+(dp2134
+g6
+S'Who was the prosecutor?'
+p2135
+sg8
+g2123
+ssS'139.4'
+p2136
+(dp2137
+g6
+S'Where was the 8th summit of the OIC held?'
+p2138
+sg8
+g2079
+ssS'106.5'
+p2139
+(dp2140
+g6
+S'What is the name of the winning manager?'
+p2141
+sg8
+S'1998 Baseball World Series'
+p2142
+ssS'67.5'
+p2143
+(dp2144
+g6
+S'What was the scheduled date of the contest?'
+p2145
+sg8
+S'Miss Universe 2000 crowned'
+p2146
+ssS'67.4'
+p2147
+(dp2148
+g6
+S'Where was the contest held?'
+p2149
+sg8
+g2146
+ssS'67.3'
+p2150
+(dp2151
+g6
+S'How many competitors did the winner have?'
+p2152
+sg8
+g2146
+ssS'67.2'
+p2153
+(dp2154
+g6
+S'What country did the winner represent?'
+p2155
+sg8
+g2146
+ssS'67.1'
+p2156
+(dp2157
+g6
+S'Who won the crown?'
+p2158
+sg8
+g2146
+ssS'71.2'
+p2159
+(dp2160
+g6
+S'How fast can it fly?'
+p2161
+sg8
+S'F16'
+p2162
+ssS'71.3'
+p2163
+(dp2164
+g6
+S'Who manufactures the F16?'
+p2165
+sg8
+g2162
+ssS'71.1'
+p2166
+(dp2167
+g6
+S'What type of plane is an F16?'
+p2168
+sg8
+g2162
+ssS'71.4'
+p2169
+(dp2170
+g6
+S'Where is this company based?'
+p2171
+sg8
+g2162
+ssS'71.5'
+p2172
+(dp2173
+g6
+S'Who manufactures engines for the F16?'
+p2174
+sg8
+g2162
+ssS'134.1'
+p2175
+(dp2176
+g6
+S'What is a genome?'
+p2177
+sg8
+S'genome'
+p2178
+ssS'134.5'
+p2179
+(dp2180
+g6
+S'What is the length of the Human genome?'
+p2181
+sg8
+g2178
+ssS'134.4'
+p2182
+(dp2183
+g6
+S'How many chromosomes does the Human genome contain?'
+p2184
+sg8
+g2178
+ssS'75.6'
+p2185
+(dp2186
+g6
+S'Who was a chairman of the company in 1996?'
+p2187
+sg8
+S'Merck & Co.'
+p2188
+ssS'75.4'
+p2189
+(dp2190
+g6
+S"What is the company's web address?"
+p2191
+sg8
+g2188
+ssS'75.2'
+p2192
+(dp2193
+g6
+S'What does the company make?'
+p2194
+sg8
+g2188
+ssS'75.3'
+p2195
+(dp2196
+g6
+S'What is their symbol on the New York Stock Exchange?'
+p2197
+sg8
+g2188
+ssS'75.1'
+p2198
+(dp2199
+g6
+S'Where is the company headquartered?'
+p2200
+sg8
+g2188
+ssS'77.4'
+p2201
+(dp2202
+g6
+S'Who did Foreman defeat for his first heavyweight championship?'
+p2203
+sg8
+S'George Foreman'
+p2204
+ssS'77.5'
+p2205
+(dp2206
+g6
+S'How old was Foreman when he first won the heavyweight championship?'
+p2207
+sg8
+g2204
+ssS'77.1'
+p2208
+(dp2209
+g6
+S'When was George Foreman born?'
+p2210
+sg8
+g2204
+ssS'77.2'
+p2211
+(dp2212
+g6
+S'Where was George Foreman born?'
+p2213
+sg8
+g2204
+ssS'77.3'
+p2214
+(dp2215
+g6
+S'When did George Foreman first become world heavyweight boxing champion?'
+p2216
+sg8
+g2204
+ssS'130.6'
+p2217
+(dp2218
+g6
+S'What language does the term "tsunami" come from?'
+p2219
+sg8
+S'tsunami'
+p2220
+ssS'130.4'
+p2221
+(dp2222
+g6
+S'How fast can it travel?'
+p2223
+sg8
+g2220
+ssS'130.3'
+p2224
+(dp2225
+g6
+S'What is its maximum height?'
+p2226
+sg8
+g2220
+ssS'130.2'
+p2227
+(dp2228
+g6
+S'Where does it commonly occur?'
+p2229
+sg8
+g2220
+ssS'130.1'
+p2230
+(dp2231
+g6
+S'What causes tsunamis?'
+p2232
+sg8
+g2220
+ssS'132.5'
+p2233
+(dp2234
+g6
+S'To whom is Kim Jong Il married?'
+p2235
+sg8
+S'Kim Jong Il'
+p2236
+ssS'132.1'
+p2237
+(dp2238
+g6
+S'When was Kim Jong Il born?'
+p2239
+sg8
+g2236
+ssS'132.3'
+p2240
+(dp2241
+g6
+S'What country does Kim Jong Il rule?'
+p2242
+sg8
+g2236
+ssS'132.2'
+p2243
+(dp2244
+g6
+S"Who is Kim Jong Il's father?"
+p2245
+sg8
+g2236
+ssS'112.3'
+p2246
+(dp2247
+g6
+S"What is the corporation's annual revenue?"
+p2248
+sg8
+S"McDonald's Corporation"
+p2249
+ssS'112.2'
+p2250
+(dp2251
+g6
+S'Where is the headquarters located?'
+p2252
+sg8
+g2249
+ssS'112.1'
+p2253
+(dp2254
+g6
+S"When did the first McDonald's restaurant open in the U.S.?"
+p2255
+sg8
+g2249
+ssS'112.4'
+p2256
+(dp2257
+g6
+S"Who made McDonald's the largest fast-food chain?"
+p2258
+sg8
+g2249
+ssS'126.6'
+p2259
+(dp2260
+g6
+S'What caused the death of Pius XII?'
+p2261
+sg8
+S'Pope Pius XII'
+p2262
+ssS'126.7'
+p2263
+(dp2264
+g6
+S'What pope followed Pius XII?'
+p2265
+sg8
+g2262
+ssS'126.4'
+p2266
+(dp2267
+g6
+S'How long was his pontificate?'
+p2268
+sg8
+g2262
+ssS'126.5'
+p2269
+(dp2270
+g6
+S'How many people did he canonize?'
+p2271
+sg8
+g2262
+ssS'126.2'
+p2272
+(dp2273
+g6
+S'What was his name before becoming Pope?'
+p2274
+sg8
+g2262
+ssS'126.1'
+p2275
+(dp2276
+g6
+S'When was he elected Pope?'
+p2277
+sg8
+g2262
+ssS'69.1'
+p2278
+(dp2279
+g6
+S'When did France win the World Cup?'
+p2280
+sg8
+S'France wins World Cup in soccer'
+p2281
+ssS'69.3'
+p2282
+(dp2283
+g6
+S'What was the final score?'
+p2284
+sg8
+g2281
+ssS'69.2'
+p2285
+(dp2286
+g6
+S'Who did France beat for the World Cup?'
+p2287
+sg8
+g2281
+ssS'69.5'
+p2288
+(dp2289
+g6
+S'At what stadium was the game played?'
+p2290
+sg8
+g2281
+ssS'69.4'
+p2291
+(dp2292
+g6
+S'What was the nickname for the French team?'
+p2293
+sg8
+g2281
+ssS'69.6'
+p2294
+(dp2295
+g6
+S'Who was the coach of the French team?'
+p2296
+sg8
+g2281
+ssS'116.5'
+p2297
+(dp2298
+g6
+S'What U.S. President first used it?'
+p2299
+sg8
+S'Camp David'
+p2300
+ssS'116.4'
+p2301
+(dp2302
+g6
+S'When was it first used?'
+p2303
+sg8
+g2300
+ssS'116.3'
+p2304
+(dp2305
+g6
+S'What was it originally called?'
+p2306
+sg8
+g2300
+ssS'116.2'
+p2307
+(dp2308
+g6
+S'How large is it?'
+p2309
+sg8
+g2300
+ssS'116.1'
+p2310
+(dp2311
+g6
+S'Where is it?'
+p2312
+sg8
+g2300
+ssS'114.5'
+p2313
+(dp2314
+g6
+S"What is his wife's name?"
+p2315
+sg8
+S'Jesse Ventura'
+p2316
+ssS'114.6'
+p2317
+(dp2318
+g6
+S'How many children do they have?'
+p2319
+sg8
+g2316
+ssS'114.1'
+p2320
+(dp2321
+g6
+S'What is his political party affiliation?'
+p2322
+sg8
+g2316
+ssS'114.2'
+p2323
+(dp2324
+g6
+S'What is his birth name?'
+p2325
+sg8
+g2316
+ssS'138.5'
+p2326
+(dp2327
+g6
+S'Who is the Director-General of the UPU?'
+p2328
+sg8
+S'International Bureau of Universal Postal Union (UPU)'
+p2329
+ssS'138.4'
+p2330
+(dp2331
+g6
+S'When did China first join the UPU?'
+p2332
+sg8
+g2329
+ssS'138.2'
+p2333
+(dp2334
+g6
+S'When did the UPU become part of the UN?'
+p2335
+sg8
+g2329
+ssS'138.1'
+p2336
+(dp2337
+g6
+S'When was the UPU organized?'
+p2338
+sg8
+g2329
+ssS'70.6'
+p2339
+(dp2340
+g6
+S'What was the outcome of the U.S. trial against the pilot?'
+p2341
+sg8
+S'Plane clips cable wires in Italian resort'
+p2342
+ssS'70.5'
+p2343
+(dp2344
+g6
+S'What was the name of the pilot?'
+p2345
+sg8
+g2342
+ssS'79.2'
+p2346
+(dp2347
+g6
+S'How many students were wounded?'
+p2348
+sg8
+S'Kip Kinkel school shooting'
+p2349
+ssS'79.1'
+p2350
+(dp2351
+g6
+S'When did the school shooting occur?'
+p2352
+sg8
+g2349
+ssS'79.6'
+p2353
+(dp2354
+g6
+S"How many bombs did investigators find in Kip's home?"
+p2355
+sg8
+g2349
+ssS'79.4'
+p2356
+(dp2357
+g6
+S'How many students did he kill?'
+p2358
+sg8
+g2349
+ssS'79.5'
+p2359
+(dp2360
+g6
+S'How old was Kip Kinkel when the shooting took place?'
+p2361
+sg8
+g2349
+ssS'122.2'
+p2362
+(dp2363
+g6
+S'When did he die?'
+p2364
+sg8
+S'Paul Revere'
+p2365
+ssS'122.3'
+p2366
+(dp2367
+g6
+S'In what cemetery is he buried?'
+p2368
+sg8
+g2365
+ssS'122.1'
+p2369
+(dp2370
+g6
+S'When was he born?'
+p2371
+sg8
+g2365
+ssS'122.6'
+p2372
+(dp2373
+g6
+S'Where did his famous ride end?'
+p2374
+sg8
+g2365
+ssS'70.1'
+p2375
+(dp2376
+g6
+S'When did the accident occur?'
+p2377
+sg8
+g2342
+ssS'122.4'
+p2378
+(dp2379
+g6
+S'When did he make his famous ride?'
+p2380
+sg8
+g2365
+ssS'122.5'
+p2381
+(dp2382
+g6
+S'From where did he begin his famous ride?'
+p2383
+sg8
+g2365
+ssS'120.1'
+p2384
+(dp2385
+g6
+S'What was her occupation?'
+p2386
+sg8
+g2059
+ssS'120.2'
+p2387
+(dp2388
+g6
+S'Where was she from?'
+p2389
+sg8
+g2059
+ssS'73.3'
+p2390
+(dp2391
+g6
+S'Who approved its use in China?'
+p2392
+sg8
+g2052
+ssS'120.4'
+p2393
+(dp2394
+g6
+S'When did she found it?'
+p2395
+sg8
+g2059
+ssS'73.5'
+p2396
+(dp2397
+g6
+S'When did Viagra go on the market?'
+p2398
+sg8
+g2052
+ssS'120.6'
+p2399
+(dp2400
+g6
+S'How old was she when she won the awards?'
+p2401
+sg8
+g2059
+ssS'89.2'
+p2402
+(dp2403
+g6
+S'On what street are the fields where the Little League World Series is played?'
+p2404
+sg8
+S'Little League Baseball'
+p2405
+ssS'89.1'
+p2406
+(dp2407
+g6
+S'Where is the Little League World Championship played?'
+p2408
+sg8
+g2405
+ssS'89.6'
+p2409
+(dp2410
+g6
+S"What is Little League Baseball's URL on the Internet?"
+p2411
+sg8
+g2405
+ssS'89.5'
+p2412
+(dp2413
+g6
+S'What year was the first Little League World Series played?'
+p2414
+sg8
+g2405
+ssS'89.4'
+p2415
+(dp2416
+g6
+S'How many girls have played in the Little League World Series?'
+p2417
+sg8
+g2405
+ssS'136.1'
+p2418
+(dp2419
+g6
+S'Who was the first Imam of the Shiite sect of Islam?'
+p2420
+sg8
+S'Shiite'
+p2421
+ssS'136.3'
+p2422
+(dp2423
+g6
+S"What was this person's relationship to the Prophet Mohammad?"
+p2424
+sg8
+g2421
+ssS'136.2'
+p2425
+(dp2426
+g6
+S'Where is his tomb?'
+p2427
+sg8
+g2421
+ssS'136.5'
+p2428
+(dp2429
+g6
+S'When did he die?'
+p2430
+sg8
+g2421
+ssS'136.4'
+p2431
+(dp2432
+g6
+S'Who was the third Imam of Shiite Muslims?'
+p2433
+sg8
+g2421
+ssS'136.6'
+p2434
+(dp2435
+g6
+S'What portion of Muslims are Shiite?'
+p2436
+sg8
+g2421
+ssS'108.2'
+p2437
+(dp2438
+g6
+S'What U.S. company did Sony purchase to form SPE?'
+p2439
+sg8
+S'Sony Pictures Entertainment (SPE)'
+p2440
+ssS'108.3'
+p2441
+(dp2442
+g6
+S'Name the president and COO of the SPE.'
+p2443
+sg8
+g2440
+ssS'108.1'
+p2444
+(dp2445
+g6
+S'Who is the parent company of Sony Pictures?'
+p2446
+sg8
+g2440
+ssS'108.6'
+p2447
+(dp2448
+g6
+S'Who is the vice-president of SPE?'
+p2449
+sg8
+g2440
+ssS'99.4'
+p2450
+(dp2451
+g6
+S'What year did Woody Guthrie die?'
+p2452
+sg8
+S'Woody Guthrie'
+p2453
+ssS'99.5'
+p2454
+(dp2455
+g6
+S'Where did he die?'
+p2456
+sg8
+g2453
+ssS'99.6'
+p2457
+(dp2458
+g6
+S"What caused Guthrie's death?"
+p2459
+sg8
+g2453
+ssS'99.2'
+p2460
+(dp2461
+g6
+S'When was Guthrie born?'
+p2462
+sg8
+g2453
+ssS'99.3'
+p2463
+(dp2464
+g6
+S'Where was Guthrie born?'
+p2465
+sg8
+g2453
+ssS'72.3'
+p2466
+(dp2467
+g6
+S'What is the Bollywood equivalent of Beverly Hills?'
+p2468
+sg8
+S'Bollywood'
+p2469
+ssS'125.6'
+p2470
+(dp2471
+g6
+S'At what age did he die?'
+p2472
+sg8
+S'Enrico Caruso'
+p2473
+ssS'125.5'
+p2474
+(dp2475
+g6
+S'How many performances did he sing at the Met?'
+p2476
+sg8
+g2473
+ssS'118.1'
+p2477
+(dp2478
+g6
+S'When was it first awarded?'
+p2479
+sg8
+S'U.S. Medal of Honor'
+p2480
+ssS'118.3'
+p2481
+(dp2482
+g6
+S'How many have received the award since 1863?'
+p2483
+sg8
+g2480
+ssS'118.2'
+p2484
+(dp2485
+g6
+S'Who authorized it?'
+p2486
+sg8
+g2480
+ssS'118.5'
+p2487
+(dp2488
+g6
+S'Who is the only woman to receive it?'
+p2489
+sg8
+g2480
+ssS'118.6'
+p2490
+(dp2491
+g6
+S'How many veterans have received the honor twice?'
+p2492
+sg8
+g2480
+ssS'110.1'
+p2493
+(dp2494
+g6
+S'What is the mission of the Lions Club?'
+p2495
+sg8
+S'Lions Club International'
+p2496
+ssS'110.3'
+p2497
+(dp2498
+g6
+S"Where is the club's world-wide headquarters?"
+p2499
+sg8
+g2496
+ssS'110.2'
+p2500
+(dp2501
+g6
+S'When was the club founded?'
+p2502
+sg8
+g2496
+ssS'110.4'
+p2503
+(dp2504
+g6
+S'Who is the Lions Club president?'
+p2505
+sg8
+g2496
+ssS'128.1'
+p2506
+(dp2507
+g6
+S'What does OPEC stand for?'
+p2508
+sg8
+S'OPEC'
+p2509
+ssS'128.2'
+p2510
+(dp2511
+g6
+S'How many countries are members of OPEC?'
+p2512
+sg8
+g2509
+ssS'128.4'
+p2513
+(dp2514
+g6
+S'Where is the headquarters of OPEC located?'
+p2515
+sg8
+g2509
+ssS'81.3'
+p2516
+(dp2517
+g6
+S'Who is the trainer of the Preakness 1998 winner?'
+p2518
+sg8
+S'Preakness 1998'
+p2519
+ssS'81.1'
+p2520
+(dp2521
+g6
+S'Name the horse that won the Preakness in 1998?'
+p2522
+sg8
+g2519
+ssS'81.6'
+p2523
+(dp2524
+g6
+S'What time did the race begin?'
+p2525
+sg8
+g2519
+ssS'81.5'
+p2526
+(dp2527
+g6
+S'What was the track attendance for the 1998 Preakness?'
+p2528
+sg8
+g2519
+ssS'81.4'
+p2529
+(dp2530
+g6
+S'Who finished second to the Preakness winner in 1998?'
+p2531
+sg8
+g2519
+ssS'124.4'
+p2532
+(dp2533
+g6
+S'How did he die?'
+p2534
+sg8
+S'Rocky Marciano'
+p2535
+ssS'124.5'
+p2536
+(dp2537
+g6
+S'How many fights did he win?'
+p2538
+sg8
+g2535
+ssS'124.1'
+p2539
+(dp2540
+g6
+S'When was he born?'
+p2541
+sg8
+g2535
+ssS'124.2'
+p2542
+(dp2543
+g6
+S'Where did he live?'
+p2544
+sg8
+g2535
+ssS'124.3'
+p2545
+(dp2546
+g6
+S'When did he die?'
+p2547
+sg8
+g2535
+ssS'93.6'
+p2548
+(dp2549
+g6
+S'On what date was the first debate?'
+p2550
+sg8
+S'first 2000 Bush-Gore presidential debate'
+p2551
+ssS'93.4'
+p2552
+(dp2553
+g6
+S'Which major network decided not to televise the debate?'
+p2554
+sg8
+g2551
+ssS'93.5'
+p2555
+(dp2556
+g6
+S'In what state did Al Gore prepare for the first debate?'
+p2557
+sg8
+g2551
+ssS'93.2'
+p2558
+(dp2559
+g6
+S'How long was the debate scheduled to be?'
+p2560
+sg8
+g2551
+ssS'93.3'
+p2561
+(dp2562
+g6
+S'On what university campus was the first debate held?'
+p2563
+sg8
+g2551
+ssS'93.1'
+p2564
+(dp2565
+g6
+S'Who moderated the first 2000 presidential debate?'
+p2566
+sg8
+g2551
+ssS'83.1'
+p2567
+(dp2568
+g6
+S'What was the Louvre Museum before it was a museum?'
+p2569
+sg8
+S'Louvre Museum'
+p2570
+ssS'83.3'
+p2571
+(dp2572
+g6
+S'How many paintings are on permanent exhibit at the Louvre?'
+p2573
+sg8
+g2570
+ssS'83.2'
+p2574
+(dp2575
+g6
+S'When was the Louvre transformed into a museum?'
+p2576
+sg8
+g2570
+ssS'83.5'
+p2577
+(dp2578
+g6
+S'How many people visit the Louvre each year?'
+p2579
+sg8
+g2570
+ssS'83.6'
+p2580
+(dp2581
+g6
+S'Who is president/director of the Louvre Museum?'
+p2582
+sg8
+g2570
+ssS'91.4'
+p2583
+(dp2584
+g6
+S'What company now owns Cliffs Notes?'
+p2585
+sg8
+S'Cliffs Notes'
+p2586
+ssS'91.5'
+p2587
+(dp2588
+g6
+S'How many copies of Cliffs Notes are sold annually?'
+p2589
+sg8
+g2586
+ssS'91.6'
+p2590
+(dp2591
+g6
+S'What percentage of Americans have used Cliffs Notes?'
+p2592
+sg8
+g2586
+ssS'91.1'
+p2593
+(dp2594
+g6
+S'Who originated Cliffs Notes?'
+p2595
+sg8
+g2586
+ssS'91.2'
+p2596
+(dp2597
+g6
+S'Whose works were the subject of the first Cliffs Notes?'
+p2598
+sg8
+g2586
+ssS'100.2'
+p2599
+(dp2600
+g6
+S"What was Sosa's team?"
+p2601
+sg8
+S'Sammy Sosa'
+p2602
+ssS'100.3'
+p2603
+(dp2604
+g6
+S'How many home runs were hit by Sosa in 1998?'
+p2605
+sg8
+g2602
+ssS'85.5'
+p2606
+(dp2607
+g6
+S'Why did the Grand Cayman turn away a NCL ship?'
+p2608
+sg8
+S'Norwegian Cruise Lines (NCL)'
+p2609
+ssS'100.1'
+p2610
+(dp2611
+g6
+S'Where was Sammy Sosa born?'
+p2612
+sg8
+g2602
+ssS'100.6'
+p2613
+(dp2614
+g6
+S'What award was won by Sammy Sosa in 1998?'
+p2615
+sg8
+g2602
+ssS'85.2'
+p2616
+(dp2617
+g6
+S'What cruise line attempted to take over NCL in December 1999?'
+p2618
+sg8
+g2609
+ssS'100.4'
+p2619
+(dp2620
+g6
+S"Who was Sosa's competitor for the home run title in 1998?"
+p2621
+sg8
+g2602
+ssS'100.5'
+p2622
+(dp2623
+g6
+S'What was the record number of home runs in 1998?'
+p2624
+sg8
+g2602
+ssS'87.5'
+p2625
+(dp2626
+g6
+S'What is Enrico Fermi most known for?'
+p2627
+sg8
+S'Enrico Fermi'
+p2628
+ssS'87.7'
+p2629
+(dp2630
+g6
+S'What country did Enrico Fermi come from originally?'
+p2631
+sg8
+g2628
+ssS'87.6'
+p2632
+(dp2633
+g6
+S'Give the name and symbol for the chemical element named after Enrico Fermi.'
+p2634
+sg8
+g2628
+ssS'87.1'
+p2635
+(dp2636
+g6
+S'When was Enrico Fermi born?'
+p2637
+sg8
+g2628
+ssS'87.3'
+p2638
+(dp2639
+g6
+S'What Nobel Prize was Fermi awarded in 1938?'
+p2640
+sg8
+g2628
+ssS'87.2'
+p2641
+(dp2642
+g6
+S'When did Enrico Fermi die?'
+p2643
+sg8
+g2628
+ssS'102.1'
+p2644
+(dp2645
+g6
+S'What was the official name of the Big Dig?'
+p2646
+sg8
+S'Boston Big Dig '
+p2647
+ssS'102.2'
+p2648
+(dp2649
+g6
+S'When did the Big Dig begin?'
+p2650
+sg8
+g2647
+ssS'102.3'
+p2651
+(dp2652
+g6
+S'What was the original estimated cost of the Big Dig?'
+p2653
+sg8
+g2647
+ssS'102.4'
+p2654
+(dp2655
+g6
+S'What was the expected completion date?'
+p2656
+sg8
+g2647
+ssS'102.5'
+p2657
+(dp2658
+g6
+S'What is the length of the Big Dig?'
+p2659
+sg8
+g2647
+ssS'140.5'
+p2660
+(dp2661
+g6
+S'What is the average waiting time for this organization to determine benefits?'
+p2662
+sg8
+S'PBGC'
+p2663
+ssS'140.2'
+p2664
+(dp2665
+g6
+S'Who is the head of PBGC?'
+p2666
+sg8
+g2663
+ssS'140.3'
+p2667
+(dp2668
+g6
+S'When was PBGC established?'
+p2669
+sg8
+g2663
+ssS'140.1'
+p2670
+(dp2671
+g6
+S'What government organization goes by the acronym PBGC?'
+p2672
+sg8
+g2663
+ssS'97.2'
+p2673
+(dp2674
+g6
+S'What year did the group form?'
+p2675
+sg8
+g2100
+ssS'104.7'
+p2676
+(dp2677
+g6
+S'In what year was the first Auto Show held?'
+p2678
+sg8
+g2096
+ssS'97.1'
+p2679
+(dp2680
+g6
+S'Who is the lead singer of the Counting Crows?'
+p2681
+sg8
+g2100
+ssS'104.2'
+p2682
+(dp2683
+g6
+S'What type of vehicle dominated the show?'
+p2684
+sg8
+g2096
+ssS'104.3'
+p2685
+(dp2686
+g6
+S'What auto won the North American Car of the Year award at the show?'
+p2687
+sg8
+g2096
+ssS'97.4'
+p2688
+(dp2689
+g6
+S"What is the title of the Crows' first record?"
+p2690
+sg8
+g2100
+ssS'104.1'
+p2691
+(dp2692
+g6
+S'In what city was the 1999 North American International Auto Show held?'
+p2693
+sg8
+g2096
+ssS'106.4'
+p2694
+(dp2695
+g6
+S'How many games were played in the series?'
+p2696
+sg8
+g2142
+ssS'95.1'
+p2697
+(dp2698
+g6
+S"What is Hong Kong's population?"
+p2699
+sg8
+S'return of Hong Kong to Chinese sovereignty'
+p2700
+ssS'95.2'
+p2701
+(dp2702
+g6
+S'When was Hong Kong returned to Chinese sovereignty?'
+p2703
+sg8
+g2700
+ssS'95.3'
+p2704
+(dp2705
+g6
+S'Who was the Chinese President at the time of the return?'
+p2706
+sg8
+g2700
+ssS'95.4'
+p2707
+(dp2708
+g6
+S'Who was the British Foreign Secretary at the time?'
+p2709
+sg8
+g2700
+ssS'106.1'
+p2710
+(dp2711
+g6
+S'What is the name of the winning team?'
+p2712
+sg8
+g2142
+ssS'106.2'
+p2713
+(dp2714
+g6
+S'What is the name of the losing team?'
+p2715
+sg8
+g2142
+ssS'106.3'
+p2716
+(dp2717
+g6
+S'Who was named Most Valuable Player (MVP)?'
+p2718
+sg8
+g2142
+ssS'66.2'
+p2719
+(dp2720
+g6
+S'Who was the on-board commander of the submarine?'
+p2721
+sg8
+S'Russian submarine Kursk sinks'
+p2722
+ssS'66.3'
+p2723
+(dp2724
+g6
+S'The submarine was part of which Russian fleet?'
+p2725
+sg8
+g2722
+ssS'66.1'
+p2726
+(dp2727
+g6
+S'When did the submarine sink?'
+p2728
+sg8
+g2722
+ssS'66.6'
+p2729
+(dp2730
+g6
+S'In what sea did the submarine sink?'
+p2731
+sg8
+g2722
+ssS'66.4'
+p2732
+(dp2733
+g6
+S'How many crewmen were lost in the disaster?'
+p2734
+sg8
+g2722
+ssS'68.4'
+p2735
+(dp2736
+g6
+S'Who was the killer?'
+p2737
+sg8
+S'Port Arthur Massacre'
+p2738
+ssS'68.5'
+p2739
+(dp2740
+g6
+S"What was the killer's nationality?"
+p2741
+sg8
+g2738
+ssS'68.1'
+p2742
+(dp2743
+g6
+S'Where is Port Arthur?'
+p2744
+sg8
+g2738
+ssS'68.2'
+p2745
+(dp2746
+g6
+S'When did the massacre occur?'
+p2747
+sg8
+g2738
+ssS'68.3'
+p2748
+(dp2749
+g6
+S'What was the final death toll of the massacre?'
+p2750
+sg8
+g2738
+ssS'127.3'
+p2751
+(dp2752
+g6
+S'What is the enrollment?'
+p2753
+sg8
+S'U.S. Naval Academy'
+p2754
+ssS'127.2'
+p2755
+(dp2756
+g6
+S'When was it founded?'
+p2757
+sg8
+g2754
+ssS'127.1'
+p2758
+(dp2759
+g6
+S'Where is the U.S. Naval Academy?'
+p2760
+sg8
+g2754
+ssS'70.4'
+p2761
+(dp2762
+g6
+S'What was the affiliation of the plane?'
+p2763
+sg8
+g2342
+ssS'70.3'
+p2764
+(dp2765
+g6
+S'How many people were killed?'
+p2766
+sg8
+g2342
+ssS'70.2'
+p2767
+(dp2768
+g6
+S'Where in Italy did the accident occur?'
+p2769
+sg8
+g2342
+ssS'127.5'
+p2770
+(dp2771
+g6
+S'Who is the father of the U.S. Navy?'
+p2772
+sg8
+g2754
+ssS'127.4'
+p2773
+(dp2774
+g6
+S'What are the students called?'
+p2775
+sg8
+g2754
+ssS'135.4'
+p2776
+(dp2777
+g6
+S'When was this agreement signed?'
+p2778
+sg8
+S'Food-for-Oil Agreement'
+p2779
+ssS'135.2'
+p2780
+(dp2781
+g6
+S'Who authorized this agreement?'
+p2782
+sg8
+g2779
+ssS'135.3'
+p2783
+(dp2784
+g6
+S'When was this agreement authorized?'
+p2785
+sg8
+g2779
+ssS'135.1'
+p2786
+(dp2787
+g6
+S'What country was the primary beneficiary of this agreement?'
+p2788
+sg8
+g2779
+ssS'74.3'
+p2789
+(dp2790
+g6
+S'When was DePauw founded?'
+p2791
+sg8
+S'DePauw University'
+p2792
+ssS'74.2'
+p2793
+(dp2794
+g6
+S'Where is DePauw located?'
+p2795
+sg8
+g2792
+ssS'74.1'
+p2796
+(dp2797
+g6
+S'What type of school is DePauw?'
+p2798
+sg8
+g2792
+ssS'74.5'
+p2799
+(dp2800
+g6
+S'What was the approximate number of students attending in 1999?'
+p2801
+sg8
+g2792
+ssS'74.4'
+p2802
+(dp2803
+g6
+S'Who was president of DePauw in 1999?'
+p2804
+sg8
+g2792
+ssS'123.4'
+p2805
+(dp2806
+g6
+S'What job did he hold before becoming president?'
+p2807
+sg8
+S'Vicente Fox'
+p2808
+ssS'123.3'
+p2809
+(dp2810
+g6
+S'Of what country is Vicente Fox president?'
+p2811
+sg8
+g2808
+ssS'123.2'
+p2812
+(dp2813
+g6
+S'Where was Vicente Fox educated?'
+p2814
+sg8
+g2808
+ssS'123.1'
+p2815
+(dp2816
+g6
+S'When was Vicente Fox born?'
+p2817
+sg8
+g2808
+ssS'76.1'
+p2818
+(dp2819
+g6
+S'What was his profession?'
+p2820
+sg8
+S'Bing Crosby'
+p2821
+ssS'76.3'
+p2822
+(dp2823
+g6
+S'What was his nickname?'
+p2824
+sg8
+g2821
+ssS'76.2'
+p2825
+(dp2826
+g6
+S'For which movie did he win an Academy Award?'
+p2827
+sg8
+g2821
+ssS'76.5'
+p2828
+(dp2829
+g6
+S'He is an alumnus of which university?'
+p2830
+sg8
+g2821
+ssS'76.4'
+p2831
+(dp2832
+g6
+S'What is the title of his all-time best-selling record?'
+p2833
+sg8
+g2821
+ssS'76.6'
+p2834
+(dp2835
+g6
+S'How old was Crosby when he died?'
+p2836
+sg8
+g2821
+ssS'121.5'
+p2837
+(dp2838
+g6
+S'Her book caused what pesticide to be banned?'
+p2839
+sg8
+S'Rachel Carson'
+p2840
+ssS'121.4'
+p2841
+(dp2842
+g6
+S'When did she write her book exposing dangers of pesticides?'
+p2843
+sg8
+g2840
+ssS'121.7'
+p2844
+(dp2845
+g6
+S'When did she die?'
+p2846
+sg8
+g2840
+ssS'121.6'
+p2847
+(dp2848
+g6
+S'What did she die of?'
+p2849
+sg8
+g2840
+ssS'121.1'
+p2850
+(dp2851
+g6
+S'What was her vocation?'
+p2852
+sg8
+g2840
+ssS'121.2'
+p2853
+(dp2854
+g6
+S'Where was her home?'
+p2855
+sg8
+g2840
+ssS'131.2'
+p2856
+(dp2857
+g6
+S'How fast could it travel?'
+p2858
+sg8
+S'Hindenburg disaster'
+p2859
+ssS'131.3'
+p2860
+(dp2861
+g6
+S'When did the Hindenburg disaster occur?'
+p2862
+sg8
+g2859
+ssS'131.1'
+p2863
+(dp2864
+g6
+S'What type of craft was the Hindenburg?'
+p2865
+sg8
+g2859
+ssS'131.6'
+p2866
+(dp2867
+g6
+S'How many of them were killed?'
+p2868
+sg8
+g2859
+ssS'131.4'
+p2869
+(dp2870
+g6
+S'Where did the disaster occur?'
+p2871
+sg8
+g2859
+ssS'131.5'
+p2872
+(dp2873
+g6
+S'How many people were on board?'
+p2874
+sg8
+g2859
+ssS'88.6'
+p2875
+(dp2876
+g6
+S'How much money did UPS pay out in insurance claims in 1984?'
+p2877
+sg8
+S'United Parcel Service (UPS)'
+p2878
+ssS'88.5'
+p2879
+(dp2880
+g6
+S'What color are UPS trucks?'
+p2881
+sg8
+g2878
+ssS'88.2'
+p2882
+(dp2883
+g6
+S'Who is the CEO of UPS?'
+p2884
+sg8
+g2878
+ssS'88.3'
+p2885
+(dp2886
+g6
+S"When was UPS's first public stock offering?"
+p2887
+sg8
+g2878
+ssS'88.1'
+p2888
+(dp2889
+g6
+S'Where is UPS headquarters located?'
+p2890
+sg8
+g2878
+ssS'133.1'
+p2891
+(dp2892
+g6
+S'Where did this hurricane occur?'
+p2893
+sg8
+S'Hurricane Mitch'
+p2894
+ssS'133.2'
+p2895
+(dp2896
+g6
+S'When did this hurricane occur?'
+p2897
+sg8
+g2894
+ssS'133.5'
+p2898
+(dp2899
+g6
+S'What country had the highest death total from this hurricane?'
+p2900
+sg8
+g2894
+ssS'113.6'
+p2901
+(dp2902
+g6
+S'Who is he married to?'
+p2903
+sg8
+S'Paul Newman'
+p2904
+ssS'113.2'
+p2905
+(dp2906
+g6
+S'What is his second successful career?'
+p2907
+sg8
+g2904
+ssS'113.3'
+p2908
+(dp2909
+g6
+S'What is the name of the company that he started?'
+p2910
+sg8
+g2904
+ssS'113.1'
+p2911
+(dp2912
+g6
+S'What is his primary career?'
+p2913
+sg8
+g2904
+ssS'109.4'
+p2914
+(dp2915
+g6
+S'Name the chairman.'
+p2916
+sg8
+S'Telefonica of Spain'
+p2917
+ssS'109.3'
+p2918
+(dp2919
+g6
+S"How is it ranked in size among the world's telecommunications companies?"
+p2920
+sg8
+g2917
+ssS'109.2'
+p2921
+(dp2922
+g6
+S'How many countries does it operate in?'
+p2923
+sg8
+g2917
+ssS'109.1'
+p2924
+(dp2925
+g6
+S'How many customers does it have?'
+p2926
+sg8
+g2917
+ssS'129.5'
+p2927
+(dp2928
+g6
+S'Where is NATO headquartered?'
+p2929
+sg8
+S'NATO'
+p2930
+ssS'129.1'
+p2931
+(dp2932
+g6
+S'What does the acronym NATO stand for?'
+p2933
+sg8
+g2930
+ssS'129.3'
+p2934
+(dp2935
+g6
+S'Where was the agreement establishing NATO signed?'
+p2936
+sg8
+g2930
+ssS'129.2'
+p2937
+(dp2938
+g6
+S'When was NATO established?'
+p2939
+sg8
+g2930
+ssS'117.2'
+p2940
+(dp2941
+g6
+S'When was it introduced into the U.S.?'
+p2942
+sg8
+S'kudzu'
+p2943
+ssS'117.3'
+p2944
+(dp2945
+g6
+S'From where was it introduced?'
+p2946
+sg8
+g2943
+ssS'117.1'
+p2947
+(dp2948
+g6
+S'What kind of plant is kudzu?'
+p2949
+sg8
+g2943
+ssS'117.6'
+p2950
+(dp2951
+g6
+S'What has been found to kill it?'
+p2952
+sg8
+g2943
+ssS'117.5'
+p2953
+(dp2954
+g6
+S'Why is it a problem?'
+p2955
+sg8
+g2943
+ssS'115.1'
+p2956
+(dp2957
+g6
+S'When was the initial land purchased?'
+p2958
+sg8
+S'Longwood Gardens'
+p2959
+ssS'115.2'
+p2960
+(dp2961
+g6
+S'Where is it?'
+p2962
+sg8
+g2959
+ssS'115.3'
+p2963
+(dp2964
+g6
+S'How large is it?'
+p2965
+sg8
+g2959
+ssS'115.4'
+p2966
+(dp2967
+g6
+S'Who created it?'
+p2968
+sg8
+g2959
+ssS'115.5'
+p2969
+(dp2970
+g6
+S'How many visitors does it get per year?'
+p2971
+sg8
+g2959
+ssS'115.6'
+p2972
+(dp2973
+g6
+S'When is the best month to visit the gardens?'
+p2974
+sg8
+g2959
+ssS'80.4'
+p2975
+(dp2976
+g6
+S'How many crew members were aboard?'
+p2977
+sg8
+S'Crash of EgyptAir Flight 990'
+p2978
+ssS'80.5'
+p2979
+(dp2980
+g6
+S'How many passengers were aboard Flight 990?'
+p2981
+sg8
+g2978
+ssS'80.2'
+p2982
+(dp2983
+g6
+S'Who was the pilot of Flight 990?'
+p2984
+sg8
+g2978
+ssS'80.3'
+p2985
+(dp2986
+g6
+S'Who was the co-pilot of Flight 990?'
+p2987
+sg8
+g2978
+ssS'80.1'
+p2988
+(dp2989
+g6
+S'Where in the Atlantic Ocean did Flight 990 crash?'
+p2990
+sg8
+g2978
+ssS'82.5'
+p2991
+(dp2992
+g6
+S'The main puppet character was based on what person?'
+p2993
+sg8
+S'Howdy Doody Show'
+p2994
+ssS'82.1'
+p2995
+(dp2996
+g6
+S'What year did the "Howdy Doody Show" first run on television?'
+p2997
+sg8
+g2994
+ssS'82.2'
+p2998
+(dp2999
+g6
+S'On what date did the show go off the air?'
+p3000
+sg8
+g2994
+ssS'78.6'
+p3001
+(dp3002
+g6
+S"What was his wife's profession?"
+p3003
+sg8
+S'Akira Kurosawa'
+p3004
+ssS'78.5'
+p3005
+(dp3006
+g6
+S'What was his English nickname?'
+p3007
+sg8
+g3004
+ssS'78.4'
+p3008
+(dp3009
+g6
+S'What was his profession?'
+p3010
+sg8
+g3004
+ssS'78.3'
+p3011
+(dp3012
+g6
+S'Which university did he graduate from?'
+p3013
+sg8
+g3004
+ssS'78.2'
+p3014
+(dp3015
+g6
+S'When was he born?'
+p3016
+sg8
+g3004
+ssS'78.1'
+p3017
+(dp3018
+g6
+S'When did Kurosawa die?'
+p3019
+sg8
+g3004
+ssS'139.5'
+p3020
+(dp3021
+g6
+S'Where was the 24th Islamic Conference of Foreign Ministers of the OIC held?'
+p3022
+sg8
+g2079
+ssS'85.4'
+p3023
+(dp3024
+g6
+S'How does NCL rank in size with other cruise lines?'
+p3025
+sg8
+g2609
+ssS'85.3'
+p3026
+(dp3027
+g6
+S"What is the name of the NCL's own private island?"
+p3028
+sg8
+g2609
+ssS'72.5'
+p3029
+(dp3030
+g6
+S"Where does Bollywood rank in the world's film industries?"
+p3031
+sg8
+g2469
+ssS'72.4'
+p3032
+(dp3033
+g6
+S"What is Bollywood's equivalent of the Oscars?"
+p3034
+sg8
+g2469
+ssS'125.3'
+p3035
+(dp3036
+g6
+S'How many children did he have?'
+p3037
+sg8
+g2473
+ssS'125.2'
+p3038
+(dp3039
+g6
+S'Whom did he marry?'
+p3040
+sg8
+g2473
+ssS'72.1'
+p3041
+(dp3042
+g6
+S'Where is Bollywood located?'
+p3043
+sg8
+g2469
+ssS'125.4'
+p3044
+(dp3045
+g6
+S'How many opening season performances did he have at the Met?'
+p3046
+sg8
+g2473
+ssS'125.7'
+p3047
+(dp3048
+g6
+S'Where did he die?'
+p3049
+sg8
+g2473
+ssS'72.2'
+p3050
+(dp3051
+g6
+S'From what foreign city did Bollywood derive its name?'
+p3052
+sg8
+g2469
+ssS'101.6'
+p3053
+(dp3054
+g6
+S"What is Weiss's home town?"
+p3055
+sg8
+S'Michael Weiss'
+p3056
+ssS'101.5'
+p3057
+(dp3058
+g6
+S"Who is Michael Weiss's choreographer?"
+p3059
+sg8
+g3056
+ssS'101.4'
+p3060
+(dp3061
+g6
+S'When did Weiss win his second U.S. Skating title?'
+p3062
+sg8
+g3056
+ssS'101.3'
+p3063
+(dp3064
+g6
+S'When did Weiss win his first U.S. Skating title?'
+p3065
+sg8
+g3056
+ssS'101.2'
+p3066
+(dp3067
+g6
+S"Who is Weiss's coach?"
+p3068
+sg8
+g3056
+ssS'101.1'
+p3069
+(dp3070
+g6
+S'When was Michael Weiss born?'
+p3071
+sg8
+g3056
+ssS'103.5'
+p3072
+(dp3073
+g6
+S'How many plays were there in Super Bowl XXXIV?'
+p3074
+sg8
+S'Super Bowl XXXIV'
+p3075
+ssS'103.4'
+p3076
+(dp3077
+g6
+S'What was the attendance at the game?'
+p3078
+sg8
+g3075
+ssS'103.1'
+p3079
+(dp3080
+g6
+S'Where was Super Bowl XXXIV held?'
+p3081
+sg8
+g3075
+ssS'103.3'
+p3082
+(dp3083
+g6
+S'What was the final score?'
+p3084
+sg8
+g3075
+ssS'103.2'
+p3085
+(dp3086
+g6
+S'What team won the game?'
+p3087
+sg8
+g3075
+ssS'84.2'
+p3088
+(dp3089
+g6
+S'How heavy is it?'
+p3090
+sg8
+S'meteorites'
+p3091
+ssS'84.3'
+p3092
+(dp3093
+g6
+S'What is it called by the Indians?'
+p3094
+sg8
+g3091
+ssS'84.1'
+p3095
+(dp3096
+g6
+S'What is the largest meteorite found in the U.S.?'
+p3097
+sg8
+g3091
+ssS'84.6'
+p3098
+(dp3099
+g6
+S'How many metric tons of meteorites fall to the earth each year?'
+p3100
+sg8
+g3091
+ssS'84.4'
+p3101
+(dp3102
+g6
+S"Where is the world's largest meteorite?"
+p3103
+sg8
+g3091
+ssS'84.5'
+p3104
+(dp3105
+g6
+S"How heavy is the world's largest meteorite?"
+p3106
+sg8
+g3091
+ssS'86.1'
+p3107
+(dp3108
+g6
+S'Give the month and year that General Abacha had a successful coup in Nigeria.'
+p3109
+sg8
+S'Sani Abacha'
+p3110
+ssS'86.2'
+p3111
+(dp3112
+g6
+S'What reportedly caused the death of Sani Abacha?'
+p3113
+sg8
+g3110
+ssS'86.3'
+p3114
+(dp3115
+g6
+S'How old was Sani Abacha when he died?'
+p3116
+sg8
+g3110
+ssS'86.4'
+p3117
+(dp3118
+g6
+S'Who was sworn in to replace Sani Abacha?'
+p3119
+sg8
+g3110
+ssS'137.4'
+p3120
+(dp3121
+g6
+S"In the 1950's, who regularly bombarded Kinmen?"
+p3122
+sg8
+S'Kinmen Island'
+p3123
+ssS'137.5'
+p3124
+(dp3125
+g6
+S'How far is Kinmen from this country?'
+p3126
+sg8
+g3123
+ssS'137.6'
+p3127
+(dp3128
+g6
+S'Of the two governments involved over Kinmen, which has air superiority?'
+p3129
+sg8
+g3123
+ssS'137.1'
+p3130
+(dp3131
+g6
+S'What is the former name of Kinmen?'
+p3132
+sg8
+g3123
+ssS'137.2'
+p3133
+(dp3134
+g6
+S'What country governs Kinmen?'
+p3135
+sg8
+g3123
+ssS'105.3'
+p3136
+(dp3137
+g6
+S"What was the date of Mt. St. Helens' eruption?"
+p3138
+sg8
+S'1980 Mount St. Helens eruption'
+p3139
+ssS'105.2'
+p3140
+(dp3141
+g6
+S'Who named Mount St. Helens?'
+p3142
+sg8
+g3139
+ssS'105.1'
+p3143
+(dp3144
+g6
+S'In what mountain range is Mt. St. Helens located?'
+p3145
+sg8
+g3139
+ssS'105.5'
+p3146
+(dp3147
+g6
+S'What was the height of the volcano after the eruption?'
+p3148
+sg8
+g3139
+ssS'105.4'
+p3149
+(dp3150
+g6
+S'How many people died when it erupted?'
+p3151
+sg8
+g3139
+ssS'107.1'
+p3152
+(dp3153
+g6
+S'How long is the Chunnel?'
+p3154
+sg8
+S'Chunnel'
+p3155
+ssS'107.3'
+p3156
+(dp3157
+g6
+S'What year did the Chunnel open for traffic?'
+p3158
+sg8
+g3155
+ssS'107.2'
+p3159
+(dp3160
+g6
+S'What year did construction of the tunnel begin?'
+p3161
+sg8
+g3155
+ssS'107.5'
+p3162
+(dp3163
+g6
+S'Who operates the Chunnel?'
+p3164
+sg8
+g3155
+ssS'107.4'
+p3165
+(dp3166
+g6
+S'How many people use the Chunnel each year?'
+p3167
+sg8
+g3155
+ssS'98.1'
+p3168
+(dp3169
+g6
+S'When was the American Legion founded?'
+p3170
+sg8
+S'American Legion'
+p3171
+ssS'98.3'
+p3172
+(dp3173
+g6
+S'How many members does the American Legion have?'
+p3174
+sg8
+g3171
+ssS'98.2'
+p3175
+(dp3176
+g6
+S'Where was the American Legion founded?'
+p3177
+sg8
+g3171
+ssS'98.4'
+p3178
+(dp3179
+g6
+S'What organization has helped to revitalize Legion membership?'
+p3180
+sg8
+g3171
+ssS'119.5'
+p3181
+(dp3182
+g6
+S'What is the average age of a Harley-Davidson rider?'
+p3183
+sg8
+S'Harley-Davidson'
+p3184
+ssS'119.6'
+p3185
+(dp3186
+g6
+S'What company did Harley-Davidson buy out?'
+p3187
+sg8
+g3184
+ssS'119.1'
+p3188
+(dp3189
+g6
+S'When was the company founded?'
+p3190
+sg8
+g3184
+ssS'119.2'
+p3191
+(dp3192
+g6
+S'Where is it based?'
+p3193
+sg8
+g3184
+ssS'119.3'
+p3194
+(dp3195
+g6
+S'They are best known for making what product?'
+p3196
+sg8
+g3184
+ssS'111.5'
+p3197
+(dp3198
+g6
+S'What is the name "AMWAY" short for?'
+p3199
+sg8
+S'AMWAY'
+p3200
+ssS'111.1'
+p3201
+(dp3202
+g6
+S'When was AMWAY founded?'
+p3203
+sg8
+g3200
+ssS'111.2'
+p3204
+(dp3205
+g6
+S'Where is it headquartered?'
+p3206
+sg8
+g3200
+ssS'111.3'
+p3207
+(dp3208
+g6
+S'Who is the president of the company?'
+p3209
+sg8
+g3200
+sss.
