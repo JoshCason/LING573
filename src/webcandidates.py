@@ -24,6 +24,8 @@ bing = BingSearchAPI(my_key)
 
 sys.path.insert(0, os.path.join("..", ".."))
 
+from xgoogle.search import GoogleSearch, SearchError
+
 from pattern.web import Bing, asynchronous, plaintext
 from pattern.web import SEARCH, IMAGE, NEWS
 import time
@@ -52,7 +54,7 @@ def apply_filters(web_results, question, limit):
     return filters.top(limit)
 
 # search the web for a particular query using different libraries and engines
-def websearch(search_library, query, limit):
+def websearch(search_library, search_engine, query, limit):
     ret = []
     # Get the top 100 - I think it will let you get only 50 at a time.
     per_page = 50
@@ -81,6 +83,20 @@ def websearch(search_library, query, limit):
             results = bing.search('web',clean_query(query),params)()['d']['results'][0]['Web']
             for result in results:
                 ret.append({'title' : result['Title'], 'description' : result['Description']})
+                
+    elif search_library == 'xgoogle':
+        for page in range(pages):
+            try:
+                # inject some delay
+                time.sleep(0.04)
+                gs = GoogleSearch(clean_query(query))
+                gs.page = page+1
+                gs.results_per_page = per_page
+                results = gs.get_results()
+                for res in results:
+                    ret.append({'title' : res.title.encode("utf8"), 'description' : res.desc.encode("utf8")})
+            except SearchError, e:
+                print "Search failed: %s" % e
                 
     return ret
 
@@ -153,7 +169,7 @@ def getwebresults(question):
         with open(cache_path ,'rb') as fp:
             web_results = pickle.load(fp)
     else:
-        web_results = websearch(search_library, q, lim)
+        web_results = websearch(search_library, search_engine, q, lim)
         with open(cache_path ,'wb') as fp:
             pickle.dump(web_results,fp)
             
@@ -166,12 +182,12 @@ def getwebresults(question):
             with open(cache_path ,'rb') as fp:
                 web_results_exact = pickle.load(fp)
         else:
-            web_results_exact = websearch(search_library, '"' + q + '"', lim)
+            web_results_exact = websearch(search_library, search_engine, '"' + q + '"', lim)
             with open(cache_path ,'wb') as fp:
                 pickle.dump(web_results_exact,fp)
 
     # continue # uncomment this just to cache a bunch of web results.
-    
+
     # Apply Anthony's context filters
     if config['include_exact_query_matches'] == 0:
         # if we don't have to merge in exact query web results than just pass on through

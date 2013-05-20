@@ -1,8 +1,8 @@
 {
-    "search_libraries": ["pattern", "requests"],
-    "search_library_active": "requests",
+    "search_libraries": ["pattern", "requests", "xgoogle"],
+    "search_library_active": "xgoogle",
     "search_engines": ["bing", "google"],
-    "search_engine_active": "bing",
+    "search_engine_active": "google",
     "use_lucene_wildcard": true,
     "questions_to_answer":0,
     "aquant_index_dir": "aquaint_index",

@@ -1,3 +1,4 @@
+from config573 import config
 from lucene import \
     QueryParser, IndexSearcher, StandardAnalyzer, File, \
     VERSION, initVM, Version, MultiFieldQueryParser, SimpleFSDirectory

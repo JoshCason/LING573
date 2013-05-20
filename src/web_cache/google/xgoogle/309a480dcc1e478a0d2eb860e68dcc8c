@@ -1,0 +1,32 @@
+(lp1
+(dp2
+S'description'
+p3
+S'World_Knowledge_for_Question_Answering'
+p4
+sS'title'
+p5
+S'Using Semantic Relations with World Knowledge for Question ...'
+p6
+sa(dp7
+g3
+S'Document_Retrieval_for_Question_Answering'
+p8
+sg5
+S'Using Linguistically Motivated Features in Document Retrieval for ...'
+p9
+sa(dp10
+g3
+S'World_Knowledge_for_Question_Answering'
+p11
+sg5
+S'Using Semantic Relations with World Knowledge for Question ...'
+p12
+sa(dp13
+g3
+S'Document_Retrieval_for_Question_Answering'
+p14
+sg5
+S'Using Linguistically Motivated Features in Document Retrieval for ...'
+p15
+sa.

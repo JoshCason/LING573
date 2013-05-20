@@ -19,7 +19,8 @@ from nltk.tag import pos_tag
 from nltk.tag.simplify import simplify_wsj_tag
 import xml.etree.ElementTree as ET
 from webcandidates import getcandidates, getwebresults
-from util import aquaint_search
+from util import *
+from aquaint_lucene import aquaint_search
 from config573 import config
 
 sys.path.insert(0, os.path.join("..", ".."))
