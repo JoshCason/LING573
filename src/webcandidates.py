@@ -18,6 +18,7 @@ from qa_filters import qa_filters
 from config573 import config
 sys.path.append('./requests/')
 from bing_search_api import BingSearchAPI
+import HTMLParser
 
 my_key = 'cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM='
 bing = BingSearchAPI(my_key)
@@ -26,7 +27,7 @@ sys.path.insert(0, os.path.join("..", ".."))
 
 from xgoogle.search import GoogleSearch, SearchError
 
-from pattern.web import Bing, asynchronous, plaintext
+from pattern.web import Google, Bing, asynchronous, plaintext
 from pattern.web import SEARCH, IMAGE, NEWS
 import time
 
@@ -61,7 +62,10 @@ def websearch(search_library, search_engine, query, limit):
     pages = int(math.ceil(limit / float(per_page)))
 
     if search_library == 'pattern':
-        engine = Bing(license='cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM=', language="en")
+        if search_engine == 'bing':
+            engine = Bing(license='cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM=', language="en")
+        elif search_engine == 'google':
+            engine = Google(license=None, language="en")
         for page in range(pages):
             try:
                 # turns out start = starting page and count is results per page
@@ -113,7 +117,10 @@ def getcandidates(search_results, query):
         texts = text.split('...')
         toked = []
         for t in texts:
-            tokes = word_tokenize(t)
+            if config['search_library_active'] == 'xgoogle':
+                tokes = word_tokenize(t.decode('utf8'))
+            else:
+                tokes = word_tokenize(t)
             tokes = map(lambda x: x.lower(), tokes)
             toked.append(tokes)
         for tokens in toked:
@@ -150,6 +157,15 @@ def getcandidates(search_results, query):
             for token in tokens:
                 ngrams[k] += ngrams[token]
     return ngrams 
+    
+def clean_results(results):
+    # we want to remove html tags and decode html entities for titles and descriptions
+    h = HTMLParser.HTMLParser()
+    for result in results:
+        result['title'] = h.unescape(re.sub('<[^<]+?>', '', result['title']))
+        result['description'] = h.unescape(re.sub('<[^<]+?>', '', result['description']))
+        
+    return results
 
 # Take a TREC question and retrieve search results from the web. 
 # Leverage caching and exact query searching
@@ -173,6 +189,8 @@ def getwebresults(question):
         with open(cache_path ,'wb') as fp:
             pickle.dump(web_results,fp)
             
+    web_results = clean_results(web_results)
+            
     # do we want to search for exact query web results as well and do some merging?
     if config['include_exact_query_matches'] == 1:
         cache_key = hashlib.md5('"' + q + '"' + search_engine + search_library).hexdigest()
@@ -185,6 +203,8 @@ def getwebresults(question):
             web_results_exact = websearch(search_library, search_engine, '"' + q + '"', lim)
             with open(cache_path ,'wb') as fp:
                 pickle.dump(web_results_exact,fp)
+                
+        web_results_exact = clean_results(web_results_exact)
 
     # continue # uncomment this just to cache a bunch of web results.
 

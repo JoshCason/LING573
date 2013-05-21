@@ -1,6 +1,6 @@
 {
     "search_libraries": ["pattern", "requests", "xgoogle"],
-    "search_library_active": "xgoogle",
+    "search_library_active": "pattern",
     "search_engines": ["bing", "google"],
     "search_engine_active": "google",
     "use_lucene_wildcard": true,

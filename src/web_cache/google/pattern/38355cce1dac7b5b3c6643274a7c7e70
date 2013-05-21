@@ -1,0 +1,60 @@
+(lp1
+(dp2
+S'description'
+p3
+VThis reduces the burden of the further grammatical processing. Consider the question q141.5: <b>Who is Warren Moon&#39;s agent</b>? Instead, Moon flew to Los Angeles, ...
+p4
+sS'title'
+p5
+VUsing Semantic Relations with World Knowledge for Question - TREC
+p6
+sa(dp7
+g3
+V... \u201c<b>Who is Warren Moon&#39;s Agent</b>?\u201d \u2192. §. ¦. ¤. ¥. Question. Analysis. \u2193. §. ¦. ¤. ¥. Question. Classification. \u2193. §. ¦. ¤. ¥. Query. Construction. \u2193 ...
+p8
+sg5
+Vbrevity problem
+p9
+sa(dp10
+g3
+V141.5: <b>Who is Warren Moon&#39;s agent</b>? Target 216: \u201cPaul Krugman\u201d (year: 2007). 216.1: For which newspaper does Krugman write? 216.2: At which university ...
+p11
+sg5
+VAcquiring Syntactic and Semantic Transformations in Question ...
+p12
+sa(dp13
+g3
+V... \u201c<b>Who is Warren Moon&#39;s Agent</b>?\u201d \u2192. §. ¦. ¤. ¥. Question. Analysis. \u2193. §. ¦. ¤. ¥. Question. Classification. \u2193. §. ¦. ¤. ¥. Query. Construction. \u2193 ...
+p14
+sg5
+VWhy QA
+p15
+sa(dp16
+g3
+VThis reduces the burden of the further grammatical processing. Consider the question q141.5: <b>Who is Warren Moon&#39;s agent</b>? Instead, Moon flew to Los Angeles, ...
+p17
+sg5
+VUsing Semantic Relations with World Knowledge for Question - TREC
+p18
+sa(dp19
+g3
+V... \u201c<b>Who is Warren Moon&#39;s Agent</b>?\u201d \u2192. §. ¦. ¤. ¥. Question. Analysis. \u2193. §. ¦. ¤. ¥. Question. Classification. \u2193. §. ¦. ¤. ¥. Query. Construction. \u2193 ...
+p20
+sg5
+Vbrevity problem
+p21
+sa(dp22
+g3
+V141.5: <b>Who is Warren Moon&#39;s agent</b>? Target 216: \u201cPaul Krugman\u201d (year: 2007). 216.1: For which newspaper does Krugman write? 216.2: At which university ...
+p23
+sg5
+VAcquiring Syntactic and Semantic Transformations in Question ...
+p24
+sa(dp25
+g3
+V... \u201c<b>Who is Warren Moon&#39;s Agent</b>?\u201d \u2192. §. ¦. ¤. ¥. Question. Analysis. \u2193. §. ¦. ¤. ¥. Question. Classification. \u2193. §. ¦. ¤. ¥. Query. Construction. \u2193 ...
+p26
+sg5
+VWhy QA
+p27
+sa.
