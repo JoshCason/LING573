@@ -183,7 +183,7 @@ Give it a question id and get back which year it was asked.
 def getyearbyqid(qid):
     return filter(lambda x: qid in questions[x],questions)[0]
 
-comment = """
+"""
 util.cache_plain_web_results
 
 plain means nothing was done to the question except prepending
@@ -210,7 +210,12 @@ def cache_plain_web_results():
     cp = cPickle
     q = questions
     countdown = len(reduce(lambda x,y: x+y,map(lambda x: q[x].values(),q)))
-    rfile = open("pickledplainwebresults",'wb')
+    try:
+        rfile = open("pickledplainwebresults",'rb')
+        q = cPickle.load(rfile)
+        rfile.close()
+    except:
+        rfile = open("pickledplainwebresults",'wb')
     for year in q:
         key = config["search_engine_active"]
         qids = q[year].keys() 
@@ -233,7 +238,6 @@ def cache_plain_web_results():
                 q[year][qkey] = True
             countdown -= 1
             print(str(countdown) + " to go")
-    q['comment'] = comment
     cp.dump(q,rfile)
     rfile.close()
     return q
@@ -252,6 +256,9 @@ class StemTokenizer(object):
     def __call__(self, doc):
         return [self.stem.stem(t) for t in word_tokenize(doc) if t not in self.punct]
     
+"""
+this function checks if there are any missing results
+"""    
 def f():
     cp = cPickle
     rfile = open("pickledplainwebresults",'rb')
