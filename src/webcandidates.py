@@ -55,30 +55,34 @@ def apply_filters(web_results, question, limit):
     return filters.top(limit)
 
 # search the web for a particular query using different libraries and engines
-def websearch(search_library, search_engine, query, limit):
+def websearch(query):
+    limit = config['web_results_limit']
+    search_library = config['search_library_active']
+    search_engine = config['search_engine_active']
+    
     ret = []
-    # Get the top 100 - I think it will let you get only 50 at a time.
-    per_page = 50
+    # Bing=50 per page, Google=10 - go figure!
+    per_page = config[search_engine + '_per_page']
     pages = int(math.ceil(limit / float(per_page)))
 
     if search_library == 'pattern':
         if search_engine == 'bing':
             engine = Bing(license='cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM=', language="en")
         elif search_engine == 'google':
-            engine = Google(license=None, language="en")
+            engine = Google(license=config[config['use_whose_key'] + '_google_key'], language="en")
         for page in range(pages):
             try:
                 # turns out start = starting page and count is results per page
                 # could probably do some logic to make sure count is right if limit was 130, on page 3, count should be 30, whereas 
                 # our code is going to fetch 50 for a total of 150. ... I think we can probably mess with that later and just work in blocks of 50
-                request = asynchronous(engine.search, clean_query(query), start=page+1, count=per_page, type=SEARCH, timeout=10)
+                request = asynchronous(engine.search, clean_query(query), start=page+1, count=per_page, type=SEARCH, timeout=10, throttle=0.5)
                 while not request.done:
                     time.sleep(0.01)
             except:
                 raise
-
-            for result in request.value:
-                ret.append({'title' : result.title, 'description' : result.text})
+            if request.value != None:
+                for result in request.value:
+                    ret.append({'title' : result.title, 'description' : result.text})
             
     elif search_library == 'requests':
         for page in range(pages):
@@ -185,7 +189,7 @@ def getwebresults(question):
         with open(cache_path ,'rb') as fp:
             web_results = pickle.load(fp)
     else:
-        web_results = websearch(search_library, search_engine, q, lim)
+        web_results = websearch(q)
         with open(cache_path ,'wb') as fp:
             pickle.dump(web_results,fp)
             
@@ -200,7 +204,7 @@ def getwebresults(question):
             with open(cache_path ,'rb') as fp:
                 web_results_exact = pickle.load(fp)
         else:
-            web_results_exact = websearch(search_library, search_engine, '"' + q + '"', lim)
+            web_results_exact = websearch('"' + q + '"')
             with open(cache_path ,'wb') as fp:
                 pickle.dump(web_results_exact,fp)
                 

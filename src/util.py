@@ -9,6 +9,16 @@ import cPickle
 import re
 from config573 import config
 import xml.etree.ElementTree as ET
+from webcandidates import websearch, clean_results
+from nltk import word_tokenize, PorterStemmer
+import string
+
+f = open("pickledquestions",'rb')
+questions = cPickle.load(f)
+f.close()
+f = open("pickledanswers",'rb')
+ans_patterns = cPickle.load(f)
+f.close()
 
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
@@ -99,8 +109,6 @@ def getquestions(trec_file):
             q_dict[qid]['question'] = q.text.strip()
     return q_dict
 
-
-questions = cPickle.load(open("pickledquestions",'rb'))
 """
 pass in a year and get back a dictionary of dictionaries.
 Each question id picks out a dictionary which contains "target" and 
@@ -159,10 +167,8 @@ def checkanswer(year_str,qid_str,ans_str, docno=None):
         mrr_type = 'lenient'
     else: mrr_type = 'strict'
     qid = qid_str
-    f = open("pickledanswers",'rb')
-    allyears = cPickle.load(f)
-    if year_str in allyears:
-        patterns = allyears[year_str]
+    if year_str in ans_patterns:
+        patterns = ans_patterns[year_str]
     pct = 0
     while pct < len(patterns[qid].patts):
         if re.search(patterns[qid].patts[pct],ans_str) >= 0:
@@ -171,6 +177,95 @@ def checkanswer(year_str,qid_str,ans_str, docno=None):
         pct += 1
     return False
 
+"""
+Give it a question id and get back which year it was asked.
+"""
+def getyearbyqid(qid):
+    return filter(lambda x: qid in questions[x],questions)[0]
 
+comment = """
+util.cache_plain_web_results
 
+plain means nothing was done to the question except prepending
+the target.
+
+goes through 2004, 2005, 2006 questions and caches their cleaned 
+results. Will store results separately for different search engines 
+
+how to look up results:
+unpickle pickledplainwebresults
+you need to know the year, the qid, and the search engine. Then you 
+get a dictionary with keys 1-n where n is the number of results we 
+retrieved for that search engine (which differs, so use len() if necessary).
+
+if "results" is the name of the unpickled dictionary:
+google result 1 for 2004 qid 35.3 would be results['2004']['35.3']['google'][1]
+
+**Important** If you get throttled in the middle of a run, the results
+that did get returned will get cached. the algorithm will skip over those
+questions the next time and not search them again. That way you can change
+the config to use someone else's key or up your billing limits.
+"""
+def cache_plain_web_results():
+    cp = cPickle
+    q = questions
+    countdown = len(reduce(lambda x,y: x+y,map(lambda x: q[x].values(),q)))
+    rfile = open("pickledplainwebresults",'wb')
+    for year in q:
+        key = config["search_engine_active"]
+        qids = q[year].keys() 
+        for qid in qids:
+            qkey = key + "_" + qid
+            if qkey not in q[year]: 
+                question = q[year][qid]['question']
+                target = q[year][qid]['target']
+                qry = "%s %s" % (target, question)
+                q[year][qid][key] = dict()
+                try:
+                    r = clean_results(websearch(qry))
+                except:
+                    print("qid:%s, %s" % (qid, qry))
+                    cp.dump(q,rfile)
+                    rfile.close()
+                    raise
+                for i,result in enumerate(r):
+                    q[year][qid][key][i] = result
+                q[year][qkey] = True
+            countdown -= 1
+            print(str(countdown) + " to go")
+    q['comment'] = comment
+    cp.dump(q,rfile)
+    rfile.close()
+    return q
+
+"""
+
+__call__ is when you use an instance of the class as a method
+>>> st = StemTokenizer()
+>>> tokedNstemmed = st(sentence)
+
+"""
+class StemTokenizer(object):
+    def __init__(self):
+        self.stem = PorterStemmer()
+        self.punct = set(string.punctuation) | set(['..','...','....','.....'])
+    def __call__(self, doc):
+        return [self.stem.stem(t) for t in word_tokenize(doc) if t not in self.punct]
+    
+def f():
+    cp = cPickle
+    rfile = open("pickledplainwebresults",'rb')
+    r = cp.load(rfile)
+    rfile.close()
+    del r['comment'] 
+    missing = []
+    for year in r:
+        for qid in r[year]:
+            if not type(r[year][qid]) == bool:
+                if 'google' in r[year][qid]:
+                    if r[year][qid]['google'] == {}:
+                        missing.append(qid)
+                else: print("ack!!!")
+    return missing
+    
 

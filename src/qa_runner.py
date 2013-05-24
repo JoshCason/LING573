@@ -215,7 +215,6 @@ if __name__ == '__main__':
     f = open(out_file, 'a')
     qta = config["questions_to_answer"]
     assert(type(qta == int))
-    # Zero means do all questions - sorry can't comment the json
     if qta == 0:
         qta = len(questions)
     for question in questions[:qta]:
