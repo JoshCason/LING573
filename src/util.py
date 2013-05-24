@@ -257,14 +257,16 @@ class StemTokenizer(object):
         return [self.stem.stem(t) for t in word_tokenize(doc) if t not in self.punct]
     
 """
-this function checks if there are any missing results
+this function checks if there are any missing web results
 """    
 def f():
     cp = cPickle
     rfile = open("pickledplainwebresults",'rb')
     r = cp.load(rfile)
     rfile.close()
-    del r['comment'] 
+    try:
+        del r['comment']
+    except: pass 
     missing = []
     for year in r:
         for qid in r[year]:
