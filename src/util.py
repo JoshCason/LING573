@@ -13,13 +13,6 @@ from webcandidates import websearch, clean_results
 from nltk import word_tokenize, PorterStemmer
 import string
 
-f = open("pickledquestions",'rb')
-questions = cPickle.load(f)
-f.close()
-f = open("pickledanswers",'rb')
-ans_patterns = cPickle.load(f)
-f.close()
-
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
                     range(1,len(t)-2), \
@@ -44,42 +37,63 @@ class pattern:
         self.doclists = []
         self.doclists.append(doclist)
 
+f = open("pickledquestions",'rb')
+questions = cPickle.load(f)
+f.close()
+# don't move the following section above the "pattern" class since the
+# data structure in the pickle requires it.
+g = open("pickledanswers",'rb')
+anspatterns = cPickle.load(g)
+g.close()
+
 """
 Stole most of this code from compute_mrr.py written by UW faculty/TAs
 
  I used this to get the pickledanswers file.
 Since we have the answers pickled now, this function will
 probably not be useful
+
+I updated it when I thought i'd need it again, and then didn't need it.
+Hasn't been tested, but should work. Pass in the path to the directory
+holding the training and devtest patterns. I supplied the patas default.
+Make sure to put the / at the end of the path string.
+
 -j
 """ 
-def getanswerpatterns(patt_file):
+def getanswerpatterns(path_to_patterns_dir='/dropbox/12-13/573/Data/patterns/'):
     
-    patt_f = open(patt_file,'r')
-
-    patterns = {}
-
-    # Collect patters from pattern files
-    for pattline in patt_f.readlines():
-        pattline = pattline[:-1]
-        parts = re.split('\s+',pattline)
-        if len(parts) > 2:
-            qid = parts[0]
-            patt = ''
-            partct = 1
-            while partct < len(parts) and parts[partct].find('APW') < 0 and parts[partct].find('XIE') < 0 and parts[partct].find('NYT') < 0:
-                patt += parts[partct]+'\s*'
-                partct += 1
-            doclist = []
-            while partct < len(parts):
-                doclist.append(parts[partct])
-                partct += 1
-            if patterns.has_key(qid):
-                patterns[qid].patts.append(patt)
-                patterns[qid].doclists.append(doclist)
-            else:
-                patterns[qid] = pattern(patt,doclist)
-    patt_f.close()
-    return patterns
+    p = path_to_patterns_dir
+    patt_files = {'2006': p +'devtest/factoid-docs.litkowski.2006.txt',
+     '2004': p +'training/factoid-docs.litkowski.2004.txt',
+     '2005': p +'training/factoid-docs.litkowski.2005.txt',
+     '2001': p +'training/factoid-docs.litkowski.2001.txt'}
+    all_patterns = dict()
+    for patt_file in patt_files:
+        patt_f = open(patt_files[patt_file],'r')
+        patterns = dict()
+        # Collect patters from pattern files
+        for pattline in patt_f.readlines():
+            pattline = pattline[:-1]
+            parts = re.split('\s+',pattline)
+            if len(parts) > 2:
+                qid = parts[0]
+                patt = ''
+                partct = 1
+                while partct < len(parts) and parts[partct].find('APW') < 0 and parts[partct].find('XIE') < 0 and parts[partct].find('NYT') < 0:
+                    patt += parts[partct]+'\s*'
+                    partct += 1
+                doclist = []
+                while partct < len(parts):
+                    doclist.append(parts[partct])
+                    partct += 1
+                if patterns.has_key(qid):
+                    patterns[qid].patts.append(patt)
+                    patterns[qid].doclists.append(doclist)
+                else:
+                    patterns[qid] = pattern(patt,doclist)
+        all_patterns[patt_file] = patterns
+        patt_f.close()
+    return all_patterns
 
 """
 Used this to pickle all the questions except year 2001 because
@@ -264,9 +278,6 @@ def f():
     rfile = open("pickledplainwebresults",'rb')
     r = cp.load(rfile)
     rfile.close()
-    try:
-        del r['comment']
-    except: pass 
     missing = []
     for year in r:
         for qid in r[year]:
