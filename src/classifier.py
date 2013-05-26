@@ -28,7 +28,7 @@ class clsfr():
         except:
             self.rbf_svc = svm.SVC(kernel='rbf')
         try:
-            g = open(config["model_dir"]+"vectorizer",'wb')
+            g = open(config["model_dir"]+"vectorizer",'rb')
             cp.dump(self.dv,g)
             g.close()
         except:

@@ -199,7 +199,7 @@ get a dictionary with keys 1-n where n is the number of results we
 retrieved for that search engine (which differs, so use len() if necessary).
 
 if "results" is the name of the unpickled dictionary:
-google result 1 for 2004 qid 35.3 would be results['2004']['35.3']['google'][1]
+google result 1 for 2004 qid 35.3 would be results['2004']['35.3']['google'][0]
 
 **Important** If you get throttled in the middle of a run, the results
 that did get returned will get cached. the algorithm will skip over those
