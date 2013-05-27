@@ -56,7 +56,7 @@ class clsfr(object):
             g.close()
             self.trained = True
         except:
-            self.rbf_svc = svm.SVC(kernel='rbf')
+            self.rbf_svc = svm.SVC(kernel='rbf', probability=True)
             self.dv = DictVectorizer()
         
     """
@@ -186,7 +186,8 @@ class clsfr(object):
         self.error_dict = dict(map(lambda x: (x,error_dict[x]), self.err_indices))
         self.report = lambda : print(classification_report(Y_gold, Y_model))
         self.acc = 1-(float(len(self.err_indices))/float(len(Y_gold)))
-        return Y_model
+        Y_probs = self.rbf_svc.predict_proba(X_data)            
+        return zip(Y_model,Y_probs)
         # TODO: figure out how to rank answer candidates not just classify them.
         
 
