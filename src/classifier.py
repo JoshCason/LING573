@@ -185,7 +185,7 @@ class clsfr(object):
         self.err_indices = filter(lambda x: Y_gold[x] != Y_model[x], range(len(Y_gold)))
         self.error_dict = dict(map(lambda x: (x,error_dict[x]), self.err_indices))
         self.report = lambda : print(classification_report(Y_gold, Y_model))
-        self.acc = float(1-len(self.err_indices))/float(len(Y_gold))
+        self.acc = 1-(float(len(self.err_indices))/float(len(Y_gold)))
         return Y_model
         # TODO: figure out how to rank answer candidates not just classify them.
         
