@@ -134,6 +134,7 @@ class clsfr(object):
     features = all the features
     
     >>> a_clsfr_object.devtest()
+    list of (classification,[probabilities,...]) pairs (see below)
     >>> a_clsfr_object.acc
     some number
     >>> a_clsfr_object.report()
@@ -146,15 +147,15 @@ class clsfr(object):
     For other tasks, an error dictionary is not stored, but error indices are (showing where
     in the test instances there were errors)
     
-    >>> import classifier
-    >>> a_clsfr_object = classifier.clsfr("something_other_than_main")
+    >>> reload(c)
+    <module 'classifier' from 'classifier.py'>
+    >>> a_clsfr_object = c.clsfr("something_other_than_main")
     >>> X_dict_list = [{1:2,2:3,3:4},{1:3,2:3,3:4}]
     >>> Y_gold = [-1,1] # since this is a binary svm
     >>> a_clsfr_object.train(X_dict_list, Y_gold)
     >>> a_clsfr_object.devtest(X_dict_list, Y_gold)
-    array([-1,  1])
-    >>> Y_gold
-    [-1, 1]
+    [(-1, array([ 0.45098648,  0.54901352])), (1, array([ 0.5489233,  0.4510767]))]
+    # obviously, the higher probability refers to the selected class
 
     ... etc.
 
