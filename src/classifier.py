@@ -5,6 +5,7 @@
 # Classifier
 #
 # @author Joshua Cason <casonj@uw.edu>
+from __future__ import print_function
 import subprocess
 import json
 import cPickle as cp
@@ -14,7 +15,6 @@ from sklearn.feature_extraction import FeatureHasher, DictVectorizer
 from sklearn.metrics import classification_report
 from sklearn import svm
 from config573 import config
-from __future__ import print_function
 
 
 """
