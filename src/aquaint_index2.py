@@ -22,17 +22,17 @@ class Ticker(object):
             time.sleep(1.0)
             
 if __name__ == '__main__':
-    aquaint_path = '/corpora/LDC/LDC02T31'
-    sub_dirs = ['/apw/', 'nyt', 'xie']
-    
+    aquaint_path = '/corpora/LDC/LDC08T25/data'
+    sub_dirs = ['/afp_eng/', '/apw_eng/', '/cna_eng/', '/ltw_eng/', '/nyt_eng/', '/xin_eng/']
+
     lucene.initVM()
     print 'lucene', lucene.VERSION
     start = datetime.now()
     
     # create aquaint index
-    if not os.path.exists('aquaint_index'):
-        os.mkdir('aquaint_index')
-    store = lucene.SimpleFSDirectory(lucene.File('aquaint_index'))
+    if not os.path.exists('aquaint_index2'):
+        os.mkdir('aquaint_index2')
+    store = lucene.SimpleFSDirectory(lucene.File('aquaint_index2'))
     writer = lucene.IndexWriter(store, lucene.StandardAnalyzer(lucene.Version.LUCENE_CURRENT), True,
                                 lucene.IndexWriter.MaxFieldLength.LIMITED)
     writer.setMaxFieldLength(1048576)
@@ -44,7 +44,9 @@ if __name__ == '__main__':
         for root, subFolders, files in os.walk(aquaint_path + d):
             for file in files:
                 if os.path.isfile(os.path.join(root,file)):
-                    fileList.append(os.path.join(root,file))
+                    fileName, fileExtension = os.path.splitext(os.path.join(root,file))
+                    if fileExtension == '.xml':
+                        fileList.append(os.path.join(root,file))
 
     # for each AQUAINT file get info
     for af in fileList:
@@ -61,14 +63,11 @@ if __name__ == '__main__':
         doctext = ''
         docheadline = ''
         for line in content:
-            if doc_found and '<DOCNO>' in line:
-                docid = line.replace('<DOCNO>', '').replace('</DOCNO>', '').strip()
-                
             # headline can be split across multiple lines or on one line.
             if doc_found and '</HEADLINE>' in line:
                 headline_found = False
             if headline_found:
-                docheadline += line.strip() + ' '
+                docheadline += line.strip() + ' ' 
             if doc_found and '<HEADLINE>' in line:
                 if '</HEADLINE>' in line:
                     docheadline = line.replace('<HEADLINE>', '').replace('</HEADLINE>', '').strip()
@@ -86,10 +85,13 @@ if __name__ == '__main__':
                 else:
                     text_found = True
                 
-            if line.strip() == '<DOC>':
+            if line.strip().startswith('<DOC'):
+                docid = line[line.find('id="') + 4:line.find('"', line.find('id="') + 4)].strip()
                 doc_found = True
+                
             if line.strip() == '</DOC>':
                 # Done with doc, lets index it.
+                
                 docheadline = docheadline.strip()
                 doctext = doctext.strip()
 

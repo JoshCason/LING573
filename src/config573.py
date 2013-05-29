@@ -16,7 +16,7 @@ config = {
     # 2006 has 403, 2004 has 230, 2005 has 362
     # 0 means do all questions
     "questions_to_answer":0,
-    "aquant_index_dir": "aquaint_index",
+    "aquant_index_dir": "aquaint_index2",
     "web_cache_dir": "web_cache",
     "reset_web_cache": 0,
     "web_results_limit": 50,
