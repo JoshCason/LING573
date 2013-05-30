@@ -43,12 +43,12 @@ class clsfr(object):
                 if year == '2006':
                     for qid in q[year]:
                         self.devtest_dict[qid] = dict()
-                else:
+                elif year in ['2004','2005']:
                     for qid in q[year]:
                         self.training_dict[qid] = dict()
         self.trained = False
         try:
-            f = f = open(self.modelfilename,'rb')
+            f = open(self.modelfilename,'rb')
             self.rbf_svc = cp.load(f)
             f.close()
             g = open(self.vectorizername,'rb')
@@ -162,9 +162,11 @@ class clsfr(object):
     """
     def devtest(self, X_dict_list=None, Y_gold=None):
         if not self.trained: raise Exception("train() must be run before testing.") 
+        main = False
         if X_dict_list is not None and Y_gold is not None:
             pass
         elif X_dict_list == Y_gold == None:
+            main = True
             X_dict_list,Y = [], []
             error_dict = dict()
             for qid in self.devtest_dict:
@@ -184,12 +186,12 @@ class clsfr(object):
         X_data = self.dv.fit_transform(X_dict_list)
         Y_model = self.rbf_svc.predict(X_data)
         self.err_indices = filter(lambda x: Y_gold[x] != Y_model[x], range(len(Y_gold)))
-        self.error_dict = dict(map(lambda x: (x,error_dict[x]), self.err_indices))
+        if main:
+            self.error_dict = dict(map(lambda x: (x,error_dict[x]), self.err_indices))
         self.report = lambda : print(classification_report(Y_gold, Y_model))
         self.acc = 1-(float(len(self.err_indices))/float(len(Y_gold)))
         Y_probs = self.rbf_svc.predict_proba(X_data)            
         return zip(Y_model,Y_probs)
-        # TODO: figure out how to rank answer candidates not just classify them.
         
 
 """

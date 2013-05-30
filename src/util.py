@@ -322,6 +322,15 @@ def findmissing():
 
 """
 get your plain results, already cached.
+
+>>> util.getplainwebresults('260.4')[0]
+{'description': u'Ninja Turtles: The Next Mutation is an American live-action television series produced
+by Saban Entertainment, which ran on the Fox Kids network from 1997 to 1998. ... introduced many new
+elements to the Teenage Mutant Ninja Turtles saga. ... TMNT continuities, Leonardo states in the second episode
+that the Turtles are ...', 'title': u'Ninja Turtles: The Next Mutation - Wikipedia, the free encyclopedia'}
+>>> util.getquestion(qid='260.4')
+{'question': 'What television network carried TMNT?', 'target': 'Teenage Mutant Ninja Turtles (TMNT)'}
+
 """
 def getplainwebresults(qid, engine='google'):
     year = getyearbyqid(qid)
