@@ -8,14 +8,9 @@
 import sys, os, math, hashlib, cPickle as pickle, json
 import operator
 import nltk
-#from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
-#from nltk.tag import pos_tag
-#from nltk.tag.simplify import simplify_wsj_tag
-#import xml.etree.ElementTree as ET
 import util
 from util import *
-#from aquaint_lucene import aquaint_search
 from config573 import config
 import classifier
 from classifier import *
@@ -63,47 +58,70 @@ def extractLabel(q):
         label = 'q_' + tokens[0]
 		
     return label
+	
+def addFeaturesValues(trainingData, X, Y):
+    target = trainingData[qid]['target']
+    question = trainingData[qid]['question']
+    # feature extraction function(s)
+    features = extractUnigrams(target, question)
+    # Label extraction function
+    label = extractLabel(question)
+	# append to respective list/dictionary
+    X.append(features)
+    Y.append(label)
+	
+    return X, Y
 
-# Train the classifier w/ 2004 & 2005 data
+# Train the classifier w/ 2004 & 2005 data; devtest = 2006 data
 # Each question gets its own dictionary of feature/value pairs & 
 #    list of corresponding labels
 if __name__ == '__main__':
     qc = classifier.clsfr("question_classification")
-    trainingData_04 = util.getquestion('2004')
-    trainingData_05 = util.getquestion('2005')
+	
+    trainingData_04 = util.getquestion('2004') # train
+    trainingData_05 = util.getquestion('2005') # train
+    trainingData_06 = util.getquestion('2006') # devtest
+	
     X = [] # List of dicts to store features (keys) & feature values (values)
     Y = [] # List of labels corresponding to each feature/value pair
 	
 	# adding features/values for 2004 TREC questions
     for qid in trainingData_04:
-        target = trainingData_04[qid]['target']
-        question = trainingData_04[qid]['question']
-		# feature extraction function(s)
-        features = extractUnigrams(target, question)
-		# Label extraction function
-        label = extractLabel(question)
-		# append to respective list/dictionary
-        X.append(features)
-        Y.append(label)
+        addFeaturesValues(trainingData_04, X, Y)		
 
     # adding features/values for 2005 TREC questions
     for qid in trainingData_05:
-        target = trainingData_05[qid]['target']
-        question = trainingData_05[qid]['question']
-        features = extractUnigrams(target, question)
-		# Label extraction function
-        label = extractLabel(question)
-		# append to respective list/dictionary
-        X.append(features)
-        Y.append(label)
-	
-	# testing
+        addFeaturesValues(trainingData_05, X, Y)
+			
+	# writing X/Y content to output file to check if it's right
     for i in range(0,len(X)-1):
         output.write('X member #' + str(i) + ' = ' + str(X[i]) + '\n')
     for j in range(0,len(Y)-1):
         output.write('Y member #' + str(j) + ' = ' + str(Y[j]) + '\n')
 	
     qc.train(X,Y)
-		
+    
+	# QUESTION: Am I supposed to do this?? I was getting an error that seemed to suggest I should
+    X = []
+    Y = []
+
+	# ---------------------------------------------------------------------
+	# DEVTEST	
+	# adding features/values for 2006 TREC questions
+    features_dict = dict()
+	
+    for qid in trainingData_06:
+        addFeaturesValues(trainingData_06, X, Y)    
+	
+	# testing contents of X & Y
+    for i in range(0,len(X)-1):
+        output.write('X member #' + str(i) + ' = ' + str(X[i]) + '\n')
+    for j in range(0,len(Y)-1):
+        output.write('Y member #' + str(j) + ' = ' + str(Y[j]) + '\n')
+	
+    Y_model = qc.devtest(X,Y)
+	
+	# ERROR MESSAGE: "return" outside function... I have no idea why this is happening
+    #return features_dict, Y_model
 	
     
