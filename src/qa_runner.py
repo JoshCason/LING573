@@ -23,6 +23,7 @@ from util import getplainwebresults, getquestion
 from aquaint_lucene import aquaint_search
 from config573 import config
 import pprint
+import classifier as clsfr
 
 sys.path.insert(0, os.path.join("..", ".."))
 
@@ -211,6 +212,38 @@ def reform_trec_questions(trec_file):
 
     return questions
     
+def addtrainingfeatures(clsfr, questions):
+    for question in questions:
+        # get question info
+        q = getquestion(qid=question['question_id'])
+        # grab web results from cache
+        results = getplainwebresults(question['question_id'])
+        # apply some filters
+        results = apply_filters(results, q['question'], config['web_results_limit'])
+        
+        for r in results:
+            clsfr.addfeatures(question['question_id'], 'figureoutanswercand', {'rank' : r['rank'], 'weight' : r['weight']})
+            
+def adddevtestfeatures(clsfr, questions):
+    for question in questions:
+        # get question info
+        q = getquestion(qid=question['question_id'])
+        # grab web results from cache
+        results = getplainwebresults(question['question_id'])
+        # apply some filters
+        results = apply_filters(results, q['question'], config['web_results_limit'])
+        
+        for r in results:
+            clsfr.addfeatures(question['question_id'], 'figureoutanswercand', {'rank' : r['rank'], 'weight' : r['weight']})
+    
+def devpipeline(questions):
+    mainclsfr = clsfr.clsfr("main")
+    addtrainingfeatures(mainclsfr, questions) # needs to be written, looks up questions and web results for 2004 and 2005, extracts features
+    mainclsfr.train()
+    adddevtestfeatures(mainclsfr, questions) # also needs to be done, but only differs in doing 2006
+    results = mainclsfr.devtest() # for devtest the results can be thrown away (unless we want to focus on strict MRR too, let me know)
+    return mainclsfr
+    
 # Lets do some work! Main Runner
 if __name__ == '__main__':
 
@@ -238,19 +271,29 @@ if __name__ == '__main__':
     assert(type(qta == int))
     if qta == 0:
         qta = len(questions)
+    
+    # do classifier fun
+    clsfr = devpipeline(questions[:qta])
+    clsfr.report()
+    clsfr.acc
+    
     for question in questions[:qta]:
 
         # this is a crude means of picking up where a run left off if it fails for some reason
         # you need to find the last question_id in the output file
         #if question['question_id'] <= '205.4':
         #    continue
-            
-
-        q = getquestion(qid=question['question_id'])
-        web_results = getplainwebresults(question['question_id'])
-        web_results = apply_filters(web_results, q['question'], config['web_results_limit'])
         
+            
         print q['target'] + ' - ' + q['question']
+        # get question info
+        q = getquestion(qid=question['question_id'])
+        # grab web results from cache
+        web_results = getplainwebresults(question['question_id'])
+        # apply some filters
+        web_results = apply_filters(web_results, q['question'], config['web_results_limit'])
+
+        # do something with our classifier
         
         #pp = pprint.PrettyPrinter(indent=4)
         #pp.pprint(web_results)

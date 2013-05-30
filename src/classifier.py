@@ -35,7 +35,7 @@ class clsfr(object):
         self.vectorizername = config["model_dir"]+functionality+"_vectorizer"
         if functionality == "main":
             self.training_dict = dict()
-            self.devtest_dicT = dict()
+            self.devtest_dict = dict()
             qfile = open("pickledquestions",'rb')
             q = cp.load(qfile)
             qfile.close()
