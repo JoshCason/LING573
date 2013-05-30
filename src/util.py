@@ -9,7 +9,7 @@ import cPickle
 import re
 from config573 import config
 import xml.etree.ElementTree as ET
-from webcandidates import websearch, clean_results
+#from webcandidates import websearch, clean_results # commented out as qa_runner imports webcandidates which causes a circular import breakdown
 from nltk import word_tokenize, PorterStemmer
 import string
 

@@ -18,10 +18,11 @@ from nltk.corpus import wordnet as wn
 from nltk.tag import pos_tag
 from nltk.tag.simplify import simplify_wsj_tag
 import xml.etree.ElementTree as ET
-from webcandidates import getcandidates, getwebresults
-from util import *
+from webcandidates import apply_filters, getcandidates
+from util import getplainwebresults, getquestion
 from aquaint_lucene import aquaint_search
 from config573 import config
+import pprint
 
 sys.path.insert(0, os.path.join("..", ".."))
 
@@ -33,6 +34,25 @@ from lucene import \
     
 import time
 from datetime import datetime
+
+# Apply Anthony's context filters
+def apply_filters(web_results, question, limit):
+    filters = qa_filters(web_results)
+    
+    # Initial weigh by rank index
+    filters.weigh_index_position()
+
+    # Weigh by question word type that have matching context in results
+    q = question.lower()
+
+    if q.startswith('when') or q.startswith('what year') or q.startswith('what month'):
+        filters.weigh_temporal_context()
+    elif q.startswith('where') or q.startswith('in what country') or q.startswith('in what state') or q.startswith('what country') or q.startswith('what state'):
+        filters.weigh_location_context()
+    elif q.startswith('how many') or q.startswith('how much') or q.startswith('at what age') or q.startswith('how old'):
+        filters.weigh_numerical_context()
+    
+    return filters.top(limit)
 
 # storing question words
 def classify_question(text):
@@ -159,21 +179,22 @@ def reform_trec_questions(trec_file):
             
             q_dict = {}
 
-            q_dict['target_id'] = target.attrib['id']
-            q_dict['target_text'] = target.attrib['text']
+            # Comment out most of this as Josh already has the information cached, we just need the question id
+            #q_dict['target_id'] = target.attrib['id']
+            #q_dict['target_text'] = target.attrib['text']
             q_dict['question_id'] = q.attrib['id']
-            q_dict['question_text'] = q.text.strip()
+            #q_dict['question_text'] = q.text.strip()
             
-            if q_dict['target_text'].lower() in q_dict['question_text'].lower():
-                q_dict['question_target_combined'] = q_dict['question_text']
-            else:
-                q_dict['question_target_combined'] = q_dict['target_text'] + ' ' + q_dict['question_text']
+            #if q_dict['target_text'].lower() in q_dict['question_text'].lower():
+            #    q_dict['question_target_combined'] = q_dict['question_text']
+            #else:
+            #    q_dict['question_target_combined'] = q_dict['target_text'] + ' ' + q_dict['question_text']
             
-            q_dict['question_target_combined']  
+            #q_dict['question_target_combined']  
 
-            q_dict['classification'] = classify_question(q_dict['question_text'])
-            q_dict['bag_of_words'] = remove_stopwords(q_dict['question_text'])
-            q_dict['stemmed_query'] = stem_query(q_dict['bag_of_words'])
+            #q_dict['classification'] = classify_question(q_dict['question_text'])
+            #q_dict['bag_of_words'] = remove_stopwords(q_dict['question_text'])
+            #q_dict['stemmed_query'] = stem_query(q_dict['bag_of_words'])
             
             # Commenting synonym processing out for now (as it is somewhat intensive and in question about 
             # whether to be used or not
@@ -210,7 +231,7 @@ if __name__ == '__main__':
     
 
     # output file
-    out_file = '../outputs/' + config['deliverable'] + '.outputs'
+    out_file = '../outputs/' + config['deliverable'] + '.' + str(config['answer_char_length']) + '.outputs'
     run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
     qta = config["questions_to_answer"]
@@ -224,28 +245,18 @@ if __name__ == '__main__':
         #if question['question_id'] <= '205.4':
         #    continue
             
-        q = question['question_target_combined']
 
-        print q
+        q = getquestion(qid=question['question_id'])
+        web_results = getplainwebresults(question['question_id'])
+        web_results = apply_filters(web_results, q['question'], config['web_results_limit'])
         
-        # Get Web Results leveraging N-Grams
-        print "FETCHING WEB RESULTS"
+        print q['target'] + ' - ' + q['question']
         
-        # Fetch web results ...sometimes we get SSL certificate errors when the requests
-        # library attempts a search, so lets retry a few times until we get something before bailing
-        web_results_fetched = False
-        web_results_fetch_attempts = 3
-        attempts = 0
-        while web_results_fetched == False and attempts < web_results_fetch_attempts:
-            attempts += 1
-            try:
-                web_results = getwebresults(question)
-                web_results_fetched = True
-            except:
-                web_results_fetched = False
-        
+        #pp = pprint.PrettyPrinter(indent=4)
+        #pp.pprint(web_results)
+
         # determine ngrams from our search results
-        c = getcandidates(web_results, q)
+        c = getcandidates(web_results, q['target'] + ' ' + q['question'])
         
         # for the most common ngrams lets find some matching AQUAINT docs
         for ngram_set, count in c.most_common(config['answer_candidates_limit']):
@@ -253,7 +264,7 @@ if __name__ == '__main__':
             
             # Search AQUAINT lucene 
             # Add the ngram set to our question
-            qry = q + ' ' + ngram_set
+            qry = q['target'] + ' ' + q['question'] + ' ' + ngram_set
             
             doc = aquaint_search(qry, searcher)
             

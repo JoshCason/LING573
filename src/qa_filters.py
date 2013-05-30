@@ -29,6 +29,7 @@ class qa_filters:
         position = 1
         for r in self.results:
             r['weight'] = r['weight'] - (step * (position - 1))
+            r['rank'] = position
             position += 1
             
         return self

@@ -12,12 +12,13 @@ config = {
     "marie_google_key":"AIzaSyCMJUqmyyzwZMBBxdhKt5Fi4yRaeounW6o",
     "use_whose_key": "josh",
     "use_lucene_wildcard": True,
+    "answer_char_length" : 100,
     # you can limit the number of questions in a run
     # for experimentation
     # 2006 has 403, 2004 has 230, 2005 has 362
     # 0 means do all questions
     "questions_to_answer":0,
-    "aquant_index_dir": "aquaint_index2",
+    "aquant_index_dir": "aquaint_index", # aquaint_index2 for 2007
     "web_cache_dir": "web_cache",
     "reset_web_cache": 0,
     "web_results_limit": 50,
