@@ -40,6 +40,9 @@ class pattern:
 f = open("pickledquestions",'rb')
 questions = cPickle.load(f)
 f.close()
+rfilein = open("pickledplainwebresults",'rb')
+r = cPickle.load(rfilein)
+rfilein.close()
 # don't move the following section above the "pattern" class since the
 # data structure in the pickle requires it.
 g = open("pickledanswers",'rb')
@@ -124,7 +127,15 @@ def getquestions(trec_file):
     return q_dict
 
 """
+Give it a question id and get back which year it was asked.
+"""
+def getyearbyqid(qid):
+    return filter(lambda x: qid in questions[x],questions)[0]
+
+"""
 pass in a year and get back a dictionary of dictionaries.
+
+In each sub-dictionary:
 Each question id picks out a dictionary which contains "target" and 
 "question" keys. "target" is the topic for several questions such as
 "Warren Moon". "question" is the actual question text.
@@ -136,12 +147,26 @@ keys.
 >>> getquestion('2004', '35.2')
 {'question': 'How many years was he with GE?', 'target': 'Jack Welch'}
 
+The same works without the year:
+>>> getquestion(qid='35.2')
+{'question': 'How many years was he with GE?', 'target': 'Jack Welch'}
+
+with just the year:
+>>> getquestion('2004')['35.2']
+{'question': 'How many years was he with GE?', 'target': 'Jack Welch'}
+
+with just the year:
+>>> getquestion('2004')['35.2']['question']
+'How many years was he with GE?'
+
 """
-def getquestion(year, qid=None):
+def getquestion(year=None, qid=None):
     if qid == None:
         return questions[year]
-    else:
+    elif qid != None and year != None:
         return questions[year][qid]
+    else:
+        return questions[getyearbyqid(qid)][qid]
 
 """
 Stole most of this code from compute_mrr.py written by UW faculty/TAs
@@ -192,12 +217,6 @@ def checkanswer(year_str,qid_str,ans_str, docno=None):
     return False
 
 """
-Give it a question id and get back which year it was asked.
-"""
-def getyearbyqid(qid):
-    return filter(lambda x: qid in questions[x],questions)[0]
-
-"""
 util.cache_plain_web_results
 
 plain means nothing was done to the question except prepending
@@ -225,59 +244,72 @@ def cache_plain_web_results():
     q = questions
     countdown = len(reduce(lambda x,y: x+y,map(lambda x: q[x].values(),q)))
     try:
-        rfile = open("pickledplainwebresults",'rb')
-        q = cPickle.load(rfile)
-        rfile.close()
-    except:
         rfile = open("pickledplainwebresults",'wb')
+    except:
+        raise Exception("missing pickledplainwebresults file!")
+        #rfile = open("pickledplainwebresults",'wb')
     for year in q:
+        if year not in r:
+            r[year] = q[year]
         key = config["search_engine_active"]
         qids = q[year].keys() 
+        missing = set(findmissing())
         for qid in qids:
+            if qid == '260.4':
+                print("found it!")
             qkey = key + "_" + qid
-            if qkey not in q[year]: 
-                question = q[year][qid]['question']
-                target = q[year][qid]['target']
+            if qkey not in r[year] or qid in missing: 
+                question = r[year][qid]['question']
+                target = r[year][qid]['target']
                 qry = "%s %s" % (target, question)
-                q[year][qid][key] = dict()
+                r[year][qid][key] = dict()
                 try:
-                    r = clean_results(websearch(qry))
+                    results = clean_results(websearch(qry))
                 except:
                     print("qid:%s, %s" % (qid, qry))
-                    cp.dump(q,rfile)
+                    cp.dump(r,rfile)
                     rfile.close()
                     raise
-                for i,result in enumerate(r):
-                    q[year][qid][key][i] = result
-                q[year][qkey] = True
+                for i,result in enumerate(results):
+                    # not really sure why I didn't just dump the
+                    # list in there. maybe will fix it, but works
+                    # for now.
+                    r[year][qid][key][i] = result 
+                r[year][qkey] = True
             countdown -= 1
-            print(str(countdown) + " to go")
-    cp.dump(q,rfile)
+            #print str(countdown) + " to go,",
+    cp.dump(r,rfile)
     rfile.close()
-    return q
+    return r
 
 """
 
 __call__ is when you use an instance of the class as a method
->>> st = StemTokenizer()
->>> tokedNstemmed = st(sentence)
+>>> t = Tokenizer()
+>>> toked = t(sentence)
+
+stem_toke also stems the token.
+>>> t = Tokenizer()
+>>> toked = t.stem_toke(sentence)
 
 """
-class StemTokenizer(object):
+class Tokenizer(object):
     def __init__(self):
         self.stem = PorterStemmer()
-        self.punct = set(string.punctuation) | set(['..','...','....','.....'])
+        self.punct = set(string.punctuation) | set(['..','...','....','.....','......'])
     def __call__(self, doc):
+        return [t for t in word_tokenize(doc) if t not in self.punct]
+    def stem_toke(self, doc):
         return [self.stem.stem(t) for t in word_tokenize(doc) if t not in self.punct]
     
 """
 this function checks if there are any missing web results
 """    
-def f():
-    cp = cPickle
-    rfile = open("pickledplainwebresults",'rb')
-    r = cp.load(rfile)
-    rfile.close()
+def findmissing():
+#   cp = cPickle
+#     rfile = open("pickledplainwebresults",'rb')
+#     r = cp.load(rfile)
+#     rfile.close()
     missing = []
     for year in r:
         for qid in r[year]:
@@ -287,5 +319,17 @@ def f():
                         missing.append(qid)
                 else: print("ack!!!")
     return missing
-    
+
+"""
+get your plain results, already cached.
+"""
+def getplainwebresults(qid, engine='google'):
+    year = getyearbyqid(qid)
+    if 'google' in r[year][qid]:
+        # this part is stupid, but I didn't realize I had designed it
+        # stupidly until I had already cached a bunch of results
+        result = []
+        for i in range(len(r[year][qid][engine])):
+            result.append(r[year][qid][engine][i])
+        return result
 

@@ -9,7 +9,8 @@ config = {
     "bing_per_page": 50,
     "josh_google_key": "AIzaSyDwqZl_4hPZCBk7ePFUKxizus52tnLgTWE",
     "anthony_google_key": "AIzaSyBXfu02iYBd4FvIa6fSYGUIv8WXIkNC8ZY",
-    "use_whose_key": "anthony",
+    "marie_google_key":"AIzaSyCMJUqmyyzwZMBBxdhKt5Fi4yRaeounW6o",
+    "use_whose_key": "josh",
     "use_lucene_wildcard": True,
     # you can limit the number of questions in a run
     # for experimentation
