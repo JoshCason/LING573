@@ -25,9 +25,9 @@ def featurize(target, question):
     except:
         print("%s %s" % (target, question))
         raise
-    bigrams = map(lambda x: ' '.join(x), bigramize(tokens))
-    trigrams = map(lambda x: ' '.join(x), trigramize(tokens))
-    quadrigrams = map(lambda x: ' '.join(x), quadrigramize(tokens))
+    bigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), bigramize(tokens)))
+    trigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), trigramize(tokens)))
+    quadrigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), quadrigramize(tokens)))
     feats = dict(Counter(tokens+bigrams+trigrams+quadrigrams))
     '''
     add (or remove) whatever features you want here then run qc.devtest()
