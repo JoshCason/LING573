@@ -117,12 +117,15 @@ with just the year:
 
 """
 def getquestion(year=None, qid=None):
-    if qid == None:
-        return questions[year]
-    elif qid != None and year != None:
-        return questions[year][qid]
+    if float(qid) > 9999:
+        return questions['10000'][qid]
     else:
-        return questions[getyearbyqid(qid)][qid]
+        if qid == None:
+            return questions[year]
+        elif qid != None and year != None:
+            return questions[year][qid]
+        else:
+            return questions[getyearbyqid(qid)][qid]
 
 """
 Stole most of this code from compute_mrr.py written by UW faculty/TAs

@@ -20,7 +20,11 @@ output = open('trainTestOutput.txt', 'w')
 
 def featurize(target, question):
     t = Tokenizer()
-    tokens = t.stem_toke("%s %s" % (target, question))
+    try:
+        tokens = t.stem_toke("%s %s" % (target, question))
+    except:
+        print("%s %s" % (target, question))
+        raise
     bigrams = map(lambda x: ' '.join(x), bigramize(tokens))
     trigrams = map(lambda x: ' '.join(x), trigramize(tokens))
     quadrigrams = map(lambda x: ' '.join(x), quadrigramize(tokens))

@@ -4,15 +4,17 @@ from util import qc, getquestion
 from trainQueryFeatures import featurize
 import numpy as np
 
+NUM_OF_QUESTIONS = 2000
+
 np.random.seed(0)
 indices = np.random.permutation(len(qc))
 qids = qc.keys()
-qids = map(lambda x: qids[x], indices) 
+qids = map(lambda x: qids[x], indices)[:NUM_OF_QUESTIONS] 
 twentypercent = int(len(qids) * 0.2)
 trainq = qids[twentypercent:]
 testq = qids[:twentypercent]
 
-qc_classifier = classifier.clsfr("question_classification", kfeatures=150)
+qc_classifier = classifier.clsfr("question_classification", alg="svm",kfeatures=1500)
 
 def train(): 
     X,Y = [],[]
@@ -20,7 +22,7 @@ def train():
         target = getquestion(qid=qid)['target']
         question = getquestion(qid=qid)['question']
         features = featurize(target, question) # your function
-        label = qc[qid]
+        label = qc[qid].split(':')[0]
         X.append(features)
         Y.append(label)
     qc_classifier.train(X,Y)
@@ -31,7 +33,7 @@ def devtest():
         target = getquestion(qid=qid)['target']
         question = getquestion(qid=qid)['question']
         features = featurize(target, question) # your function
-        label = qc[qid]
+        label = qc[qid].split(':')[0]
         X.append(features)
         Y.append(label)
         qc_classifier.devtest(X,Y)
@@ -44,7 +46,7 @@ def predict(new_qids):
         target = getquestion(qid=qid)['target']
         question = getquestion(qid=qid)['question']
         features = featurize(target, question) # your function
-        label = qc[qid]
+        label = qc[qid].split(':')[0]
         features_dict[qid] = features
         X.append(features)
         Y.append(label)

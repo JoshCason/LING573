@@ -13,10 +13,16 @@ from util import checkanswer, getyearbyqid, getquestion, questions as q
 import numpy
 from sklearn.feature_extraction import FeatureHasher, DictVectorizer
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import Perceptron
+from sklearn.linear_model import SGDClassifier
 from sklearn.metrics import classification_report
 from sklearn.feature_selection import SelectKBest, chi2
 from sklearn import svm
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 from config573 import config
+
+
+VEC_CHOICE = "dv"
 
 """
 ***Important***
@@ -35,7 +41,9 @@ class clsfr(object):
         self.modelfilename = config["model_dir"]+functionality+"_model"
         self.vectorizername = config["model_dir"]+functionality+"_vectorizer"
         self.chisquaredname = config["model_dir"]+functionality+"_chisquared"
+        self.scalername = config["model_dir"]+functionality+"_scaler"
         self.ch2 = SelectKBest(chi2, kfeatures)
+        self.scaler = StandardScaler(with_mean=False)
         if functionality == "main":
             self.training_dict = dict()
             self.devtest_dict = dict()
@@ -49,27 +57,30 @@ class clsfr(object):
         self.trained = False
         pick_alg = {
                     "svm": lambda : svm.SVC(kernel='rbf', probability=True),
-                    "knn": lambda : KNeighborsClassifier(n_neighbors=10)
+                    "knn": lambda : KNeighborsClassifier(n_neighbors=10, warn_on_equidistant=False)
+                    }
+        pick_vec = {
+                    "fh": lambda : FeatureHasher(),
+                    "dv": lambda : DictVectorizer()
                     }
         try:
             f = open(self.modelfilename,'rb')
             self.clsfr_alg = cp.load(f)
             f.close()
             g = open(self.vectorizername,'rb')
-            self.dv = cp.load(g)
+            self.vec = cp.load(g)
             g.close()
-#             h = open(self.vectorizername,'rb')
-#             self.fh = cp.load(h)
-#             h.close()
             h = open(self.chisquaredname,'rb')
             self.ch2 = cp.load(h)
             h.close()
+            i = open(self.scalername,'rb')
+            self.scaler = cp.load(i)
+            i.close()
             self.trained = True
         except:
             print("ack!!")
             self.clsfr_alg = pick_alg[alg]()
-            self.dv = DictVectorizer()
-            self.fh = FeatureHasher()
+            self.vec = pick_vec[VEC_CHOICE]()
         
     """
     Since in all of our current questions, the qid is unique, there
@@ -121,20 +132,23 @@ class clsfr(object):
                     Y_labels.append(label)
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_labels, please.""")
-        X_data = self.dv.fit_transform(X_dict_list)
+        X_data = self.vec.fit_transform(X_dict_list)
         X_data = self.ch2.fit_transform(X_data, Y_labels)
+        X_data = self.scaler.fit_transform(X_data)
         #X_data = self.fh.fit_transform(X_dict_list)
         self.clsfr_alg.fit(X_data,Y_labels)
         f = open(self.modelfilename,'wb')
         cp.dump(self.clsfr_alg, f)
         f.close()
         g = open(self.vectorizername,'wb')
-        cp.dump(self.dv,g)
-        #cp.dump(self.fh,g)
+        cp.dump(self.vec,g)
         g.close()
         h = open(self.chisquaredname,'wb')
         cp.dump(self.ch2, h)
         h.close()
+        i = open(self.scalername,'wb')
+        cp.dump(self.scaler, i)
+        i.close()
         self.trained = True
     
     """
@@ -211,21 +225,28 @@ class clsfr(object):
             Y_gold = Y
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_gold, please.""")
-        X_data = self.dv.transform(X_dict_list)
-        #X_data = self.fh.transform(X_dict_list)
+        X_data = self.vec.transform(X_dict_list)
         X_data = self.ch2.transform(X_data)
-        self.Y_model = self.clsfr_alg.predict(X_data)
+        X_data = self.scaler.transform(X_data)
+        self.Y_probs = self.clsfr_alg.predict_proba(X_data)
+        self.Y_model = list()
+        self.results = list()
+        for prob in self.Y_probs:
+            result = sorted(zip(self.clsfr_alg.classes_, prob), key=lambda x: x[1], reverse=True)
+            self.Y_model.append(result[0][0])
+            self.results.append(result)
         self.err_indices = filter(lambda x: self.Y_gold[x] != self.Y_model[x], range(len(self.Y_gold)))
         if main:
             self.error_dict = dict(map(lambda x: (x,error_dict[x]), self.err_indices))
+        
         # this is for classification report
         labels2ints = {label: i for i, label in enumerate(set(self.Y_gold) | set(self.Y_model))}
         newY_model = map(lambda x: labels2ints[x], self.Y_model) 
         newY_gold = map(lambda x: labels2ints[x], self.Y_gold)
         self.report = lambda : print(classification_report(newY_gold, newY_model)+"\n"+str(labels2ints))
+        
         self.acc = 1-(float(len(self.err_indices))/float(len(self.Y_gold)))
-        self.Y_probs = self.clsfr_alg.predict_proba(X_data)            
-        return zip(self.Y_model,self.Y_probs)
+        return self.results
 
 
         
