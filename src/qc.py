@@ -4,17 +4,17 @@ from util import qc, getquestion
 from trainQueryFeatures import featurize
 import numpy as np
 
-NUM_OF_QUESTIONS = 2000
+NUM_OF_QUESTIONS = 3000
 
 np.random.seed(0)
 indices = np.random.permutation(len(qc))
 qids = qc.keys()
 qids = map(lambda x: qids[x], indices)[:NUM_OF_QUESTIONS] 
-twentypercent = int(len(qids) * 0.2)
-trainq = qids[twentypercent:]
-testq = qids[:twentypercent]
+percent = int(len(qids) * 0.1)
+trainq = qids[percent:]
+testq = qids[:percent]
 
-qc_classifier = classifier.clsfr("question_classification", alg="svm",kfeatures=1500)
+qc_classifier = classifier.clsfr("question_classification", alg="svm",kfeatures=2250)
 
 def train(): 
     X,Y = [],[]
