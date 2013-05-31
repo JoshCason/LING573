@@ -36,6 +36,7 @@ def featurize(target, question):
     return feats
     
 
+# FEATURE FUNCTION
 # Extracting unigrams
 # INPUT: target, question
 def extractUnigrams(t, q):
@@ -56,6 +57,7 @@ def extractUnigrams(t, q):
 
     return unigrams
 
+# FEATURE FUNCTION
 # Add POS tags to question + target words
 # INPUT: question, target
 def extractTaggedUnigrams(q, t):
@@ -69,12 +71,13 @@ def extractTaggedUnigrams(q, t):
 				text.append(token)
 
     taggedWords = nltk.pos_tag(text)
-    for t in taggedWords:
-	    taggedUnigrams['q_' + t] = 1
+    for word, tag in taggedWords:
+		# feature looks like: 'q_Rapunzel_NNP'
+	    taggedUnigrams['q_' + word + '_' + tag] = 1
 
     return taggedUnigrams   
     
-	
+# FEATURE FUNCTION	
 # Head NP + Head VP chunks
 # INPUT: question
 def extractHeadChunks(q):
@@ -103,33 +106,35 @@ def extractHeadChunks(q):
 	        NP_candidates.append(subtree)
         elif subtree.node == 'VP':
 	        VP_candidates.append(subtree)
-	# doing some clean-up of the subtree before adding it as a feature
-	cleanedN = re.sub(r'\/.{1,3}', '', str(NP_candidates[0]))
-	finalN = cleanedN.replace(' ', '_')
-    headChunks['q_' + finalN] = 1
-    cleanedV = re.sub(r'\/.{1,3}', '', str(VP_candidates[0]))
-    finalV = cleanedV.replace(' ', '_')
-    headChunks['q_' + finalV] = 1
+    cleanedN = str(re.sub(r'\/.{1,3}','',str(NP_candidates[0]))).replace(' ','_').replace('(','').replace(')','')
+	# FEATURE LOOKS LIKE: 'q_NP_the_little_yellow_dog'
+    headChunks['q_' + cleanedN] = 1
+    cleanedV = str(re.sub(r'\/.{1,3}','',str(VP_candidates[0]))).replace(' ','_').replace('(','').replace(')','')
+	# FEATURE LOOKS LIKE: 'q_VP_barked'
+    headChunks['q_' + cleanedV] = 1
+	
     return headChunks
 
-# storing question words --> label for now (Y)
+# FEATURE FUNCTION
+# extract question words 
 # INPUT: question
-def extractLabel(q):
+def extractQuestionWord(q):
     tokens = []
-    label = ''	
+    q_word = ''	
     for token in nltk.wordpunct_tokenize(q.strip()):
         tokens.append(token)		
     if q.lower().startswith('how'):
-        label = 'q_' + tokens[0] + '_' + tokens[1]
+        q_word = 'q_' + tokens[0] + '_' + tokens[1]
     elif q.lower().startswith('for how'):
-        label = 'q_' + tokens[0] + '_' + tokens[1] + '_' + tokens[2]
+        q_word = 'q_' + tokens[0] + '_' + tokens[1] + '_' + tokens[2]
     elif q.lower().startswith('for'):
-        label = 'q_' + tokens[0] + '_' + tokens[1]
+        q_word = 'q_' + tokens[0] + '_' + tokens[1]
     elif q.lower().startswith('from'):
-        label = 'q_' + tokens[0] + '_' + tokens[1]
+        q_word = 'q_' + tokens[0] + '_' + tokens[1]
     else:
-        label = 'q_' + tokens[0]		
-    return label
+        q_word = 'q_' + tokens[0]	
+    # FEATURE LOOKS LIKE: 'q_how_many'		
+    return q_word
 	
 def addFeaturesValues(trainingData, X, Y):
     target = trainingData[qid]['target']
@@ -143,9 +148,9 @@ def addFeaturesValues(trainingData, X, Y):
     chunks = extractHeadChunks(question)
     X.append(chunks)
 	
-    # Label extraction function
-    label = extractLabel(question)
-    Y.append(label)
+    # Label extraction function -- NOTE: I made the question word a feature
+    #label = extractLabel(question)
+    #Y.append(label)
 	
     return X, Y
 
