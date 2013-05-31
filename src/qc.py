@@ -14,7 +14,7 @@ percent = int(len(qids) * 0.1)
 trainq = qids[percent:]
 testq = qids[:percent]
 
-qc_classifier = classifier.clsfr("question_classification", alg="svm",kfeatures=2250)
+qc_classifier = classifier.clsfr("question_classification", alg="svm",kfeatures=1500)
 
 def train(): 
     X,Y = [],[]
@@ -52,3 +52,8 @@ def predict(new_qids):
         Y.append(label)
     Y_model = qc_classifier.devtest(X,Y)
     return Y_model, features_dict
+
+def run():
+    train()
+    results = devtest()
+    return results.acc
