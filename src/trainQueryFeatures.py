@@ -29,11 +29,25 @@ def featurize(target, question):
     trigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), trigramize(tokens)))
     quadrigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), quadrigramize(tokens)))
     feats = dict(Counter(tokens+bigrams+trigrams+quadrigrams))
+    # adding anthony feats
+    feats = dict(weighContexts(question).items() + feats.items())
     '''
     add (or remove) whatever features you want here then run qc.devtest()
     to see if you've gained anything.
     '''
     return feats
+    
+def weighContexts(q):
+    q = question.lower()
+
+    if q.startswith('when') or q.startswith('what year') or q.startswith('what month'):
+        return {'q_weigh_temporal' : 1}
+    elif q.startswith('where') or q.startswith('in what country') or q.startswith('in what state') or q.startswith('what country') or q.startswith('what state'):
+        return {'q_weigh_location' : 1}
+    elif q.startswith('how many') or q.startswith('how much') or q.startswith('at what age') or q.startswith('how old'):
+        return {'q_weigh_numerical' : 1}
+    else:
+        return {}    
     
 
 # FEATURE FUNCTION
