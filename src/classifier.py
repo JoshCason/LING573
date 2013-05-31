@@ -9,13 +9,14 @@ from __future__ import print_function
 import subprocess
 import json
 import cPickle as cp
-from util import checkanswer, getyearbyqid, getquestion
+from util import checkanswer, getyearbyqid, getquestion, questions as q
 import numpy
 from sklearn.feature_extraction import FeatureHasher, DictVectorizer
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
+from sklearn.feature_selection import SelectKBest, chi2
 from sklearn import svm
 from config573 import config
-
 
 """
 ***Important***
@@ -30,15 +31,14 @@ x = classifier.clsfr("web_result_reranking")
 
 """
 class clsfr(object):
-    def __init__(self, functionality):
+    def __init__(self, functionality, alg="svm", kfeatures=150):
         self.modelfilename = config["model_dir"]+functionality+"_model"
         self.vectorizername = config["model_dir"]+functionality+"_vectorizer"
+        self.chisquaredname = config["model_dir"]+functionality+"_chisquared"
+        self.ch2 = SelectKBest(chi2, kfeatures)
         if functionality == "main":
             self.training_dict = dict()
             self.devtest_dict = dict()
-            qfile = open("pickledquestions",'rb')
-            q = cp.load(qfile)
-            qfile.close()
             for year in q:
                 if year == '2006':
                     for qid in q[year]:
@@ -47,17 +47,29 @@ class clsfr(object):
                     for qid in q[year]:
                         self.training_dict[qid] = dict()
         self.trained = False
+        pick_alg = {
+                    "svm": lambda : svm.SVC(kernel='rbf', probability=True),
+                    "knn": lambda : KNeighborsClassifier(n_neighbors=10)
+                    }
         try:
             f = open(self.modelfilename,'rb')
-            self.rbf_svc = cp.load(f)
+            self.clsfr_alg = cp.load(f)
             f.close()
             g = open(self.vectorizername,'rb')
-            cp.dump(self.dv,g)
+            self.dv = cp.load(g)
             g.close()
+#             h = open(self.vectorizername,'rb')
+#             self.fh = cp.load(h)
+#             h.close()
+            h = open(self.chisquaredname,'rb')
+            self.ch2 = cp.load(h)
+            h.close()
             self.trained = True
         except:
-            self.rbf_svc = svm.SVC(kernel='rbf', probability=True)
+            print("ack!!")
+            self.clsfr_alg = pick_alg[alg]()
             self.dv = DictVectorizer()
+            self.fh = FeatureHasher()
         
     """
     Since in all of our current questions, the qid is unique, there
@@ -110,13 +122,19 @@ class clsfr(object):
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_labels, please.""")
         X_data = self.dv.fit_transform(X_dict_list)
-        self.rbf_svc.fit(X_data,Y_labels)
+        X_data = self.ch2.fit_transform(X_data, Y_labels)
+        #X_data = self.fh.fit_transform(X_dict_list)
+        self.clsfr_alg.fit(X_data,Y_labels)
         f = open(self.modelfilename,'wb')
-        cp.dump(self.rbf_svc, f)
+        cp.dump(self.clsfr_alg, f)
         f.close()
         g = open(self.vectorizername,'wb')
         cp.dump(self.dv,g)
+        #cp.dump(self.fh,g)
         g.close()
+        h = open(self.chisquaredname,'wb')
+        cp.dump(self.ch2, h)
+        h.close()
         self.trained = True
     
     """
@@ -157,10 +175,20 @@ class clsfr(object):
     [(-1, array([ 0.45098648,  0.54901352])), (1, array([ 0.5489233,  0.4510767]))]
     # obviously, the higher probability refers to the selected class
 
-    ... etc.
+    If you want to use multiple labels and textual labels, scikit sorts that out for you too.
+    
+    >>> import classifier as c
+    >>> a_clsfr_object = c.clsfr("something_other_than_main")
+    >>> X_dict_list = [{1:2,2:3,3:4},{1:3,2:3,3:4}, {1:4,2:3,3:4}]
+    >>> Y_gold = ['A','B','C']
+    >>> a_clsfr_object.train(X_dict_list, Y_gold)
+    >>> a_clsfr_object.devtest(X_dict_list, Y_gold)
+    [('A', array([ 0.25777335,  0.31319117,  0.42903547])), ('B', array([ 0.3534678 ,  0.29212005,  0.35441214])), ('C', array([ 0.42954912,  0.31293183,  0.25751905]))]
+
 
     """
     def devtest(self, X_dict_list=None, Y_gold=None):
+        self.Y_gold = Y_gold
         if not self.trained: raise Exception("train() must be run before testing.") 
         main = False
         if X_dict_list is not None and Y_gold is not None:
@@ -183,28 +211,21 @@ class clsfr(object):
             Y_gold = Y
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_gold, please.""")
-        X_data = self.dv.fit_transform(X_dict_list)
-        Y_model = self.rbf_svc.predict(X_data)
-        self.err_indices = filter(lambda x: Y_gold[x] != Y_model[x], range(len(Y_gold)))
+        X_data = self.dv.transform(X_dict_list)
+        #X_data = self.fh.transform(X_dict_list)
+        X_data = self.ch2.transform(X_data)
+        self.Y_model = self.clsfr_alg.predict(X_data)
+        self.err_indices = filter(lambda x: self.Y_gold[x] != self.Y_model[x], range(len(self.Y_gold)))
         if main:
             self.error_dict = dict(map(lambda x: (x,error_dict[x]), self.err_indices))
-        self.report = lambda : print(classification_report(Y_gold, Y_model))
-        self.acc = 1-(float(len(self.err_indices))/float(len(Y_gold)))
-        Y_probs = self.rbf_svc.predict_proba(X_data)            
-        return zip(Y_model,Y_probs)
-        
-
-"""
-from when I was going to use mallet.
-"""
-def runclassifier():
-    json_data=open('config')
-    config = json.load(json_data)
-    json_data.close()
-    subprocess.call(config['binarize_cmd'],shell=True)
-    subprocess.call(config['train_cmd'],shell=True)
-    subprocess.call(config['test_cmd'],shell=True)
-
+        # this is for classification report
+        labels2ints = {label: i for i, label in enumerate(set(self.Y_gold) | set(self.Y_model))}
+        newY_model = map(lambda x: labels2ints[x], self.Y_model) 
+        newY_gold = map(lambda x: labels2ints[x], self.Y_gold)
+        self.report = lambda : print(classification_report(newY_gold, newY_model)+"\n"+str(labels2ints))
+        self.acc = 1-(float(len(self.err_indices))/float(len(self.Y_gold)))
+        self.Y_probs = self.clsfr_alg.predict_proba(X_data)            
+        return zip(self.Y_model,self.Y_probs)
 
 
         

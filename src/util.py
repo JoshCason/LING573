@@ -10,7 +10,6 @@ import re
 import xml.etree.ElementTree as ET
 from nltk import word_tokenize, PorterStemmer
 import string
-from cached_resources import questions, r, anspatterns
 
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
@@ -25,6 +24,35 @@ trigramize = lambda t: [(t[x],t[y],t[z]) for (x,y,z) in \
 
 bigramize = lambda t: [(t[x],t[y]) for (x,y) in \
                 zip(range(len(t)-1),range(1,len(t)))]
+
+# treats Litkowski patterns as arrays of patts and doclists
+# where patts are regular expression patterns that match correct answers
+# and  doclist are list of docnos in which those patterns are valid
+class pattern:
+    def __init__(self,patt,doclist):
+        self.patts = []
+        self.patts.append(patt)
+        self.doclists = []
+        self.doclists.append(doclist)
+
+f = open("pickledquestions",'rb')
+questions = cPickle.load(f)
+f.close()
+
+rfilein = open("pickledplainwebresults",'rb')
+r = cPickle.load(rfilein)
+rfilein.close()
+
+h = open("pickledqc",'rb')
+qc = cPickle.load(h)
+h.close()
+
+# don't move the following section above the "pattern" class since the
+# data structure in the pickle requires it.
+g = open("pickledanswers",'rb')
+ans_patterns = cPickle.load(g)
+g.close()
+
 
 """
 Used this to pickle all the questions except year 2001 because
@@ -162,7 +190,7 @@ class Tokenizer(object):
     def __call__(self, doc):
         return [t for t in word_tokenize(doc) if t not in self.punct]
     def stem_toke(self, doc):
-        return [self.stem.stem(t) for t in word_tokenize(doc) if t not in self.punct]
+        return [self.stem.stem(t.lower()) for t in word_tokenize(doc) if t not in self.punct]
 
 """
 get your plain results, already cached.
