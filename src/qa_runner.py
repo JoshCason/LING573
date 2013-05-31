@@ -37,7 +37,7 @@ import time
 from datetime import datetime
 
 # Apply Anthony's context filters
-def apply_filters(web_results, question, limit):
+def apply_filters(web_results, question, answer_type, limit):
     filters = qa_filters(web_results)
     
     # Initial weigh by rank index
@@ -52,6 +52,11 @@ def apply_filters(web_results, question, limit):
         filters.weigh_location_context()
     elif q.startswith('how many') or q.startswith('how much') or q.startswith('at what age') or q.startswith('how old'):
         filters.weigh_numerical_context()
+        
+    # now lets do some features based on answer types
+    types = ['LOC', 'HUM', 'NUM', 'ABBR', 'ENTY', 'DESC']
+    if answer_type in types:
+        filters.addFeaturesByType(answer_type)
     
     return filters.top(limit)
 
@@ -219,7 +224,7 @@ def addtrainingfeatures(clsfr, questions):
         # grab web results from cache
         results = getplainwebresults(question['question_id'])
         # apply some filters
-        results = apply_filters(results, q['question'], config['web_results_limit'])
+        results = apply_filters(results, q['question'], answer_type, config['web_results_limit'])
         
         for r in results:
             clsfr.addfeatures(question['question_id'], 'figureoutanswercand', {'rank' : r['rank'], 'weight' : r['weight']})
@@ -231,7 +236,7 @@ def adddevtestfeatures(clsfr, questions):
         # grab web results from cache
         results = getplainwebresults(question['question_id'])
         # apply some filters
-        results = apply_filters(results, q['question'], config['web_results_limit'])
+        results = apply_filters(results, q['question'], answer_type, config['web_results_limit'])
         
         for r in results:
             clsfr.addfeatures(question['question_id'], 'figureoutanswercand', {'rank' : r['rank'], 'weight' : r['weight']})
@@ -291,7 +296,7 @@ if __name__ == '__main__':
         # grab web results from cache
         web_results = getplainwebresults(question['question_id'])
         # apply some filters
-        web_results = apply_filters(web_results, q['question'], config['web_results_limit'])
+        web_results = apply_filters(web_results, q['question'], answer_type, config['web_results_limit'])
 
         # do something with our classifier
         

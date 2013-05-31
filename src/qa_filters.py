@@ -9,7 +9,6 @@ import sys, os, re
 from operator import itemgetter
 
 class qa_filters:
-    
     # all results start with a weight of 1.0
     def __init__(self, results, set_initial = 1):
         if set_initial:
@@ -59,7 +58,7 @@ class qa_filters:
     # https://github.com/cnorthwood/ternip
     # we probably just want to deal with a handful of regular expressions 
     def weigh_temporal_context(self):
-        patterns = ['(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)', '(January|February|March|April|May|June|July|August|September|October|November|December)', '(14\d{2}|15\d{2}|16\d{2}|17\d{2}|18\d{2}|19\d{2}|20\d{2})']
+        patterns = ['(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)', '(Spring|Summer|Winter|Fall|Autumn)', '(Christmas|Thanksgiving|Easter|Halloween)', '(January|February|March|April|May|June|July|August|September|October|November|December)', '(14\d{2}|15\d{2}|16\d{2}|17\d{2}|18\d{2}|19\d{2}|20\d{2})']
         boost_multiplier = 1.2
         
         return self.weigh_context_by_pattern(patterns, boost_multiplier)
@@ -91,4 +90,134 @@ class qa_filters:
         
     def top(self, limit):
         return self.sort_by_weight().results[:limit]
+        
+    def addFeatures(pattern_values):
+        boost_multiplier = 1.2
+        for r in self.results:
+            for k in pattern_values:
+                for pattern in pattern_values[k]:
+                    if (re.search(pattern, r['title'], re.IGNORECASE) or re.search(pattern, r['description'], re.IGNORECASE)):
+                        r['weight'] = r['weight'] * boost_multiplier
+                        r[k] = 1
+                        
+        return self.results
+                        
+    def addFeaturesByType(self, answer_type):
+        # ['LOC', 'HUM', 'NUM', 'ABBR', 'ENTY', 'DESC']
+        if (answer_type == 'LOC'):
+            return self.addFeaturesLocation()
+        elif (answer_type == 'HUM'):
+            return self.addFeaturesHuman()
+        elif (answer_type == 'NUM'):
+            return self.addFeaturesNumeric()
+        elif (answer_type == 'ABBR'):
+            return self.addFeaturesAbbreviation()
+        elif (answer_type == 'ENTY'):
+            return self.addFeaturesEntity()
+        elif (answer_type == 'DESC'):
+            return self.addFeaturesDescription()
+        else:
+            return self.results
+            
+    def addFeaturesLocation():
+        pattern_values = {}
+        #city 	cities
+        # perhaps just some most populated ones
+        pattern_values['city'] = [
+            '(new york|shanghai|london|hong kong|buenos aires|bangkok|seoul|mexico city|mumbai|beijing|moscow|istanbul|karachi|jakarta|tokyo|los angeles|seattle|chicago|austin|portland|sacremento|atlanta|boston|miami|rio de janeiro|lima)'
+        ]
+        
+        #country 	countries
+        pattern_values['country'] = [
+            '(AFGHANISTAN|ALBANIA|ALGERIA|AMERICAN SAMOA|ANDORRA|ANGOLA|ANGUILLA|ANTARCTICA|ANTIGUA AND BARBUDA|ARGENTINA|ARMENIA|ARUBA|AUSTRALIA|AUSTRIA|AZERBAIJAN|BAHAMAS|BAHRAIN|BANGLADESH|BARBADOS|BELARUS|BELGIUM|BELIZE|BENIN|BERMUDA|BHUTAN|BOLIVIA|BONAIRE|BOSNIA|BOTSWANA|BOUVET ISLAND|BRAZIL|BULGARIA|BURUNDI|CAMBODIA|CAMEROON|CANADA|CAPE VERDE|CAYMAN ISLANDS|CENTRAL AFRICAN REPUBLIC|CHAD|CHILE|CHINA|CHRISTMAS ISLAND|COLOMBIA|COMOROS|CONGO|COOK ISLANDS|COSTA RICA|CROATIA|CUBA|CYPRUS|CZECH REPUBLIC|DENMARK|DJIBOUTI|DOMINICA|DOMINICAN REPUBLIC|ECUADOR|EGYPT|EL SALVADOR|EQUATORIAL GUINEA|ERITREA|ESTONIA|ETHIOPIA|FALKLAND ISLANDS|FAROE ISLANDS|FIJI|FINLAND|FRANCE|FRENCH GUIANA|FRENCH POLYNESIA|FRENCH SOUTHERN TERRITORIES|GABON|GAMBIA|GEORGIA|GERMANY|GHANA|GIBRALTAR|GREECE|GREENLAND|GRENADA|GUADELOUPE|GUAM|GUATEMALA|GUERNSEY|GUINEA|GUINEA-BISSAU|GUYANA|HAITI|HONDURAS|HONG KONG|HUNGARY|ICELAND|INDIA|INDONESIA|IRAN|IRAQ|IRELAND|ISRAEL|ITALY|JAMAICA|JAPAN|JERSEY|JORDAN|KAZAKHSTAN|KENYA|KIRIBATI|KOREA|KUWAIT|KYRGYZSTAN|LATVIA|LEBANON|LESOTHO|LIBERIA|LIBYA|LIECHTENSTEIN|LITHUANIA|LUXEMBOURG|MACAO|MACEDONIA|MADAGASCAR|MALAWI|MALAYSIA|MALDIVES|MALI|MALTA|MARSHALL ISLANDS|MARTINIQUE|MAURITANIA|MAURITIUS|MAYOTTE|MEXICO|MICRONESIA|MOLDOVA|MONACO|MONGOLIA|MONTENEGRO|MONTSERRAT|MOROCCO|MOZAMBIQUE|MYANMAR|NAMIBIA|NAURU|NEPAL|NETHERLANDS|NEW CALEDONIA|NEW ZEALAND|NICARAGUA|NIGER|NIGERIA|NIUE|NORFOLK ISLAND|NORTHERN MARIANA ISLANDS|NORWAY|OMAN|PAKISTAN|PALAU|PALESTINE|PANAMA|NEW GUINEA|PARAGUAY|PERU|PHILIPPINES|PITCAIRN|POLAND|PORTUGAL|PUERTO RICO|QATAR|ROMANIA|RUSSIA|RWANDA|SAINT LUCIA|SAMOA|SAN MARINO|SAO TOME AND PRINCIPE|SAUDI ARABIA|SENEGAL|SERBIA|SEYCHELLES|SIERRA LEONE|SINGAPORE|SLOVAKIA|SLOVENIA|SOLOMON ISLANDS|SOMALIA|SOUTH AFRICA|SPAIN|SRI LANKA|SUDAN|SURINAME|SWAZILAND|SWEDEN|SWITZERLAND|TAIWAN|TAJIKISTAN|TANZANIA|THAILAND|TIMOR-LESTE|TOGO|TOKELAU|TONGA|TRINIDAD AND TOBAGO|TUNISIA|TURKEY|TURKMENISTAN|TURKS AND CAICOS|TUVALU|UGANDA|UKRAINE|UNITED ARAB EMIRATES|UNITED KINGDOM|UNITED STATES|URUGUAY|UZBEKISTAN|VANUATU|VENEZUELA|VIETNAM|VIRGIN ISLANDS|WALLIS AND FUTUNA|SAHARA|YEMEN|ZAMBIA|ZIMBABWE)'
+        ]
+        
+        #mountain 	mountains
+        pattern_values['mountain'] = [
+            '(highest|hill|ledge|mesa|mountain|peak|plateau|point|range|ridge|slope|tallest|volcan|mt\.)'
+        ]
+
+        #other 	other locations
+        pattern_values['other_location'] = [
+            '(africa|north america|south america|antarctica|europe|asia|australia)'
+        ]
+        
+        #state 	states
+        pattern_values['state'] = [
+            '(mississippi|wyoming|minnesota|illinois|indiana|louisiana|texas|kansas|connecticut|montana|west virginia|alaska|missouri|south dakota|new jersey|washington|maryland|arizona|iowa|michigan|oregon|massachusetts|florida|ohio|rhode island|north carolina|maine|oklahoma|delaware|arkansas|new mexico|california|georgia|north dakota|pennsylvania|colorado|new york|nevada|idaho|utah|virginia|district of columbia|new hampshire|south carolina|vermont|hawaii|kentucky|nebraska|wisconsin|alabama|tennessee)'
+        ]
+        
+        return self.addFeatures(pattern_values)
+        
+    def addFeaturesHuman():
+        pattern_values = {}
+        #group 	a group or organization of persons
+        #ind 	an individual
+        #title 	title of a person
+        #description 	description of a person
+        return self.addFeatures(pattern_values)
+        
+    def addFeaturesNumeric():
+        pattern_values = {}
+        #code 	postcodes or other codes
+        #count 	number of sth.
+        #date 	dates
+        #distance 	linear measures
+        #money 	prices
+        #order 	ranks
+        #other 	other numbers
+        #period 	the lasting time of sth.
+        #percent 	fractions
+        #speed 	speed
+        #temp 	temperature
+        #size 	size, area and volume
+        #weight 	weight
+        return self.addFeatures(pattern_values)
+        
+    def addFeaturesAbbreviation():
+        pattern_values = {}
+        #abb 	abbreviation
+        #exp 	expression abbreviated
+        return self.addFeatures(pattern_values)
+        
+    def addFeaturesEntity():
+        pattern_values = {}
+        #animal 	animals
+        #body 	organs of body
+        #color 	colors
+        #creative 	inventions, books and other creative pieces
+        #currency 	currency names
+        #dis.med. 	diseases and medicine
+        #event 	events
+        #food 	food
+        pattern_values['food'] = [
+            '(alcoholic|apple|apples|ate|beer|berry|berries|breakfast|brew|butter|Butter|candy|cereal|cereals|champagne|chef|chefs|chew|chews|chocoloate|cocktail|condiment|condiments|consume|consumed|consumes|cook|cooked|cookie|cookies|cooking|cooks|corn|corns|cream|creams|crop|crops|crunchy|delicacy|delicacies|delicious|dine|dinner|dip|dips|dipped|dish|dishes|drink|drinks|eat|eats|fat|feed|feeded|feeds|fish|flavor|flavors|food|foods|fry|fries|fruit|fruits|gin|imbibe|imbibed|imbibes|intake|intakes|intaked|juice|lunch|mayonnaise|meal|meals|meat|milk|nutrient|nutrients|nuts|onion|pea|peanut|peanuts|Peanut|peas|pickle|pickled|pickles|pineapple|pineapples|pizza|pizzas|potato|potatoes|protein|powdered|rum|rums|salty|sauce|savoury|sip|sips|snack|snacks|soda|sour|spice|spices|Spice|stomach|supper|swallow|swallows|sweet|sweeter|taste|tastes|tasting|tasty|tequila|treat|treats|vegetable|vegetables|vermouth|vitamin|whisky|wine|wines)'
+        ]
+        #instrument 	musical instrument
+        #lang 	languages
+        pattern_values['language'] = [
+            '(Afrikaans|Albanian|Arabic|Armenian|Azeri|Basque|Bengali|Bosnian|Brazilian Portuguese|Breton|Bulgarian|Byelorussian|Catalan|Cebuano|Cornish|Croatian|Czech|Danish|Dutch|English|Esperanto|Estonian|Faroese|Fijian|Finnish|French|Frisian|Galician|Georgian|German|Greek|Guarani|Gujarati|Haitian Creole|Hawaiian|Hebrew|Hiligaynon|Hindi|Hmong|Hungarian|Chinese|Icelandic|Indonesian|Interlingua|Inuit|Inuktitut|Irish|Italian|Japanese|Japanese Romaji|Kabyle|Kazakh|Kinyarwanda|Kiribati|Korean|Kurdish|Latin|Latvian|Lithuanian|Macedonian|Malagasy|Malay|Malayalam|Maltese|Manx|Maori|Mapudungun|Marathi|Masai|Mongolian|Nepali|Norwegian Bokmal|Norwegian Nynorsk|Pali|Papiamento|Persian|Polish|Portuguese|Punjabi|Quechua|Rapanui|Romanian|Russian|Sanskrit|Scottish Gaelic|Serbian|Sesotho|Setswana|Sinhala|Slovak|Slovenian|Somali|Spanish|Sranan|Swahili|Swedish|Tagalog|Tamil|Tatar|Telugu|Thai|Tok Pisin|Tongan|Turkish|Turkmen|Urdu|Valencian|Vietnamese|Walloon|Welsh|Xhosa|Zulu)'
+        ]
+        
+        #letter 	letters like a-z
+        #other 	other entities
+        #plant 	plants
+        #product 	products
+        #religion 	religions
+        #sport 	sports
+        #substance 	elements and substances
+        #symbol 	symbols and signs
+        #technique 	techniques and methods
+        #term 	equivalent terms
+        #vehicle 	vehicles
+        #word 	words with a special property
+        return self.addFeatures(pattern_values)
+        
+    def addFeaturesDescription():
+        pattern_values = {}
+        #definition 	definition of sth.
+        #description 	description of sth.
+        #manner 	manner of an action
+        #reason 	reasons
+        return self.addFeatures(pattern_values)
         
