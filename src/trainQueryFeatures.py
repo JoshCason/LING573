@@ -7,7 +7,7 @@
 
 import sys, os, math, hashlib, cPickle as pickle, json
 import operator
-import nltk
+import nltk, re
 from nltk.corpus import stopwords
 import util
 from util import *
@@ -17,10 +17,10 @@ from classifier import *
 
 output = open('trainTestOutput.txt','w')
 
-# Extracting unigrams --> features for now (X)
+# Extracting unigrams
 # INPUT: target, question
 def extractUnigrams(t,q):
-    features = {}
+    unigrams = {}
     stopwords = nltk.corpus.stopwords.words('english')
     clean_q = q.strip()
     clean_t = t.strip()
@@ -28,24 +28,78 @@ def extractUnigrams(t,q):
     for q_unigram in nltk.wordpunct_tokenize(clean_q):
         if q_unigram.isalnum():
             if q_unigram not in stopwords:
-                features['q_' + q_unigram] = 1 
+                unigrams['q_' + q_unigram] = 1 
 	
     for t_unigram in nltk.wordpunct_tokenize(clean_t):
         if t_unigram.isalnum():
             if t_unigram not in stopwords:
-                features['q_' + t_unigram] = 1
+                unigrams['q_' + t_unigram] = 1
 
-    return features
+    return unigrams
+
+# Add POS tags to question + target words
+# INPUT: question, target
+def extractTaggedUnigrams(q,t):
+    taggedUnigrams = {}
+	text = []
+	stopwords = nltk.corpus.stopwords.words('english')
+	
+	for token in nltk.wordpunct_tokenize(q + t):
+	    if token.isalnum():
+		    if token not in stopwords:
+				text.append(token)
+
+    taggedWords = nltk.pos_tag(text)
+    for t in taggedWords:
+	    taggedUnigrams['q_' + t] = 1
+
+    return taggedUnigrams   
+    
+	
+# Head NP + Head VP chunks
+# INPUT: question
+def extractHeadChunks(q):
+	# 1st step: tag the question words
+    text = []
+    stopwords = nltk.corpus.stopwords.words('english')	
+    for token in nltk.wordpunct_tokenize(q):
+        if token.isalnum():
+            if token not in stopwords:
+                text.append(token)
+    taggedWords = nltk.pos_tag(text)
+	
+	# 2nd step: chunk
+    headChunks = {}
+	# grammar to extract NP & VP chunks from the question
+    grammar = r"""
+        NP: {<DT|PP\$>?<JJ>*<NN|NNP>+}
+        VP: {<MD>?<V.+>+}
+    """
+    chunker = nltk.RegexpParser(grammar)
+    tree = chunker.parse(sentence)
+    NP_candidates = []
+    VP_candidates = []
+    for subtree in tree.subtrees():
+        if subtree.node == 'NP':
+	        NP_candidates.append(subtree)
+        elif subtree.node == 'VP':
+	        VP_candidates.append(subtree)
+	# doing some clean-up of the subtree before adding it as a feature
+	cleanedN = re.sub(r'\/.{1,3}','',str(NP_candidates[0]))
+	finalN = cleanedN.replace(' ','_')
+    headChunks['q_' + finalN] = 1
+    cleanedV = re.sub(r'\/.{1,3}','',str(VP_candidates[0]))
+    finalV = cleanedV.replace(' ','_')
+    headChunks['q_' + finalV] = 1
+    return headChunks
 
 # storing question words --> label for now (Y)
 # INPUT: question
 def extractLabel(q):
     tokens = []
-    label = ''
-	
+    label = ''	
     for token in nltk.wordpunct_tokenize(q.strip()):
-        tokens.append(token)
-		
+        tokens.append(token)		
     if q.lower().startswith('how'):
         label = 'q_' + tokens[0] + '_' + tokens[1]
     elif q.lower().startswith('for how'):
@@ -55,19 +109,23 @@ def extractLabel(q):
     elif q.lower().startswith('from'):
         label = 'q_' + tokens[0] + '_' + tokens[1]
     else:
-        label = 'q_' + tokens[0]
-		
+        label = 'q_' + tokens[0]		
     return label
 	
 def addFeaturesValues(trainingData, X, Y):
     target = trainingData[qid]['target']
     question = trainingData[qid]['question']
+	
     # feature extraction function(s)
-    features = extractUnigrams(target, question)
+    unigrams = extractUnigrams(target, question)
+    X.append(unigrams)
+	taggedUnigrams = extractTaggedUnigrams(question, target)
+    X.append(taggedUigrams)
+    chunks = extractHeadChunks(question)
+    X.append(chunks)
+	
     # Label extraction function
     label = extractLabel(question)
-	# append to respective list/dictionary
-    X.append(features)
     Y.append(label)
 	
     return X, Y
