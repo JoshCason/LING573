@@ -108,7 +108,7 @@ def websearch(query):
                 
     return ret
 
-useUnion = True
+useUnion = False
 # gather up n-grams from our web search reslts
 def getcandidates(search_results, query, label, qfeatures):
     qa = qa_filters([])

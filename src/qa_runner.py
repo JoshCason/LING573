@@ -38,20 +38,14 @@ from lucene import \
 import time
 from datetime import datetime
 
-
-
-
 # Lets do some work! Main Runner
 if __name__ == '__main__':
 
-    
-        
     # Start timer
     start = datetime.now()
     STORE_DIR = config['aquant_index_dir']
     directory = SimpleFSDirectory(File(STORE_DIR))
     searcher = IndexSearcher(directory, True)
-    
 
     # output file
     out_file = '../outputs/' + config['deliverable'] + '.' + str(config['answer_char_length']) + '.outputs'
@@ -59,23 +53,20 @@ if __name__ == '__main__':
     f = open(out_file, 'a')
     
     # determine ngrams from our search results
-    c = evalcandidates()
-    
-    for question in questions[:qta]:
-    
-        # for the most common ngrams lets find some matching AQUAINT docs
-        for ngram_set, count in c.most_common(config['answer_candidates_limit']):
-            # now for each we get the supporting AQUAINT doc
-            
-            # Search AQUAINT lucene 
-            # Add the ngram set to our question
-            qry = q['target'] + ' ' + q['question'] + ' ' + ngram_set
-            
-            doc = aquaint_search(qry, searcher)
-            
-            if doc is not False:
-                # write to D2.outputs
-                f.write(u' '.join((question['question_id'], run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
+    cdict = evalcandidates()
+    for qid in cdict:
+        q = util.getquestion(qid=qid)
+        for c in cdict[qid]:
+            # for the most common ngrams lets find some matching AQUAINT docs
+            for ngram_set, count in c.most_common(config['answer_candidates_limit']):
+                # now for each we get the supporting AQUAINT doc
+                # Search AQUAINT lucene 
+                # Add the ngram set to our question
+                qry = q['target'] + ' ' + q['question'] + ' ' + ngram_set                
+                doc = aquaint_search(qry, searcher)
+                if doc is not False:
+                    # write to D2.outputs
+                    f.write(u' '.join((qid, run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
     searcher.close()
     f.close()
     
