@@ -1,6 +1,7 @@
 
 
 config = {
+    "run2006insteadof2007": True,
     "search_libraries": ["pattern", "requests", "xgoogle"],
     "search_library_active": "pattern",
     "search_engines": ["bing", "google"],

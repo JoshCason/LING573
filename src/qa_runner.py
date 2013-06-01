@@ -52,8 +52,10 @@ if __name__ == '__main__':
     run_tag = config['deliverable'] + '-' + str(int(time.time()))
     f = open(out_file, 'a')
     
+    isdevrun = config["run2006insteadof2007"]
+    
     # determine ngrams from our search results
-    cdict = evalcandidates()
+    cdict = evalcandidates(isdevrun)
     for qid in cdict:
         q = util.getquestion(qid=qid)
         for c in cdict[qid]:
