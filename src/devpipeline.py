@@ -6,10 +6,10 @@ import classifier
 from webcandidates import getcandidates
 import cPickle as cp
 
-TOTAL_QUESTIONS = 995
+TOTAL_QUESTIONS = 995 - 895
 NUM_OF_QUESTIONS = TOTAL_QUESTIONS
 PERCENT = 0.1 # of data for testing
-KFEATURES = 10000
+KFEATURES = 150
 
 main_clsfr = classifier.clsfr("main", alg="svm",kfeatures=KFEATURES)
 
@@ -134,7 +134,9 @@ def evalcandidates():
     for qid in evalq:
         output[qid] = Counter()
         for ngram in cand_indexing[qid]:
-            probs = results[cand_indexing[qid][ngram]]
+            probs = dict(results[cand_indexing[qid][ngram]])
+            output[qid][ngram] = probs[1]
+    return output
             
 
 
@@ -142,7 +144,8 @@ def run2():
     train()
     results = devtest()
     print(results.report())
-    return results.acc
+    print(results.acc)
+    return main_clsfr 
 
 def run():
     results = devtest()
