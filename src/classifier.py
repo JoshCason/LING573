@@ -47,13 +47,6 @@ class clsfr(object):
         if functionality == "main":
             self.training_dict = dict()
             self.devtest_dict = dict()
-            for year in q:
-                if year == '2006':
-                    for qid in q[year]:
-                        self.devtest_dict[qid] = dict()
-                elif year in ['2004','2005']:
-                    for qid in q[year]:
-                        self.training_dict[qid] = dict()
         self.trained = False
         pick_alg = {
                     "svm": lambda : svm.SVC(kernel='rbf', probability=True),
@@ -94,24 +87,25 @@ class clsfr(object):
     combine the results elsewhere. It's difficult to guess how to deal with
     duplicate features because their values might be string or numerical.
     """
-    def addfeatures(self, qid, ans_cand, feat_dict):
+    def addfeatures(self, qid, ans_cand, feat_dict, train=True):
         
-        if qid in self.devtest_dict:
+        if not train:
             dict_to_update = self.devtest_dict
         else:
             dict_to_update = self.training_dict
-        if qid in dict_to_update:
-            if ans_cand not in dict_to_update[qid]:
-                dict_to_update[qid][ans_cand] = feat_dict
-            else:
-                for feat in feat_dict:
-                    if feat not in dict_to_update[qid][ans_cand]:
-                        dict_to_update[qid][ans_cand][feat] = feat_dict[feat]
-                    else:
-                        msg = "This feature, %s, is already in the feature set of %s.\n"
-                        msg = (msg % (feat, ans_cand)) 
-                        msg += "Try combining the values earlier in the pipeline or changing the name."
-                        raise Exception(msg)
+        if qid not in dict_to_update:
+            dict_to_update[qid] = dict()
+        if ans_cand not in dict_to_update[qid]:
+            dict_to_update[qid][ans_cand] = feat_dict
+        else:
+            for feat in feat_dict:
+                if feat not in dict_to_update[qid][ans_cand]:
+                    dict_to_update[qid][ans_cand][feat] = feat_dict[feat]
+#                 else:
+#                     msg = "This feature, %s, is already in the feature set of %s.\n"
+#                     msg = (msg % (feat, ans_cand)) 
+#                     msg += "Try combining the values earlier in the pipeline or changing the name."
+#                     raise Exception(msg)
     
     """
     Once you have gathered all the features you like, adding them with the addfeatures method,
@@ -125,11 +119,13 @@ class clsfr(object):
             for qid in self.training_dict:
                 year_str = getyearbyqid(qid)       
                 for ac in self.training_dict[qid]:
-                    if checkanswer(year_str, qid, ac):
-                        label = 1
-                    else: label = -1
-                    X_dict_list.append(self.training_dict[qid][ac])
-                    Y_labels.append(label)
+                    try:
+                        if checkanswer(year_str, qid, ac):
+                            label = 1
+                        else: label = -1
+                        X_dict_list.append(self.training_dict[qid][ac])
+                        Y_labels.append(label)
+                    except: pass
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_labels, please.""")
         X_data = self.vec.fit_transform(X_dict_list)
@@ -213,16 +209,15 @@ class clsfr(object):
             error_dict = dict()
             for qid in self.devtest_dict:
                 year_str = getyearbyqid(qid)       
-                for i,ac in enumerate(self.devtest_dict[qid]):
-                    error_dict[i] = \
-                    {"ans" : ac,"qid": qid, "q": getquestion(year_str, qid), \
-                     "features" : self.devtest_dict[qid][ac]}
-                    if checkanswer(year_str, qid, ac):
-                        label = 1
-                    else: label = -1
-                    X_dict_list.append(self.devtest_dict[qid][ac])
-                    Y.append(label)
-            Y_gold = Y
+                for ac in self.devtest_dict[qid]:
+                    try:
+                        if checkanswer(year_str, qid, ac):
+                            label = 1
+                        else: label = -1
+                        X_dict_list.append(self.devtest_dict[qid][ac])
+                        Y.append(label)
+                    except: pass
+            self.Y_gold = Y
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_gold, please.""")
         X_data = self.vec.transform(X_dict_list)
@@ -236,8 +231,6 @@ class clsfr(object):
             self.Y_model.append(result[0][0])
             self.results.append(result)
         self.err_indices = filter(lambda x: self.Y_gold[x] != self.Y_model[x], range(len(self.Y_gold)))
-        if main:
-            self.error_dict = dict(map(lambda x: (x,error_dict[x]), self.err_indices))
         
         # this is for classification report
         labels2ints = {label: i for i, label in enumerate(set(self.Y_gold) | set(self.Y_model))}

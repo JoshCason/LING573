@@ -34,13 +34,13 @@ def featurize(target, question):
 	# A: ngrams
     feats = dict(Counter(tokens+bigrams+trigrams+quadrigrams))
     # B: adding pattern weights
-    feats = dict(weighContexts(question).items() + feats.items())
-	# C: added tagged unigrams
-    feats = dict(extractTaggedUnigrams(question,target).items() + feats.items())
-    # D: adding head chunks
-    feats = dict(extractHeadChunks(question).items() + feats.items())
-    # E: adding question word
-    feats = dict(extractQuestionWord(question).items() + feats.items())	
+#     feats = dict(weighContexts(question).items() + feats.items())
+# 	# C: added tagged unigrams
+#     feats = dict(extractTaggedUnigrams(question,target).items() + feats.items())
+#     # D: adding head chunks
+#     feats = dict(extractHeadChunks(question).items() + feats.items())
+#     # E: adding question word
+#     feats = dict(extractQuestionWord(question).items() + feats.items())	
     '''
     add (or remove) whatever features you want here then run qc.devtest()
     to see if you've gained anything.

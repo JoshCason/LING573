@@ -77,7 +77,8 @@ class qa_filters:
     def featurizeCandidate(self, label, candidate, punc=0):
         feats = {}
         for token in candidate.split(' '):
-            feats = dict(self.tokenFeatures(token, label, punc).items() + feats.items())
+            feats = self.tokenFeatures(token, label, punc).items() + feats.items()
+            feats = dict(map(lambda x: ("a_" + x[0] ,x[1]), feats))
         
         return feats
         
@@ -85,7 +86,8 @@ class qa_filters:
         feats = {}
         text = result['title'].strip() + ' ' + result['description'].strip()
         for token in text.split(' '):
-            feats = dict(self.tokenFeatures(token, label, punc).items() + feats.items())
+            feats = self.tokenFeatures(token, label, punc).items() + feats.items()
+            feats = dict(map(lambda x: ("w_" + x[0] ,x[1]), feats))
         
         return feats
         

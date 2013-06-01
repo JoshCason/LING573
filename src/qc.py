@@ -46,12 +46,11 @@ def predict(new_qids):
         target = getquestion(qid=qid)['target']
         question = getquestion(qid=qid)['question']
         features = featurize(target, question) # your function
-        label = qc[qid].split(':')[0]
         features_dict[qid] = features
         X.append(features)
-        Y.append(label)
-    Y_model = qc_classifier.devtest(X,Y)
-    return Y_model, features_dict
+        Y.append('NUM')
+    qc_classifier.devtest(X,Y)
+    return qc_classifier, features_dict
 
 def run():
     train()

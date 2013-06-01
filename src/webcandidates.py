@@ -108,16 +108,20 @@ def websearch(query):
                 
     return ret
 
-# grather up n-grams from our web search reslts
-def getcandidates(search_results, query):
+useUnion = True
+# gather up n-grams from our web search reslts
+def getcandidates(search_results, query, label, qfeatures):
+    qa = qa_filters([])
     stop_words = set(stopwords.words('english')) | set(["'s"])
     punct = set(string.punctuation + '·™')
         
     ngrams = Counter()
-    for result in search_results:
-        text = ''
-        text += "... %s" % result['title']
-        text += "... %s" % result['description']
+    ngram_featset = dict()
+    result_features = dict()
+    for result_key, result in enumerate(search_results):
+        result_features[result_key] = set(qa.featurizeWebResult(label,result,1).items())
+        
+        text = "%s ... %s" % (result['title'], result['description'])
         texts = text.split('...')
         toked = []
         for t in texts:
@@ -131,14 +135,14 @@ def getcandidates(search_results, query):
             bigrams = map(lambda x: ' '.join(x), bigramize(tokens))
             trigrams = map(lambda x: ' '.join(x), trigramize(tokens))
             quadrigrams = map(lambda x: ' '.join(x), quadrigramize(tokens))
-            for token in tokens:
-                ngrams[token] += result['weight']
-            for bigram in bigrams:
-                ngrams[bigram] += result['weight']
-            for trigram in trigrams:
-                ngrams[trigram] += result['weight']
-            for quadrigram in quadrigrams:
-                ngrams[quadrigram] += result['weight']
+            
+            for ng in tokens+bigrams+trigrams+quadrigrams:
+                #ngrams[token] += result['weight']
+                ngrams[ng] += 1
+                if ng in ngram_featset:
+                    ngram_featset[ng].add(result_key)
+                else:
+                    ngram_featset[ng]= set([result_key])
     stemmer = nltk.PorterStemmer()
     for k in ngrams.keys():
         qwords = set(map(lambda x: stemmer.stem(x.lower()), word_tokenize(query)))
@@ -160,7 +164,16 @@ def getcandidates(search_results, query):
         if len(tokens) > 1:
             for token in tokens:
                 ngrams[k] += ngrams[token]
-    return ngrams 
+    finalfeatdict = dict()
+    for ng, chunk in ngrams.most_common(100):
+        if useUnion:
+            feats = reduce(lambda x,y: x | y, map(lambda z: result_features[z], ngram_featset[ng]))
+        else:
+            feats = reduce(lambda x,y: x & y, map(lambda z: result_features[z], ngram_featset[ng]))
+        feats.add(('REDUNDANCY_SCORE',ngrams[ng]))
+        feats.add(('WEB_RANK', 1 + min(ngram_featset[ng])))
+        finalfeatdict[ng] = dict(feats | set(qa.featurizeCandidate(label, ng, 0).items()) | set(qfeatures.items()))
+    return finalfeatdict
     
 def clean_results(results):
     # we want to remove html tags and decode html entities for titles and descriptions
