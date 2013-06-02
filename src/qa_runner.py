@@ -24,8 +24,8 @@ from aquaint_lucene import aquaint_search
 from config573 import config
 import pprint
 import classifier as clsfr
-import web_reranking
 import qc
+from devpipeline import evalcandidates
 
 sys.path.insert(0, os.path.join("..", ".."))
 
@@ -48,17 +48,19 @@ if __name__ == '__main__':
     searcher = IndexSearcher(directory, True)
 
     # output file
-    out_file = '../outputs/' + config['deliverable'] + '.' + str(config['answer_char_length']) + '.outputs'
-    run_tag = config['deliverable'] + '-' + str(int(time.time()))
-    f = open(out_file, 'a')
+    out_file0 = '../outputs/' + 'QA' + '.' + 'outputs'
     
-    isdevrun = config["run2006insteadof2007"]
-    
-    # determine ngrams from our search results
-    cdict = evalcandidates(isdevrun)
-    for qid in cdict:
-        q = util.getquestion(qid=qid)
-        for c in cdict[qid]:
+    for year in ['2006','2007']:
+        out_file = outfile0 + '_'+ year + '_100'
+        
+        run_tag = config['deliverable'] + '-' + str(int(time.time()))
+        f = open(out_file, 'a')
+        
+        # determine ngrams from our search results
+        cdict = evalcandidates(year)    
+        for qid in sorted(cdict.keys(), key=lambda x: float(x)):
+            q = getquestion(qid=qid)
+            c = cdict[qid]
             # for the most common ngrams lets find some matching AQUAINT docs
             for ngram_set, count in c.most_common(config['answer_candidates_limit']):
                 # now for each we get the supporting AQUAINT doc
@@ -69,12 +71,12 @@ if __name__ == '__main__':
                 if doc is not False:
                     # write to D2.outputs
                     f.write(u' '.join((qid, run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
-    searcher.close()
-    f.close()
-    
-    # End Timer
-    end = datetime.now()
-    print 'Time elapsed: ' + str(end - start)
+        searcher.close()
+        f.close()
+        
+        # End Timer
+        end = datetime.now()
+        print 'Time elapsed: ' + str(end - start)
     
 
 

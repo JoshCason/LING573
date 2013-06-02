@@ -19,6 +19,7 @@ from config573 import config
 sys.path.append('./requests/')
 from bing_search_api import BingSearchAPI
 import HTMLParser
+from util import Tokenizer
 
 my_key = 'cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM='
 bing = BingSearchAPI(my_key)
@@ -110,26 +111,30 @@ def websearch(query):
 
 useUnion = False
 # gather up n-grams from our web search reslts
-def getcandidates(search_results, query, label, qfeatures):
+def getcandidates(search_results, query, label, qfeatures, qid, pickledngrams):
+
+    tokenizer = Tokenizer()
     qa = qa_filters([])
     stop_words = set(stopwords.words('english')) | set(["'s"])
     punct = set(string.punctuation + '·™')
-        
-    ngrams = Counter()
+    
+    if qid in pickledngrams:
+        ngrams = pickledngrams[qid]
+    else:
+        ngrams = Counter()
+    
     ngram_featset = dict()
     result_features = dict()
     for result_key, result in enumerate(search_results):
         result_features[result_key] = set(qa.featurizeWebResult(label,result,1).items())
-        
         text = "%s ... %s" % (result['title'], result['description'])
         texts = text.split('...')
         toked = []
         for t in texts:
             if config['search_library_active'] == 'xgoogle':
-                tokes = word_tokenize(t.decode('utf8'))
+                tokes = tokenizer(t.decode('utf8'))
             else:
-                tokes = word_tokenize(t)
-            tokes = map(lambda x: x.lower(), tokes)
+                tokes = tokenizer(t)
             toked.append(tokes)
         for tokens in toked:
             bigrams = map(lambda x: ' '.join(x), bigramize(tokens))
@@ -138,42 +143,46 @@ def getcandidates(search_results, query, label, qfeatures):
             
             for ng in tokens+bigrams+trigrams+quadrigrams:
                 #ngrams[token] += result['weight']
-                ngrams[ng] += 1
+                if qid not in pickledngrams:
+                    ngrams[ng] += 1
                 if ng in ngram_featset:
                     ngram_featset[ng].add(result_key)
                 else:
                     ngram_featset[ng]= set([result_key])
-    stemmer = nltk.PorterStemmer()
-    for k in ngrams.keys():
-        qwords = set(map(lambda x: stemmer.stem(x.lower()), word_tokenize(query)))
-        remove = False
-        tokens = k.split()
-        if len(tokens) > 1:
-            if tokens[0] in stop_words: remove = True
-            if tokens[-1] in stop_words: remove = True
-            for token in tokens:
-                if stemmer.stem(token) in qwords: remove = True
-                if token in punct: remove = True
-        else:
-            if k in stop_words: remove = True
-            if k in punct: remove = True
-            if stemmer.stem(k) in qwords: remove = True
-        if remove: del ngrams[k]
-    for k in ngrams.keys():
-        tokens = k.split()
-        if len(tokens) > 1:
-            for token in tokens:
-                ngrams[k] += ngrams[token]
+    if qid not in pickledngrams:
+        stemmer = nltk.PorterStemmer()
+        for k in ngrams.keys():
+            qwords = set(map(lambda x: stemmer.stem(x.lower()), word_tokenize(query)))
+            remove = False
+            tokens = k.split()
+            if len(tokens) > 1:
+                if tokens[0] in stop_words: remove = True
+                if tokens[-1] in stop_words: remove = True
+                for token in tokens:
+                    if stemmer.stem(token) in qwords: remove = True
+                    if token in punct: remove = True
+            else:
+                if k in stop_words: remove = True
+                if k in punct: remove = True
+                if stemmer.stem(k) in qwords: remove = True
+            if remove: del ngrams[k]
+        for k in ngrams.keys():
+            tokens = k.split()
+            if len(tokens) > 1:
+                for token in tokens:
+                    ngrams[k] += ngrams[token]
     finalfeatdict = dict()
-    for ng, chunk in ngrams.most_common(100):
+    for ng, chunk in ngrams.most_common(30):
         if useUnion:
             feats = reduce(lambda x,y: x | y, map(lambda z: result_features[z], ngram_featset[ng]))
         else:
             feats = reduce(lambda x,y: x & y, map(lambda z: result_features[z], ngram_featset[ng]))
         feats.add(('REDUNDANCY_SCORE',ngrams[ng]))
         feats.add(('WEB_RANK', 1 + min(ngram_featset[ng])))
+        feats.add(('QC_LABEL', label))
         finalfeatdict[ng] = dict(feats | set(qa.featurizeCandidate(label, ng, 0).items()) | set(qfeatures.items()))
-    return finalfeatdict
+        #finalfeatdict[ng] = dict(feats | set(qa.featurizeCandidate(label, ng, 0).items()))
+    return finalfeatdict, ngrams
     
 def clean_results(results):
     # we want to remove html tags and decode html entities for titles and descriptions

@@ -6,13 +6,13 @@ import classifier
 from webcandidates import getcandidates
 import cPickle as cp
 from collections import Counter
-
+from config573 import config
 
 qids = reduce(lambda x, y: x+y, \
               map(lambda x: util.questions[x].keys(), \
                   filter(lambda y: y not in  ['2006', '10000', '2007'], util.questions)))
 
-TOTAL_QUESTIONS = 592 - 300
+TOTAL_QUESTIONS = 592
 NUM_OF_QUESTIONS = TOTAL_QUESTIONS
 PERCENT = 0.1 # of data for testing
 KFEATURES = 50
@@ -29,18 +29,24 @@ portion = int(len(qids) * PERCENT)
 trainq = qids[portion:]
 testq = qids[:portion]
 
-def train():
+def dopipeline(qidsq):
     try:
-        f = open("pickledwebcandidates",'rb')
+        f = open("pickledwebcandidates"+marker,'rb')
         webcandpickled = cp.load(f)
         f.close()
+        #raise
     except:
         webcandpickled = dict()
-    qc.train()
-    qc_train_clsfr, qc_train_feats = qc.predict(trainq)
-    trainqc_dict = dict(zip(trainq, qc_train_clsfr.Y_model))
+    try:
+        f = open("pickledngrams1"+marker,'rb')
+        pickledngrams = pickle.load(f)
+        f.close()
+    except:
+        pickledngrams = dict()
+    qc_qids_clsfr, qc_qids_feats = qc.predict(qidsq)
+    qidsqc_dict = dict(zip(qidsq, qc_qids_clsfr.Y_model))
     search_results = dict()
-    for qid in trainq:
+    for qid in qidsq:
         search_results[qid] = util.getplainwebresults(qid)
     webcand_dict = dict()
     for qid, result in search_results.items():
@@ -50,12 +56,21 @@ def train():
         if qid in webcandpickled:
             c = webcandpickled[qid]
         else:
-            c = getcandidates(result, qry, trainqc_dict[qid], qc_train_feats[qid])
+            c, ngrams = getcandidates(result, qry, qidsqc_dict[qid], qc_qids_feats[qid], qid, pickledngrams)
             webcandpickled[qid] = c
+            pickledngrams[qid] = ngrams
         webcand_dict[qid] = c
-    f = open("pickledwebcandidates",'wb')
+    f = open("pickledwebcandidates"+marker,'wb')
     cp.dump(webcandpickled,f)
     f.close()
+    f = open("pickledngrams"+marker,'wb')
+    cp.dump(pickledngrams, f)
+    f.close()
+    return webcand_dict
+
+def train():
+    #qc.train() # we can assume this is trained
+    webcand_dict = dopipeline(trainq)
     for qid, c in webcand_dict.items():
         for ngram in c:
             feats = c[ngram]
@@ -64,31 +79,7 @@ def train():
     print("done training")
     
 def devtest():
-    try:
-        f = open("pickledwebcandidates",'rb')
-        webcandpickled = cp.load(f)
-        f.close()
-    except:
-        webcandpickled = dict()
-    qc_test_clsfr, qc_test_feats = qc.predict(testq)
-    testqc_dict = dict(zip(testq, qc_test_clsfr.Y_model))
-    search_results = dict()
-    for qid in testq:
-        search_results[qid] = util.getplainwebresults(qid)
-    webcand_dict = dict()
-    for qid, result in search_results.items():
-        query = util.getquestion(qid = qid)
-        # c = dict of dicts with 'ngram' and 'features'
-        qry = "%s %s" % (query['target'], query['question'])
-        if qid in webcandpickled:
-            c = webcandpickled[qid]
-        else:
-            c = getcandidates(result, qry, testqc_dict[qid], qc_test_feats[qid])
-            webcandpickled[qid] = c
-        webcand_dict[qid] = c
-    f = open("pickledwebcandidates",'wb')
-    cp.dump(webcandpickled,f)
-    f.close()
+    webcand_dict = dopipeline(testq)
     for qid, c in webcand_dict.items():
         for ngram in c:
             feats = c[ngram]
@@ -96,35 +87,17 @@ def devtest():
     main_clsfr.devtest()
     return main_clsfr 
 
-def evalcandidates(dev=False):
+def evalcandidates(year):
+    global evalq
+    if year == '2006':
+        dev = True
+    else:
+        dev = False
+    tempq = None
     if dev:
         tempq = evalq
         evalq = devq
-    try:
-        f = open("pickledwebcandidates",'rb')
-        webcandpickled = cp.load(f)
-        f.close()
-    except:
-        webcandpickled = dict()
-    qc_eval_clsfr, qc_eval_feats = qc.predict(evalq)
-    evalqc_dict = dict(zip(evalq, qc_eval_clsfr.Y_model))
-    search_results = dict()
-    for qid in evalq:
-        search_results[qid] = util.getplainwebresults(qid)
-    webcand_dict = dict()
-    for qid, result in search_results.items():
-        query = util.getquestion(qid = qid)
-        # c = dict of dicts with 'ngram' and 'features'
-        qry = "%s %s" % (query['target'], query['question'])
-        if qid in webcandpickled:
-            c = webcandpickled[qid]
-        else:
-            c = getcandidates(result, qry, evalqc_dict[qid], qc_eval_feats[qid])
-            webcandpickled[qid] = c
-        webcand_dict[qid] = c
-    f = open("pickledwebcandidates",'wb')
-    cp.dump(webcandpickled,f)
-    f.close()
+    webcand_dict = dopipeline(evalq)
     X, Y = [],[]
     cand_indexing = dict()
     index = 0
@@ -142,11 +115,14 @@ def evalcandidates(dev=False):
         for ngram in cand_indexing[qid]:
             probs = dict(results[cand_indexing[qid][ngram]])
             output[qid][ngram] = probs[1]
-    evalq = tempq
+    if dev:
+        evalq = tempq
     return output
 
 def run2(k):
+    global main_clsfr
     KFEATURES = k
+    main_clsfr = classifier.clsfr("main", alg="svm",kfeatures=KFEATURES)
     train()
     results = devtest()
     print(results.report())
@@ -157,12 +133,26 @@ def run3(klist):
     max1 = 0
     maxk = 0
     for k in klist:
-        x = run2(k)
-        new1 = Counter(x.Y_model)[1]
+        output = run4(k)
+        distotal = 0
+        distct = 0
+        for qid in output:
+            x = output[qid].most_common()
+            dist = abs(x[0][1] - x[-1][1])
+            distotal += dist
+            distct +=1
+        new1 = distotal / float(distct)
+        #new1 = Counter(main_clsfr.Y_model)[1]
         if new1 > max1:
             maxk = k
             max1 = new1
     return maxk
+
+def run4(k):
+    KFEATURES = k
+    main_clsfr = classifier.clsfr("main", alg="svm",kfeatures=KFEATURES)
+    train()
+    return evalcandidates()
 
 def run():
     results = devtest()

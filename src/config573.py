@@ -1,7 +1,6 @@
 
 
 config = {
-    "run2006insteadof2007": True,
     "search_libraries": ["pattern", "requests", "xgoogle"],
     "search_library_active": "pattern",
     "search_engines": ["bing", "google"],
@@ -27,8 +26,5 @@ config = {
     "include_exact_query_matches": 0,
     "deliverable": "D4",
     "trec_file": "/dropbox/12-13/573/Data/Questions/devtest/TREC-2006.xml",
-    "model_dir": "./models/",
-    "binarize_cmd": "/NLP_TOOLS/tool_sets/mallet/latest/bin/mallet import-svmlight --input train.vectors.txt --output train.vectors",
-    "train_cmd": "/NLP_TOOLS/tool_sets/mallet/latest/bin/mallet train-classifier --input train.vectors --trainer MaxEnt --output-classifier ml.model",
-    "test_cmd": "/NLP_TOOLS/tool_sets/mallet/latest/bin/mallet classify-svmlight --input test.vectors.txt --output classifier.result --classifier ml.model"
+    "model_dir": "./models/"
 }

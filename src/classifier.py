@@ -38,21 +38,21 @@ x = classifier.clsfr("web_result_reranking")
 """
 class clsfr(object):
     def __init__(self, functionality, alg="svm", kfeatures=150):
+        self.alg = alg
+        self.kfeatures = kfeatures
         self.modelfilename = config["model_dir"]+functionality+"_model"
         self.vectorizername = config["model_dir"]+functionality+"_vectorizer"
         self.chisquaredname = config["model_dir"]+functionality+"_chisquared"
         self.scalername = config["model_dir"]+functionality+"_scaler"
-        self.ch2 = SelectKBest(chi2, kfeatures)
-        self.scaler = StandardScaler(with_mean=False)
         if functionality == "main":
             self.training_dict = dict()
             self.devtest_dict = dict()
         self.trained = False
-        pick_alg = {
+        self.pick_alg = {
                     "svm": lambda : svm.SVC(kernel='rbf', probability=True),
                     "knn": lambda : KNeighborsClassifier(n_neighbors=10, warn_on_equidistant=False)
                     }
-        pick_vec = {
+        self.pick_vec = {
                     "fh": lambda : FeatureHasher(),
                     "dv": lambda : DictVectorizer()
                     }
@@ -72,8 +72,6 @@ class clsfr(object):
             self.trained = True
         except:
             print("ack!!")
-            self.clsfr_alg = pick_alg[alg]()
-            self.vec = pick_vec[VEC_CHOICE]()
         
     """
     Since in all of our current questions, the qid is unique, there
@@ -128,6 +126,16 @@ class clsfr(object):
                     except: pass
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_labels, please.""")
+        
+        self.clsfr_alg = self.pick_alg[self.alg]()
+        self.vec = self.pick_vec[VEC_CHOICE]()
+        self.ch2 = SelectKBest(chi2, self.kfeatures)
+        self.scaler = StandardScaler(with_mean=False)
+        
+        allfeats = set()
+        for instance in X_dict_list:
+            allfeats = allfeats | set(instance.keys())
+        print("total %s training features" % str(len(allfeats)))
         X_data = self.vec.fit_transform(X_dict_list)
         X_data = self.ch2.fit_transform(X_data, Y_labels)
         X_data = self.scaler.fit_transform(X_data)
@@ -220,6 +228,10 @@ class clsfr(object):
             self.Y_gold = Y
         else: raise Exception("""Either the main pipeline features should be used, in which case,\n 
             supply no arguments, or supply both X_dict_list and Y_gold, please.""")
+        allfeats = set()
+        for instance in X_dict_list:
+            allfeats = allfeats | set(instance.keys())
+        print("total %s testing features" % str(len(allfeats)))
         X_data = self.vec.transform(X_dict_list)
         X_data = self.ch2.transform(X_data)
         X_data = self.scaler.transform(X_data)

@@ -189,9 +189,10 @@ stem_toke also stems the token.
 class Tokenizer(object):
     def __init__(self):
         self.stem = PorterStemmer()
-        self.punct = set(string.punctuation) | set(['..','...','....','.....','......'])
+        self.punct = set(string.punctuation) | set(['·™','..','...','....','.....','......'])
+        self.punct = self.punct | set(["``", "·", "–", "--", "”","—","•","—"])
     def __call__(self, doc):
-        return [t for t in word_tokenize(doc) if t not in self.punct]
+        return [t.lower() for t in word_tokenize(doc) if t not in self.punct]
     def stem_toke(self, doc):
         return [self.stem.stem(t.lower()) for t in word_tokenize(doc) if t not in self.punct]
 
