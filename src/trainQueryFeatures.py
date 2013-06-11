@@ -18,34 +18,46 @@ from config573 import config
 import classifier
 from classifier import *
 from collections import Counter
+import cPickle as cp
 
 output = open('trainTestOutput.txt', 'w')
 
-def featurize(target, question):
+
+
+
+def featurize(target, question, pickledquestionfeats):
     t = Tokenizer()
-    try:
-        tokens = t.stem_toke("%s %s" % (target, question))
-    except:
-        print("%s %s" % (target, question))
-        raise
+    tokens = t.stem_toke("%s %s" % (target, question))
     bigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), bigramize(tokens)))
     trigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), trigramize(tokens)))
     quadrigrams = map(lambda y: "%s%s" % ("q_",y), map(lambda x: ' '.join(x), quadrigramize(tokens)))
-	# A: ngrams
-    feats = dict(Counter(tokens+bigrams+trigrams+quadrigrams))
-    # B: adding pattern weights
-#     feats = dict(weighContexts(question).items() + feats.items())
-# 	# C: added tagged unigrams
-#     feats = dict(extractTaggedUnigrams(question,target).items() + feats.items())
-#     # D: adding head chunks
-#     feats = dict(extractHeadChunks(question).items() + feats.items())
-#     # E: adding question word
-#     feats = dict(extractQuestionWord(question).items() + feats.items())	
+    
+    qry = (target+question)
+    if qry not in pickledquestionfeats:
+        
+        pickledquestionfeats[qry] = dict()
+        pickledquestionfeats[qry]['A'] = dict(Counter(tokens+bigrams+trigrams+quadrigrams))
+        pickledquestionfeats[qry]['B'] = weighContexts(question)
+        pickledquestionfeats[qry]['C'] = extractTaggedUnigrams(question,target)
+        pickledquestionfeats[qry]['D'] = extractHeadChunks(question)
+        pickledquestionfeats[qry]['E'] = extractQuestionWord(question)
+        
+    feats = dict()
+    
+    A=True; B=True; C=True; D=True; E=False;
+    # A: ngrams, B: adding pattern weights, C: added tagged unigrams, 
+    # D: adding head chunks, E: adding question word
+    
+    for flagged,letter in [(A,'A'),(B,'B'),(C,'C'),(D,'D'),(E,'E')]:
+    
+        if flagged:
+            feats = dict(pickledquestionfeats[qry][letter].items() + feats.items())
+
     '''
     add (or remove) whatever features you want here then run qc.devtest()
     to see if you've gained anything.
     '''
-    return feats
+    return feats, pickledquestionfeats
     
 def weighContexts(question):
     q = question.lower()

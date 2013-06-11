@@ -3,8 +3,10 @@ import util
 from util import qc, getquestion
 from trainQueryFeatures import featurize
 import numpy as np
+import cPickle as cp
 
-NUM_OF_QUESTIONS = 3000
+# negative one is basically all of them
+NUM_OF_QUESTIONS = -1
 
 np.random.seed(0)
 indices = np.random.permutation(len(qc))
@@ -14,43 +16,46 @@ percent = int(len(qids) * 0.1)
 trainq = qids[percent:]
 testq = qids[:percent]
 
-qc_classifier = classifier.clsfr("question_classification", alg="svm",kfeatures=1500)
+qc_classifier = classifier.clsfr("question_classification", alg="svm",kfeatures=3000)
 
-def train(): 
+def qcpipeline(theqids, predict=False):
+    try:
+        f = open("pickledquestionfeats",'rb')
+        pickledquestionfeats = pickle.load(f)
+        f.close()
+    except:
+        pickledquestionfeats = dict()
+    features_dict = dict()
     X,Y = [],[]
-    for qid in trainq:
+    for qid in theqids:
         target = getquestion(qid=qid)['target']
         question = getquestion(qid=qid)['question']
-        features = featurize(target, question) # your function
-        label = qc[qid].split(':')[0]
+        features, pickledquestionfeats = featurize(target, question, pickledquestionfeats) # your function
+        features_dict[qid] = features
+        if not predict:
+            label = qc[qid].split(':')[0]
+            Y.append(label)
+        else:
+            Y.append('NUM')
         X.append(features)
-        Y.append(label)
+    f = open("pickledquestionfeats",'wb')
+    cp.dump(pickledquestionfeats,f)
+    f.close()
+    return X,Y,features_dict
+
+def train(): 
+    X,Y,feats = qcpipeline(trainq)
     qc_classifier.train(X,Y)
     
 def devtest():
-    X,Y = [],[]
-    for qid in testq:
-        target = getquestion(qid=qid)['target']
-        question = getquestion(qid=qid)['question']
-        features = featurize(target, question) # your function
-        label = qc[qid].split(':')[0]
-        X.append(features)
-        Y.append(label)
-        qc_classifier.devtest(X,Y)
+    X,Y,feats = qcpipeline(testq)
+    qc_classifier.devtest(X,Y)
     return qc_classifier
 
 def predict(new_qids):
-    features_dict = dict()
-    X,Y = [],[]
-    for qid in new_qids:
-        target = getquestion(qid=qid)['target']
-        question = getquestion(qid=qid)['question']
-        features = featurize(target, question) # your function
-        features_dict[qid] = features
-        X.append(features)
-        Y.append('NUM')
+    X,Y,feats = qcpipeline(new_qids, True)
     qc_classifier.devtest(X,Y)
-    return qc_classifier, features_dict
+    return qc_classifier, feats
 
 def run():
     train()

@@ -20,6 +20,7 @@ sys.path.append('./requests/')
 from bing_search_api import BingSearchAPI
 import HTMLParser
 from util import Tokenizer
+from math import log
 
 my_key = 'cvzWROzO9Vaxqu0k33+y6h++ts+a4PLQfvA7HlyJyXM='
 bing = BingSearchAPI(my_key)
@@ -112,7 +113,7 @@ def websearch(query):
 useUnion = False
 # gather up n-grams from our web search reslts
 def getcandidates(search_results, query, label, qfeatures, qid, pickledngrams):
-
+    stemmer = nltk.PorterStemmer()
     tokenizer = Tokenizer()
     qa = qa_filters([])
     stop_words = set(stopwords.words('english')) | set(["'s"])
@@ -135,13 +136,14 @@ def getcandidates(search_results, query, label, qfeatures, qid, pickledngrams):
                 tokes = tokenizer(t.decode('utf8'))
             else:
                 tokes = tokenizer(t)
-            toked.append(tokes)
+            toked.append(map(lambda x: x.replace('.',''), tokes))
         for tokens in toked:
             bigrams = map(lambda x: ' '.join(x), bigramize(tokens))
             trigrams = map(lambda x: ' '.join(x), trigramize(tokens))
             quadrigrams = map(lambda x: ' '.join(x), quadrigramize(tokens))
+            quintrigrams = map(lambda x: ' '.join(x), quintrigramize(tokens)) 
             
-            for ng in tokens+bigrams+trigrams+quadrigrams:
+            for ng in tokens+bigrams+trigrams+quadrigrams+quintrigrams:
                 #ngrams[token] += result['weight']
                 if qid not in pickledngrams:
                     ngrams[ng] += 1
@@ -150,7 +152,6 @@ def getcandidates(search_results, query, label, qfeatures, qid, pickledngrams):
                 else:
                     ngram_featset[ng]= set([result_key])
     if qid not in pickledngrams:
-        stemmer = nltk.PorterStemmer()
         for k in ngrams.keys():
             qwords = set(map(lambda x: stemmer.stem(x.lower()), word_tokenize(query)))
             remove = False
@@ -171,8 +172,17 @@ def getcandidates(search_results, query, label, qfeatures, qid, pickledngrams):
             if len(tokens) > 1:
                 for token in tokens:
                     ngrams[k] += ngrams[token]
+        D = len(search_results)
+        for k in ngrams.keys():
+            tokes = k.split()
+            c = len(tokes)
+            sumIDF = 0
+            for u in tokes:
+                d = len(ngram_featset[u])
+                sumIDF += log(float(D)/float(d))
+            ngrams[k] = ngrams[k]*(sumIDF/float(c))
     finalfeatdict = dict()
-    for ng, chunk in ngrams.most_common(30):
+    for ng, chunk in ngrams.most_common(40):
         if useUnion:
             feats = reduce(lambda x,y: x | y, map(lambda z: result_features[z], ngram_featset[ng]))
         else:
@@ -180,6 +190,9 @@ def getcandidates(search_results, query, label, qfeatures, qid, pickledngrams):
         feats.add(('REDUNDANCY_SCORE',ngrams[ng]))
         feats.add(('WEB_RANK', 1 + min(ngram_featset[ng])))
         feats.add(('QC_LABEL', label))
+        awords = set(map(lambda x: stemmer.stem(x.lower()), word_tokenize(ng)))
+        for toke in awords:
+            feats.add(('a_' + toke, 1))
         finalfeatdict[ng] = dict(feats | set(qa.featurizeCandidate(label, ng, 0).items()) | set(qfeatures.items()))
         #finalfeatdict[ng] = dict(feats | set(qa.featurizeCandidate(label, ng, 0).items()))
     return finalfeatdict, ngrams
@@ -201,11 +214,11 @@ def getwebresults(question):
     lim = config['web_results_limit']
     search_library = config['search_library_active']
     search_engine = config['search_engine_active']
-    
+     
     # Should check cache first
     cache_key = hashlib.md5(q + search_engine + search_library).hexdigest()
     cache_path = config['web_cache_dir'] + '/' + search_engine + '/' + search_library + '/' + cache_key
-    
+     
     if config['reset_web_cache'] == 0 and os.path.exists(cache_path):
         # continue # uncomment this just to cache a bunch of web results.
         with open(cache_path ,'rb') as fp:
@@ -214,9 +227,9 @@ def getwebresults(question):
         web_results = websearch(q)
         with open(cache_path ,'wb') as fp:
             pickle.dump(web_results,fp)
-            
+             
     web_results = clean_results(web_results)
-            
+             
     # do we want to search for exact query web results as well and do some merging?
     if config['include_exact_query_matches'] == 1:
         cache_key = hashlib.md5('"' + q + '"' + search_engine + search_library).hexdigest()
@@ -229,11 +242,11 @@ def getwebresults(question):
             web_results_exact = websearch('"' + q + '"')
             with open(cache_path ,'wb') as fp:
                 pickle.dump(web_results_exact,fp)
-                
+                 
         web_results_exact = clean_results(web_results_exact)
-
+ 
     # continue # uncomment this just to cache a bunch of web results.
-
+ 
     # Apply Anthony's context filters
     if config['include_exact_query_matches'] == 0:
         # if we don't have to merge in exact query web results than just pass on through
@@ -244,11 +257,11 @@ def getwebresults(question):
         web_results = apply_filters(web_results, question['question_text'], lim)
         web_results_exact = apply_filters(web_results_exact, question['question_text'], lim)
         web_results = web_results + web_results_exact
-
+ 
         # lets remove duplicates, keeping the result that has a higher weight.
         filters = qa_filters(web_results, 0)
         web_results = filters.sort_by_weight().results
-
+ 
         results = []
         for r in web_results:
             insert = True;
@@ -256,10 +269,10 @@ def getwebresults(question):
                 if r['title'] == r2['title']:
                     insert = False
                     break
-                
+                 
             if (insert == True):
                 results.append(r)
-                
+                 
         # at this point we could have less or more than are limit depending on the 
         # results, so lets just cut list by limit so at the least we aren't dealing with more
         web_results = results[:lim]

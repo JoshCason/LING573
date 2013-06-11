@@ -15,7 +15,7 @@ qids = reduce(lambda x, y: x+y, \
 TOTAL_QUESTIONS = 592
 NUM_OF_QUESTIONS = TOTAL_QUESTIONS
 PERCENT = 0.1 # of data for testing
-KFEATURES = 50
+KFEATURES = 2400
 
 main_clsfr = classifier.clsfr("main", alg="svm",kfeatures=KFEATURES)
 
@@ -31,14 +31,14 @@ testq = qids[:portion]
 
 def dopipeline(qidsq):
     try:
-        f = open("pickledwebcandidates"+marker,'rb')
+        f = open("pickledwebcandidates",'rb')
         webcandpickled = cp.load(f)
         f.close()
         #raise
     except:
         webcandpickled = dict()
     try:
-        f = open("pickledngrams1"+marker,'rb')
+        f = open("pickledngrams",'rb')
         pickledngrams = pickle.load(f)
         f.close()
     except:
@@ -60,16 +60,16 @@ def dopipeline(qidsq):
             webcandpickled[qid] = c
             pickledngrams[qid] = ngrams
         webcand_dict[qid] = c
-    f = open("pickledwebcandidates"+marker,'wb')
+    f = open("pickledwebcandidates",'wb')
     cp.dump(webcandpickled,f)
     f.close()
-    f = open("pickledngrams"+marker,'wb')
+    f = open("pickledngrams",'wb')
     cp.dump(pickledngrams, f)
     f.close()
     return webcand_dict
 
 def train():
-    #qc.train() # we can assume this is trained
+    qc.train() # we can usually assume this is trained
     webcand_dict = dopipeline(trainq)
     for qid, c in webcand_dict.items():
         for ngram in c:

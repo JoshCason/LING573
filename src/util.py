@@ -11,6 +11,13 @@ import xml.etree.ElementTree as ET
 from nltk import word_tokenize, PorterStemmer
 import string
 
+quintrigramize = lambda t: [(t[v],t[w],t[x],t[y],t[z]) for (v,w,x,y,z) in \
+                zip(range(0,len(t)-4), \
+                    range(1,len(t)-3), \
+                    range(2,len(t)-2), \
+                    range(3,len(t)-1), \
+                    range(4, len(t)-0))]
+
 quadrigramize = lambda t: [(t[w],t[x],t[y],t[z]) for (w,x,y,z) in \
                 zip(range(0,len(t)-3), \
                     range(1,len(t)-2), \

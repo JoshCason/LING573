@@ -25,7 +25,7 @@ from config573 import config
 import pprint
 import classifier as clsfr
 import qc
-from devpipeline import evalcandidates
+from devpipeline import evalcandidates, train
 
 sys.path.insert(0, os.path.join("..", ".."))
 
@@ -50,11 +50,15 @@ if __name__ == '__main__':
     # output file
     out_file0 = '../outputs/' + 'QA' + '.' + 'outputs'
     
+    train()
+    
     for year in ['2006','2007']:
-        out_file = outfile0 + '_'+ year + '_100'
+        out_file1 = out_file0 + '_'+ year + '_100'
+        out_file2 = out_file0 + '_'+ year + '_250'
         
         run_tag = config['deliverable'] + '-' + str(int(time.time()))
-        f = open(out_file, 'a')
+        f1 = open(out_file1, 'w')
+        f2 = open(out_file2, 'w')
         
         # determine ngrams from our search results
         cdict = evalcandidates(year)    
@@ -70,13 +74,15 @@ if __name__ == '__main__':
                 doc = aquaint_search(qry, searcher)
                 if doc is not False:
                     # write to D2.outputs
-                    f.write(u' '.join((qid, run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
-        searcher.close()
-        f.close()
-        
-        # End Timer
-        end = datetime.now()
-        print 'Time elapsed: ' + str(end - start)
+                    f1.write(u' '.join((qid, run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
+                    f2.write(u' '.join((qid, run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
+    searcher.close()
+    f1.close()
+    f2.close()
+    
+    # End Timer
+    end = datetime.now()
+    print 'Time elapsed: ' + str(end - start)
     
 
 
