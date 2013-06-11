@@ -43,9 +43,9 @@ if __name__ == '__main__':
 
     # Start timer
     start = datetime.now()
-    STORE_DIR = config['aquant_index_dir']
-    directory = SimpleFSDirectory(File(STORE_DIR))
-    searcher = IndexSearcher(directory, True)
+
+    searcher = IndexSearcher(SimpleFSDirectory(File('aquaint_index')), True)
+    searcher2 = IndexSearcher(SimpleFSDirectory(File('aquaint_index2')), True)
 
     # output file
     out_file0 = '../outputs/' + 'QA' + '.' + 'outputs'
@@ -70,8 +70,12 @@ if __name__ == '__main__':
                 # now for each we get the supporting AQUAINT doc
                 # Search AQUAINT lucene 
                 # Add the ngram set to our question
-                qry = q['target'] + ' ' + q['question'] + ' ' + ngram_set                
-                doc = aquaint_search(qry, searcher)
+                qry = q['target'] + ' ' + q['question'] + ' ' + ngram_set    
+                if year == '2007':
+                    doc = aquaint_search(qry, searcher2)   
+                else:
+                    doc = aquaint_search(qry, searcher)
+                    
                 if doc is not False:
                     # write to D2.outputs
                     f1.write(u' '.join((qid, run_tag, doc.get("docid"), ngram_set)).encode('utf-8').strip() + "\n")
